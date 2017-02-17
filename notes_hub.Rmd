@@ -1,0 +1,8 @@
+---
+title: Random Notes
+layout: default
+---
+
+Just some notes about some stuff. 
+
+- [Procedural Generation](notes_procgen.html)

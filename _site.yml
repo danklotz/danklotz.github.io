@@ -1,0 +1,12 @@
+name: "allokkio"
+output_dir: "."
+navbar:
+  title: "allokkio"
+  type: inverse
+  left:
+    - text: "home"
+      href: index.html
+    - text: "notes"
+      href: "notes_hub.html"
+    - text: "about"
+      href: about.html

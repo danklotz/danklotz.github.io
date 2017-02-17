@@ -1,0 +1,11 @@
+---
+title: index
+fig_width: 9.47
+toc: yes
+toc_float: yes
+---
+
+Instead of this text, you will soon be able to read proper words & sentences here.
+If you are lucky they will even make sense!
+
+For now I am not sure how to organize "this" thing here. 
