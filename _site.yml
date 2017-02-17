@@ -1,12 +1,18 @@
 name: "allokkio"
 output_dir: "."
+output:
+  html_document:
+    theme: cerulean
+    clean: no
+    fig_width: 9.47
+    toc: yes
+    toc_float: yes
 navbar:
   title: "allokkio"
   type: inverse
   left:
-    - text: "home"
+    - text: "about"
+      icon: fa-eye
       href: index.html
     - text: "notes"
       href: "notes_hub.html"
-    - text: "about"
-      href: about.html

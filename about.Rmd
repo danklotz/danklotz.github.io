@@ -1,5 +1,5 @@
 ---
-title: introduction
+title: about
 output:
   html_document:
     clean: no
@@ -15,5 +15,5 @@ I am just playing around with this website. So, don't bother to much.
 
 Find me on:
 
-- [github](https://github.com/danklotz) 
+- [github](https://github.com/danklotz)
 - [twitter](https://twitter.com/ido87)

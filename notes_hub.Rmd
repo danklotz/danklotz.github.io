@@ -1,8 +1,7 @@
 ---
-title: Random Notes
+title: random notes
 layout: default
 ---
 
-Just some notes about some stuff. 
-
-- [Procedural Generation](notes_procgen.html)
+Here I will (hopefully) collect notes about (more or less) random things.
+So far I have none, but I shall work on it. 

@@ -1,11 +1,19 @@
 ---
-title: index
-fig_width: 9.47
-toc: yes
-toc_float: yes
+title: hello
+output:
+  html_document:
+    clean: no
+    fig_width: 9.47
+    toc: yes
+    toc_float: yes
 ---
 
-Instead of this text, you will soon be able to read proper words & sentences here.
-If you are lucky they will even make sense!
+Hello, my name is Daniel Klotz. I am making a phd in hydrology at
+[BOKU](https://www.boku.ac.at/en/), Vienna.
 
-For now I am not sure how to organize "this" thing here. 
+I am just playing around with this website. So, don't bother to much.
+
+Find me on:
+
+- [github](https://github.com/danklotz)
+- [twitter](https://twitter.com/ido87)
