@@ -6,8 +6,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>visCOS</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="visCOS">
-  <meta name="generator" content="bookdown 0.3.9 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
 
   <meta property="og:title" content="visCOS" />
   <meta property="og:type" content="book" />
@@ -33,6 +34,7 @@
   
 <link rel="prev" href="flow-duration-curves.html">
 <link rel="next" href="exploring-objective-functions.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -90,7 +92,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
-
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -328,10 +329,10 @@ This is by far not the only option/possibility to approach the peak finding task
     plot_sub &lt;-<span class="st"> </span><span class="kw">ggplot</span>() +
 <span class="st">      </span><span class="kw">geom_line</span>(<span class="dt">data =</span> peak_data[(point$idx -<span class="st"> </span>window_size):(point$idx +<span class="st"> </span>window_size),],
                 <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> sim),
-                <span class="dt">col =</span> <span class="st">&quot;orange&quot;</span>) +
+                <span class="dt">col =</span> <span class="kw">viscos_options</span>(<span class="st">&quot;color_s&quot;</span>)) +
 <span class="st">      </span><span class="kw">geom_line</span>(<span class="dt">data =</span> peak_data[(point$idx -<span class="st"> </span>window_size):(point$idx +<span class="st"> </span>window_size),],
                 <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> obs),
-                <span class="dt">col =</span> <span class="st">&quot;steelblue&quot;</span>) +
+                <span class="dt">col =</span> <span class="kw">viscos_options</span>(<span class="st">&quot;color_o&quot;</span>)) +
 <span class="st">      </span><span class="kw">geom_point</span>(<span class="dt">data =</span> point, <span class="kw">aes</span>(idx, peak_obs))
     <span class="kw">return</span>(plot_sub)
   }</code></pre></div>
@@ -352,9 +353,8 @@ This is by far not the only option/possibility to approach the peak finding task
         </div>
       </div>
 <a href="flow-duration-curves.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exploring-objective-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
-  </div>
+<a href="exploring-objective-functions.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
