@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>visCOS</title>
+  <meta name="description" content="visCOS">
+  <meta name="generator" content="bookdown 0.3.9 and GitBook 2.6.7">
+
+  <meta property="og:title" content="visCOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="visCOS" />
+  
+  
+  
+
+<meta name="author" content="Daniel Klotz, Johannes Wesemann, Mathew Herrnegger">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="exploring-objective-functions.html">
+<link rel="next" href="main-objective-functions.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">visCOS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Hello Traveler</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#raw-data"><i class="fa fa-check"></i><b>1.1</b> Raw Data</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#cooked-data"><i class="fa fa-check"></i><b>1.2</b> Cooked Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cooking-data.html"><a href="cooking-data.html"><i class="fa fa-check"></i><b>2</b> Cooking Data</a><ul>
+<li class="chapter" data-level="2.1" data-path="cooking-data.html"><a href="cooking-data.html#examples"><i class="fa fa-check"></i><b>2.1</b> Examples</a></li>
+<li class="chapter" data-level="2.2" data-path="cooking-data.html"><a href="cooking-data.html#code"><i class="fa fa-check"></i><b>2.2</b> Code</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="cooking-data.html"><a href="cooking-data.html#get-example-data"><i class="fa fa-check"></i><b>2.2.1</b> Get Example Data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="cooking-data.html"><a href="cooking-data.html#isolate-needed-columns"><i class="fa fa-check"></i><b>2.2.2</b> Isolate Needed Columns</a></li>
+<li class="chapter" data-level="2.2.3" data-path="cooking-data.html"><a href="cooking-data.html#complete-dates"><i class="fa fa-check"></i><b>2.2.3</b> Complete Dates</a></li>
+<li class="chapter" data-level="2.2.4" data-path="cooking-data.html"><a href="cooking-data.html#remove-leading-zeros-in-column-names"><i class="fa fa-check"></i><b>2.2.4</b> Remove Leading Zeros in Column Names</a></li>
+<li class="chapter" data-level="2.2.5" data-path="cooking-data.html"><a href="cooking-data.html#mark-periods"><i class="fa fa-check"></i><b>2.2.5</b> Mark Periods</a></li>
+<li class="chapter" data-level="2.2.6" data-path="cooking-data.html"><a href="cooking-data.html#transform-cos_data-into-xts"><i class="fa fa-check"></i><b>2.2.6</b> Transform <code>cos_data</code> into <code>xts</code></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="options.html"><a href="options.html"><i class="fa fa-check"></i><b>3</b> Options</a></li>
+<li class="chapter" data-level="4" data-path="time-aggregates.html"><a href="time-aggregates.html"><i class="fa fa-check"></i><b>4</b> Time Aggregates</a><ul>
+<li class="chapter" data-level="4.1" data-path="time-aggregates.html"><a href="time-aggregates.html#examples-1"><i class="fa fa-check"></i><b>4.1</b> Examples</a></li>
+<li class="chapter" data-level="4.2" data-path="time-aggregates.html"><a href="time-aggregates.html#code-1"><i class="fa fa-check"></i><b>4.2</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html"><i class="fa fa-check"></i><b>5</b> Flow Duration Curves</a><ul>
+<li class="chapter" data-level="5.1" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#example"><i class="fa fa-check"></i><b>5.1</b> Example</a></li>
+<li class="chapter" data-level="5.2" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#code-2"><i class="fa fa-check"></i><b>5.2</b> Code</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#computation"><i class="fa fa-check"></i><b>5.2.1</b> Computation</a></li>
+<li class="chapter" data-level="5.2.2" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#plotting"><i class="fa fa-check"></i><b>5.2.2</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#references"><i class="fa fa-check"></i><b>5.3</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html"><i class="fa fa-check"></i><b>6</b> Plotting Runoff Peaks Plots</a><ul>
+<li class="chapter" data-level="6.1" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html#examples-2"><i class="fa fa-check"></i><b>6.1</b> Examples:</a></li>
+<li class="chapter" data-level="6.2" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html#code-3"><i class="fa fa-check"></i><b>6.2</b> Code</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html#peak-plots-for-a-signle-basin"><i class="fa fa-check"></i><b>6.2.1</b> Peak-Plots for a signle Basin</a></li>
+<li class="chapter" data-level="6.2.2" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html#peak-finding-function"><i class="fa fa-check"></i><b>6.2.2</b> Peak Finding Function</a></li>
+<li class="chapter" data-level="6.2.3" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html#subplot-function"><i class="fa fa-check"></i><b>6.2.3</b> Subplot Function</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html#references-1"><i class="fa fa-check"></i><b>6.3</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ojective-functions.html"><a href="ojective-functions.html"><i class="fa fa-check"></i><b>7</b> Ojective Functions</a><ul>
+<li class="chapter" data-level="7.1" data-path="ojective-functions.html"><a href="ojective-functions.html#code-4"><i class="fa fa-check"></i><b>7.1</b> Code</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="ojective-functions.html"><a href="ojective-functions.html#the-main-objective-functions"><i class="fa fa-check"></i><b>7.1.1</b> The “Main” Objective Functions</a></li>
+<li class="chapter" data-level="7.1.2" data-path="ojective-functions.html"><a href="ojective-functions.html#ohter-objective-functions"><i class="fa fa-check"></i><b>7.1.2</b> Ohter Objective Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="ojective-functions.html"><a href="ojective-functions.html#references-2"><i class="fa fa-check"></i><b>7.2</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html"><i class="fa fa-check"></i><b>8</b> Exploring Objective Functions</a><ul>
+<li class="chapter" data-level="8.1" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#example-1"><i class="fa fa-check"></i><b>8.1</b> Example</a></li>
+<li class="chapter" data-level="8.2" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#code-5"><i class="fa fa-check"></i><b>8.2</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="runoff-comparison-with-objective-functions.html"><a href="runoff-comparison-with-objective-functions.html"><i class="fa fa-check"></i><b>9</b> Runoff Comparison with Objective Functions</a><ul>
+<li class="chapter" data-level="9.1" data-path="runoff-comparison-with-objective-functions.html"><a href="runoff-comparison-with-objective-functions.html#code-6"><i class="fa fa-check"></i><b>9.1</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="main-objective-functions.html"><a href="main-objective-functions.html"><i class="fa fa-check"></i><b>10</b> Main Objective Functions</a><ul>
+<li class="chapter" data-level="10.1" data-path="main-objective-functions.html"><a href="main-objective-functions.html#code-7"><i class="fa fa-check"></i><b>10.1</b> Code</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="main-objective-functions.html"><a href="main-objective-functions.html#computation-1"><i class="fa fa-check"></i><b>10.1.1</b> Computation</a></li>
+<li class="chapter" data-level="10.1.2" data-path="main-objective-functions.html"><a href="main-objective-functions.html#plotting-1"><i class="fa fa-check"></i><b>10.1.2</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="generate-previews.html"><a href="generate-previews.html"><i class="fa fa-check"></i><b>11</b> Generate Previews</a><ul>
+<li class="chapter" data-level="11.1" data-path="generate-previews.html"><a href="generate-previews.html#code-8"><i class="fa fa-check"></i><b>11.1</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="defensive-code.html"><a href="defensive-code.html"><i class="fa fa-check"></i><b>12</b> Defensive Code</a><ul>
+<li class="chapter" data-level="12.1" data-path="defensive-code.html"><a href="defensive-code.html#code-9"><i class="fa fa-check"></i><b>12.1</b> Code</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="defensive-code.html"><a href="defensive-code.html#check-for-useless-columns"><i class="fa fa-check"></i><b>12.1.1</b> Check for useless Columns</a></li>
+<li class="chapter" data-level="12.1.2" data-path="defensive-code.html"><a href="defensive-code.html#check-date"><i class="fa fa-check"></i><b>12.1.2</b> Check Date</a></li>
+<li class="chapter" data-level="12.1.3" data-path="defensive-code.html"><a href="defensive-code.html#check-for-data.frame"><i class="fa fa-check"></i><b>12.1.3</b> Check for <code>data.frame</code></a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="defensive-code.html"><a href="defensive-code.html#references-3"><i class="fa fa-check"></i><b>12.2</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="helpers.html"><a href="helpers.html"><i class="fa fa-check"></i><b>13</b> Helpers</a><ul>
+<li class="chapter" data-level="13.1" data-path="helpers.html"><a href="helpers.html#search-string-the-option-names"><i class="fa fa-check"></i><b>13.1</b> Search-String the (Option) Names</a></li>
+<li class="chapter" data-level="13.2" data-path="helpers.html"><a href="helpers.html#extract-the-numeration"><i class="fa fa-check"></i><b>13.2</b> Extract the Numeration</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">visCOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="runoff-comparison-with-objective-functions" class="section level1">
+<h1><span class="header-section-number">Chapter 9</span> Runoff Comparison with Objective Functions</h1>
+<p><img src="figures/explore_cos_data.gif" style="display: block; margin: auto;" /></p>
+<div id="code-6" class="section level2">
+<h2><span class="header-section-number">9.1</span> Code</h2>
+<p>In the following paragraphs the code of the shiny app is defined. The computations of the app are defined in the <code>server</code> part and the appearance in the <code>ui</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; Explore with Objective Functions</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; Runs a Shiny Gadget which can be used to get an overview of a cos_data time</span>
+  <span class="co">#&#39; series object.</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @import shiny</span>
+  <span class="co">#&#39; @import miniUI</span>
+  <span class="co">#&#39; @importFrom xts</span>
+  <span class="co">#&#39; @import dplyr</span>
+  <span class="co">#&#39; @import magrittr</span>
+  <span class="co">#&#39; @import dygraphs</span>
+  <span class="co">#&#39; @import hydroGOF</span>
+  <span class="co">#&#39; @import pasta</span>
+  <span class="co">#&#39; @importFrom purrr map_df</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @export</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @examples</span>
+  <span class="co">#&#39; # get example data,</span>
+  <span class="co">#&#39; # explore the model performance</span>
+  <span class="co">#&#39; cos_data &lt;- get_viscos_example()</span>
+  <span class="co">#&#39; explore_cos_data(cos_data)</span>
+of_compare &lt;-<span class="st"> </span>function(d1,
+                       <span class="dt">d2 =</span> <span class="ot">NULL</span>,
+                             <span class="dt">of_list =</span> <span class="kw">list</span>(
+                               <span class="dt">nse =</span> of_nse,
+                               <span class="dt">kge =</span> of_kge,
+                               <span class="dt">p_bias =</span> of_p_bias,
+                               <span class="dt">r =</span> of_cor
+                               ),
+                             <span class="dt">start_date =</span> <span class="ot">NULL</span>,
+                             <span class="dt">end_date =</span> <span class="ot">NULL</span>) {
+  <span class="co"># (I) pre-sets: ============================================================</span>
+  if(!<span class="kw">is.list</span>(of_list)){
+    of_list =<span class="st"> </span><span class="kw">list</span>(of_list)
+  }
+  if (<span class="kw">is.null</span>(d2)) {
+    d2 &lt;-<span class="st"> </span>d1
+  }
+  if (<span class="kw">is.null</span>(<span class="kw">names</span>(of_list))){
+    <span class="kw">names</span>(of_list) &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;of&quot;</span>, <span class="dv">1</span>:<span class="kw">length</span>(of_list), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)
+  }
+  clean_data1 &lt;-<span class="st"> </span>d1 %&gt;%<span class="st"> </span>
+<span class="st">    </span><span class="kw">remove_leading_zeros</span>(.) %&gt;%<span class="st"> </span>
+<span class="st">    </span><span class="kw">complete_dates</span>(.)
+  clean_data2 &lt;-<span class="st"> </span>d2 %&gt;%<span class="st"> </span>
+<span class="st">    </span><span class="kw">remove_leading_zeros</span>(.) %&gt;%<span class="st"> </span>
+<span class="st">    </span><span class="kw">complete_dates</span>(.)
+  <span class="co"># convenience variables: ===================================================</span>
+  name_o &lt;-<span class="st"> </span>visCOS::<span class="kw">viscos_options</span>(<span class="st">&quot;name_o&quot;</span>)
+  name_s &lt;-<span class="st"> </span>visCOS::<span class="kw">viscos_options</span>(<span class="st">&quot;name_s&quot;</span>)
+  color_o &lt;-<span class="st"> </span>visCOS::<span class="kw">viscos_options</span>(<span class="st">&quot;color_o&quot;</span>)
+  color_s &lt;-<span class="st"> </span>visCOS::<span class="kw">viscos_options</span>(<span class="st">&quot;color_s&quot;</span>)
+  ylab &lt;-<span class="st"> </span>visCOS::<span class="kw">viscos_options</span>(<span class="st">&quot;data_unit&quot;</span>)
+  <span class="co"># </span>
+  name_lb &lt;-<span class="st"> </span>visCOS::<span class="kw">viscos_options</span>(<span class="st">&quot;name_lb&quot;</span>)
+  name_ub &lt;-visCOS::<span class="kw">viscos_options</span>(<span class="st">&quot;name_ub&quot;</span>)
+  names_d1 &lt;-<span class="st"> </span><span class="kw">names</span>(clean_data1) %&gt;%<span class="st"> </span><span class="kw">tolower</span>(.)
+  names_d2 &lt;-<span class="st"> </span><span class="kw">names</span>(clean_data2) %&gt;%<span class="st"> </span><span class="kw">tolower</span>(.)
+  <span class="co">#</span>
+  idx_names_d1 &lt;-<span class="st"> </span><span class="kw">grepl</span>(name_o, names_d1, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>)
+  d_nums &lt;-<span class="st"> </span>names_d1 %&gt;%
+<span class="st">      </span>.[idx_names_d1] %&gt;%
+<span class="st">      </span><span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">D&quot;</span>,<span class="st">&quot;&quot;</span>,.) %&gt;%
+<span class="st">      </span><span class="kw">as.integer</span>(.) %&gt;%
+<span class="st">      </span><span class="kw">unique</span>(.)
+  idx_names_d2 &lt;-<span class="st"> </span><span class="kw">grepl</span>(name_o, names_d2, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>)
+  d_nums &lt;-<span class="st"> </span>names_d2 %&gt;%
+<span class="st">      </span>.[idx_names_d2] %&gt;%
+<span class="st">      </span><span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">D&quot;</span>,<span class="st">&quot;&quot;</span>,.) %&gt;%
+<span class="st">      </span><span class="kw">as.integer</span>(.) %&gt;%
+<span class="st">      </span><span class="kw">unique</span>(.)
+  <span class="co"># check for potential bounds: ==============================================</span>
+  check_for_bounds &lt;-<span class="st"> </span>function(names_data) {
+    number_lb &lt;-<span class="st"> </span><span class="kw">grepl</span>(name_lb, 
+                       names_data, 
+                       <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) %&gt;%
+<span class="st">      </span><span class="kw">sum</span>(.)
+    number_ub &lt;-<span class="st"> </span><span class="kw">grepl</span>(name_ub, 
+                       names_data, 
+                       <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) %&gt;%<span class="st"> </span>
+<span class="st">      </span><span class="kw">sum</span>(.)
+    <span class="co">#</span>
+    plot_bounds &lt;-<span class="st"> </span><span class="ot">FALSE</span>
+    if( (number_lb &gt;<span class="st"> </span><span class="dv">0</span>) &amp;<span class="st"> </span>(number_ub &gt;<span class="st"> </span><span class="dv">0</span>)) {
+      number_obs &lt;-<span class="st"> </span><span class="kw">grepl</span>(<span class="kw">viscos_options</span>(<span class="st">&quot;name_o&quot;</span>), 
+                          names_d1, 
+                          <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) %&gt;%<span class="st"> </span>
+<span class="st">        </span><span class="kw">sum</span>(.)
+      number_sim &lt;-<span class="st"> </span><span class="kw">grepl</span>(<span class="kw">viscos_options</span>(<span class="st">&quot;name_s&quot;</span>), 
+                          names_d1, 
+                          <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) %&gt;%<span class="st"> </span>
+<span class="st">        </span><span class="kw">sum</span>(.)
+      if (number_lb !=<span class="st"> </span>number_ub) {
+        <span class="kw">stop</span>(<span class="st">&quot;number of available bounds is not the same!&quot;</span> %&amp;&amp;%<span class="st"> </span>
+<span class="st">               &quot;#lb=&quot;</span> %&amp;%<span class="st"> </span>number_lb %&amp;&amp;%<span class="st"> </span>
+<span class="st">               &quot;#ub=&quot;</span> %&amp;%<span class="st"> </span>number_ub)
+      } else if ((number_lb !=<span class="st"> </span>number_obs) |<span class="st"> </span>(number_lb !=<span class="st"> </span>number_sim)) {
+        <span class="kw">stop</span>(<span class="st">&quot;Number of bounds is not the same as the o/s data!&quot;</span> %&amp;&amp;%
+<span class="st">              &quot;#bounds=&quot;</span> %&amp;%<span class="st"> </span>number_lb %&amp;&amp;%<span class="st"> </span>
+<span class="st">               &quot;#obs=&quot;</span> %&amp;%<span class="st"> </span>number_obs %&amp;&amp;%
+<span class="st">               &quot;#sim=&quot;</span> %&amp;%<span class="st"> </span>number_sim)
+      } else {
+        plot_bounds &lt;-<span class="st"> </span><span class="ot">TRUE</span> <span class="co"># switch: plot bounds</span>
+      }
+    }
+    <span class="kw">return</span>(plot_bounds)
+  }
+  plot_bounds_d1 &lt;-<span class="st"> </span><span class="kw">check_for_bounds</span>(names_d1)
+  plot_bounds_d2 &lt;-<span class="st"> </span><span class="kw">check_for_bounds</span>(names_d2)
+  <span class="co"># app functions: ===========================================================</span>
+  <span class="co"># subselect data: ##########################################################</span>
+  subselect &lt;-<span class="st"> </span>function(cos_data,
+                        basin_number,
+                        plot_bounds) {
+    unique_data_names &lt;-<span class="st"> </span><span class="kw">names</span>(cos_data) %&gt;%<span class="st"> </span>
+<span class="st">      </span><span class="kw">tolower</span>(.) %&gt;%<span class="st"> </span>
+<span class="st">      </span><span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">d&quot;</span>, <span class="st">&quot;&quot;</span>, .) %&gt;%
+<span class="st">      </span><span class="kw">unique</span>(.)
+    x_string &lt;-<span class="st"> </span>unique_data_names[ <span class="kw">grep</span>(name_o, unique_data_names) ]
+    y_string &lt;-<span class="st"> </span>unique_data_names[ <span class="kw">grep</span>(name_s, unique_data_names) ]
+    x_sel&lt;-<span class="st">  </span>x_string %&amp;%<span class="st"> </span>basin_number %&amp;%<span class="st"> &quot;$&quot;</span>  
+    y_sel &lt;-<span class="st"> </span>y_string %&amp;%<span class="st"> </span>basin_number %&amp;%<span class="st"> &quot;$&quot;</span>
+    if(plot_bounds) {
+      lb_string &lt;-<span class="st">  </span>unique_data_names[ <span class="kw">grep</span>(name_lb, unique_data_names) ]
+      ub_string &lt;-<span class="st">  </span>unique_data_names[ <span class="kw">grep</span>(name_ub, unique_data_names) ]
+      lb_sel &lt;-<span class="st"> </span>lb_string %&amp;%<span class="st"> </span>basin_number %&amp;%<span class="st"> &quot;$&quot;</span>
+      ub_sel &lt;-<span class="st"> </span>ub_string %&amp;%<span class="st"> </span>basin_number %&amp;%<span class="st"> &quot;$&quot;</span>
+      selected_data &lt;-<span class="st"> </span>cos_data %&gt;%<span class="st"> </span>
+<span class="st">        </span><span class="kw">select</span>(<span class="dt">x =</span> <span class="kw">matches</span>( x_sel ), 
+               <span class="dt">y =</span> <span class="kw">matches</span>( y_sel), 
+               <span class="dt">lb =</span> <span class="kw">matches</span>( lb_sel ), 
+               <span class="dt">ub =</span> <span class="kw">matches</span>( ub_sel))
+      } else {
+        selected_data &lt;-<span class="st"> </span>cos_data %&gt;%<span class="st"> </span>
+<span class="st">          </span><span class="kw">select</span>(<span class="dt">x =</span> <span class="kw">matches</span>( x_sel ), <span class="dt">y =</span> <span class="kw">matches</span>( y_sel ))
+      } 
+    selected_data %&lt;&gt;%<span class="st"> </span>
+<span class="st">      </span><span class="kw">xts</span>(.,<span class="dt">order.by =</span> cos_data[[<span class="kw">viscos_options</span>(<span class="st">&quot;name_COSposix&quot;</span>)]])
+  }
+  <span class="co"># plotting: ################################################################</span>
+  create_dygraph &lt;-<span class="st"> </span>function(plot_data, plot_group,plot_bounds){
+    if(plot_bounds) {
+      base_graph &lt;-<span class="st"> </span><span class="kw">dygraph</span>(plot_data, <span class="dt">group =</span> plot_group) %&gt;%
+<span class="st">        </span><span class="kw">dyAxis</span>(<span class="st">&quot;y&quot;</span>, <span class="dt">label =</span> ylab) %&gt;%
+<span class="st">        </span><span class="kw">dySeries</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">label =</span> name_o, <span class="dt">color =</span> color_o) %&gt;%
+<span class="st">        </span><span class="kw">dySeries</span>(<span class="st">&quot;y&quot;</span>, <span class="dt">label =</span> name_s, <span class="dt">color =</span> color_s) %&gt;%
+<span class="st">        </span><span class="kw">dySeries</span>(<span class="st">&quot;lb&quot;</span>, <span class="dt">label =</span> name_lb, <span class="dt">color =</span> <span class="st">&quot;grey80&quot;</span>) %&gt;%<span class="st"> </span>
+<span class="st">        </span><span class="kw">dySeries</span>(<span class="st">&quot;ub&quot;</span>,<span class="dt">label =</span> name_ub,<span class="dt">color =</span> <span class="st">&quot;grey80&quot;</span>)
+    } else {
+      base_graph &lt;-<span class="st"> </span><span class="kw">dygraph</span>(plot_data, <span class="dt">group =</span> plot_group) %&gt;%
+<span class="st">        </span><span class="kw">dyAxis</span>(<span class="st">&quot;y&quot;</span>, <span class="dt">label =</span> ylab) %&gt;%
+<span class="st">        </span><span class="kw">dySeries</span>(<span class="st">&quot;x&quot;</span>, <span class="dt">label =</span> name_o, <span class="dt">color =</span> color_o) %&gt;%
+<span class="st">        </span><span class="kw">dySeries</span>(<span class="st">&quot;y&quot;</span>, <span class="dt">label =</span> name_s, <span class="dt">color =</span> color_s)
+    }
+  }</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># (V) Define App: ==========================================================</span>
+  server &lt;-<span class="st"> </span>function(input, output, session) {
+    xts_selected_data1 &lt;-<span class="st"> </span><span class="kw">reactive</span>({
+      <span class="kw">subselect</span>(clean_data1, input$basin_num, plot_bounds_d1)
+      })
+    xts_selected_data2 &lt;-<span class="st"> </span><span class="kw">reactive</span>({
+      <span class="kw">subselect</span>(clean_data2, input$basin_num2, plot_bounds_d2)
+      })
+    
+    <span class="co"># (d) create plots:</span>
+    upper_graph &lt;-<span class="st"> </span><span class="kw">reactive</span>({ 
+      <span class="kw">create_dygraph</span>(<span class="kw">xts_selected_data1</span>(), <span class="st">&quot;test&quot;</span>, plot_bounds_d1) 
+      })
+    lower_graph &lt;-<span class="st"> </span><span class="kw">reactive</span>({ 
+      <span class="kw">create_dygraph</span>(<span class="kw">xts_selected_data2</span>(), <span class="st">&quot;test&quot;</span>, plot_bounds_d1) 
+      })
+    output$hydrographs &lt;-<span class="st"> </span><span class="kw">renderDygraph</span>({
+      <span class="kw">upper_graph</span>() %&gt;%
+<span class="st">        </span><span class="kw">dyOptions</span>(<span class="dt">includeZero =</span> <span class="ot">TRUE</span>,
+                  <span class="dt">retainDateWindow =</span> <span class="ot">TRUE</span>,
+                  <span class="dt">animatedZooms =</span> <span class="ot">TRUE</span>) 
+    })
+    output$hydrographs2 &lt;-<span class="st"> </span><span class="kw">renderDygraph</span>({
+      <span class="kw">lower_graph</span>() %&gt;%
+<span class="st">        </span><span class="kw">dyRangeSelector</span>(<span class="dt">height =</span> <span class="dv">20</span>, <span class="dt">strokeColor =</span> <span class="st">&quot;&quot;</span>) %&gt;%
+<span class="st">        </span><span class="kw">dyOptions</span>(<span class="dt">includeZero =</span> <span class="ot">TRUE</span>,
+                  <span class="dt">retainDateWindow =</span> <span class="ot">TRUE</span>,
+                  <span class="dt">animatedZooms =</span> <span class="ot">TRUE</span>)
+    })
+    
+    <span class="co"># (e) get dygraph date bounds (switches):</span>
+    selcted_from &lt;-<span class="st"> </span><span class="kw">reactive</span>({
+      if (!<span class="kw">is.null</span>(start_date)) {
+        start_date
+      } else if (!<span class="kw">is.null</span>(input$hydrographs_date_window)) {
+        input$hydrographs_date_window[[<span class="dv">1</span>]]
+      }
+    })
+    selcted_to &lt;-<span class="st"> </span><span class="kw">reactive</span>({
+      if (!<span class="kw">is.null</span>(end_date)) {
+        end_date
+      } else if (!<span class="kw">is.null</span>(input$hydrographs_date_window)) {
+        input$hydrographs_date_window[[<span class="dv">2</span>]]
+      }
+    })
+    
+    <span class="co"># (f) extract time_window for the stats header:</span>
+    output$selected_timewindow &lt;-<span class="st"> </span><span class="kw">renderText</span>({
+      if (!<span class="kw">is.null</span>(input$hydrographs_date_window))
+        <span class="kw">paste</span>(<span class="kw">strftime</span>(<span class="kw">selcted_from</span>(), <span class="dt">format =</span> <span class="st">&quot;%d %b %Y&quot;</span>),
+              <span class="st">&quot;-&quot;</span>,
+              <span class="kw">strftime</span>(<span class="kw">selcted_to</span>(), <span class="dt">format =</span> <span class="st">&quot;%d %b %Y&quot;</span>),
+              <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>)
+    })
+    
+    <span class="co"># (g) calculate stats:</span>
+    sub_slc_cos1 &lt;-<span class="st"> </span><span class="kw">reactive</span>({
+      if (!<span class="kw">is.null</span>(input$hydrographs_date_window))
+        <span class="kw">xts_selected_data1</span>()[<span class="kw">paste</span>(<span class="kw">strftime</span>(<span class="kw">selcted_from</span>(), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d-%H-%M&quot;</span>),
+                               <span class="kw">strftime</span>(<span class="kw">selcted_to</span>(), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d-%H-%M&quot;</span>),
+                               <span class="dt">sep =</span> <span class="st">&quot;/&quot;</span>)] })
+    sub_slc_cos2 &lt;-<span class="st"> </span><span class="kw">reactive</span>({
+      if (!<span class="kw">is.null</span>(input$hydrographs_date_window))
+        <span class="kw">xts_selected_data2</span>()[<span class="kw">paste</span>(<span class="kw">strftime</span>(<span class="kw">selcted_from</span>(), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d-%H-%M&quot;</span>),
+                               <span class="kw">strftime</span>(<span class="kw">selcted_to</span>(), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d-%H-%M&quot;</span>),
+                               <span class="dt">sep =</span> <span class="st">&quot;/&quot;</span>)] })
+    out_of &lt;-<span class="st"> </span><span class="kw">reactive</span>({
+      if (!<span class="kw">is.null</span>(input$hydrographs_date_window)) {
+          <span class="kw">cbind.data.frame</span>(
+          <span class="kw">map_df</span>(of_list, function(of_,x,y) <span class="kw">of_</span>(x,y),
+                 <span class="dt">x =</span> <span class="kw">sub_slc_cos1</span>()$x,
+                 <span class="dt">y =</span> <span class="kw">sub_slc_cos1</span>()$y ) %&gt;%<span class="st"> </span>
+<span class="st">            </span><span class="kw">set_names</span>(<span class="st">&quot;d1&quot;</span> %-%<span class="st"> </span><span class="kw">names</span>(.)),
+          <span class="st">&quot;-&quot;</span> =<span class="st"> &quot;-&quot;</span>,
+          <span class="kw">map_df</span>(of_list, function(of_,x,y) <span class="kw">of_</span>(x,y),
+                 <span class="dt">x =</span> <span class="kw">sub_slc_cos2</span>()$x,
+                 <span class="dt">y =</span> <span class="kw">sub_slc_cos2</span>()$y ) %&gt;%<span class="st"> </span>
+<span class="st">            </span><span class="kw">set_names</span>(<span class="st">&quot;d2&quot;</span> %-%<span class="st"> </span><span class="kw">names</span>(.))
+          )
+      } })
+
+    output$slctd_OF &lt;-<span class="st"> </span><span class="kw">renderTable</span>(<span class="kw">out_of</span>())
+    <span class="co"># (h) exit when user clicks on done: </span>
+    <span class="kw">observeEvent</span>(input$done, {
+      returnValue &lt;-<span class="st"> </span><span class="kw">list</span>(
+        <span class="dt">selected_time =</span> <span class="kw">c</span>(<span class="kw">strftime</span>(<span class="kw">selcted_from</span>(), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d-%H-%M&quot;</span>), 
+                          <span class="kw">strftime</span>(<span class="kw">selcted_to</span>(), <span class="dt">format =</span> <span class="st">&quot;%Y-%m-%d-%H-%M&quot;</span>)),
+        <span class="dt">selected_data =</span> <span class="kw">data.frame</span>(<span class="dt">date =</span> <span class="kw">index</span>( <span class="kw">sub_slc_cos1</span>() ),
+                                   <span class="dt">d1 =</span> <span class="kw">coredata</span>( <span class="kw">sub_slc_cos1</span>() ), 
+                                   <span class="dt">d2 =</span> <span class="kw">coredata</span>( <span class="kw">sub_slc_cos2</span>() )),
+        <span class="dt">selected_of =</span> <span class="kw">out_of</span>()
+      )
+      <span class="kw">stopApp</span>(returnValue)
+    })
+  }</code></pre></div>
+<p>The <code>miniUI</code> is quite spartan. There is an <code>miniButtonBlock</code> that allows to select different basin, as as the <code>dygraph</code> output (i.e <code>hydrographs</code>) for the interactive exploration of the <span class="math inline">\(o\)</span> and <span class="math inline">\(s\)</span> data. The formatted table (<code>slctd_OF</code>) displays the different objective functions, that can be given to <code>explore_cos_data</code> .</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  ui &lt;-<span class="st"> </span><span class="kw">miniPage</span>(
+    <span class="kw">miniButtonBlock</span>(<span class="kw">selectInput</span>(<span class="st">&quot;basin_num&quot;</span>,
+                                <span class="st">&quot;basin d1:&quot;</span>,
+                                <span class="dt">choices =</span> d_nums,
+                                <span class="dt">selected =</span> <span class="dv">1</span>,
+                                <span class="dt">selectize =</span> <span class="ot">FALSE</span>,
+                                <span class="dt">width =</span> <span class="st">&#39;50%&#39;</span>),
+                    <span class="kw">selectInput</span>(<span class="st">&quot;basin_num2&quot;</span>,
+                                <span class="st">&quot;basin d2:&quot;</span>,
+                                <span class="dt">choices =</span> d_nums,
+                                <span class="dt">selected =</span> <span class="dv">1</span>,
+                                <span class="dt">selectize =</span> <span class="ot">FALSE</span>,
+                                <span class="dt">width =</span> <span class="st">&#39;50%&#39;</span>)),
+    <span class="kw">miniContentPanel</span>(
+      <span class="kw">fillCol</span>(
+          <span class="dt">flex =</span> <span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">2</span>),
+          <span class="kw">dygraphOutput</span>(<span class="st">&quot;hydrographs&quot;</span>, <span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;100%&quot;</span>),
+          <span class="kw">dygraphOutput</span>(<span class="st">&quot;hydrographs2&quot;</span>, <span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;100%&quot;</span>),
+          <span class="kw">fillCol</span>(
+            <span class="dt">align =</span> <span class="st">&quot;center&quot;</span>,
+            <span class="kw">tableOutput</span>(<span class="st">&quot;slctd_OF&quot;</span>))
+      )
+    ),
+    <span class="kw">gadgetTitleBar</span>(<span class="st">&quot;test&quot;</span>)
+  )</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">runGadget</span>(ui,server)
+<span class="er">}</span></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exploring-objective-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="main-objective-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["visCOS.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
