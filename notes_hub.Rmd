@@ -1,7 +1,0 @@
----
-title: random notes
-layout: default
----
-
-Here I will (hopefully) collect notes about (more or less) random things.
-So far I have none, but I shall work on it. 
