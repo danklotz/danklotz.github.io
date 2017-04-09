@@ -11,17 +11,6 @@
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Hello World</title>
-      <link>/portfolio/2017-04-09-hello-world/</link>
-      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/portfolio/2017-04-09-hello-world/</guid>
-      <description>&lt;p&gt;This is my hello world post.
-Hello world!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>hello-world.Rmd</title>
       <link>/post/2017-04-09-hello-world-rmd/</link>
       <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
@@ -29,6 +18,16 @@ Hello world!&lt;/p&gt;
       <guid>/post/2017-04-09-hello-world-rmd/</guid>
       <description>&lt;p&gt;This is my hello world post.
 Hello world!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>viscos</title>
+      <link>/portfolio/2017-04-09-viscos/</link>
+      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/2017-04-09-viscos/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://danklotz.github.io/viscos/index.html&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -107,6 +106,24 @@ Figure 1: A fancy pie chart.
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/post/2017-04-09-viscos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-04-09-viscos/</guid>
+      <description>&lt;p&gt;showonlyimage = true
+draft = false
+image = &amp;ldquo;img/portfolio/viscos.png&amp;rdquo;
+date = &amp;ldquo;2017-04-09&amp;rdquo;
+title = &amp;ldquo;viscos&amp;rdquo;&amp;rdquo;
+weight = 0
++++&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://danklotz.github.io/viscos/index.html&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
