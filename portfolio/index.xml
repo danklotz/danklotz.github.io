@@ -11,26 +11,18 @@
     <atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Hello World</title>
-      <link>/portfolio/2017-04-09-hello-world/</link>
-      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/portfolio/2017-04-09-hello-world/</guid>
-      <description>&lt;p&gt;This is my hello world post.
-Hello world!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>viscos</title>
       <link>/portfolio/2017-04-09-viscos/</link>
       <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/portfolio/2017-04-09-viscos/</guid>
-      <description>&lt;p&gt;The aim of visCOS is to provide summaries that aid a concurrent and comparative parameter estimation for multiple  basins or catchments.&lt;/p&gt;
+      <description>&lt;p&gt;viscos provides summaries that help with a comparative parameter estimation
+of the model COSERO&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://danklotz.github.io/viscos/index.html&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;I will write up a short description soon. Until then, explore the package for
+yourself: &lt;a href=&#34;https://danklotz.github.io/viscos/index.html&#34;&gt;link&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
