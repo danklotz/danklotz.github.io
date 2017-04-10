@@ -71,7 +71,7 @@ section.background-secondary {
   color: #fff;
 }
 .section-inverse .heading:after {
-  background: #fff;
+  background: #eee;
 }
 .italic {
   font-style: italic;
@@ -364,7 +364,7 @@ SIDEBAR + RIGHT COLUMN
 }
 .sidebar-heading a:hover {
   border-bottom: dotted 1px #FFA500;
-  color: #000;
+  color: #FFA500;
   text-decoration: none;
 }
 .sidebar-p {
@@ -1628,7 +1628,7 @@ body {
   font-size: 16px;
   line-height: 1.55;
   color: #000000;
-  background-color: #f4f4f4;
+  background-color: #e8e2e0;
 }
 a {
   color: #FFA500;
