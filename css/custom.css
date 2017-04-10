@@ -208,7 +208,7 @@ fieldset[disabled] .btn-ghost.active {
   border-color: #FFA500;
 }
 .btn-ghost-black {
-  color: #000000;
+  color: #000;
   background-color: transparent;
   border-color: #000000;
 }
@@ -242,11 +242,11 @@ fieldset[disabled] .btn-ghost-black:active,
 .btn-ghost-black[disabled].active,
 fieldset[disabled] .btn-ghost-black.active {
   background-color: transparent;
-  border-color: #000000;
+  border-color: #000;
 }
 .btn-ghost-black .badge {
   color: transparent;
-  background-color: #000000;
+  background-color: #000;
 }
 .btn-ghost-black:hover,
 .btn-ghost-black:focus,
@@ -1535,7 +1535,7 @@ STYLE SWITCHER FOR DEMO
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
-  color: #cccccc;
+  color: #ccc;
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
@@ -1628,7 +1628,7 @@ body {
   font-size: 16px;
   line-height: 1.55;
   color: #000000;
-  background-color: #e8e2e0;
+  background-color: #fff7f8;
 }
 a {
   color: #FFA500;
