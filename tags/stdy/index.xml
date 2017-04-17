@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stdy on allokkio</title>
+    <link>/tags/stdy/</link>
+    <description>Recent content in Stdy on allokkio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy;2016 Your name or company</copyright>
+    <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/stdy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Open Learning 2017 Edition</title>
+      <link>/portfolio/2017-04-10-open-learning/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/2017-04-10-open-learning/</guid>
+      <description>In high school I had the epiphany that it is better to follow good teachers then good topics. Throughout my studies I tried to follow that maxim as good as possible, but forgot about it recently. This year I want to re-establish my principle once more.
+With that in mind I ordered the learning stuff into 3 categories.
+Data Sciences &amp;amp; Computer Stuff Hadley Wickham PLOTCON 2016 - New open viz in R Data Science with R Managing many models with R Data Science in the Tidyverse R for Data Science  book progression [++++-]   Norman J.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Portfolios on allokkio</title>
-    <link>/portfolio/</link>
-    <description>Recent content in Portfolios on allokkio</description>
+    <title>Learning on allokkio</title>
+    <link>/tags/learning/</link>
+    <description>Recent content in Learning on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy;2016 Your name or company</copyright>
     <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,18 +20,6 @@
       <guid>/portfolio/2017-04-10-open-learning/</guid>
       <description>&lt;p&gt;Season 2. Still inspired by &lt;a href=&#34;https://github.com/una/personal-goals&#34;&gt;Una Kravets&lt;/a&gt;.
 Sharing my personal learning efforts, making it explicit &amp;amp; open.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>viscos</title>
-      <link>/portfolio/2017-04-09-viscos/</link>
-      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/portfolio/2017-04-09-viscos/</guid>
-      <description>&lt;p&gt;viscos provides summaries that help with a comparative parameter estimation
-of the model COSERO&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

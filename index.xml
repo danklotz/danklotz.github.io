@@ -2,13 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>allokkio</title>
-    <link>/index.xml</link>
+    <link>/</link>
     <description>Recent content on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy;2016 Your name or company</copyright>
     <lastBuildDate>Sun, 09 Apr 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>viscos</title>
@@ -19,30 +21,37 @@
       <description>&lt;p&gt;viscos provides summaries that help with a comparative parameter estimation
 of the model COSERO&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Open Learning 2017</title>
+      <link>/portfolio/2017-04-10-open-learning/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/2017-04-10-open-learning/</guid>
+      <description>&lt;p&gt;Season 2. Still inspired by &lt;a href=&#34;https://github.com/una/personal-goals&#34;&gt;Una Kravets&lt;/a&gt;.
+Sharing my personal learning efforts, making it explicit &amp;amp; open.&lt;/p&gt;
 
-&lt;p&gt;I will write up a short description soon. Until then, explore the package for
-yourself: &lt;a href=&#34;https://danklotz.github.io/viscos/index.html&#34;&gt;link&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Get in touch</title>
-      <link>/contact/</link>
+      <link>/contact/index/</link>
       <pubDate>Sun, 06 Nov 2016 13:00:25 +0530</pubDate>
       
-      <guid>/contact/</guid>
-      <description>&lt;p&gt;Sadly you cannot touch me yet. Try it somewhere else instead&lt;/p&gt;
-</description>
+      <guid>/contact/index/</guid>
+      <description>Sadly you cannot touch me yet. Try it somewhere else instead</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>/about/</link>
+      <link>/about/index/</link>
       <pubDate>Sat, 05 Nov 2016 21:05:33 +0530</pubDate>
       
-      <guid>/about/</guid>
-      <description>&lt;p&gt;This will soon be an about me page&lt;/p&gt;
-</description>
+      <guid>/about/index/</guid>
+      <description>This will soon be an about me page</description>
     </item>
     
   </channel>

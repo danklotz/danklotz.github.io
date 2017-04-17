@@ -2,55 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on allokkio</title>
-    <link>/post/index.xml</link>
+    <link>/post/</link>
     <description>Recent content in Posts on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy;2016 Your name or company</copyright>
-    <lastBuildDate>Sun, 09 Apr 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>hello-world.Rmd</title>
-      <link>/post/2017-04-09-hello-world-rmd/</link>
-      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
+      <title>Open Learning 2017 Edition</title>
+      <link>/post/2017-04-10-open-learning/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-04-09-hello-world-rmd/</guid>
-      <description>&lt;p&gt;This is my hello world post.
-Hello world!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>viscos</title>
-      <link>/post/2017-04-09-viscos/</link>
-      <pubDate>Sun, 09 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2017-04-09-viscos/</guid>
-      <description>&lt;p&gt;I will write up a short description soon. Until then, explore the package for
-yourself: &lt;a href=&#34;https://danklotz.github.io/viscos/index.html&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+      <guid>/post/2017-04-10-open-learning/</guid>
+      <description>&lt;p&gt;Learning made open source. Inspired by &lt;a href=&#34;https://github.com/una/personal-goals&#34;&gt;Una Kravets&lt;/a&gt;. Makes studying more explicit, accessible, transparent &amp;amp; accountable.&lt;/p&gt;
 
-
-
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-
-&lt;p&gt;+++ showonlyimage = false draft = false image = “img/portfolio/viscos.png” date = “2017-04-09” title = “viscos” Description = “viscos provides summaries that help with a comparative parameter estimation of the model COSERO” weight = 0 +++&lt;/p&gt;
-&lt;p&gt;I will write up a short description soon. Until then, explore the package for yourself: &lt;a href=&#34;https://danklotz.github.io/viscos/index.html&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
