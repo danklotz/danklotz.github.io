@@ -327,7 +327,7 @@ fieldset[disabled] .btn-white.active {
   color: #fc888a;
 }
 .icon.brand-terciary {
-  border-color: #37123c;
+  border-color: #fc888a;
   color: #37123c;
 }
 .icon.brand-four {
@@ -351,12 +351,12 @@ SIDEBAR + RIGHT COLUMN
   }
 }
 .sidebar-heading {
-  font-size: 18px;
+  font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 .sidebar-heading a {
-  color: #000;
+  color: #FAFAFA;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -368,8 +368,8 @@ SIDEBAR + RIGHT COLUMN
   text-decoration: none;
 }
 .sidebar-p {
-  color: #999999;
-  font-size: 14px;
+  color: #AAAAAA;
+  font-size: 18px;
 }
 .sidebar-menu {
   list-style-type: none;
@@ -380,7 +380,8 @@ SIDEBAR + RIGHT COLUMN
   margin-bottom: 5px;
 }
 .sidebar-menu li a {
-  color: #555555;
+  color: #DEDEDE;
+  font-size: 22px;
 }
 .sidebar-menu li:before {
   font-family: et-book,'FontAwesome';
@@ -453,13 +454,13 @@ SIDEBAR + RIGHT COLUMN
 }
 .small-navbar-heading {
   float: right;
-  font-size: 18px;
+  font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 10px;
 }
 .small-navbar-heading a {
-  color: #000;
+  color: #FAFAFA;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -467,7 +468,7 @@ SIDEBAR + RIGHT COLUMN
 }
 .small-navbar-heading a:hover {
   border-bottom: dotted 1px #FFA500;
-  color: #000;
+  color: #FFA500;
   text-decoration: none;
 }
 /*
@@ -1625,10 +1626,10 @@ STYLE SWITCHER FOR DEMO
 /* scaffolding */
 body {
   font-family: et-book, "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 28px;
   line-height: 1.55;
   color: #000000;
-  background-color: #fff7f8;
+  background-color: #252522;
 }
 a {
   color: #FFA500;
@@ -1996,7 +1997,7 @@ h6,
 }
 h1,
 .h1 {
-  font-size: 48px;
+  font-size: 88px;
 }
 h2,
 .h2 {
