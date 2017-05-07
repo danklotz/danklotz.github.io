@@ -26,6 +26,11 @@
              src: url("fonts/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix") format("embedded-opentype"), url("fonts/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff") format("woff"), url("fonts/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf") format("truetype"), url("fonts/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf") format("svg");
              font-weight: normal;
              font-style: normal; }
+ /* Trying frederica the great (google font) to make things more individual*/   
+@font-face {
+    font-family: "FrederickatheGreat";
+    src: url(fonts/FrederickatheGreat-Regular.ttf) format("truetype");
+}
 /*
 
 =====================
@@ -351,12 +356,13 @@ SIDEBAR + RIGHT COLUMN
   }
 }
 .sidebar-heading {
+  font-family: 'FrederickatheGreat', et-book;
   font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 .sidebar-heading a {
-  color: #FAFAFA;
+  color: #FFA500;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -372,6 +378,7 @@ SIDEBAR + RIGHT COLUMN
   font-size: 18px;
 }
 .sidebar-menu {
+  font-family: 'FrederickatheGreat', et-book;
   list-style-type: none;
   padding-left: 20px;
   margin-bottom: 40px;
@@ -460,7 +467,8 @@ SIDEBAR + RIGHT COLUMN
   margin-top: 10px;
 }
 .small-navbar-heading a {
-  color: #FAFAFA;
+  font-family: 'FrederickatheGreat', et-book;
+  color: #FFA500;
   text-decoration: none;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -497,7 +505,7 @@ OFF-CANVAS SIDEBAR BEHAVIOUR
     /* 6 columns */
   }
   .row-offcanvas-left .sidebar-offcanvas {
-    left: -48%;
+    left: -78%;
     /* 6 columns */
   }
   .row-offcanvas-right.active {
@@ -505,7 +513,7 @@ OFF-CANVAS SIDEBAR BEHAVIOUR
     /* 6 columns */
   }
   .row-offcanvas-left.active {
-    left: 50%;
+    left: 90%;
     /* 6 columns */
   }
   .sidebar-offcanvas {
@@ -1338,7 +1346,7 @@ STYLE SWITCHER FOR DEMO
 }
 /* navbar */
 .navbar {
-  font-family: et-book,"Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   min-height: 80px;
   margin-bottom: 0;
   border-top: none;
@@ -1625,8 +1633,8 @@ STYLE SWITCHER FOR DEMO
 }
 /* scaffolding */
 body {
-  font-family: et-book, "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 28px;
+  font-family: et-book, Arial, sans-serif;
+  font-size: 25px;
   line-height: 1.55;
   color: #000000;
   background-color: #252522;
@@ -1821,7 +1829,7 @@ fieldset[disabled] .btn-transparent.active {
 }
 /* labels */
 .label {
-  font-family: et-book, "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: normal;
   text-transform: uppercase;
 }
@@ -1875,7 +1883,7 @@ label {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 14px;
-  font-family: et-book, "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: bold;
 }
 .pager li {
@@ -1904,7 +1912,7 @@ label {
 /* pagination */
 .pagination {
   margin: 24px 0;
-  font-family: et-book, "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   border-radius: 0;
 }
 .pagination > li > a,
@@ -1957,7 +1965,7 @@ label {
   border-color: #dddddd;
 }
 /* responsive utilities */
-@media (max-width: 767px) {
+@media (max-width: 1300px) {
   .text-center-xs {
     text-align: center !important;
   }
