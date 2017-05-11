@@ -357,13 +357,12 @@ SIDEBAR + RIGHT COLUMN
 }
 .sidebar-heading {
   font-family: 'FrederickatheGreat', et-book;
-  font-size: 28px;
+  font-size: 35px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 .sidebar-heading a {
   color: #FFA500;
-  text-decoration: none;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
@@ -461,7 +460,7 @@ SIDEBAR + RIGHT COLUMN
 }
 .small-navbar-heading {
   float: right;
-  font-size: 28px;
+  font-size: 35px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 10px;
@@ -1965,7 +1964,7 @@ label {
   border-color: #dddddd;
 }
 /* responsive utilities */
-@media (max-width: 1300px) {
+@media (max-width: 767px) {
   .text-center-xs {
     text-align: center !important;
   }
@@ -2005,15 +2004,15 @@ h6,
 }
 h1,
 .h1 {
-  font-size: 88px;
+  font-size: 35px;
 }
 h2,
 .h2 {
-  font-size: 38px;
+  font-size: 32px;
 }
 h3,
 .h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
 }
 h4,
