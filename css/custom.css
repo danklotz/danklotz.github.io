@@ -425,7 +425,7 @@ SIDEBAR + RIGHT COLUMN
   padding-right: 20px;
   padding-bottom: 20px;
 }
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .content-column-content {
     padding-left: 40px;
     padding-right: 40px;

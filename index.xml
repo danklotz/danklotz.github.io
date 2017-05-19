@@ -44,11 +44,21 @@
 
 &lt;p&gt;In high school I had the epiphany that it is better to follow good teachers then good topics. Throughout my studies I tried to follow that maxim as good as possible, but forgot about it recently. This year I want to re-establish my principle once more.&lt;/p&gt;
 
-&lt;p&gt;With that in mind I ordered the learning stuff into 3 categories.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;books&#34;&gt;Books&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Garrett Grolemund, Hadley Wickham: &lt;em&gt;R for Data Science&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Claus Mattheck: &lt;em&gt;Die Körpersprache der Bauteile&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;John M. Chambers: &lt;em&gt;Extending R&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;1-data-sciences-computer-stuff&#34;&gt;1 Data Sciences &amp;amp; Computer Stuff&lt;/h2&gt;
+&lt;h1 id=&#34;videos&#34;&gt;Videos&lt;/h1&gt;
+
+&lt;h2 id=&#34;1-computing-with-data&#34;&gt;1 Computing with Data&lt;/h2&gt;
 
 &lt;h3 id=&#34;1-1-hadley-wickham&#34;&gt;1.1 Hadley Wickham&lt;/h3&gt;
 
@@ -57,12 +67,6 @@
 &lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://youtu.be/K-ss_ag2k9E&#34;&gt;Data Science with R&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://youtu.be/rz3_FDVt9eg&#34;&gt;Managing many models with R&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://www.rstudio.com/resources/videos/data-science-in-the-tidyverse/&#34;&gt;Data Science in the Tidyverse&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://r4ds.had.co.nz/&#34;&gt;R for Data Science&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;book&lt;/li&gt;
-&lt;li&gt;progression [≠≠≠≠=]&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;1-2-bred-victor&#34;&gt;1.2 Bred Victor&lt;/h3&gt;
@@ -104,18 +108,6 @@
 &lt;li&gt;progression: [=====]&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;2-water-landscapes&#34;&gt;2 Water &amp;amp; Landscapes&lt;/h2&gt;
-
-&lt;h3 id=&#34;2-1-claus-mattheck&#34;&gt;2.1 Claus Mattheck&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;To Do &lt;em&gt;TM&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
 
 &lt;h2 id=&#34;3-tinkering-other&#34;&gt;3 Tinkering (other)&lt;/h2&gt;
 
