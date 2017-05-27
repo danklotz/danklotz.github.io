@@ -2,22 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Contacts on allokkio</title>
-    <link>/contact/index.xml</link>
+    <link>/danklotz.github.io/contact/</link>
     <description>Recent content in Contacts on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>~~~</copyright>
     <lastBuildDate>Sun, 06 Nov 2016 13:00:25 +0530</lastBuildDate>
-    <atom:link href="/contact/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/danklotz.github.io/contact/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Get in touch</title>
-      <link>/contact/</link>
+      <link>/danklotz.github.io/contact/</link>
       <pubDate>Sun, 06 Nov 2016 13:00:25 +0530</pubDate>
       
-      <guid>/contact/</guid>
-      <description>&lt;p&gt;Sadly you cannot touch me yet. Try it somewhere else instead&lt;/p&gt;
-</description>
+      <guid>/danklotz.github.io/contact/</guid>
+      <description>Sadly you cannot touch me yet. Try it somewhere else instead</description>
     </item>
     
   </channel>

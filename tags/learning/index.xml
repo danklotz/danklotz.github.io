@@ -2,103 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Learning on allokkio</title>
-    <link>/tags/learning/index.xml</link>
+    <link>/danklotz.github.io/tags/learning/</link>
     <description>Recent content in Learning on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>~~~</copyright>
-    <atom:link href="/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/danklotz.github.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Open Learning 2017</title>
-      <link>/portfolio/2017-04-10-open-learning/</link>
+      <link>/danklotz.github.io/portfolio/2017-04-10-open-learning/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/portfolio/2017-04-10-open-learning/</guid>
+      <guid>/danklotz.github.io/portfolio/2017-04-10-open-learning/</guid>
       <description>&lt;p&gt;Season 2 of a project, which was (and is) inspired by &lt;a href=&#34;https://github.com/una/personal-goals&#34;&gt;Una Kravets&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The goal is to share my personal learning efforts, making them explicit &amp;amp; open.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;In high school I had the epiphany that it is better to follow good teachers then good topics. Throughout my studies I tried to follow that maxim as good as possible, but forgot about it recently. This year I want to re-establish my principle once more.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;books&#34;&gt;Books&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Garrett Grolemund, Hadley Wickham: &lt;em&gt;R for Data Science&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Claus Mattheck: &lt;em&gt;Die Körpersprache der Bauteile&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;John M. Chambers: &lt;em&gt;Extending R&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&#34;videos&#34;&gt;Videos&lt;/h1&gt;
-
-&lt;h2 id=&#34;1-computing-with-data&#34;&gt;1 Computing with Data&lt;/h2&gt;
-
-&lt;h3 id=&#34;1-1-hadley-wickham&#34;&gt;1.1 Hadley Wickham&lt;/h3&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://youtu.be/cU0-NrUxRw4&#34;&gt;PLOTCON 2016 - New open viz in R&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://youtu.be/K-ss_ag2k9E&#34;&gt;Data Science with R&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://youtu.be/rz3_FDVt9eg&#34;&gt;Managing many models with R&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://www.rstudio.com/resources/videos/data-science-in-the-tidyverse/&#34;&gt;Data Science in the Tidyverse&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;1-2-bred-victor&#34;&gt;1.2 Bred Victor&lt;/h3&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; To Do &lt;em&gt;TM&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;1-3-norman-j-wildberger&#34;&gt;1.3 Norman J. Wildberger&lt;/h3&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://www.youtube.com/playlist?list=PL41FDABC6AA085E78&#34;&gt;Algebraic Topology: A beginner&amp;rsquo;s course&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;lecture&lt;/li&gt;
-&lt;li&gt;progression: [≠====]&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;bart-kosko&#34;&gt;Bart Kosko&lt;/h3&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;https://www.edge.org/response-detail/27130&#34;&gt;Negative Evidence&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Noise (2nd read)
-
-&lt;ul&gt;
-&lt;li&gt;book&lt;/li&gt;
-&lt;li&gt;progression: [=====]&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;1-5-trevor-hastie&#34;&gt;1.5 Trevor Hastie&lt;/h3&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://www.stanford.edu/~hastie/CASI/&#34;&gt;Computer Age Statistical Inference&lt;/a&gt;&lt;br /&gt;
-
-&lt;ul&gt;
-&lt;li&gt;book&lt;/li&gt;
-&lt;li&gt;progression: [=====]&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;3-tinkering-other&#34;&gt;3 Tinkering (other)&lt;/h2&gt;
-
-&lt;ul class=&#34;task-list&#34;&gt;
-&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &lt;a href=&#34;http://oyc.yale.edu/music/musi-112&#34;&gt;Listening to Music&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;lecture&lt;/li&gt;
-&lt;li&gt;by: &lt;em&gt;C. Wright&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;progression: [≠====]&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

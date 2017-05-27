@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on allokkio</title>
-    <link>/tags/</link>
+    <link>/danklotz.github.io/tags/</link>
     <description>Recent content in Tags on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Q_Qf</copyright>
+    <copyright>~~~</copyright>
     <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/danklotz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Learning</title>
-      <link>/tags/learning/</link>
+      <link>/danklotz.github.io/tags/learning/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/learning/</guid>
+      <guid>/danklotz.github.io/tags/learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Open Source</title>
-      <link>/tags/open-source/</link>
+      <link>/danklotz.github.io/tags/open-source/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/open-source/</guid>
+      <guid>/danklotz.github.io/tags/open-source/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scholarship</title>
-      <link>/tags/scholarship/</link>
+      <link>/danklotz.github.io/tags/scholarship/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/scholarship/</guid>
+      <guid>/danklotz.github.io/tags/scholarship/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tinkering</title>
-      <link>/tags/tinkering/</link>
+      <link>/danklotz.github.io/tags/tinkering/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/tinkering/</guid>
+      <guid>/danklotz.github.io/tags/tinkering/</guid>
       <description></description>
     </item>
     

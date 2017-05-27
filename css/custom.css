@@ -29,7 +29,9 @@
  /* Trying frederica the great (google font) to make things more individual*/   
 @font-face {
     font-family: "FrederickatheGreat";
-    src: url(fonts/FrederickatheGreat-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 900;
+    src: url(fonts/FrederickatheGreat-Regular.ttf) format("woff2");
 }
 /*
 
