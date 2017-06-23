@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/portfolio/2017-04-09-viscos/</loc>
-    <lastmod>2017-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/portfolio/2017-04-10-open-learning/</loc>
     <lastmod>2017-04-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
+    <loc>/portfolio/2017-04-09-viscos/</loc>
+    <lastmod>2017-04-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/contact/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>
   </url>
@@ -30,18 +30,6 @@
   <url>
     <loc>/contact/</loc>
     <lastmod>2016-11-06T13:00:25+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/learning/</loc>
-    <lastmod>2017-04-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/open-source/</loc>
-    <lastmod>2017-04-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -52,25 +40,8 @@
   </url>
   
   <url>
-    <loc>/tags/scholarship/</loc>
-    <lastmod>2017-04-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tinkering/</loc>
-    <lastmod>2017-04-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/</loc>
-    <lastmod>2017-04-09T00:00:00+00:00</lastmod>
+    <lastmod>2017-04-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
