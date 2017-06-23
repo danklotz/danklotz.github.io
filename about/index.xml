@@ -2,22 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on allokkio</title>
-    <link>/about/index.xml</link>
+    <link>/danklotz.github.io/about/</link>
     <description>Recent content in Abouts on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>~~~</copyright>
     <lastBuildDate>Sat, 05 Nov 2016 21:05:33 +0530</lastBuildDate>
-    <atom:link href="/about/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/danklotz.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>About me</title>
-      <link>/about/</link>
+      <link>/danklotz.github.io/about/</link>
       <pubDate>Sat, 05 Nov 2016 21:05:33 +0530</pubDate>
       
-      <guid>/about/</guid>
-      <description>&lt;p&gt;This will soon be an about me page&lt;/p&gt;
-</description>
+      <guid>/danklotz.github.io/about/</guid>
+      <description>This will soon be an about me page</description>
     </item>
     
   </channel>
