@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="read-in-data.html">
+<link rel="prev" href="aggregate-according-to-time.html">
+<link rel="next" href="proposal-for-the-libraries-function.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -133,29 +133,59 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Within <strong>visCOS</strong> “cooking data” is is used as a synonym for the process of transforming <em>raw data</em> into <em>cooked data</em>. This process and definitions are, of course, metaphors. We shall explain them in the following.</p>
-<div id="raw-data" class="section level2">
-<h2><span class="header-section-number">1.1</span> Raw Data</h2>
-<p>Raw-data is data which is not yet in the right format for its use. Raw-data takes on many forms. The ones of interest for <strong>visCOS</strong> are series of observations, <span class="math inline">\(o\)</span>, and model simulations, <span class="math inline">\(s\)</span>. in the scientific context, raw data is usually served in some simple file format, e.g. <em>.txt</em> or <em>.csv</em>. In other context more complex formats can be found, but we shall not delve into that now. <code>R</code> includes method to read simple formats, e.g. with the different <code>read.table</code> functions (simply enter <code>?read.table</code> in your <code>R</code> terminal to get an overview). However, for larger (unstructured) files we recommend the read functionality of the <code>data.table</code> package. In our tests it was fastest and most flexible choice. Lastly, we recommend <code>readr</code> package for well structured and large data that has to be read.</p>
-</div>
-<div id="cooked-data" class="section level2">
-<h2><span class="header-section-number">1.2</span> Cooked Data</h2>
-<p>Cooked data is data that is formatted in a way, that can be used be used by applications. A nice example (or dish if you want to) for cooked data is<br />
-<a href="ftp://cran.r-project.org/pub/R/web/packages/tidyr/vignettes/tidy-data.html">tidy-data</a>. Another one might be the storage of data in matrices and vectors. Within the <strong>visCOS</strong> package, cooked data, is data which is in the <em>cos_data</em> format. This format is a slightly redundant but flexible representation of hydrological time-series that is derived from the way COSERO produces outputs. All data in <em>cos_data</em> format can be used for further exploratory analysis with the package.</p>
-<p>…</p>
-<p>Currently <strong>visCOS</strong> only allows to compare between <em>numbered catchments</em>! The data <strong>must</strong> include an integer number at the end of its name, e.g. <code>QObs_001</code> and <code>QSim_001</code>).</p>
+<div id="other-helpfull-funcitons" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Other helpfull funcitons</h1>
+<p>Here you can find helpful functions that are not included in <code>viscos</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(magrittr)</code></pre></div>
+<p>Get last <code>n</code> letters of a character:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">substr_right &lt;-<span class="st"> </span><span class="cf">function</span>(x, n){
+  <span class="co"># author: Simon Frey</span>
+  <span class="co">#</span>
+  <span class="co"># x ... character vector </span>
+  <span class="co"># n ... number of letters to extract</span>
+  
+  <span class="kw">substr</span>(x, <span class="kw">nchar</span>(x)<span class="op">-</span>n<span class="op">+</span><span class="dv">1</span>, <span class="kw">nchar</span>(x))
+}
+<span class="kw">substr_right</span>(<span class="st">&quot;abcdefgh&quot;</span>,<span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">print</span>(.)</code></pre></div>
+<p>Transform <span class="math inline">\(mm\)</span> into <span class="math inline">\(\frac{m^3}{s}\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mm_to_m3s &lt;-<span class="st"> </span><span class="cf">function</span>(input, <span class="dt">area =</span> <span class="dv">1000</span>, <span class="dt">dt =</span> <span class="dv">1</span>) {
+  <span class="co"># author: Simon Frey</span>
+  <span class="co">#</span>
+  <span class="co"># input ... Runoff in mm</span>
+  <span class="co"># area ... Area in m^2</span>
+  <span class="co"># dt ... timesetp in sec</span>
+  <span class="co"># output ... runoff m^3*s^-1</span>
+  
+  <span class="kw">return</span>(<span class="dt">output =</span> input<span class="op">/</span>(dt<span class="op">*</span><span class="dv">1000</span>)<span class="op">*</span>area)
+}
+<span class="kw">mm_to_m3s</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">print</span>(.)</code></pre></div>
+<p>Transform <span class="math inline">\(\frac{m^3}{s}\)</span> into <span class="math inline">\(mm\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m3s_to_mm &lt;-<span class="st"> </span><span class="cf">function</span>(input, <span class="dt">area =</span> <span class="dv">1000</span>, <span class="dt">dt =</span> <span class="dv">1</span>) {
+  <span class="co"># author: Simon Frey</span>
+  <span class="co">#</span>
+  <span class="co"># input ... Runoff in m^3*s^-1</span>
+  <span class="co"># area ... Area in m^2</span>
+  <span class="co"># dt ... timesetp in sec</span>
+  <span class="co"># output ... runoff mmm</span>
+  
+  <span class="kw">return</span>(<span class="dt">output =</span> input<span class="op">*</span><span class="dv">1000</span><span class="op">*</span>dt<span class="op">/</span>area)
+}
+<span class="kw">m3s_to_mm</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">print</span>(.)</code></pre></div>
+<p>Check if a give year is a <a href="http://en.wikipedia.org/wiki/Leap_year">leap year</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">is_leapyear =<span class="st"> </span><span class="cf">function</span>(year) {
+  <span class="co"># author: Simon Frey</span>
 
-</div>
+  <span class="kw">return</span>(((year <span class="op">%%</span><span class="st"> </span><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st"> </span>(year <span class="op">%%</span><span class="st"> </span><span class="dv">100</span> <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>)) <span class="op">|</span><span class="st"> </span>(year <span class="op">%%</span><span class="st"> </span><span class="dv">400</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>))
+}</code></pre></div>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="read-in-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="aggregate-according-to-time.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="proposal-for-the-libraries-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

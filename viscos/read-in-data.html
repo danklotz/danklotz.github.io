@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="read-in-data.html">
+<link rel="prev" href="introduction.html">
+<link rel="next" href="aggregate-according-to-time.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -133,29 +133,56 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Within <strong>visCOS</strong> “cooking data” is is used as a synonym for the process of transforming <em>raw data</em> into <em>cooked data</em>. This process and definitions are, of course, metaphors. We shall explain them in the following.</p>
-<div id="raw-data" class="section level2">
-<h2><span class="header-section-number">1.1</span> Raw Data</h2>
-<p>Raw-data is data which is not yet in the right format for its use. Raw-data takes on many forms. The ones of interest for <strong>visCOS</strong> are series of observations, <span class="math inline">\(o\)</span>, and model simulations, <span class="math inline">\(s\)</span>. in the scientific context, raw data is usually served in some simple file format, e.g. <em>.txt</em> or <em>.csv</em>. In other context more complex formats can be found, but we shall not delve into that now. <code>R</code> includes method to read simple formats, e.g. with the different <code>read.table</code> functions (simply enter <code>?read.table</code> in your <code>R</code> terminal to get an overview). However, for larger (unstructured) files we recommend the read functionality of the <code>data.table</code> package. In our tests it was fastest and most flexible choice. Lastly, we recommend <code>readr</code> package for well structured and large data that has to be read.</p>
-</div>
-<div id="cooked-data" class="section level2">
-<h2><span class="header-section-number">1.2</span> Cooked Data</h2>
-<p>Cooked data is data that is formatted in a way, that can be used be used by applications. A nice example (or dish if you want to) for cooked data is<br />
-<a href="ftp://cran.r-project.org/pub/R/web/packages/tidyr/vignettes/tidy-data.html">tidy-data</a>. Another one might be the storage of data in matrices and vectors. Within the <strong>visCOS</strong> package, cooked data, is data which is in the <em>cos_data</em> format. This format is a slightly redundant but flexible representation of hydrological time-series that is derived from the way COSERO produces outputs. All data in <em>cos_data</em> format can be used for further exploratory analysis with the package.</p>
-<p>…</p>
-<p>Currently <strong>visCOS</strong> only allows to compare between <em>numbered catchments</em>! The data <strong>must</strong> include an integer number at the end of its name, e.g. <code>QObs_001</code> and <code>QSim_001</code>).</p>
+<div id="read-in-data" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Read in Data</h1>
+<p>Before working in <code>R</code> you need to get the data into it. Here we discuss differnt optionsfor doing so.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(magrittr)</code></pre></div>
+<p>Simons stuff. Maybe be useful in the future:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># qobs_qsim von COSERO lesen und als getrennte Zeitreihen in einer Liste zurückgeben</span>
+  read.qobsqsim &lt;-<span class="st"> </span><span class="cf">function</span>(x){
+    <span class="kw">library</span>(xts)
+    output &lt;-<span class="st"> </span><span class="kw">list</span>()
+    out &lt;-<span class="st"> </span><span class="kw">read.table</span>(x,<span class="dt">nrow=</span><span class="dv">1</span>,<span class="dt">header=</span><span class="ot">TRUE</span>)
+    nc &lt;-<span class="st"> </span><span class="kw">ncol</span>(out)
+    out &lt;-<span class="st"> </span><span class="kw">read.table</span>(x,<span class="dt">header=</span><span class="ot">TRUE</span>,<span class="dt">colClasses=</span>
+                        <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;character&quot;</span>,<span class="dv">5</span>),<span class="kw">rep</span>(<span class="st">&quot;numeric&quot;</span>,nc<span class="op">-</span><span class="dv">5</span>)))
+    datum &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="kw">paste</span>(out[,<span class="dv">1</span>],out[,<span class="dv">2</span>],out[,<span class="dv">3</span>],out[,<span class="dv">4</span>],out[,<span class="dv">5</span>],<span class="dt">sep=</span><span class="st">&quot; &quot;</span>),
+                        <span class="dt">format=</span><span class="st">&quot;%Y %m %d %H %M&quot;</span>,<span class="dt">tz=</span><span class="st">&quot;utc&quot;</span>)
+    out &lt;-<span class="st"> </span><span class="kw">xts</span>(out[,<span class="dv">6</span><span class="op">:</span>nc],<span class="dt">order.by=</span>datum)
+    
+    output<span class="op">$</span>QOBS &lt;-<span class="st"> </span>out[ ,<span class="kw">grep</span>(<span class="st">&quot;Qobs&quot;</span>,<span class="kw">colnames</span>(out))]
+    output<span class="op">$</span>QSIM &lt;-<span class="st"> </span>out[ ,<span class="kw">grep</span>(<span class="st">&quot;Qsim&quot;</span>,<span class="kw">colnames</span>(out))]
+    
+    <span class="kw">return</span>(output)
+  }
+  
+  read.xts &lt;-<span class="st"> </span><span class="cf">function</span>(x,<span class="dt">datecolums=</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>),<span class="dt">format=</span><span class="st">&quot;%Y %m %d %H %M&quot;</span>,<span class="dt">header=</span><span class="ot">TRUE</span>,...){
+    <span class="kw">library</span>(xts)
+    temp &lt;-<span class="st"> </span><span class="kw">read.table</span>(x,<span class="dt">nrow=</span><span class="dv">1</span>,<span class="dt">header=</span>header,...)
+    nc &lt;-<span class="st"> </span><span class="kw">ncol</span>(temp)
+    temp &lt;-<span class="st"> </span><span class="kw">read.table</span>(x,<span class="dt">colClasses=</span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;character&quot;</span>,<span class="kw">max</span>(datecolums)),
+                                      <span class="kw">rep</span>(<span class="st">&quot;numeric&quot;</span>,nc<span class="op">-</span><span class="kw">max</span>(datecolums))),
+                       <span class="dt">header=</span>header,...)
+    <span class="cf">for</span>(k <span class="cf">in</span> datecolums){
+      <span class="cf">if</span>(k <span class="op">==</span><span class="st"> </span>datecolums[<span class="dv">1</span>]){
+        datum &lt;-<span class="st"> </span>temp[,k]
+      } <span class="cf">else</span> {
+        datum &lt;-<span class="st"> </span><span class="kw">paste</span>(datum,temp[,k],<span class="dt">sep=</span><span class="st">&quot; &quot;</span>)
+      }
+    }
+    datum &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(datum, <span class="dt">format=</span>format,<span class="dt">tz=</span><span class="st">&quot;utc&quot;</span>)
+    output &lt;-<span class="st"> </span><span class="kw">xts</span>(temp[,(<span class="kw">max</span>(datecolums)<span class="op">+</span><span class="dv">1</span>)<span class="op">:</span>nc], <span class="dt">order.by=</span>datum)
+    <span class="kw">return</span>(output)
+  }</code></pre></div>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="read-in-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="aggregate-according-to-time.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

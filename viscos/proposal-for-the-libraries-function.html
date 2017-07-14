@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="read-in-data.html">
+<link rel="prev" href="other-helpfull-funcitons.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -133,29 +133,78 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Within <strong>visCOS</strong> “cooking data” is is used as a synonym for the process of transforming <em>raw data</em> into <em>cooked data</em>. This process and definitions are, of course, metaphors. We shall explain them in the following.</p>
-<div id="raw-data" class="section level2">
-<h2><span class="header-section-number">1.1</span> Raw Data</h2>
-<p>Raw-data is data which is not yet in the right format for its use. Raw-data takes on many forms. The ones of interest for <strong>visCOS</strong> are series of observations, <span class="math inline">\(o\)</span>, and model simulations, <span class="math inline">\(s\)</span>. in the scientific context, raw data is usually served in some simple file format, e.g. <em>.txt</em> or <em>.csv</em>. In other context more complex formats can be found, but we shall not delve into that now. <code>R</code> includes method to read simple formats, e.g. with the different <code>read.table</code> functions (simply enter <code>?read.table</code> in your <code>R</code> terminal to get an overview). However, for larger (unstructured) files we recommend the read functionality of the <code>data.table</code> package. In our tests it was fastest and most flexible choice. Lastly, we recommend <code>readr</code> package for well structured and large data that has to be read.</p>
-</div>
-<div id="cooked-data" class="section level2">
-<h2><span class="header-section-number">1.2</span> Cooked Data</h2>
-<p>Cooked data is data that is formatted in a way, that can be used be used by applications. A nice example (or dish if you want to) for cooked data is<br />
-<a href="ftp://cran.r-project.org/pub/R/web/packages/tidyr/vignettes/tidy-data.html">tidy-data</a>. Another one might be the storage of data in matrices and vectors. Within the <strong>visCOS</strong> package, cooked data, is data which is in the <em>cos_data</em> format. This format is a slightly redundant but flexible representation of hydrological time-series that is derived from the way COSERO produces outputs. All data in <em>cos_data</em> format can be used for further exploratory analysis with the package.</p>
-<p>…</p>
-<p>Currently <strong>visCOS</strong> only allows to compare between <em>numbered catchments</em>! The data <strong>must</strong> include an integer number at the end of its name, e.g. <code>QObs_001</code> and <code>QSim_001</code>).</p>
+<div id="proposal-for-the-libraries-function" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Proposal for the libraries function</h1>
+<p>Hey Simon,</p>
+<p>da ich die <code>libraries</code> Idee so super finde, habe ich versucht sie noch besser zu machen und so hoffentlich; bin mir aber nicht sicher ob mir das geglückt ist.</p>
+<p>Mein Vorschlag für die Funktion ist unten angegeben. Er hat folgende “Vorteile”/Eigenschaften:</p>
+<ul>
+<li>Die <code>library</code> Funktion wird verwendet (Christop == Glücklich).</li>
+<li>Packete müssen nicht über <code>c()</code> zusammengefasst werden, sondern könen einfach eingetipselt werden.</li>
+<li>Packete müssen nicht als <code>character</code> angegeben werden</li>
+</ul>
+<p>Ein nachteil ist vorerst, dass die Packete nicht automatisch installiert werden. Aber über die Fehlermeldung oder den zurgegeben Vector kann man sehen, was nicht funktioniert hat. Wenn du magst könnte ich/wir versuchen das installieren über ein <code>try</code> bzw. ein <code>tryCatch</code> zu bewerkstelligen. Ich find aber irgendwie, dass das Ganze dann sehr anders als die ursprünglichen Funktionen (<code>require</code> und <code>library</code>) funktionieren würde.</p>
+<p>Naja, sag mir bescheid, hier ist erstmal der Code zum anschauen und ausprobieren:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Load multiple Libraries</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @description </span>
+<span class="co">#&#39; \code{libraries} conveniently wraps the \code{\link{base::library}} function so </span>
+<span class="co">#&#39; that multiple packages can be loaded with a signle one function call. </span>
+<span class="co">#&#39; @author Simon Frey, Daniel Klotz</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @param ... Arguments passed to \code{\link{library}}.</span>
+<span class="co">#&#39; @param vebrose A logical vector, indicating if the package start-up messages </span>
+<span class="co">#&#39;                   should be supressed (\code{FALSE}) or not (\code{TRUE}).</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @examples</span>
+<span class="co">#&#39; # loading can be done by string or by directly insertin an expression: </span>
+<span class="co">#&#39; libraries(xts)</span>
+<span class="co">#&#39; libraries(shin)</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; # load multiple libraries: </span>
+<span class="co">#&#39; libraries(&quot;xts&quot;,&quot;shiny&quot;)</span>
+<span class="co">#&#39; libraries(xts, shiny)</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; # mixed arguments are also possible:</span>
+<span class="co">#&#39; libraries(magrittr,&quot;shiny&quot;,&quot;png&quot;,jpg) </span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @return Returns a logical vector that informas if the given package could be </span>
+<span class="co">#&#39;            loaded</span>
+<span class="co">#&#39; @seealso \code{\link{require}}, \code{\link{library}},</span>
+<span class="co">#&#39;          \code{\link{install.packages}} </span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @importFrom lazyeval lazy_dots</span>
+<span class="co">#&#39; @importFrom purrr map_lgl</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @export</span>
+libraries &lt;-<span class="st"> </span><span class="cf">function</span>(..., <span class="dt">verbose =</span> <span class="ot">FALSE</span>) {
+  <span class="cf">if</span> (base<span class="op">::</span><span class="kw">is.logical</span>(verbose) <span class="op">!=</span><span class="st"> </span><span class="ot">TRUE</span>) 
+    <span class="kw">stop</span>( <span class="st">&quot;verboes must be a logical! it currently is:&quot;</span> <span class="op">%&amp;&amp;%</span><span class="st"> </span><span class="kw">class</span>(verbose) )
+  parse_string &lt;-<span class="st"> </span><span class="kw">ifelse</span>(verbose,
+                         <span class="st">&quot;library(&#39;le_package&#39;, logical.return = TRUE)&quot;</span>, 
+                         <span class="st">&quot;suppressPackageStartupMessages(library(&#39;le_package&#39;, </span>
+<span class="st">                              logical.return = TRUE))&quot;</span>)
+  le_dots &lt;-<span class="st"> </span>lazyeval<span class="op">::</span><span class="kw">lazy_dots</span>(...)
+  loop_length &lt;-<span class="st"> </span><span class="kw">length</span>(le_dots)
+  loader &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
+    le_package &lt;-<span class="st"> </span><span class="kw">as.character</span>(le_dots[[x]]<span class="op">$</span>expr)
+    package_loaded &lt;-<span class="st"> </span><span class="kw">eval</span>(
+      <span class="kw">parse</span>( <span class="dt">text =</span> <span class="kw">gsub</span>(<span class="st">&quot;le_package&quot;</span>,le_package,parse_string) )
+      )
+  }
+  le_result &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">map_lgl</span>(<span class="dv">1</span><span class="op">:</span>loop_length, loader)
+}</code></pre></div>
+<p>:</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="read-in-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="other-helpfull-funcitons.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
