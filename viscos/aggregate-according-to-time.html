@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="read-in-data.html">
-<link rel="next" href="other-helpfull-funcitons.html">
+<link rel="next" href="other-helpful-functions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -109,9 +109,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="read-in-data.html"><a href="read-in-data.html"><i class="fa fa-check"></i><b>2</b> Read in Data</a></li>
 <li class="chapter" data-level="3" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html"><i class="fa fa-check"></i><b>3</b> Aggregate according to time</a><ul>
-<li class="chapter" data-level="3.1" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html#code"><i class="fa fa-check"></i><b>3.1</b> Code</a></li>
+<li class="chapter" data-level="3.1" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html#code-aggregate_time"><i class="fa fa-check"></i><b>3.1</b> Code: <code>aggregate_time</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="other-helpfull-funcitons.html"><a href="other-helpfull-funcitons.html"><i class="fa fa-check"></i><b>4</b> Other helpfull funcitons</a></li>
+<li class="chapter" data-level="4" data-path="other-helpful-functions.html"><a href="other-helpful-functions.html"><i class="fa fa-check"></i><b>4</b> Other helpful functions</a></li>
 <li class="chapter" data-level="5" data-path="proposal-for-the-libraries-function.html"><a href="proposal-for-the-libraries-function.html"><i class="fa fa-check"></i><b>5</b> Proposal for the libraries function</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -194,8 +194,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
 <p><img src="visCOS_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
-<div id="code" class="section level2">
-<h2><span class="header-section-number">3.1</span> Code</h2>
+<p><code>aggregate_time</code> is useful to get a quick overview. However, for larger basins the facetting can become confusing. It is then useful to save the data as larger pictures and/or arange them into one plot. The latter can, for example, be done by using using the <code>ggjoy</code> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(<span class="st">&quot;ggjoy&quot;</span>) <span class="co"># devtools::install_github(&quot;clauswilke/ggjoy&quot;)</span>
+
+  big_cosdata &lt;-<span class="st"> </span>data.table<span class="op">::</span><span class="kw">fread</span>(<span class="st">&quot;path_to_your_data&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(your_data)
+  runoff_aggregate_mm &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(big_cosdata, <span class="st">&quot;mm&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>), 
+                  <span class="dt">basin =</span> <span class="kw">substr</span>(key,<span class="dv">6</span>,<span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.) ) 
+  runoff_aggregate_mm<span class="op">$</span>key_factor =<span class="st"> </span><span class="kw">factor</span>(runoff_aggregate_mm<span class="op">$</span>key,
+                                          <span class="dt">levels =</span> <span class="kw">unique</span>(runoff_aggregate_mm<span class="op">$</span>key))
+  <span class="co"># plot data:</span>
+  <span class="kw">ggplot</span>(runoff_aggregate_mm, <span class="kw">aes</span>(<span class="dt">x=</span>value, <span class="dt">y=</span> key_factor, <span class="dt">height =</span> ..density.., <span class="dt">fill =</span> obs_sim)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_joy</span>() <span class="op">+</span>
+<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;dodgerblue&quot;</span>,<span class="st">&quot;orange&quot;</span>)) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_minimal</span>()</code></pre></div>
+<div class="figure">
+<img src="figures/aggregation_joyplot-example.png" alt="joy plot" />
+<p class="caption">joy plot</p>
+</div>
+<div id="code-aggregate_time" class="section level2">
+<h2><span class="header-section-number">3.1</span> Code: <code>aggregate_time</code></h2>
 <p><code>aggregate_time</code> is basically wrapper for <code>coscos::clump</code>. Here is the code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co">#&#39; Time Aggregation</span>
   <span class="co">#&#39;</span>
@@ -253,7 +272,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="read-in-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="other-helpfull-funcitons.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="other-helpful-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="introduction.html">
-<link rel="next" href="aggregate-according-to-time.html">
+<link rel="prev" href="aggregate-according-to-time.html">
+<link rel="next" href="proposal-for-the-libraries-function.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -133,47 +133,50 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="read-in-data" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Read in Data</h1>
-<p>Before working in <code>R</code> you need to get the data into it. Here we discuss differnt optionsfor doing so.</p>
+<div id="other-helpful-functions" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Other helpful functions</h1>
+<p>Here you can find helpful functions that are not included in <code>viscos</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(magrittr)</code></pre></div>
-<p>Simons stuff. Maybe be useful in the future:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># qobs_qsim von COSERO lesen und als getrennte Zeitreihen in einer Liste zurückgeben</span>
-  read.qobsqsim &lt;-<span class="st"> </span><span class="cf">function</span>(x){
-    <span class="kw">library</span>(xts)
-    output &lt;-<span class="st"> </span><span class="kw">list</span>()
-    out &lt;-<span class="st"> </span><span class="kw">read.table</span>(x,<span class="dt">nrow=</span><span class="dv">1</span>,<span class="dt">header=</span><span class="ot">TRUE</span>)
-    nc &lt;-<span class="st"> </span><span class="kw">ncol</span>(out)
-    out &lt;-<span class="st"> </span><span class="kw">read.table</span>(x,<span class="dt">header=</span><span class="ot">TRUE</span>,<span class="dt">colClasses=</span>
-                        <span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;character&quot;</span>,<span class="dv">5</span>),<span class="kw">rep</span>(<span class="st">&quot;numeric&quot;</span>,nc<span class="op">-</span><span class="dv">5</span>)))
-    datum &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="kw">paste</span>(out[,<span class="dv">1</span>],out[,<span class="dv">2</span>],out[,<span class="dv">3</span>],out[,<span class="dv">4</span>],out[,<span class="dv">5</span>],<span class="dt">sep=</span><span class="st">&quot; &quot;</span>),
-                        <span class="dt">format=</span><span class="st">&quot;%Y %m %d %H %M&quot;</span>,<span class="dt">tz=</span><span class="st">&quot;utc&quot;</span>)
-    out &lt;-<span class="st"> </span><span class="kw">xts</span>(out[,<span class="dv">6</span><span class="op">:</span>nc],<span class="dt">order.by=</span>datum)
-    
-    output<span class="op">$</span>QOBS &lt;-<span class="st"> </span>out[ ,<span class="kw">grep</span>(<span class="st">&quot;Qobs&quot;</span>,<span class="kw">colnames</span>(out))]
-    output<span class="op">$</span>QSIM &lt;-<span class="st"> </span>out[ ,<span class="kw">grep</span>(<span class="st">&quot;Qsim&quot;</span>,<span class="kw">colnames</span>(out))]
-    
-    <span class="kw">return</span>(output)
-  }
+<p>Get last <code>n</code> letters of a character:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">substr_right &lt;-<span class="st"> </span><span class="cf">function</span>(x, n){
+  <span class="co"># author: Simon Frey</span>
+  <span class="co">#</span>
+  <span class="co"># x ... character vector </span>
+  <span class="co"># n ... number of letters to extract</span>
   
-  read.xts &lt;-<span class="st"> </span><span class="cf">function</span>(x,<span class="dt">datecolums=</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>),<span class="dt">format=</span><span class="st">&quot;%Y %m %d %H %M&quot;</span>,<span class="dt">header=</span><span class="ot">TRUE</span>,...){
-    <span class="kw">library</span>(xts)
-    temp &lt;-<span class="st"> </span><span class="kw">read.table</span>(x,<span class="dt">nrow=</span><span class="dv">1</span>,<span class="dt">header=</span>header,...)
-    nc &lt;-<span class="st"> </span><span class="kw">ncol</span>(temp)
-    temp &lt;-<span class="st"> </span><span class="kw">read.table</span>(x,<span class="dt">colClasses=</span><span class="kw">c</span>(<span class="kw">rep</span>(<span class="st">&quot;character&quot;</span>,<span class="kw">max</span>(datecolums)),
-                                      <span class="kw">rep</span>(<span class="st">&quot;numeric&quot;</span>,nc<span class="op">-</span><span class="kw">max</span>(datecolums))),
-                       <span class="dt">header=</span>header,...)
-    <span class="cf">for</span>(k <span class="cf">in</span> datecolums){
-      <span class="cf">if</span>(k <span class="op">==</span><span class="st"> </span>datecolums[<span class="dv">1</span>]){
-        datum &lt;-<span class="st"> </span>temp[,k]
-      } <span class="cf">else</span> {
-        datum &lt;-<span class="st"> </span><span class="kw">paste</span>(datum,temp[,k],<span class="dt">sep=</span><span class="st">&quot; &quot;</span>)
-      }
-    }
-    datum &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(datum, <span class="dt">format=</span>format,<span class="dt">tz=</span><span class="st">&quot;utc&quot;</span>)
-    output &lt;-<span class="st"> </span><span class="kw">xts</span>(temp[,(<span class="kw">max</span>(datecolums)<span class="op">+</span><span class="dv">1</span>)<span class="op">:</span>nc], <span class="dt">order.by=</span>datum)
-    <span class="kw">return</span>(output)
-  }</code></pre></div>
+  <span class="kw">substr</span>(x, <span class="kw">nchar</span>(x)<span class="op">-</span>n<span class="op">+</span><span class="dv">1</span>, <span class="kw">nchar</span>(x))
+}
+<span class="kw">substr_right</span>(<span class="st">&quot;abcdefgh&quot;</span>,<span class="dv">5</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">print</span>(.)</code></pre></div>
+<p>Transform <span class="math inline">\(mm\)</span> into <span class="math inline">\(\frac{m^3}{s}\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mm_to_m3s &lt;-<span class="st"> </span><span class="cf">function</span>(input, <span class="dt">area =</span> <span class="dv">1000</span>, <span class="dt">dt =</span> <span class="dv">1</span>) {
+  <span class="co"># author: Simon Frey</span>
+  <span class="co">#</span>
+  <span class="co"># input ... Runoff in mm</span>
+  <span class="co"># area ... Area in m^2</span>
+  <span class="co"># dt ... timesetp in sec</span>
+  <span class="co"># output ... runoff m^3*s^-1</span>
+  
+  <span class="kw">return</span>(<span class="dt">output =</span> input<span class="op">/</span>(dt<span class="op">*</span><span class="dv">1000</span>)<span class="op">*</span>area)
+}
+<span class="kw">mm_to_m3s</span>(<span class="dv">1000</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">print</span>(.)</code></pre></div>
+<p>Transform <span class="math inline">\(\frac{m^3}{s}\)</span> into <span class="math inline">\(mm\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m3s_to_mm &lt;-<span class="st"> </span><span class="cf">function</span>(input, <span class="dt">area =</span> <span class="dv">1000</span>, <span class="dt">dt =</span> <span class="dv">1</span>) {
+  <span class="co"># author: Simon Frey</span>
+  <span class="co">#</span>
+  <span class="co"># input ... Runoff in m^3*s^-1</span>
+  <span class="co"># area ... Area in m^2</span>
+  <span class="co"># dt ... timesetp in sec</span>
+  <span class="co"># output ... runoff mmm</span>
+  
+  <span class="kw">return</span>(<span class="dt">output =</span> input<span class="op">*</span><span class="dv">1000</span><span class="op">*</span>dt<span class="op">/</span>area)
+}
+<span class="kw">m3s_to_mm</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">print</span>(.)</code></pre></div>
+<p>Check if a give year is a <a href="http://en.wikipedia.org/wiki/Leap_year">leap year</a></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">is_leapyear =<span class="st"> </span><span class="cf">function</span>(year) {
+  <span class="co"># author: Simon Frey</span>
+
+  <span class="kw">return</span>(((year <span class="op">%%</span><span class="st"> </span><span class="dv">4</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st"> </span>(year <span class="op">%%</span><span class="st"> </span><span class="dv">100</span> <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>)) <span class="op">|</span><span class="st"> </span>(year <span class="op">%%</span><span class="st"> </span><span class="dv">400</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>))
+}</code></pre></div>
 
 </div>
             </section>
@@ -181,8 +184,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="aggregate-according-to-time.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="aggregate-according-to-time.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="proposal-for-the-libraries-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
