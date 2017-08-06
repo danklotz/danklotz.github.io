@@ -397,11 +397,12 @@ figure.fullwidth figcaption {
   margin-right: 24%; 
 }
 
-  /* Links: replicate underline that clears descenders 
+  /* Links: replicate underline that clears descenders */
 a:link, a:visited { 
-  color: inherit; 
+  color: #1e90ff; 
 }
 
+/*
 a:link { 
   text-decoration: none;
   background: -webkit-linear-gradient(#EEEDE4, #EEEDE4), -webkit-linear-gradient(#EEEDE4, #EEEDE4), -webkit-linear-gradient(#333, #333);
