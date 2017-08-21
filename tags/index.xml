@@ -2,51 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on allokkio</title>
-    <link>/danklotz.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>~~~</copyright>
-    <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/danklotz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Learning</title>
-      <link>/danklotz.github.io/tags/learning/</link>
-      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/danklotz.github.io/tags/learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>/danklotz.github.io/tags/open-source/</link>
-      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/danklotz.github.io/tags/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scholarship</title>
-      <link>/danklotz.github.io/tags/scholarship/</link>
-      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/danklotz.github.io/tags/scholarship/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tinkering</title>
-      <link>/danklotz.github.io/tags/tinkering/</link>
-      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/danklotz.github.io/tags/tinkering/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
