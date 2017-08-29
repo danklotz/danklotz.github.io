@@ -1,0 +1,52 @@
+---
+title: "Open Learning 2017"
+author: "Daniel Klotz"
+output:
+  tufte::tufte_html: 
+    tufte_variant: "default"
+    tufte_features: "fonts"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In high school I had the epiphany that it is better to follow good teachers then good topics. Throughout my studies I tried to follow that maxim as good as possible, but forgot about it recently. This year I want to re-establish my principle once more.
+
+---
+
+# Books
+
+1. Garrett Grolemund, Hadley Wickham: *R for Data Science*
+2. Claus Mattheck: *Die Körpersprache der Bauteile*
+3. John M. Chambers: *Extending R*
+
+---
+
+# Videos
+## 1 Computing with Data
+
+### 1.1 Hadley Wickham
+- [x] [PLOTCON 2016 - New open viz in R](https://youtu.be/cU0-NrUxRw4)
+- [x] [Data Science with R](https://youtu.be/K-ss_ag2k9E)
+- [x] [Managing many models with R](https://youtu.be/rz3_FDVt9eg)
+- [x] [Data Science in the Tidyverse](https://www.rstudio.com/resources/videos/data-science-in-the-tidyverse/)
+
+### 1.2 Bred Victor
+- [ ] To Do *TM*
+
+### 1.3 Norman J. Wildberger
+- [ ] [Algebraic Topology: A beginner's course](https://www.youtube.com/playlist?list=PL41FDABC6AA085E78)
+
+### 1.4 Bart Kosko
+- [x] [Negative Evidence](https://www.edge.org/response-detail/27130)
+- [ ] Noise (2nd read)
+
+### 1.5 Trevor Hastie
+- [ ] [Computer Age Statistical Inference](http://www.stanford.edu/~hastie/CASI/)  
+
+## 2 Misc
+- [ ] [Listening to Music](http://oyc.yale.edu/music/musi-112)
+  - lecture
+  - by: *C. Wright*
+
