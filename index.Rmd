@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Hello Traveler
 You just found [my](https://www.boku.ac.at/personen/person/6E56AD7273C135A3/)
-very ephemeral web-presence. I hope to update it more very soon. 
+very ephemeral web-presence. I hope to build it up very soon. 
 In the mean-time feel free to contact me over at
 [twitter](https://twitter.com/ido87).
 
