@@ -2,14 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>allokkio</title>
-    <link>/</link>
+    <link>/index.xml</link>
     <description>Recent content on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Semiotic</title>
+      <link>/2017/10/04/semiotic/</link>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/10/04/semiotic/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://elijahmeeks.com/&#34;&gt;Elijah Meeks&lt;/a&gt; is very smart and very much datavis.
+He created &lt;a href=&#34;https://emeeks.github.io/semiotic/#/&#34;&gt;Semiotic&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A data visualization framework for &lt;a href=&#34;https://reactjs.org/&#34;&gt;react&lt;/a&gt;.
+The most interesting thing for me is
+its way to explicitly showing the uncertainty of the data by rendering the
+plots and charts accordingly. Elijah wrote a very nice &lt;a href=&#34;https://medium.com/@Elijah_Meeks/sketchy-data-visualization-in-semiotic-5811a52f59bc&#34;&gt;article&lt;/a&gt; which lays out his ideas. Worth reading.&lt;/p&gt;
+
+&lt;p&gt;For me the linked processing library, i.e. &lt;a href=&#34;https://www.gicentre.net/handy/&#34;&gt;handy&lt;/a&gt;,
+still look even bit better, but seems to be less focused on data and the
+creation of fast and loose plots. There is also a thoughtful  &lt;a href=&#34;https://www.gicentre.net/blog/?offset=1499881637476&#34;&gt;post&lt;/a&gt; about the use of
+sketchiness for visualizing uncertainty.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Intro to Scrap Notes</title>
@@ -17,9 +36,19 @@
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/04/10/intro-to-scrap-notes/</guid>
-      <description>scrap (/skɹæp/):
- A (small) piece; a fragment; a detached, incomplete portion. Discarded objects (especially metal) that may be dismantled to recover their constituent materials, junk.   source
-I will try to put some pretty random notes on random thing on here. Since I see them as scrap, don&amp;rsquo;t expect to much from them.</description>
+      <description>&lt;p&gt;scrap (/skɹæp/):&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;A (small) piece; a fragment; a detached, incomplete portion.&lt;/li&gt;
+&lt;li&gt;Discarded objects (especially metal) that may be dismantled to recover their constituent materials, junk.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://en.wiktionary.org/wiki/scrap&#34;&gt;source&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I will try to put some pretty random notes on random thing on here.
+Since I see them as scrap, don&amp;rsquo;t expect to much from them.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -37,7 +66,8 @@ I will try to put some pretty random notes on random thing on here. Since I see 
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+      <description>&lt;p&gt;This is a &amp;ldquo;hello world&amp;rdquo; example website for the &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;&lt;strong&gt;blogdown&lt;/strong&gt;&lt;/a&gt; package. The theme was forked from &lt;a href=&#34;https://github.com/jrutheiser/hugo-lithium-theme&#34;&gt;@jrutheiser/hugo-lithium-theme&lt;/a&gt; and modified by &lt;a href=&#34;https://github.com/yihui/hugo-lithium-theme&#34;&gt;Yihui Xie&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
