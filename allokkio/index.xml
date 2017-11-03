@@ -47,7 +47,8 @@ might be summarized or at least strongly overlap with the domain of
 &lt;p&gt;&amp;hellip; an area of computer graphics that focuses on enabling a wide variety of expressive styles for digital art. In contrast to traditional computer graphics, which has focused on photorealism, NPR is inspired by artistic styles such as painting, drawing, technical illustration, and animated cartoons. NPR has appeared in movies and video games in the form of &amp;ldquo;toon shading&amp;rdquo;, as well as in scientific visualization, architectural illustration and experimental animation. An example of a modern use of this method is that of cel-shaded animation.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;strong&gt;HANDY&lt;/strong&gt;. In &lt;a href=&#34;http://openaccess.city.ac.uk/1274/&#34;&gt;2012 Wood et al.&lt;/a&gt;
+&lt;p&gt;&lt;img src=&#34;./post/visunc/handy_overview.png&#34; alt=&#34;semiotic_logo.png&#34; /&gt;
+&lt;strong&gt;HANDY&lt;/strong&gt;. In &lt;a href=&#34;http://openaccess.city.ac.uk/1274/&#34;&gt;2012 Wood et al.&lt;/a&gt;
 presented a framework for sketchy information visualization. The framework is
 called &lt;a href=&#34;https://www.gicentre.net/handy/&#34;&gt;handy&lt;/a&gt; and is a &lt;a href=&#34;https://processing.org/&#34;&gt;processing library&lt;/a&gt;. Here is an excerpt from abstract:&lt;/p&gt;
 
@@ -61,6 +62,8 @@ which exhibits many examples and a very thoughtful
 &lt;a href=&#34;https://www.gicentre.net/blog/?offset=1499881637476&#34;&gt;blogpost&lt;/a&gt;
 about the potential and use of sketchiness for visualizing uncertainty in
 general.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./post/visunc/semiotic_logo.png&#34; alt=&#34;semiotic_logo.png&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;SEMIOTIC.&lt;/strong&gt; &lt;a href=&#34;http://elijahmeeks.com/&#34;&gt;Elijah Meeks&lt;/a&gt; is very smart-
 He created &lt;a href=&#34;https://emeeks.github.io/semiotic/#/&#34;&gt;Semiotic&lt;/a&gt;.&lt;/p&gt;
