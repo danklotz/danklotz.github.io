@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+<title>allokkio - Visualizing Uncertainty</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="allokkio">
+<meta name="generator" content="Hugo 0.18.1" />
+
+  
+
+
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../../../css/tuftesque.css">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<div id="layout" class="pure-g">
+<article class="pure-u-1">
+<header class="brand">
+  <h1>
+    <a href="../../../../">
+      <span id = "blog_logo">
+        
+          <img src= "/allokkio/images/logo.jpg" alt="home" style="height: 40px; width:40px">
+           
+          
+        
+      </span>
+      
+    </a>
+  </h1>
+</header>
+
+<section>
+  <h2 class="content-title">
+  
+  <a href="../../../../2017/10/04/visualizing-uncertainty/">Visualizing Uncertainty</a>
+  
+  </h2>
+  
+  
+  
+  
+
+  
+</section>
+
+
+<section>
+
+<p>I am not sure where one should start with this topic. Visualizing uncertainty
+is hard. in general, it is still an unsolved problem.</p>
+
+<p>Back in the days even the mighty
+<a href="https://flowingdata.com/2013/07/10/visualizing-uncertainty-still-unsolved-problem/">Nathan Yau</a>
+wrote:</p>
+
+<blockquote>
+<p>I still struggle with uncertainty and visualization. I haven’t seen many worthwhile solutions other than the old standbys, boxplots and histograms, which show distributions. But how many people understand spread, skew, etc? It’s a small proportion, which poses an interesting challenge.</p>
+</blockquote>
+
+<p>Perhaps a good place to start the article <a href="https://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line">When Lives Are on the Line</a> by <a href="https://eagereyes.org/">Robert Kosara</a>. The article provides plenty of (good)
+examples and shows the inherent problems of uncertainty visualization. The
+underlying topic, i.e. Hurricane Forecasting, is also very relevant.</p>
+
+<p><img src="../../../../post/visunc/eagereyes_hurricanes.png" alt="&quot;eagereye&quot;&quot;" /></p>
+
+<h2 id="real-world-metaphors">Real World Metaphors</h2>
+
+<p>This approach tries to visualize uncertainty by using visceral representation
+that are familiar to viewers. Example are brushstrokes (e.g. the thicker the
+more uncertain), hand-drawn style (e.g. the more sketchy the more uncertain) or
+watercolors (e.g. the more transparent the more uncertain). The used techniques
+might be summarized or at least strongly overlap with the domain of
+<a href="https://en.wikipedia.org/wiki/Non-photorealistic_rendering">non-photorealistic rendering</a>, which is</p>
+
+<blockquote>
+<p>&hellip; an area of computer graphics that focuses on enabling a wide variety of expressive styles for digital art. In contrast to traditional computer graphics, which has focused on photorealism, NPR is inspired by artistic styles such as painting, drawing, technical illustration, and animated cartoons. NPR has appeared in movies and video games in the form of &ldquo;toon shading&rdquo;, as well as in scientific visualization, architectural illustration and experimental animation. An example of a modern use of this method is that of cel-shaded animation.</p>
+</blockquote>
+
+<p><strong>HANDY</strong>. In <a href="http://openaccess.city.ac.uk/1274/">2012 Wood et al.</a>
+presented a framework for sketchy information visualization. The framework is
+called <a href="https://www.gicentre.net/handy/">handy</a> and is a <a href="https://processing.org/">processing library</a>. Here is an excerpt from abstract:</p>
+
+<blockquote>
+<p>We present and evaluate a framework for constructing sketchy style information visualizations that mimic data graphics drawn by hand. We provide an alternative renderer for the Processing graphics environment that redefines core drawing primitives including line, polygon and ellipse rendering. These primitives allow higher-level graphical features such as bar charts, line charts, treemaps and node-link diagrams to be drawn in a sketchy style with a specified degree of sketchiness. &hellip;</p>
+</blockquote>
+
+<p>There also exists a great
+<a href="https://www.gicentre.net/handy/gallery/imp9lpl2bebs2rlb6i2yqdo9mcfmrd">gallery</a>,
+which exhibits many examples and a very thoughtful
+<a href="https://www.gicentre.net/blog/?offset=1499881637476">blogpost</a>
+about the potential and use of sketchiness for visualizing uncertainty in
+general.</p>
+
+<p><strong>SEMIOTIC.</strong> <a href="http://elijahmeeks.com/">Elijah Meeks</a> is very smart-
+He created <a href="https://emeeks.github.io/semiotic/#/">Semiotic</a>.</p>
+
+<p>Semiotic is (yet another) data visualization framework. It is based on
+<a href="https://reactjs.org/">react</a>. The motivation behind it is to provide a fast
+way to create plots, without putting to much time into a specific chart.</p>
+
+<p>It can visualize uncertainty by &lsquo;sketchy&rsquo; rendering.  Elijah wrote a very nice <a href="https://medium.com/@Elijah_Meeks/sketchy-data-visualization-in-semiotic-5811a52f59bc">article</a> which lays out his ideas.</p>
+</section>
+<section>
+  
+
+
+  
+
+
+      
+
+  <footer class="page-footer">
+		<hr>
+		<ul class="page-footer-menu">
+		
+		</ul>
+
+  
+
+	<div class="copyright">
+	<p>
+    
+      &copy; 2017
+    .
+    All rights reserved.
+    
+  </p>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</footer>
+
+</section>
+</article>
+</div>
+</body>
+</html>

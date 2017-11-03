@@ -10,44 +10,99 @@
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Semiotic</title>
-      <link>/2017/10/04/semiotic/</link>
+      <title>Visualizing Uncertainty</title>
+      <link>/2017/10/04/visualizing-uncertainty/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/10/04/semiotic/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://elijahmeeks.com/&#34;&gt;Elijah Meeks&lt;/a&gt; is very smart and very much datavis.
+      <guid>/2017/10/04/visualizing-uncertainty/</guid>
+      <description>
+
+&lt;p&gt;I am not sure where one should start with this topic. Visualizing uncertainty
+is hard. in general, it is still an unsolved problem.&lt;/p&gt;
+
+&lt;p&gt;Back in the days even the mighty
+&lt;a href=&#34;https://flowingdata.com/2013/07/10/visualizing-uncertainty-still-unsolved-problem/&#34;&gt;Nathan Yau&lt;/a&gt;
+wrote:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;I still struggle with uncertainty and visualization. I haven’t seen many worthwhile solutions other than the old standbys, boxplots and histograms, which show distributions. But how many people understand spread, skew, etc? It’s a small proportion, which poses an interesting challenge.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Perhaps a good place to start the article &lt;a href=&#34;https://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line&#34;&gt;When Lives Are on the Line&lt;/a&gt; by &lt;a href=&#34;https://eagereyes.org/&#34;&gt;Robert Kosara&lt;/a&gt;. The article provides plenty of (good)
+examples and shows the inherent problems of uncertainty visualization. The
+underlying topic, i.e. Hurricane Forecasting, is also very relevant.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;./post/visunc/eagereyes_hurricanes.png&#34; alt=&#34;&amp;quot;eagereye&amp;quot;&amp;quot;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;real-world-metaphors&#34;&gt;Real World Metaphors&lt;/h2&gt;
+
+&lt;p&gt;This approach tries to visualize uncertainty by using visceral representation
+that are familiar to viewers. Example are brushstrokes (e.g. the thicker the
+more uncertain), hand-drawn style (e.g. the more sketchy the more uncertain) or
+watercolors (e.g. the more transparent the more uncertain). The used techniques
+might be summarized or at least strongly overlap with the domain of
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Non-photorealistic_rendering&#34;&gt;non-photorealistic rendering&lt;/a&gt;, which is&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip; an area of computer graphics that focuses on enabling a wide variety of expressive styles for digital art. In contrast to traditional computer graphics, which has focused on photorealism, NPR is inspired by artistic styles such as painting, drawing, technical illustration, and animated cartoons. NPR has appeared in movies and video games in the form of &amp;ldquo;toon shading&amp;rdquo;, as well as in scientific visualization, architectural illustration and experimental animation. An example of a modern use of this method is that of cel-shaded animation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;HANDY&lt;/strong&gt;. In &lt;a href=&#34;http://openaccess.city.ac.uk/1274/&#34;&gt;2012 Wood et al.&lt;/a&gt;
+presented a framework for sketchy information visualization. The framework is
+called &lt;a href=&#34;https://www.gicentre.net/handy/&#34;&gt;handy&lt;/a&gt; and is a &lt;a href=&#34;https://processing.org/&#34;&gt;processing library&lt;/a&gt;. Here is an excerpt from abstract:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We present and evaluate a framework for constructing sketchy style information visualizations that mimic data graphics drawn by hand. We provide an alternative renderer for the Processing graphics environment that redefines core drawing primitives including line, polygon and ellipse rendering. These primitives allow higher-level graphical features such as bar charts, line charts, treemaps and node-link diagrams to be drawn in a sketchy style with a specified degree of sketchiness. &amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There also exists a great
+&lt;a href=&#34;https://www.gicentre.net/handy/gallery/imp9lpl2bebs2rlb6i2yqdo9mcfmrd&#34;&gt;gallery&lt;/a&gt;,
+which exhibits many examples and a very thoughtful
+&lt;a href=&#34;https://www.gicentre.net/blog/?offset=1499881637476&#34;&gt;blogpost&lt;/a&gt;
+about the potential and use of sketchiness for visualizing uncertainty in
+general.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SEMIOTIC.&lt;/strong&gt; &lt;a href=&#34;http://elijahmeeks.com/&#34;&gt;Elijah Meeks&lt;/a&gt; is very smart-
 He created &lt;a href=&#34;https://emeeks.github.io/semiotic/#/&#34;&gt;Semiotic&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;A data visualization framework for &lt;a href=&#34;https://reactjs.org/&#34;&gt;react&lt;/a&gt;.
-The most interesting thing for me is
-its way to explicitly showing the uncertainty of the data by rendering the
-plots and charts accordingly. Elijah wrote a very nice &lt;a href=&#34;https://medium.com/@Elijah_Meeks/sketchy-data-visualization-in-semiotic-5811a52f59bc&#34;&gt;article&lt;/a&gt; which lays out his ideas. Worth reading.&lt;/p&gt;
+&lt;p&gt;Semiotic is (yet another) data visualization framework. It is based on
+&lt;a href=&#34;https://reactjs.org/&#34;&gt;react&lt;/a&gt;. The motivation behind it is to provide a fast
+way to create plots, without putting to much time into a specific chart.&lt;/p&gt;
 
-&lt;p&gt;For me the linked processing library, i.e. &lt;a href=&#34;https://www.gicentre.net/handy/&#34;&gt;handy&lt;/a&gt;,
-still look even bit better, but seems to be less focused on data and the
-creation of fast and loose plots. There is also a thoughtful  &lt;a href=&#34;https://www.gicentre.net/blog/?offset=1499881637476&#34;&gt;post&lt;/a&gt; about the use of
-sketchiness for visualizing uncertainty.&lt;/p&gt;
+&lt;p&gt;It can visualize uncertainty by &amp;lsquo;sketchy&amp;rsquo; rendering.  Elijah wrote a very nice &lt;a href=&#34;https://medium.com/@Elijah_Meeks/sketchy-data-visualization-in-semiotic-5811a52f59bc&#34;&gt;article&lt;/a&gt; which lays out his ideas.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Intro to Scrap Notes</title>
-      <link>/2017/04/10/intro-to-scrap-notes/</link>
+      <title>Intro</title>
+      <link>/2017/04/10/intro/</link>
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/04/10/intro-to-scrap-notes/</guid>
-      <description>&lt;p&gt;scrap (/skɹæp/):&lt;/p&gt;
+      <guid>/2017/04/10/intro/</guid>
+      <description>
+
+&lt;p&gt;Currently everything is very scrappy here and it will probably remain so for
+quite some time.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I will try to put some pretty random notes on random things on here.&lt;/li&gt;
+&lt;li&gt;The idea is that each &amp;ldquo;blogpost&amp;rdquo; will be expanded over time and is thus not
+finished. I may provide some kind of update news as the project goes along; that
+will however depend on how everything plays out.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;some-definitions-and-concepts&#34;&gt;Some Definitions and Concepts&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://en.wiktionary.org/wiki/scrap&#34;&gt;scrap (/skɹæp/)&lt;/a&gt;&lt;/strong&gt;:&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;A (small) piece; a fragment; a detached, incomplete portion.&lt;/li&gt;
-&lt;li&gt;Discarded objects (especially metal) that may be dismantled to recover their constituent materials, junk.
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;Discarded objects (especially metal) that may be dismantled to recover their constituent materials, junk.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://en.wiktionary.org/wiki/scrap&#34;&gt;source&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I will try to put some pretty random notes on random thing on here.
-Since I see them as scrap, don&amp;rsquo;t expect to much from them.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;uovo all&amp;rsquo;occhio di bue:&lt;/strong&gt; Fried egg&lt;/p&gt;
 </description>
     </item>
     
