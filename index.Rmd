@@ -22,9 +22,10 @@ An about page will also follow soon. Don't worry (yet).
 
 ---
 
-## Some Projects
+![](figures/projects_banner.jpg)
 
-### Open Learning 2017
+
+## Open Learning 2017
 
 ```{marginfigure}
 Season 2 of a project, which was (and is) inspired by [Una Kravets](https://github.com/una/personal-goals). The idea is to share most 
@@ -33,7 +34,7 @@ of my learning efforts openly. For fun and glory!
 
 [ ![](figures/open_learning.jpg) ](open_learning_2017.html)
 
-### R and COSERO
+## R and COSERO
 ```{marginfigure}
 'rrrcos' and 'viscos' are my take for providing a unified way to guide the 
 calibration of the rainfall-runoff model COSERO from 'R'  
