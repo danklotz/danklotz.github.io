@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html">
-
+<link rel="next" href="cosdata.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -102,11 +102,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./index.html">visCOS</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Guide</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> The Guide</a></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#viscos-and-other-r-package"><i class="fa fa-check"></i><b>2.1</b> visCOS and other R-package</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#cosdata"><i class="fa fa-check"></i><b>2.2</b> cosdata</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>3</b> cosdata</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -140,70 +140,6 @@ soon we will have more packages, ideas and scripts that are able to use it. s</p
 <p>Among then, several have provide help to the calibration of (conceptual) rainfall-runoff models. As their name suggests, these models relate the a rainfall input to a generated runoff for some given basins They have found a wide array of applications in hydrology. Form the analysis of catchment properties to climate impact studies, so to speak. From the point o view of the R package ecosystem there are to packages, which are of particular interest with regard to <strong>visCOS</strong>: The <a href="https://CRAN.R-project.org/package=hydroGOF"><code>hydroGOF</code></a> package and the <a href="https://CRAN.R-project.org/package=hydroTSM"><code>hydroTSM</code></a> package. The former provides the most commonly used (and discussed) objective functions. The latter, helps with the analysis, interpolation and the plotting of hydrological time series.</p>
 <p>As an R-package that aim of <strong>visCOS</strong> is to provide visual aids for the parameter estimation process of multiple (related) basins or catchments.</p>
 <p>Thus, topic wise, visCOS can be positioned somewhere in-between the two previously mentioned packages. visCOS is usable for conceptual rainfall runoff models in general, but almost all of its functionality has been derived from different applications of the COSERO model.</p>
-</div>
-<div id="cosdata" class="section level2">
-<h2><span class="header-section-number">2.2</span> cosdata</h2>
-<p>For visCOS raw-data is data directly taken from COSERO. In general, raw-data can have many forms. The focus of visCOS are time series of observations, <span class="math inline">\(o\)</span>, and model simulations, <span class="math inline">\(s\)</span>. It assumes that the data is already loaded in to R.</p>
-<p>R has many options to read data. Most file-formats can be accessed with the native <code>read.</code> functions (for an example enter <code>?read.table</code> in your R-terminal). However, for larger files we recommend the read functionality of the <code>data.table</code> package. In our tests it was fastest and most flexible choice. Lastly, we recommend <code>readr</code> package for well structured and large data.</p>
-<p>After the data is read into R it needs to be transformed (<em>cooked</em>) into a rigidly defined format, which we call <strong>cosdata</strong>. The format has some redundant columns, but provides a large optionality. It is also a good middle ground between the output of COSERO and the formats used within the R ecosystem.</p>
-<p>All cosdata formated data can be used for further exploratory analysis with visCOS.</p>
-<p><strong>NOW WE NEED TO EXPLAIN COSDATA!</strong></p>
-<p>Snipptes:</p>
-<p>Currently <strong>visCOS</strong> only allows to compare between <em>numbered catchments</em>! The data <strong>must</strong> include an integer number at the end of its name, e.g. <code>QObs_001</code> and <code>QSim_001</code>).</p>
-<p>Additionally, <code>cos_data</code> data.frame needs to have two different definitions for the date of a given row (see: <a href="introduction.html">Introduction</a>). One is based on an old way to write dates out in fortran code. In that case each column represents a time-resolution. In concrete, the following columns are used:</p>
-<ul>
-<li><em>yyyy</em> - year,</li>
-<li><em>mm</em> - month,</li>
-<li><em>hh</em> - hour,</li>
-<li><em>min</em> - minute.</li>
-</ul>
-<p>The other format is a more modern way to define time information. That is, the <code>POSIXct</code> format (see: <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/as.POSIXlt.html">link</a>). This format is a standard for <code>R</code> and has many usages (e.g. transforming your data frame into a time series).</p>
-<p>visCOS can differentiate seasonal information on a monthly resolution. The in- and out-of-period markings are stored in a separate column (defined by <code>viscos_options(&quot;name_COSperiod&quot;)</code>). Here, each season is defined by an number (integer), which starts 1 and is raised for each new season. A 0 indicates the out-of-period rows.</p>
-<p>If needed, the column-names of the cosdata can adapted by using the <code>viscos_options</code> function from <code>coscos</code> (alternatively one might prefer to set the column-name the <code>data.frame</code> accordingly). Calling the function <code>viscos_options()</code> will return a list with the available options. The available options are as following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">   <span class="co"># showing the options:</span>
-   <span class="kw">library</span>(magrittr)
-   <span class="kw">viscos_options</span>( ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unlist</span>(.)</code></pre></div>
-<pre><code>##         name_o         name_s        name_lb        name_ub   name_COSyear 
-##         &quot;qobs&quot;         &quot;qsim&quot;           &quot;lb&quot;           &quot;ub&quot;         &quot;yyyy&quot; 
-##  name_COSmonth    name_COSday   name_COShour    name_COSmin  name_COSposix 
-##           &quot;mm&quot;           &quot;dd&quot;           &quot;hh&quot;          &quot;min&quot;    &quot;posixdate&quot; 
-## name_COSperiod      data_unit   missing_data        color_o        color_s 
-##       &quot;period&quot;      &quot;(m^3/s)&quot;         &quot;-999&quot;        &quot;green&quot;       &quot;orange&quot; 
-##     of_limits1     of_limits2 
-##            &quot;0&quot;            &quot;1&quot;</code></pre>
-<p>An option can be changed by providing the new option-value as functional argument of the option. Here is an example for changing the <span class="math inline">\(o\)</span> column color:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">   <span class="co"># changing an option:</span>
-   coscos<span class="op">::</span><span class="kw">viscos_options</span>(<span class="dt">color_o =</span> <span class="st">&quot;green&quot;</span>)
-   coscos<span class="op">::</span><span class="kw">viscos_options</span>( ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unlist</span>(.)</code></pre></div>
-<pre><code>##         name_o         name_s        name_lb        name_ub   name_COSyear 
-##         &quot;qobs&quot;         &quot;qsim&quot;           &quot;lb&quot;           &quot;ub&quot;         &quot;yyyy&quot; 
-##  name_COSmonth    name_COSday   name_COShour    name_COSmin  name_COSposix 
-##           &quot;mm&quot;           &quot;dd&quot;           &quot;hh&quot;          &quot;min&quot;    &quot;posixdate&quot; 
-## name_COSperiod      data_unit   missing_data        color_o        color_s 
-##       &quot;period&quot;      &quot;(m^3/s)&quot;         &quot;-999&quot;        &quot;green&quot;       &quot;orange&quot; 
-##     of_limits1     of_limits2 
-##            &quot;0&quot;            &quot;1&quot;</code></pre>
-<p>The <code>coscos</code> package also provides a function to get some exemplary data to use in visCOS. Throughout this guide we will use it to demonstrate the different functionalities of visCOS. The data can be loaded with the function <code>viscos_example</code>, e.g.:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">options</span>(<span class="dt">width=</span><span class="dv">80</span>)
-  <span class="kw">require</span>(coscos)
-  <span class="co">#</span>
-  raw_data_example &lt;-<span class="st"> </span><span class="kw">viscos_example</span>( )
-  <span class="kw">head</span>(raw_data_example)</code></pre></div>
-<pre><code>##   yyyy mm dd hh min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 QSIM_0002
-## 1 2007  1  1  0   0      2.98      3.48      3.48      2.56      3.11      3.11
-## 2 2007  1  1  1   0      2.89      3.48      3.48      2.56      3.11      3.11
-## 3 2007  1  1  2   0      2.64      3.48      3.48      2.57      3.11      3.11
-## 4 2007  1  1  3   0      2.51      3.48      3.48      2.57      3.11      3.11
-## 5 2007  1  1  4   0      2.42      3.48      3.48      2.57      3.11      3.11
-## 6 2007  1  1  5   0      2.34      3.49      3.49      2.57      3.11      3.11</code></pre>
-<p>One can see that the example data still has some columns that are not needed for further analysis, i.e. the columns <code>QOSI_0001</code> and <code>QOSI_0002</code>.</p>
-<p><strong>Until here and not further</strong></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(ggplot2)
-  raw_data_example <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">cook_cosdata</span>(.) <span class="op">%&gt;%</span>
-<span class="st">    </span><span class="kw">ggplot</span>(.) <span class="op">+</span>
-<span class="st">      </span><span class="kw">geom_line</span>( <span class="kw">aes</span>(<span class="dt">x =</span> posixdate, <span class="dt">y =</span> QOBS_<span class="dv">0001</span>))</code></pre></div>
-<p><img src="visCOS_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -212,8 +148,8 @@ soon we will have more packages, ideas and scripts that are able to use it. s</p
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cosdata.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
