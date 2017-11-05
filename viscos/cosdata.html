@@ -22,7 +22,7 @@
   
   
 
-<meta name="author" content="Daniel Klotz, Johannes Wesemann, Mathew Herrnegger">
+<meta name="author" content="Daniel Klotz, Johannes Wesemann, Simon Frey, Mathew Herrnegger">
 
 
 
@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#viscos-and-other-r-package"><i class="fa fa-check"></i><b>1.2</b> visCOS and other R-package</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>2</b> cosdata</a><ul>
-<li class="chapter" data-level="2.1" data-path="cosdata.html"><a href="cosdata.html#example-plots-from-cosdata"><i class="fa fa-check"></i><b>2.1</b> Example plots from cosdata</a></li>
+<li class="chapter" data-level="2.1" data-path="cosdata.html"><a href="cosdata.html#examples-plots-from-cosdata"><i class="fa fa-check"></i><b>2.1</b> Examples plots from cosdata</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -199,9 +199,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## 6  2007     1     1     5     0      2.34      3.49      2.57      3.11
 ## # ... with 2 more variables: posixdate &lt;dttm&gt;, period &lt;int&gt;</code></pre>
 <p>The <code>cook_cosdata</code> function can be very useful. If you are not sure that your data has the right format yet, just try to use <code>cook_cosdata</code> on it. The function is used at the start of almost all visCOS functions. Thus, it is very likely that your data is fine if <code>cook_cosdata</code> works on it.</p>
-<div id="example-plots-from-cosdata" class="section level2">
-<h2><span class="header-section-number">2.1</span> Example plots from cosdata</h2>
-<p>Direct Plots from cosdata</p>
+<div id="examples-plots-from-cosdata" class="section level2">
+<h2><span class="header-section-number">2.1</span> Examples plots from cosdata</h2>
+<p>It is already possible to do a lot with just the cosdata. In the following are some examples:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(ggplot2)
   raw_data_example <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">cook_cosdata</span>(.) <span class="op">%&gt;%</span>
