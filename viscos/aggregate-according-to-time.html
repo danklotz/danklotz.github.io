@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>visCOS</title>
   <meta name="description" content="visCOS">
-  <meta name="generator" content="bookdown 0.3.18 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="visCOS" />
   <meta property="og:type" content="book" />
@@ -22,7 +22,7 @@
   
   
 
-<meta name="author" content="Daniel Klotz, Johannes Wesemann, Mathew Herrnegger">
+<meta name="author" content="Daniel Klotz, Johannes Wesemann, Simon Frey, Mathew Herrnegger">
 
 
 
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="read-in-data.html">
-<link rel="next" href="other-helpful-functions.html">
+<link rel="prev" href="cosdata.html">
+<link rel="next" href="distance-metrics.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -102,17 +102,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./index.html">visCOS</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Hello Traveler</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#raw-data"><i class="fa fa-check"></i><b>1.1</b> Raw Data</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#cooked-data"><i class="fa fa-check"></i><b>1.2</b> Cooked Data</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> The Guide</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#viscos-and-other-r-package"><i class="fa fa-check"></i><b>1.2</b> visCOS and other R-package</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="read-in-data.html"><a href="read-in-data.html"><i class="fa fa-check"></i><b>2</b> Read in Data</a></li>
+<li class="chapter" data-level="2" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>2</b> cosdata</a><ul>
+<li class="chapter" data-level="2.1" data-path="cosdata.html"><a href="cosdata.html#examples-plots-from-cosdata"><i class="fa fa-check"></i><b>2.1</b> Examples plots from cosdata</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html"><i class="fa fa-check"></i><b>3</b> Aggregate according to time</a><ul>
 <li class="chapter" data-level="3.1" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html#code-aggregate_time"><i class="fa fa-check"></i><b>3.1</b> Code: <code>aggregate_time</code></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="other-helpful-functions.html"><a href="other-helpful-functions.html"><i class="fa fa-check"></i><b>4</b> Other helpful functions</a></li>
-<li class="chapter" data-level="5" data-path="proposal-for-the-libraries-function.html"><a href="proposal-for-the-libraries-function.html"><i class="fa fa-check"></i><b>5</b> Proposal for the libraries function</a></li>
+<li class="chapter" data-level="4" data-path="distance-metrics.html"><a href="distance-metrics.html"><i class="fa fa-check"></i><b>4</b> Distance Metrics</a><ul>
+<li class="chapter" data-level="4.1" data-path="distance-metrics.html"><a href="distance-metrics.html#code"><i class="fa fa-check"></i><b>4.1</b> Code</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="distance-metrics.html"><a href="distance-metrics.html#the-main-objective-functions"><i class="fa fa-check"></i><b>4.1.1</b> The “Main” Objective Functions</a></li>
+<li class="chapter" data-level="4.1.2" data-path="distance-metrics.html"><a href="distance-metrics.html#mean-squared-error"><i class="fa fa-check"></i><b>4.1.2</b> Mean Squared Error</a></li>
+<li class="chapter" data-level="4.1.3" data-path="distance-metrics.html"><a href="distance-metrics.html#distance-function-fortran-wrapper"><i class="fa fa-check"></i><b>4.1.3</b> Distance Function Fortran Wrapper</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="distance-metrics.html"><a href="distance-metrics.html#references"><i class="fa fa-check"></i><b>4.2</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html"><i class="fa fa-check"></i><b>5</b> Objective Function Summaries</a><ul>
+<li class="chapter" data-level="5.1" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#code-1"><i class="fa fa-check"></i><b>5.1</b> Code</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#wrapper"><i class="fa fa-check"></i><b>5.1.1</b> Wrapper</a></li>
+<li class="chapter" data-level="5.1.2" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#computation"><i class="fa fa-check"></i><b>5.1.2</b> Computation</a></li>
+<li class="chapter" data-level="5.1.3" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#plotting"><i class="fa fa-check"></i><b>5.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -135,12 +149,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="aggregate-according-to-time" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Aggregate according to time</h1>
-<p>In hydrology it is often useful to summarise the data respect to a given time dimension. In <strong>visCOS</strong> this can be done by using the <code>aggregate_time</code> function. The function takes <a href="cook_data.html">COSERO data.frame</a> and aggregates them according to a chosen time dimension. Note, that the name of the dimension can be specified via the <a href="LP-viscos_options.html">options</a>.</p>
+<p>In hydrology it is often useful to summarize the data respect to a given time dimension. In visCOS this can be done by using the <code>aggregate_time</code> function. The function takes in <a href="cook_data.html">cosdata</a> and aggregates them according to a chosen time dimension. In the following are some examples of its use:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  coscos<span class="op">::</span><span class="kw">libraries</span>(visCOS, ggplot2, dplyr, magrittr)</code></pre></div>
 <p>Daily runoff aggregation:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  cosdata &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">viscos_example</span>()
-  runoff_aggregate_dd &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(cosdata, <span class="st">&quot;dd&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>), 
+  runoff_aggregate_dd &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(cosdata, <span class="st">&quot;dd&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>),
                   <span class="dt">basin =</span> <span class="kw">substr</span>(key,<span class="dv">6</span>,<span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.))
   <span class="co"># plot data:</span>
   <span class="kw">ggplot</span>(runoff_aggregate_dd) <span class="op">+</span>
@@ -149,10 +163,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
                                      <span class="kw">viscos_options</span>(<span class="st">&quot;color_s&quot;</span>))) <span class="op">+</span>
 <span class="st">      </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>basin,<span class="dt">ncol =</span> <span class="dv">1</span>) <span class="op">+</span>
 <span class="st">      </span><span class="kw">theme_minimal</span>()</code></pre></div>
-<p><img src="visCOS_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Monthly runoff aggregation:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  runoff_aggregate_mm &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(cosdata, <span class="st">&quot;mm&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>), 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  runoff_aggregate_mm &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(cosdata, <span class="st">&quot;mm&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>),
                   <span class="dt">basin =</span> <span class="kw">substr</span>(key,<span class="dv">6</span>,<span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.))
   <span class="co"># plot data:</span>
   <span class="kw">ggplot</span>(runoff_aggregate_mm) <span class="op">+</span>
@@ -162,10 +176,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">      </span><span class="kw">scale_x_discrete</span>(<span class="dt">limits =</span> runoff_aggregate_mm<span class="op">$</span>mm) <span class="op">+</span>
 <span class="st">      </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>basin) <span class="op">+</span>
 <span class="st">      </span><span class="kw">theme_minimal</span>()</code></pre></div>
-<p><img src="visCOS_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Yearly runoff aggregation:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  runoff_aggregate_yyyy &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(cosdata, <span class="st">&quot;yyyy&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>), 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  runoff_aggregate_yyyy &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(cosdata, <span class="st">&quot;yyyy&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>),
                   <span class="dt">basin =</span> <span class="kw">substr</span>(key,<span class="dv">6</span>,<span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.))
   <span class="co"># plot data:</span>
   <span class="kw">ggplot</span>(runoff_aggregate_yyyy) <span class="op">+</span>
@@ -177,11 +191,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">    </span><span class="kw">scale_x_discrete</span>(<span class="dt">limits =</span> runoff_aggregate_yyyy<span class="op">$</span>yyyy,  
                     <span class="dt">labels =</span> abbreviate) <span class="op">+</span>
 <span class="st">    </span><span class="kw">theme_minimal</span>()</code></pre></div>
-<p><img src="visCOS_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
 <p>Yearly and monthly runoff aggregation:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  runoff_aggregate_yyyymm &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(cosdata, <span class="kw">c</span>(<span class="st">&quot;yyyy&quot;</span>,<span class="st">&quot;mm&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>), 
-                  <span class="dt">basin =</span> <span class="kw">substr</span>(key,<span class="dv">6</span>,<span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.), 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  runoff_aggregate_yyyymm &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(cosdata, <span class="kw">c</span>(<span class="st">&quot;yyyy&quot;</span>,<span class="st">&quot;mm&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>),
+                  <span class="dt">basin =</span> <span class="kw">substr</span>(key,<span class="dv">6</span>,<span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.),
                   <span class="dt">idx =</span> yyyy <span class="op">+</span><span class="st"> </span>mm<span class="op">/</span><span class="dv">12</span>) <span class="co"># a small hack to get a unique identifier</span>
   <span class="co"># plot data:</span>
   <span class="kw">ggplot</span>(runoff_aggregate_yyyymm) <span class="op">+</span>
@@ -193,29 +207,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">    </span><span class="kw">facet_wrap</span>( <span class="op">~</span><span class="st"> </span>basin,<span class="dt">ncol =</span> <span class="dv">1</span>) <span class="op">+</span>
 <span class="st">    </span><span class="kw">theme_minimal</span>() <span class="op">+</span>
 <span class="st">    </span><span class="kw">theme</span>(<span class="dt">axis.text.x =</span> <span class="kw">element_text</span>(<span class="dt">angle =</span> <span class="dv">90</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))</code></pre></div>
-<p><img src="visCOS_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p><code>aggregate_time</code> is useful to get a quick overview. However, for larger basins the facetting can become confusing. It is then useful to save the data as larger pictures and/or arange them into one plot. The latter can, for example, be done by using using the <code>ggjoy</code> package:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(<span class="st">&quot;ggjoy&quot;</span>) <span class="co"># devtools::install_github(&quot;clauswilke/ggjoy&quot;)</span>
-
-  big_cosdata &lt;-<span class="st"> </span>data.table<span class="op">::</span><span class="kw">fread</span>(<span class="st">&quot;path_to_your_data&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(your_data)
-  runoff_aggregate_mm &lt;-<span class="st"> </span><span class="kw">aggregate_time</span>(big_cosdata, <span class="st">&quot;mm&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">    </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">obs_sim =</span> <span class="kw">substr</span>(key,<span class="dv">1</span>,<span class="dv">4</span>), 
-                  <span class="dt">basin =</span> <span class="kw">substr</span>(key,<span class="dv">6</span>,<span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.) ) 
-  runoff_aggregate_mm<span class="op">$</span>key_factor =<span class="st"> </span><span class="kw">factor</span>(runoff_aggregate_mm<span class="op">$</span>key,
-                                          <span class="dt">levels =</span> <span class="kw">unique</span>(runoff_aggregate_mm<span class="op">$</span>key))
-  <span class="co"># plot data:</span>
-  <span class="kw">ggplot</span>(runoff_aggregate_mm, <span class="kw">aes</span>(<span class="dt">x=</span>value, <span class="dt">y=</span> key_factor, <span class="dt">height =</span> ..density.., <span class="dt">fill =</span> obs_sim)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">geom_joy</span>() <span class="op">+</span>
-<span class="st">    </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;dodgerblue&quot;</span>,<span class="st">&quot;orange&quot;</span>)) <span class="op">+</span>
-<span class="st">    </span><span class="kw">theme_minimal</span>()</code></pre></div>
-<div class="figure">
-<img src="figures/aggregation_joyplot-example.png" alt="joy plot" />
-<p class="caption">joy plot</p>
-</div>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="code-aggregate_time" class="section level2">
 <h2><span class="header-section-number">3.1</span> Code: <code>aggregate_time</code></h2>
-<p><code>aggregate_time</code> is basically wrapper for <code>coscos::clump</code>. Here is the code:</p>
+<p>The function <code>aggregate_time</code> is a wrapper around the <code>coscos</code> function <code>clump</code>. Here is the code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co">#&#39; Time Aggregation</span>
   <span class="co">#&#39;</span>
   <span class="co">#&#39; Aggregates the COSERO data.frame (\code{cosdata}) according to the</span>
@@ -223,46 +218,35 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="co">#&#39; resolution-choices are \code{&#39;yyyy&#39;} - year, \code{&#39;mm&#39;} - month and</span>
   <span class="co">#&#39; \code{&#39;dd&#39;} - day and combinations thereof.</span>
   <span class="co">#&#39;</span>
-  <span class="co">#&#39; @param cosdata The strictly defined data format (\code{cosdata}) used </span>
+  <span class="co">#&#39; @param cosdata The strictly defined data format (\code{cosdata}) used</span>
   <span class="co">#&#39;          within \pkg{viscos}</span>
   <span class="co">#&#39; @param aggregation A string that defines the resolution of the aggregation.</span>
-  <span class="co">#&#39; </span>
+  <span class="co">#&#39;</span>
   <span class="co">#&#39; @import coscos</span>
   <span class="co">#&#39; @import pasta</span>
   <span class="co">#&#39; @importFrom tidyr gather_</span>
   <span class="co">#&#39; @export</span>
-  aggregate_time &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata, 
-                             <span class="dt">key =</span> <span class="st">&quot;mm&quot;</span>, 
-                             <span class="dt">.funs =</span> base<span class="op">::</span>mean, 
+  aggregate_time &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
+                             <span class="dt">key =</span> <span class="st">&quot;mm&quot;</span>,
+                             <span class="dt">.funs =</span> base<span class="op">::</span>mean,
                              <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()) {
     <span class="cf">if</span> (<span class="kw">class</span>(key) <span class="op">!=</span><span class="st"> &quot;character&quot;</span>)
       <span class="kw">stop</span>(<span class="st">&quot;key must be a chracter. It currently is:&quot;</span> <span class="op">%&amp;&amp;%</span><span class="st"> </span><span class="kw">class</span>(key))
     le_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cosdata)
-    le_aggr &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">clump</span>(le_data, <span class="dt">key =</span> key, <span class="dt">.funs =</span> .funs) 
-    le_aggr[opts<span class="op">$</span>name_COSposix] &lt;-<span class="st"> </span>le_data[[opts<span class="op">$</span>name_COSposix]] <span class="op">%&gt;%</span><span class="st"> </span>
+    le_aggr &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">clump</span>(le_data, <span class="dt">key =</span> key, <span class="dt">.funs =</span> .funs)
+    le_aggr[opts<span class="op">$</span>name_COSposix] &lt;-<span class="st"> </span>le_data[[opts<span class="op">$</span>name_COSposix]] <span class="op">%&gt;%</span>
 <span class="st">      </span>coscos<span class="op">::</span><span class="kw">clump_posix</span>(.,<span class="dt">key =</span> key)
     le_names &lt;-<span class="st"> </span><span class="kw">names</span>(le_aggr)
     <span class="co"># melt the data in a tidy format:</span>
-    selected_cols &lt;-<span class="st"> </span>(opts<span class="op">$</span>name_o <span class="op">%|%</span><span class="st"> </span>opts<span class="op">$</span>name_s) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">      </span><span class="kw">grepl</span>(.,le_names, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+    selected_cols &lt;-<span class="st"> </span>(opts<span class="op">$</span>name_o <span class="op">%|%</span><span class="st"> </span>opts<span class="op">$</span>name_s) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">grepl</span>(.,le_names, <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
 <span class="st">      </span>le_names[.]
     tidy_aggr &lt;-<span class="st"> </span>tidyr<span class="op">::</span><span class="kw">gather_</span>(le_aggr,
                                 <span class="dt">key_col =</span> <span class="kw">c</span>(<span class="st">&quot;key&quot;</span>),
-                                <span class="dt">value_col =</span> <span class="st">&quot;value&quot;</span>, 
+                                <span class="dt">value_col =</span> <span class="st">&quot;value&quot;</span>,
                                 <span class="dt">gather_cols =</span> selected_cols)
     <span class="kw">return</span>(tidy_aggr)
-  }
-
-  
-  <span class="co"># functions to extrapolte additional information:</span>
-    <span class="co"># remove_basin_nums &lt;- function(basin_names) {</span>
-    <span class="co">#   basin_names %&gt;% </span>
-    <span class="co">#     gsub(opts$name_o %&amp;% &quot;.*&quot;, opts$name_o , ., ignore.case = TRUE) %&gt;% </span>
-    <span class="co">#     gsub(opts$name_s %&amp;% &quot;.*&quot;, opts$name_s, ., ignore.case = TRUE)</span>
-    <span class="co"># }</span>
-    <span class="co"># remove_basin_names &lt;- function(basin_names) {</span>
-    <span class="co">#   as.integer(gsub(&quot;\\D&quot;,&quot;&quot;,basin_names))</span>
-    <span class="co"># }</span></code></pre></div>
+  }</code></pre></div>
 
 </div>
 </div>
@@ -271,8 +255,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="read-in-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="other-helpful-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cosdata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="distance-metrics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -283,7 +267,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -317,7 +301,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

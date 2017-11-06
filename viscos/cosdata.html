@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html">
-
+<link rel="next" href="aggregate-according-to-time.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -109,6 +109,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>2</b> cosdata</a><ul>
 <li class="chapter" data-level="2.1" data-path="cosdata.html"><a href="cosdata.html#examples-plots-from-cosdata"><i class="fa fa-check"></i><b>2.1</b> Examples plots from cosdata</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html"><i class="fa fa-check"></i><b>3</b> Aggregate according to time</a><ul>
+<li class="chapter" data-level="3.1" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html#code-aggregate_time"><i class="fa fa-check"></i><b>3.1</b> Code: <code>aggregate_time</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="distance-metrics.html"><a href="distance-metrics.html"><i class="fa fa-check"></i><b>4</b> Distance Metrics</a><ul>
+<li class="chapter" data-level="4.1" data-path="distance-metrics.html"><a href="distance-metrics.html#code"><i class="fa fa-check"></i><b>4.1</b> Code</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="distance-metrics.html"><a href="distance-metrics.html#the-main-objective-functions"><i class="fa fa-check"></i><b>4.1.1</b> The “Main” Objective Functions</a></li>
+<li class="chapter" data-level="4.1.2" data-path="distance-metrics.html"><a href="distance-metrics.html#mean-squared-error"><i class="fa fa-check"></i><b>4.1.2</b> Mean Squared Error</a></li>
+<li class="chapter" data-level="4.1.3" data-path="distance-metrics.html"><a href="distance-metrics.html#distance-function-fortran-wrapper"><i class="fa fa-check"></i><b>4.1.3</b> Distance Function Fortran Wrapper</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="distance-metrics.html"><a href="distance-metrics.html#references"><i class="fa fa-check"></i><b>4.2</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html"><i class="fa fa-check"></i><b>5</b> Objective Function Summaries</a><ul>
+<li class="chapter" data-level="5.1" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#code-1"><i class="fa fa-check"></i><b>5.1</b> Code</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#wrapper"><i class="fa fa-check"></i><b>5.1.1</b> Wrapper</a></li>
+<li class="chapter" data-level="5.1.2" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#computation"><i class="fa fa-check"></i><b>5.1.2</b> Computation</a></li>
+<li class="chapter" data-level="5.1.3" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#plotting"><i class="fa fa-check"></i><b>5.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -137,7 +155,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>All cosdata formated data can be used for further exploratory analysis with visCOS.</p>
 <p><strong>NOW WE NEED TO EXPLAIN COSDATA!</strong></p>
 <p>Snipptes:</p>
-<p>Currently <strong>visCOS</strong> only allows to compare between <em>numbered catchments</em>! The data <strong>must</strong> include an integer number at the end of its name, e.g. <code>QObs_001</code> and <code>QSim_001</code>).</p>
+<p>Currently visCOSonly allows to compare between <em>numbered catchments</em>! The data <strong>must</strong> include an integer number at the end of its name, e.g. <code>QObs_001</code> and <code>QSim_001</code>).</p>
 <p>Additionally, <code>cos_data</code> data.frame needs to have two different definitions for the date of a given row (see: <a href="introduction.html">Introduction</a>). One is based on an old way to write dates out in fortran code. In that case each column represents a time-resolution. In concrete, the following columns are used:</p>
 <ul>
 <li><em>yyyy</em> - year,</li>
@@ -157,18 +175,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ##  name_COSmonth    name_COSday   name_COShour    name_COSmin  name_COSposix 
 ##           &quot;mm&quot;           &quot;dd&quot;           &quot;hh&quot;          &quot;min&quot;    &quot;posixdate&quot; 
 ## name_COSperiod      data_unit   missing_data        color_o        color_s 
-##       &quot;period&quot;      &quot;(m^3/s)&quot;         &quot;-999&quot;        &quot;green&quot;       &quot;orange&quot; 
+##       &quot;period&quot;      &quot;(m^3/s)&quot;         &quot;-999&quot;   &quot;dodgerblue&quot;       &quot;orange&quot; 
 ##     of_limits1     of_limits2 
 ##            &quot;0&quot;            &quot;1&quot;</code></pre>
 <p>An option can be changed by providing the new option-value as functional argument of the option. Here is an example for changing the <span class="math inline">\(o\)</span> column color:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">   <span class="kw">viscos_options</span>(<span class="dt">color_o =</span> <span class="st">&quot;green&quot;</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">   <span class="kw">viscos_options</span>(<span class="dt">color_o =</span> <span class="st">&quot;dodgerblue&quot;</span>)
    <span class="kw">viscos_options</span>( ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unlist</span>(.)</code></pre></div>
 <pre><code>##         name_o         name_s        name_lb        name_ub   name_COSyear 
 ##         &quot;qobs&quot;         &quot;qsim&quot;           &quot;lb&quot;           &quot;ub&quot;         &quot;yyyy&quot; 
 ##  name_COSmonth    name_COSday   name_COShour    name_COSmin  name_COSposix 
 ##           &quot;mm&quot;           &quot;dd&quot;           &quot;hh&quot;          &quot;min&quot;    &quot;posixdate&quot; 
 ## name_COSperiod      data_unit   missing_data        color_o        color_s 
-##       &quot;period&quot;      &quot;(m^3/s)&quot;         &quot;-999&quot;        &quot;green&quot;       &quot;orange&quot; 
+##       &quot;period&quot;      &quot;(m^3/s)&quot;         &quot;-999&quot;   &quot;dodgerblue&quot;       &quot;orange&quot; 
 ##     of_limits1     of_limits2 
 ##            &quot;0&quot;            &quot;1&quot;</code></pre>
 <p>The <code>coscos</code> package also provides a function to get some exemplary data to use in visCOS. Throughout this guide we will use it to demonstrate the different functionalities of visCOS. The data can be loaded with the function <code>viscos_example</code>, e.g.:</p>
@@ -225,8 +243,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="aggregate-according-to-time.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

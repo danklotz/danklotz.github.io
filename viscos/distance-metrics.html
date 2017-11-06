@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>visCOS</title>
+  <meta name="description" content="visCOS">
+  <meta name="generator" content="bookdown 0.5.4 and GitBook 2.6.7">
+
+  <meta property="og:title" content="visCOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="visCOS" />
+  
+  
+  
+
+<meta name="author" content="Daniel Klotz, Johannes Wesemann, Simon Frey, Mathew Herrnegger">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="aggregate-according-to-time.html">
+<link rel="next" href="objective-function-summaries.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">visCOS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> The Guide</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#viscos-and-other-r-package"><i class="fa fa-check"></i><b>1.2</b> visCOS and other R-package</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>2</b> cosdata</a><ul>
+<li class="chapter" data-level="2.1" data-path="cosdata.html"><a href="cosdata.html#examples-plots-from-cosdata"><i class="fa fa-check"></i><b>2.1</b> Examples plots from cosdata</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html"><i class="fa fa-check"></i><b>3</b> Aggregate according to time</a><ul>
+<li class="chapter" data-level="3.1" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html#code-aggregate_time"><i class="fa fa-check"></i><b>3.1</b> Code: <code>aggregate_time</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="distance-metrics.html"><a href="distance-metrics.html"><i class="fa fa-check"></i><b>4</b> Distance Metrics</a><ul>
+<li class="chapter" data-level="4.1" data-path="distance-metrics.html"><a href="distance-metrics.html#code"><i class="fa fa-check"></i><b>4.1</b> Code</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="distance-metrics.html"><a href="distance-metrics.html#the-main-objective-functions"><i class="fa fa-check"></i><b>4.1.1</b> The “Main” Objective Functions</a></li>
+<li class="chapter" data-level="4.1.2" data-path="distance-metrics.html"><a href="distance-metrics.html#mean-squared-error"><i class="fa fa-check"></i><b>4.1.2</b> Mean Squared Error</a></li>
+<li class="chapter" data-level="4.1.3" data-path="distance-metrics.html"><a href="distance-metrics.html#distance-function-fortran-wrapper"><i class="fa fa-check"></i><b>4.1.3</b> Distance Function Fortran Wrapper</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="distance-metrics.html"><a href="distance-metrics.html#references"><i class="fa fa-check"></i><b>4.2</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html"><i class="fa fa-check"></i><b>5</b> Objective Function Summaries</a><ul>
+<li class="chapter" data-level="5.1" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#code-1"><i class="fa fa-check"></i><b>5.1</b> Code</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#wrapper"><i class="fa fa-check"></i><b>5.1.1</b> Wrapper</a></li>
+<li class="chapter" data-level="5.1.2" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#computation"><i class="fa fa-check"></i><b>5.1.2</b> Computation</a></li>
+<li class="chapter" data-level="5.1.3" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#plotting"><i class="fa fa-check"></i><b>5.1.3</b> Plotting</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">visCOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="distance-metrics" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Distance Metrics</h1>
+<p>Metric play an important role in hydrology. Objective functions, <span class="math inline">\(f_{of}(\cdot)\)</span>, are an important part of the hydrological model calibration. This chapter defines the objective functions that are provided by visCOS.</p>
+<p>The importance of metrics in hydrology seems to arise ultimately from the approximate nature of the subject and the the large uncertainties involved in the task that hydrologist try to solve. Over the years a many different much ink has been spilled for discussing the different merits and pitfalls of individual objective functions. Thus, with time many different ones have been proposed. Some are more useful for model comparison and some objective functions try to address specific problems of other ones.</p>
+<div id="code" class="section level2">
+<h2><span class="header-section-number">4.1</span> Code</h2>
+<p>This section defines the code for different objective functions. FORTRAN Routines are used for most of them. The results are slightly different then the ones from the R-code of the <code>hydroGOF</code> package (~13th decimal place), but always faster. For the explanation and definition of the objective function it is assumed that <span class="math inline">\(o\)</span> are the observations (defined by <code>name_o</code> in visCOS) and <span class="math inline">\(s\)</span> are the simulation(defined by <code>name_s</code> in visCOS).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Distance Measures (Metrics)</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; Different objective Functions, provided by visCOS. A detailed description</span>
+<span class="co">#&#39; of each of the provided objective function is provided in the respective</span>
+<span class="co">#&#39; vignette</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @useDynLib visCOS</span>
+<span class="co">#&#39; @param o The reference data or observations (o_data)</span>
+<span class="co">#&#39; @param s The created data or the simulations (s_data)</span>
+<span class="co">#&#39; @name d_metrics</span>
+<span class="ot">NULL</span></code></pre></div>
+<div id="the-main-objective-functions" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> The “Main” Objective Functions</h3>
+<p>Currently the main objective functions are the Nash-Sutcliffe Efficiency, the Kling-Gupta Efficiency, the percentage bias and the correlation.</p>
+<div id="nash-sutcliffe-efficiency" class="section level4">
+<h4><span class="header-section-number">4.1.1.1</span> Nash-Sutcliffe Efficiency</h4>
+<p>The Nash-Sutcliffe Criterion <span class="math inline">\(NSE\)</span> is by far the most used efficiency criterion in hydrology. In the hydrological context <span class="math inline">\(o\)</span> usually represents a set of runoff-observation and <span class="math inline">\(s\)</span> a set of simulations. The <span class="math inline">\(NSE\)</span> is defined in the same way as the general definition of the coefficient of determination <span class="math inline">\(R^2\)</span>:</p>
+<p><span class="math display">\[ NSE = \frac{\sum_{t=1}^T \big( o(t)-s(t) \big)^2}
+              {\sum_{t=1}^T \big( o(t)-\bar{o} \big)^2} . \]</span></p>
+<p>The variable <span class="math inline">\(\bar{o}\)</span> represents the average of <span class="math inline">\(o\)</span>. The <span class="math inline">\(NSE\)</span> can be seen as the relational the estimator <span class="math inline">\(s\)</span> and the estimator resulting form the average of the data. It can can have values between minus infinity and 1; with 1 being the perfect fit, 0 when the mean of <span class="math inline">\(s\)</span> is as good as the mean of <span class="math inline">\(o\)</span> and negative values are even worse.</p>
+<p>The code for the <span class="math inline">\(NSE\)</span> computation is:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; Nash-Sutcliffe Efficiency</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @rdname d_metrics</span>
+  <span class="co">#&#39; @importFrom coscos build_tibble</span>
+  <span class="co">#&#39; @importFrom purrr map2_dbl</span>
+  <span class="co">#&#39; @importFrom magrittr set_names</span>
+  <span class="co">#&#39; @export</span>
+  d_nse &lt;-<span class="st"> </span><span class="cf">function</span>(o, s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) {
+    <span class="co"># pre sets:</span>
+    o &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(o)
+    s &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(s)
+    rows &lt;-<span class="st"> </span><span class="kw">nrow</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    cols &lt;-<span class="st"> </span><span class="kw">ncol</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    <span class="cf">if</span>(rows <span class="op">!=</span><span class="st"> </span><span class="kw">nrow</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of rows (data points)&quot;</span>)
+    <span class="cf">if</span>(cols <span class="op">!=</span><span class="st"> </span><span class="kw">ncol</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of columns (variables)&quot;</span>)
+    <span class="co"># computation:</span>
+    of_nse &lt;-<span class="st"> </span><span class="kw">map2_dbl</span>(o,
+                       s,
+                       <span class="cf">function</span>(x,y) <span class="kw">d_wrapper</span>(x, y, rows, <span class="dt">d_name =</span> <span class="st">&quot;f_nse&quot;</span>, <span class="dt">na.rm =</span> na.rm)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_names</span>(<span class="kw">paste</span>(<span class="st">&quot;nse&quot;</span>, <span class="dv">1</span><span class="op">:</span>cols, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>))
+    <span class="kw">return</span>(of_nse)
+  }</code></pre></div>
+</div>
+<div id="kling-gupta-efficiency" class="section level4">
+<h4><span class="header-section-number">4.1.1.2</span> Kling-Gupta Efficiency</h4>
+<p>The Kling-Gupta Efficiency, <span class="math inline">\(KGE\)</span>, was introduced by Gupta et al. (2009) to alleviate some of the shortcomings of the <span class="math inline">\(NSE\)</span>. In their paper they argue why the <span class="math inline">\(NSE\)</span> tends to overate simulations with small variance (note: in the context of the paper <span class="math inline">\(\textrm{simulations} = s\)</span>) and propose their efficiency criterion instead.</p>
+<p>The <span class="math inline">\(KGE\)</span> is defined as:</p>
+<p><span class="math display">\[ KGE = 1 - ED, \]</span></p>
+<p>with</p>
+<p><span class="math display">\[ ED = \sqrt{\big(corr(o,s)-1 \big)^2 +
+              \big(\alpha(o,s)-1 \big)^2 +
+              \big(\beta(o,s)-1 \big)^2 }. \]</span></p>
+<p>In which <span class="math inline">\(\alpha(o,s) = \frac{\sigma_s}{ \sigma_o }\)</span> is the standard deviation <span class="math inline">\(\sigma\)</span> of <span class="math inline">\(s\)</span> divided by the <span class="math inline">\(\sigma\)</span> of <span class="math inline">\(o\)</span>, <span class="math inline">\(\beta(o,s) = \mu_s / \mu_o\)</span> with<span class="math inline">\(\mu\)</span> being the arithmetic mean and <span class="math inline">\(corr(o,s)\)</span> as the Pearson’s correlation coefficient (see below). The value range and the quality is similar to the <span class="math inline">\(NSE\)</span>.</p>
+<p>The code for the <span class="math inline">\(KGE\)</span> computation is:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; KGE 2</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @rdname d_metrics</span>
+  <span class="co">#&#39; @importFrom coscos build_tibble</span>
+  <span class="co">#&#39; @export</span>
+  d_kge &lt;-<span class="st"> </span><span class="cf">function</span>(o, s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) {
+    <span class="co"># pre sets:</span>
+    o &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(o)
+    s &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(s)
+    rows &lt;-<span class="st"> </span><span class="kw">nrow</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    cols &lt;-<span class="st"> </span><span class="kw">ncol</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    <span class="cf">if</span>(rows <span class="op">!=</span><span class="st"> </span><span class="kw">nrow</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of rows (data points)&quot;</span>)
+    <span class="cf">if</span>(cols <span class="op">!=</span><span class="st"> </span><span class="kw">ncol</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of columns (variables)&quot;</span>)
+    <span class="co"># computation:</span>
+    of_kge &lt;-<span class="st"> </span><span class="kw">map2_dbl</span>(o,
+                       s,
+                       <span class="cf">function</span>(x,y) <span class="kw">d_wrapper</span>(x, y, rows, <span class="dt">na.rm =</span> na.rm)
+      ) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_names</span>(<span class="kw">paste</span>(<span class="st">&quot;kge&quot;</span>, <span class="dv">1</span><span class="op">:</span>cols, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>))
+    <span class="kw">return</span>(of_kge)
+  }</code></pre></div>
+</div>
+<div id="bias" class="section level4">
+<h4><span class="header-section-number">4.1.1.3</span> Bias</h4>
+<p>The bias <span class="math inline">\(p_{bias}\)</span> is defined as the sum of the differences between <span class="math inline">\(s\)</span> and <span class="math inline">\(o\)</span> divided by the sum of <span class="math inline">\(o\)</span>:</p>
+<p><span class="math display">\[ p_{bias} = \frac{\sum_{t=1}^T [ o(t)-s(t) ] }{T}. \]</span></p>
+<p>The code for the <span class="math inline">\(p_{bias}\)</span> computation is:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; Percentage Bias</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @rdname d_metrics</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @importFrom coscos build_tibble</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @export</span>
+  d_bias &lt;-<span class="st"> </span><span class="cf">function</span>(o, s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) {
+    <span class="co"># pre sets:</span>
+    o &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(o)
+    s &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(s)
+    rows &lt;-<span class="st"> </span><span class="kw">nrow</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    cols &lt;-<span class="st"> </span><span class="kw">ncol</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    <span class="cf">if</span>(rows <span class="op">!=</span><span class="st"> </span><span class="kw">nrow</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of rows (data points)&quot;</span>)
+    <span class="cf">if</span>(cols <span class="op">!=</span><span class="st"> </span><span class="kw">ncol</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of columns (variables)&quot;</span>)
+    <span class="co"># computation:</span>
+    of_pbias &lt;-<span class="st"> </span><span class="kw">map2_dbl</span>(o, s,
+                       <span class="cf">function</span>(x,y) <span class="kw">d_wrapper</span>(x, y, rows, <span class="dt">d_name =</span> <span class="st">&quot;f_bias&quot;</span>, <span class="dt">na.rm =</span> na.rm)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_names</span>(<span class="kw">paste</span>(<span class="st">&quot;bias&quot;</span>, <span class="dv">1</span><span class="op">:</span>cols, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>))
+    <span class="kw">return</span>(of_pbias)
+  }</code></pre></div>
+</div>
+<div id="percentage-bias" class="section level4">
+<h4><span class="header-section-number">4.1.1.4</span> Percentage Bias</h4>
+<p>The percentage of bias <span class="math inline">\(p_{bias}\)</span> is defined as the sum of the differences between <span class="math inline">\(s\)</span> and <span class="math inline">\(o\)</span> divided by the sum of <span class="math inline">\(o\)</span> and multiplied by <span class="math inline">\(100\)</span>:</p>
+<p><span class="math display">\[ p_{bias} = 100*\frac{\sum_{t=1}^T [ s(t)-o(t) ] }{\sum_{t=1}^T o(t)}. \]</span></p>
+<p>The code for the <span class="math inline">\(p_{bias}\)</span> computation is:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; Percentage Bias</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @rdname d_metrics</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @importFrom coscos build_tibble</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @export</span>
+  d_pbias &lt;-<span class="st"> </span><span class="cf">function</span>(o, s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) {
+    <span class="co"># pre sets:</span>
+    o &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(o)
+    s &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(s)
+    rows &lt;-<span class="st"> </span><span class="kw">nrow</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    cols &lt;-<span class="st"> </span><span class="kw">ncol</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    <span class="cf">if</span>(rows <span class="op">!=</span><span class="st"> </span><span class="kw">nrow</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of rows (data points)&quot;</span>)
+    <span class="cf">if</span>(cols <span class="op">!=</span><span class="st"> </span><span class="kw">ncol</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of columns (variables)&quot;</span>)
+    <span class="co"># computation:</span>
+    of_pbias &lt;-<span class="st"> </span><span class="kw">map2_dbl</span>(o, s,
+                       <span class="cf">function</span>(x,y) <span class="kw">d_wrapper</span>(x, y, rows, <span class="dt">d_name =</span> <span class="st">&quot;f_pbias&quot;</span>, <span class="dt">na.rm =</span> na.rm)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_names</span>(<span class="kw">paste</span>(<span class="st">&quot;pbias&quot;</span>, <span class="dv">1</span><span class="op">:</span>cols, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>))
+    <span class="kw">return</span>(of_pbias)
+  }</code></pre></div>
+</div>
+<div id="pearsons-correlation-coefficient" class="section level4">
+<h4><span class="header-section-number">4.1.1.5</span> Pearson’s correlation coefficient</h4>
+<p>Pearson’s correlation coefficient, <span class="math inline">\(r\)</span> or <span class="math inline">\(corr(o,s)\)</span>, is a measure of the linear relationship between <span class="math inline">\(o\)</span> and <span class="math inline">\(s\)</span>. It is defined as:</p>
+<p><span class="math display">\[ r = \frac{cov(o,s)}{\sigma_s*\sigma_o}, \]</span></p>
+<p>where <span class="math inline">\(cov(...)\)</span> denotes the covariance. The correlation coefficient can take on values between -1 and 1. The former corresponds to an inverse and the latter to a direct relationship and the closer the values is to zero the weaker is the implied correlation.</p>
+<p>The code for the correlation is:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; Correlation</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @rdname d_metrics</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @importFrom coscos build_tibble</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @export</span>
+  d_cor &lt;-<span class="st"> </span><span class="cf">function</span>(o, s) {
+    <span class="co"># pre sets:</span>
+    o &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(o)
+    s &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(s)
+    rows &lt;-<span class="st"> </span><span class="kw">nrow</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    cols &lt;-<span class="st"> </span><span class="kw">ncol</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    <span class="cf">if</span>(rows <span class="op">!=</span><span class="st"> </span><span class="kw">nrow</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of rows (data points)&quot;</span>)
+    <span class="cf">if</span>(cols <span class="op">!=</span><span class="st"> </span><span class="kw">ncol</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of columns (variables)&quot;</span>)
+    <span class="co"># computation:</span>
+    stats<span class="op">::</span><span class="kw">cor</span>(o, s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">diag</span>(.)
+  }</code></pre></div>
+</div>
+</div>
+<div id="mean-squared-error" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Mean Squared Error</h3>
+<p>Defined as:</p>
+<p><span class="math display">\[ MSE = \frac{\sum_{t=1}^T \big( o(t)-s(t) \big)^2}{T} \]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; Mean Squared Error</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @rdname d_metrics</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @importFrom coscos build_tibble</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @export</span>
+  d_mse &lt;-<span class="st"> </span><span class="cf">function</span>(o, s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) {
+    <span class="co"># pre sets:</span>
+    o &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(o)
+    s &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(s)
+    rows &lt;-<span class="st"> </span><span class="kw">nrow</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    cols &lt;-<span class="st"> </span><span class="kw">ncol</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    <span class="cf">if</span>(rows <span class="op">!=</span><span class="st"> </span><span class="kw">nrow</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of rows (data points)&quot;</span>)
+    <span class="cf">if</span>(cols <span class="op">!=</span><span class="st"> </span><span class="kw">ncol</span>(o)) <span class="kw">stop</span>(<span class="st">&quot;o and s must have the same amount of columns (variables)&quot;</span>)
+    <span class="co"># computation:</span>
+    of_mse &lt;-<span class="st"> </span><span class="kw">map2_dbl</span>(o, s,
+                       <span class="cf">function</span>(x,y) <span class="kw">d_wrapper</span>(x, y, rows, <span class="dt">d_name =</span> <span class="st">&quot;f_mse&quot;</span>, <span class="dt">na.rm =</span> na.rm)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_names</span>(<span class="kw">paste</span>(<span class="st">&quot;mse&quot;</span>, <span class="dv">1</span><span class="op">:</span>cols, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>))
+    <span class="kw">return</span>(of_mse)
+  }</code></pre></div>
+<div id="root-mean-squared-error" class="section level4">
+<h4><span class="header-section-number">4.1.2.1</span> Root Mean Squared Error</h4>
+<p>The square root of the <span class="math inline">\(MSE\)</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; Root Mean Squared Error</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @rdname d_metrics</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @importFrom coscos build_tibble</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @export</span>
+  d_rmse &lt;-<span class="st"> </span><span class="cf">function</span>(o, s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) {
+    cols &lt;-<span class="st"> </span><span class="kw">ncol</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    <span class="kw">d_mse</span>(o,s,na.rm) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">sqrt</span>(.) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_names</span>(<span class="kw">paste</span>(<span class="st">&quot;rmse&quot;</span>, <span class="dv">1</span><span class="op">:</span>cols, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">return</span>(.)
+  }</code></pre></div>
+</div>
+<div id="inverted-nash-sutcliffe-efficiency" class="section level4">
+<h4><span class="header-section-number">4.1.2.2</span> Inverted Nash-Sutcliffe Efficiency</h4>
+<p><span class="math display">\[ inse = \frac{\sum_{t=1}^T \big( s(t)-o(t) \big)^2}
+              {\sum_{t=1}^T \big( s(t)-\bar{s} \big)^2} \]</span></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+  <span class="co">#&#39; Inverted Nash-Sutcliffe Efficiency</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @rdname d_metrics</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @importFrom coscos build_tibble</span>
+  <span class="co">#&#39;</span>
+  <span class="co">#&#39; @export</span>
+  d_inse &lt;-<span class="st"> </span><span class="cf">function</span>(o, s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) {
+    cols &lt;-<span class="st"> </span><span class="kw">ncol</span>(s) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.integer</span>(.)
+    <span class="kw">d_nse</span>(o, s, <span class="dt">na.rm =</span> na.rm) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">set_names</span>(<span class="kw">paste</span>(<span class="st">&quot;inse&quot;</span>, <span class="dv">1</span><span class="op">:</span>cols, <span class="dt">sep =</span> <span class="st">&quot;&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">return</span>(.)
+  }</code></pre></div>
+</div>
+</div>
+<div id="distance-function-fortran-wrapper" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Distance Function Fortran Wrapper</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  d_wrapper &lt;-<span class="st"> </span><span class="cf">function</span>(obs, sim, rows, <span class="dt">ndstart =</span> 1L, <span class="dt">ndend =</span> rows, <span class="dt">d_name =</span> <span class="st">&quot;f_kge&quot;</span>, na.rm) {
+    idx_to_eval &lt;-<span class="st"> </span><span class="kw">as.integer</span>( 1L <span class="op">-</span><span class="st"> </span>(<span class="kw">is.na</span>(obs) <span class="op">+</span><span class="st"> </span><span class="kw">is.na</span>(sim)) )
+    na_count &lt;-<span class="st"> </span><span class="kw">sum</span>(idx_to_eval)
+    <span class="cf">if</span> (<span class="op">!</span>na.rm <span class="op">&amp;</span><span class="st"> </span>(na_count <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)) {
+      <span class="kw">stop</span>(<span class="st">&quot;There are NAs in the data but `na.rm` is set to `FALSE`!&quot;</span>)
+    }
+    out &lt;-<span class="st"> </span><span class="kw">.Fortran</span>(d_name,
+                    <span class="dt">XSIM =</span> <span class="kw">as.double</span>(sim),
+                    <span class="dt">XOBS =</span> <span class="kw">as.double</span>(obs),
+                    <span class="dt">maxday =</span> rows,
+                    <span class="dt">NDSTART =</span> 1L,
+                    <span class="dt">NDEND =</span> rows,
+                    <span class="dt">EVAL =</span> idx_to_eval,
+                    <span class="dt">of =</span> <span class="kw">as.double</span>(<span class="op">-</span><span class="fl">999.9</span>),
+                    <span class="dt">NAOK =</span> <span class="ot">TRUE</span>)
+       <span class="kw">return</span>(out<span class="op">$</span>of)
+  }</code></pre></div>
+<p>```</p>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2><span class="header-section-number">4.2</span> References</h2>
+<ul>
+<li><strong>Percentage Bias:</strong> Yapo P. O., Gupta H. V., Sorooshian S., 1996. Automatic calibration of conceptual rainfall-runoff models: sensitivity to calibration data. Journal of Hydrology. v181 i1-4. 23-48</li>
+<li><strong>Nash-Sutcliffe Efficiency:</strong> Nash, J. E. and J. V. Sutcliffe (1970), River flow forecasting through conceptual models part I -A discussion of principles, Journal of Hydrology, 10 (3), 282-290</li>
+<li><strong>Kling-Gupta Efficiency:</strong> Gupta, Hoshin V., Harald Kling, Koray K. Yilmaz, Guillermo F. Martinez. Decomposition of the mean squared error and NSE performance criteria: Implications for improving hydrological modelling. Journal of Hydrology, Volume 377, Issues 1-2, 20 October 2009, Pages 80-91. DOI: 10.1016/j.jhydrol.2009.08.003. ISSN 0022-1694</li>
+<li><strong>Volumetric Efficiency:</strong> Criss, R. E. and Winston, W. E. (2008), Do Nash values have value? Discussion and alternate proposals. Hydrological Processes, 22: 2723-2725. doi: 10.1002/hyp.7072</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="aggregate-according-to-time.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="objective-function-summaries.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["visCOS.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
