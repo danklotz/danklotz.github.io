@@ -5,12 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>visCOS doc</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta name="description" content="visCOS doc">
-  <meta name="generator" content="bookdown 0.1.7 and GitBook 2.6.7">
+  <title>visCOS</title>
+  <meta name="description" content="visCOS">
+  <meta name="generator" content="bookdown 0.5.4 and GitBook 2.6.7">
 
-  <meta property="og:title" content="visCOS doc" />
+  <meta property="og:title" content="visCOS" />
   <meta property="og:type" content="book" />
   
   
@@ -18,28 +17,22 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="visCOS doc" />
+  <meta name="twitter:title" content="visCOS" />
   
   
   
 
-<meta name="author" content="Daniel Klotz, Johannes Wesemann, Mathew Herrnegger">
+<meta name="author" content="Daniel Klotz, Johannes Wesemann, Simon Frey, Mathew Herrnegger">
 
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  TeX: { equationNumbers: { autoNumber: "AMS" } }
-});
-</script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="ojective-functions.html">
-<link rel="next" href="references.html">
-
+<link rel="prev" href="runoff-peaks.html">
+<link rel="next" href="exploring-objective-functions.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -99,96 +92,46 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">visCOS documentation</a></li>
+<li><a href="./index.html">visCOS</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#the-basic-data-structure"><i class="fa fa-check"></i><b>1.1</b> The basic data structure</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#loading-raw-data"><i class="fa fa-check"></i><b>1.2</b> Loading raw data</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> The Guide</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#viscos-and-other-r-package"><i class="fa fa-check"></i><b>1.2</b> visCOS and other R-package</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="cook-data.html"><a href="cook-data.html"><i class="fa fa-check"></i><b>2</b> Cook Data</a><ul>
-<li class="chapter" data-level="2.1" data-path="cook-data.html"><a href="cook-data.html#examples"><i class="fa fa-check"></i><b>2.1</b> Examples</a></li>
-<li class="chapter" data-level="2.2" data-path="cook-data.html"><a href="cook-data.html#code"><i class="fa fa-check"></i><b>2.2</b> Code</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="cook-data.html"><a href="cook-data.html#get-example-data"><i class="fa fa-check"></i><b>2.2.1</b> Get Example Data</a></li>
-<li class="chapter" data-level="2.2.2" data-path="cook-data.html"><a href="cook-data.html#remove-not-needed-columns"><i class="fa fa-check"></i><b>2.2.2</b> Remove not needed columns</a></li>
-<li class="chapter" data-level="2.2.3" data-path="cook-data.html"><a href="cook-data.html#complete-the-date-formats"><i class="fa fa-check"></i><b>2.2.3</b> Complete the date formats</a></li>
-<li class="chapter" data-level="2.2.4" data-path="cook-data.html"><a href="cook-data.html#remove-leading-zeros-in-column-names"><i class="fa fa-check"></i><b>2.2.4</b> Remove leading zeros in column names</a></li>
-<li class="chapter" data-level="2.2.5" data-path="cook-data.html"><a href="cook-data.html#mark-the-needed-periods"><i class="fa fa-check"></i><b>2.2.5</b> Mark the needed periods</a></li>
-<li class="chapter" data-level="2.2.6" data-path="cook-data.html"><a href="cook-data.html#transform-the-cos_data-into-xts"><i class="fa fa-check"></i><b>2.2.6</b> Transform the <code>cos_data</code> into <code>xts</code></a></li>
+<li class="chapter" data-level="2" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>2</b> cosdata</a><ul>
+<li class="chapter" data-level="2.1" data-path="cosdata.html"><a href="cosdata.html#examples-plots-from-cosdata"><i class="fa fa-check"></i><b>2.1</b> Examples plots from cosdata</a></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="runoff-peaks.html"><a href="runoff-peaks.html"><i class="fa fa-check"></i><b>3</b> Runoff Peaks</a><ul>
+<li class="chapter" data-level="3.1" data-path="runoff-peaks.html"><a href="runoff-peaks.html#examples"><i class="fa fa-check"></i><b>3.1</b> Examples:</a></li>
+<li class="chapter" data-level="3.2" data-path="runoff-peaks.html"><a href="runoff-peaks.html#code"><i class="fa fa-check"></i><b>3.2</b> Code</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="runoff-peaks.html"><a href="runoff-peaks.html#peak-plots-for-a-signle-basin"><i class="fa fa-check"></i><b>3.2.1</b> Peak-Plots for a signle Basin</a></li>
+<li class="chapter" data-level="3.2.2" data-path="runoff-peaks.html"><a href="runoff-peaks.html#peak-finding-function"><i class="fa fa-check"></i><b>3.2.2</b> Peak Finding Function</a></li>
+<li class="chapter" data-level="3.2.3" data-path="runoff-peaks.html"><a href="runoff-peaks.html#subplot-function"><i class="fa fa-check"></i><b>3.2.3</b> Subplot Function</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="options.html"><a href="options.html"><i class="fa fa-check"></i><b>3</b> Options</a></li>
-<li class="chapter" data-level="4" data-path="ojective-functions.html"><a href="ojective-functions.html"><i class="fa fa-check"></i><b>4</b> Ojective Functions</a></li>
-<li class="chapter" data-level="5" data-path="objective-functions.html"><a href="objective-functions.html"><i class="fa fa-check"></i><b>5</b> Objective Functions</a><ul>
-<li class="chapter" data-level="5.1" data-path="objective-functions.html"><a href="objective-functions.html#main-objective-functions"><i class="fa fa-check"></i><b>5.1</b> Main Objective Functions</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="objective-functions.html"><a href="objective-functions.html#nash-sutcliffe-efficiency"><i class="fa fa-check"></i><b>5.1.1</b> Nash-Sutcliffe Efficiency</a></li>
-<li class="chapter" data-level="5.1.2" data-path="objective-functions.html"><a href="objective-functions.html#kling-gupta-efficiency"><i class="fa fa-check"></i><b>5.1.2</b> Kling-Gupta Efficiency</a></li>
-<li class="chapter" data-level="5.1.3" data-path="objective-functions.html"><a href="objective-functions.html#percentage-bias"><i class="fa fa-check"></i><b>5.1.3</b> Percentage Bias</a></li>
-<li class="chapter" data-level="5.1.4" data-path="objective-functions.html"><a href="objective-functions.html#pearsons-correlation-coefficient"><i class="fa fa-check"></i><b>5.1.4</b> Pearson’s correlation coefficient</a></li>
+<li class="chapter" data-level="3.3" data-path="runoff-peaks.html"><a href="runoff-peaks.html#references"><i class="fa fa-check"></i><b>3.3</b> References</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="objective-functions.html"><a href="objective-functions.html#ohter-objective-functions"><i class="fa fa-check"></i><b>5.2</b> Ohter Objective Functions</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="objective-functions.html"><a href="objective-functions.html#root-mean-sqaured-error"><i class="fa fa-check"></i><b>5.2.1</b> Root Mean Sqaured Error</a></li>
-<li class="chapter" data-level="5.2.2" data-path="objective-functions.html"><a href="objective-functions.html#inverted-nash-sutcliffe-efficiency"><i class="fa fa-check"></i><b>5.2.2</b> Inverted Nash-Sutcliffe Efficiency</a></li>
-<li class="chapter" data-level="5.2.3" data-path="objective-functions.html"><a href="objective-functions.html#ratio-of-the-standard-deviations"><i class="fa fa-check"></i><b>5.2.3</b> Ratio of the Standard Deviations</a></li>
-<li class="chapter" data-level="5.2.4" data-path="objective-functions.html"><a href="objective-functions.html#ratio-of-the-means"><i class="fa fa-check"></i><b>5.2.4</b> Ratio of the Means</a></li>
-<li class="chapter" data-level="5.2.5" data-path="objective-functions.html"><a href="objective-functions.html#volumetric-efficiency"><i class="fa fa-check"></i><b>5.2.5</b> Volumetric Efficiency</a></li>
+<li class="chapter" data-level="4" data-path="objective-functions.html"><a href="objective-functions.html"><i class="fa fa-check"></i><b>4</b> Objective Functions</a><ul>
+<li class="chapter" data-level="4.1" data-path="objective-functions.html"><a href="objective-functions.html#code-1"><i class="fa fa-check"></i><b>4.1</b> Code</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="objective-functions.html"><a href="objective-functions.html#wrapper"><i class="fa fa-check"></i><b>4.1.1</b> Wrapper</a></li>
+<li class="chapter" data-level="4.1.2" data-path="objective-functions.html"><a href="objective-functions.html#computation"><i class="fa fa-check"></i><b>4.1.2</b> Computation</a></li>
+<li class="chapter" data-level="4.1.3" data-path="objective-functions.html"><a href="objective-functions.html#bar-plots"><i class="fa fa-check"></i><b>4.1.3</b> Bar Plots</a></li>
+<li class="chapter" data-level="4.1.4" data-path="objective-functions.html"><a href="objective-functions.html#raster-plots"><i class="fa fa-check"></i><b>4.1.4</b> Raster Plots</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>6</b> References</a></li>
-<li class="chapter" data-level="7" data-path="time-aggregates.html"><a href="time-aggregates.html"><i class="fa fa-check"></i><b>7</b> Time Aggregates</a><ul>
-<li class="chapter" data-level="7.1" data-path="time-aggregates.html"><a href="time-aggregates.html#examples-1"><i class="fa fa-check"></i><b>7.1</b> Examples</a></li>
+<li class="chapter" data-level="5" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html"><i class="fa fa-check"></i><b>5</b> Exploring Objective Functions</a><ul>
+<li class="chapter" data-level="5.1" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#example"><i class="fa fa-check"></i><b>5.1</b> Example</a></li>
+<li class="chapter" data-level="5.2" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#code-2"><i class="fa fa-check"></i><b>5.2</b> Code</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="code-1.html"><a href="code-1.html"><i class="fa fa-check"></i><b>8</b> Code</a></li>
-<li class="chapter" data-level="9" data-path="summaries-of-important-objective-functions.html"><a href="summaries-of-important-objective-functions.html"><i class="fa fa-check"></i><b>9</b> Summaries of important objective functions</a></li>
-<li class="chapter" data-level="10" data-path="code-2.html"><a href="code-2.html"><i class="fa fa-check"></i><b>10</b> Code</a><ul>
-<li class="chapter" data-level="10.1" data-path="code-2.html"><a href="code-2.html#compute-the-main-objective-functions"><i class="fa fa-check"></i><b>10.1</b> Compute the Main Objective Functions</a></li>
-<li class="chapter" data-level="10.2" data-path="code-2.html"><a href="code-2.html#plotting"><i class="fa fa-check"></i><b>10.2</b> Plotting</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="code-2.html"><a href="code-2.html#bar-plot"><i class="fa fa-check"></i><b>10.2.1</b> Bar Plot</a></li>
-<li class="chapter" data-level="10.2.2" data-path="code-2.html"><a href="code-2.html#raster-plot"><i class="fa fa-check"></i><b>10.2.2</b> Raster-Plot</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html"><i class="fa fa-check"></i><b>11</b> Flow Duration Curves</a><ul>
-<li class="chapter" data-level="11.1" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#example"><i class="fa fa-check"></i><b>11.1</b> Example</a></li>
-<li class="chapter" data-level="11.2" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#code-3"><i class="fa fa-check"></i><b>11.2</b> Code</a><ul>
-<li class="chapter" data-level="11.2.1" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#computing-the-data-for-the-flow-duration-curves"><i class="fa fa-check"></i><b>11.2.1</b> Computing the data for the flow duration curves</a></li>
-<li class="chapter" data-level="11.2.2" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#plotting-the-flow-duration-curves"><i class="fa fa-check"></i><b>11.2.2</b> Plotting the Flow duration curves</a></li>
-</ul></li>
-<li class="chapter" data-level="11.3" data-path="flow-duration-curves.html"><a href="flow-duration-curves.html#references-1"><i class="fa fa-check"></i><b>11.3</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html"><i class="fa fa-check"></i><b>12</b> Plotting Runoff Peaks Plots</a><ul>
-<li class="chapter" data-level="12.1" data-path="plotting-runoff-peaks-plots.html"><a href="plotting-runoff-peaks-plots.html#examples-2"><i class="fa fa-check"></i><b>12.1</b> Examples:</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="code-4.html"><a href="code-4.html"><i class="fa fa-check"></i><b>13</b> Code</a><ul>
-<li class="chapter" data-level="13.1" data-path="code-4.html"><a href="code-4.html#generating-the-plots-for-one-basin."><i class="fa fa-check"></i><b>13.1</b> Generating the Plots for one basin.</a></li>
-<li class="chapter" data-level="13.2" data-path="code-4.html"><a href="code-4.html#function-to-find-peaks"><i class="fa fa-check"></i><b>13.2</b> Function to find peaks</a></li>
-<li class="chapter" data-level="13.3" data-path="code-4.html"><a href="code-4.html#subplot-function"><i class="fa fa-check"></i><b>13.3</b> Subplot Function</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html"><i class="fa fa-check"></i><b>14</b> Exploring Objective Functions</a><ul>
-<li class="chapter" data-level="14.1" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#example-1"><i class="fa fa-check"></i><b>14.1</b> Example</a></li>
-<li class="chapter" data-level="14.2" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#code-5"><i class="fa fa-check"></i><b>14.2</b> Code</a><ul>
-<li class="chapter" data-level="14.2.1" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#explore-teh-data"><i class="fa fa-check"></i><b>14.2.1</b> Explore teh data</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="making-previews.html"><a href="making-previews.html"><i class="fa fa-check"></i><b>15</b> Making Previews</a></li>
-<li class="chapter" data-level="16" data-path="code-6.html"><a href="code-6.html"><i class="fa fa-check"></i><b>16</b> code</a></li>
-<li class="chapter" data-level="17" data-path="defensive-code.html"><a href="defensive-code.html"><i class="fa fa-check"></i><b>17</b> Defensive Code</a><ul>
-<li class="chapter" data-level="17.1" data-path="defensive-code.html"><a href="defensive-code.html#code-7"><i class="fa fa-check"></i><b>17.1</b> Code</a><ul>
-<li class="chapter" data-level="17.1.1" data-path="defensive-code.html"><a href="defensive-code.html#check-if-cos_data-is-clean"><i class="fa fa-check"></i><b>17.1.1</b> Check if <code>cos_data</code> is “clean”</a></li>
-<li class="chapter" data-level="17.1.2" data-path="defensive-code.html"><a href="defensive-code.html#check-date-completeness"><i class="fa fa-check"></i><b>17.1.2</b> Check date completeness</a></li>
-<li class="chapter" data-level="17.1.3" data-path="defensive-code.html"><a href="defensive-code.html#check-if-the-data-is-a-data.frame"><i class="fa fa-check"></i><b>17.1.3</b> Check if the data is a <code>data.frame</code></a></li>
-</ul></li>
-<li class="chapter" data-level="17.2" data-path="defensive-code.html"><a href="defensive-code.html#references-2"><i class="fa fa-check"></i><b>17.2</b> References</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="helpers.html"><a href="helpers.html"><i class="fa fa-check"></i><b>18</b> Helpers</a></li>
-<li class="chapter" data-level="19" data-path="code-8.html"><a href="code-8.html"><i class="fa fa-check"></i><b>19</b> Code</a><ul>
-<li class="chapter" data-level="19.1" data-path="code-8.html"><a href="code-8.html#get_regex_for_cos_data"><i class="fa fa-check"></i><b>19.1</b> <code>get_regex_for_cos_data</code></a></li>
-<li class="chapter" data-level="19.2" data-path="code-8.html"><a href="code-8.html#get_basin_numbers"><i class="fa fa-check"></i><b>19.2</b> <code>get_basin_numbers</code></a></li>
+<li class="chapter" data-level="6" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html"><i class="fa fa-check"></i><b>6</b> Comparisons: Exploring Objective Functions II</a><ul>
+<li class="chapter" data-level="6.1" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html#code-3"><i class="fa fa-check"></i><b>6.1</b> Code</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -202,7 +145,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">visCOS doc</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">visCOS</a>
           </h1>
         </div>
 
@@ -211,154 +154,365 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="objective-functions" class="section level1">
-<h1><span class="header-section-number">5</span> Objective Functions</h1>
-<p>This section defines the code for different objective functions. If possible the calculation is done with the help of the <code>hydroGOF</code> package, if not an R-code solution is tried. Currently 4 main objective functions are provided in <strong>visCOS</strong>. They can be directly extracted from the <code>cos_data</code> data.frame via the <a href="LP-main_of.html"><code>main_of_</code></a> functions. Other objective functions are provided to, but no special extraction and visualisation functions are provided for them.</p>
-<p>For the explanation and definition of the objective function it is assumed that <span class="math inline">\(o\)</span> are the observations (defined by <code>name_o</code> in visCOS) and <span class="math inline">\(s\)</span> are the simulation(defined by <code>name_s</code> in visCOS).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Objective Functions</span>
+<h1><span class="header-section-number">Chapter 4</span> Objective Functions</h1>
+<p>This chapter presents the objective function summary functions in visCOS. They compute basin-wise objective functions of the overall data and for the individual basins.</p>
+<p>As explained in <a href="LP-distance_measures.html">previous section</a> objective functions are a pivotal part of model calibration. If no specific options are chosen visCOS uses 4 objective functions, i.e.: <span class="math inline">\(NSE\)</span>, <span class="math inline">\(KGE\)</span>, Pearson’s Correlation and the Percentage Bias (the function definitions have been given in the chapter about <a href="LP-distance_measures.html">distance metrics</a>).</p>
+<p>The objective functions for the overall data and the marked periods can be computed through the function <code>judge_compute</code>. Additionally, visCOS already provides two different options to create plots for the main objective functions: <code>judge_rasterplot</code> and <code>judge_barplot</code>. Both functions create a list with <code>ggplot</code> figures. Each entry in the list corresponds to one of the main objective functions and both lists can be saved to html embedded pictures with the <a href="LP-serve.html"><code>serve</code> function</a>.</p>
+<p>The <code>judge</code> function provides a wrapper for all other <code>judge_</code> and <code>of_</code> functions. The selection is done via the non-standardly-evaluated <code>type</code> argument (search for lazy-evaluation if you want to know more. This implies, among other things, that</p>
+<p>In the following are some examples:</p>
+<p><strong>Example 1.</strong> Computing the main objective functions</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magrittr)
+<span class="kw">library</span>(coscos)
+<span class="kw">library</span>(visCOS)
+<span class="co">#</span>
+<span class="kw">viscos_example</span>( ) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">judge</span>(.) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">print</span>(.)</code></pre></div>
+<pre><code>## # A tibble: 12 × 3
+##                of    basin_1     basin_2
+## *           &lt;chr&gt;      &lt;dbl&gt;       &lt;dbl&gt;
+## 1             nse  0.5177309   0.8012919
+## 2             kge  0.7246877   0.7489862
+## 3           pbias  0.2506191 -12.5298276
+## 4            corr  0.8177663   0.9107391
+## 5   corr_period.1  0.8243198   0.8806770
+## 6   corr_period.2  0.8577983   0.9385221
+## 7    kge_period.1  0.4138710   0.8487406
+## 8    kge_period.2  0.8419666   0.6820128
+## 9    nse_period.1  0.1326604   0.7566200
+## 10   nse_period.2  0.7096110   0.8168895
+## 11 pbias_period.1  8.8238223  -8.6127526
+## 12 pbias_period.2 -6.8569950 -15.9030884</code></pre>
+<p><strong>Example 2.</strong> Plotting the results of main objective function with bar plots:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">viscos_example</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">judge</span>(.,barplot) <span class="op">%&gt;%</span>
+<span class="st">  </span>.[[<span class="dv">1</span>]] <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">plot</span>(.)</code></pre></div>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><strong>Example 3.</strong> Plotting the results of main objective function with a raster:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">viscos_example</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">judge</span>(.,rasterplot) <span class="op">%&gt;%</span>
+<span class="st">  </span>.[[<span class="dv">2</span>]] <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">plot</span>(.)</code></pre></div>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><strong>Example 4.</strong> Using the <code>judge_</code> functionality:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">viscos_example</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">judge_barplot</span>(.) <span class="op">%&gt;%</span>
+<span class="st">  </span>.[[<span class="dv">1</span>]] <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">plot</span>(.)</code></pre></div>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="code-1" class="section level2">
+<h2><span class="header-section-number">4.1</span> Code</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ---------------------------------------------------------------------------</span>
+<span class="co"># Code for the Main Objective Functions (main_of)</span>
+<span class="co"># authors: Daniel Klotz, Johannes Wesemann, Mathew Herrnegger</span>
+<span class="co"># !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span></code></pre></div>
+<div id="wrapper" class="section level3">
+<h3><span class="header-section-number">4.1.1</span> Wrapper</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Wrapper for the different of functions</span>
 <span class="co">#&#39;</span>
-<span class="co">#&#39; Different objective Functions, provided by visCOS. A detailed description</span>
-<span class="co">#&#39; of each of the provided objective function is provided in the respective</span>
-<span class="co">#&#39; vignette</span>
+<span class="co">#&#39; This function provides a wrapper for all `judge_` functions. The</span>
+<span class="co">#&#39; input arguments `type` is lazyily-evaluated (which basically implies that</span>
+<span class="co">#&#39; it does not have to be provided as a character argument).</span>
+<span class="co">#&#39; which function is chosen (the &quot;pre fix&quot; part of</span>
+<span class="co">#&#39; the selected functions, i.e. `judge_` and `of_`, do not need to be provided).</span>
+<span class="co">#&#39; Th</span>
 <span class="co">#&#39;</span>
-<span class="co">#&#39; @param o The reference data or observations (o_data)</span>
-<span class="co">#&#39; @param s The created data or the simulations (s_data)</span>
-<span class="co">#&#39; @name of_overview</span>
-<span class="ot">NULL</span></code></pre></div>
-<div id="main-objective-functions" class="section level2">
-<h2><span class="header-section-number">5.1</span> Main Objective Functions</h2>
-<p>Currently the main objective functions are the Nash-Sutcliffe Efficiency, the Kling-Gupta Efficiency, the percentage bias and the correlation.</p>
-<div id="nash-sutcliffe-efficiency" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Nash-Sutcliffe Efficiency</h3>
-<p>The Nash-Sutcliffe Criterion <span class="math inline">\(NSE\)</span> is by far the most used efficiency criterion in hydrology. In the hydrological context <span class="math inline">\(o\)</span> usually represents a set of runoff-observation and <span class="math inline">\(s\)</span> a set of simulations. The <span class="math inline">\(NSE\)</span> is defined in the same way as the general definition of the coefficient of determination <span class="math inline">\(R^2\)</span>:</p>
-<p><span class="math display">\[ NSE = \frac{\sum_{t=1}^T \big( o(t)-s(t) \big)^2}
-              {\sum_{t=1}^T \big( o(t)-\bar{o} \big)^2} . \]</span></p>
-<p>The variable <span class="math inline">\(\bar{o}\)</span> represents the average of <span class="math inline">\(o\)</span>. The <span class="math inline">\(NSE\)</span> can be seen as the relational the estimator <span class="math inline">\(s\)</span> and the estimator resulting form the average of the data. It can can have values between minus infinity and 1 with 1 being the perfect fit, 0 when the mean of <span class="math inline">\(s\)</span> is as good as the mean of <span class="math inline">\(o\)</span> and negative values are even worse.</p>
-<p>The code for the <span class="math inline">\(NSE\)</span> computation is:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Nash-Sutcliffe Efficiency</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @import hydroGOF</span>
+<span class="co">#&#39; @import pasta</span>
+<span class="co">#&#39; @import lazyeval</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; @rdname judge</span>
 <span class="co">#&#39; @export</span>
-of_nse &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">as.numeric</span>( <span class="kw">NSE</span>(s,o) )
+judge &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
+                  <span class="dt">type =</span> <span class="st">&quot;compute&quot;</span>,
+                  <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                    <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                    <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                    <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
+                  <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>(),
+                  ...) {
+  <span class="co"># lazy evaluation: ------------------------------------------------------</span>
+  le_dots &lt;-<span class="st">  </span><span class="kw">match.call</span>(<span class="dt">expand.dots =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span>.[<span class="st">&quot;...&quot;</span>] <span class="op">%&gt;%</span>
+<span class="st">    </span>.[[<span class="dv">1</span>]]
+  le_type &lt;-<span class="st"> </span><span class="kw">match.call</span>(<span class="dt">expand.dots =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span>.[<span class="st">&quot;type&quot;</span>] <span class="op">%&gt;%</span>
+<span class="st">    </span>.[[<span class="dv">1</span>]] <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">as.character</span>(.)
+  <span class="cf">if</span> (<span class="kw">length</span>(le_type) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {
+    le_type =<span class="st"> &quot;compute&quot;</span>
+  }
+  <span class="cf">if</span> (<span class="kw">class</span>(le_type) <span class="op">!=</span><span class="st"> &quot;character&quot;</span>) {
+    <span class="kw">stop</span>(<span class="st">&quot;Cannot resolve &#39;type&#39; argument. Try to provide a character.&quot;</span>)
+  }
+  <span class="co"># compute options: ------------------------------------------------------</span>
+  <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;compute&quot;</span>) {
+    <span class="kw">judge_compute</span>(cosdata, of_metrics)
+  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_barplot&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;barplot&quot;</span>) {
+    <span class="kw">judge_barplot</span>(cosdata, of_metrics)
+  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_rasterplot&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;rasterplot&quot;</span>) {
+    <span class="kw">judge_rasterplot</span>(cosdata, of_metrics)
+  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;of_explore&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;explore&quot;</span>) {
+    <span class="kw">judge_explore</span>(cosdata, of_metrics)
+  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;of_compare&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;compare&quot;</span>) {
+    cosdata2 &lt;-<span class="st"> </span><span class="ot">NULL</span>
+    <span class="cf">if</span> (<span class="st">&quot;cos_data2&quot;</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">names</span>(le_dots)) {
+      cos_data2 &lt;-<span class="st"> </span><span class="kw">eval</span>(le_dots<span class="op">$</span>cos_data2)
+    }
+    <span class="kw">judge_compare</span>(<span class="dt">d1 =</span> cosdata,
+               <span class="dt">d2 =</span> cosdata2)
+  } <span class="cf">else</span> {
+    <span class="kw">stop</span>(<span class="st">&quot;There is no option (`type`) called&quot;</span> <span class="op">%&amp;&amp;%</span><span class="st"> </span>le_type)
+  }
 }</code></pre></div>
 </div>
-<div id="kling-gupta-efficiency" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Kling-Gupta Efficiency</h3>
-<p>The Kling-Gupta Efficiency <span class="math inline">\(KGE\)</span> was introduced by Gupta et al. (2009) to alleviate some of the shortcomings of the <span class="math inline">\(NSE\)</span>. In their paper they argue why the <span class="math inline">\(NSE\)</span> tends to overate simulations with small variance (note: in the context of the paper <span class="math inline">\(\textrm{simulations} = s\)</span>) and propose their efficiency criterion instead.</p>
-<p>The <span class="math inline">\(KGE\)</span> is defined as:</p>
-<p><span class="math display">\[ KGE = 1 - ED, \]</span></p>
-<p>with</p>
-<p><span class="math display">\[ ED = \sqrt{\big(corr(o,s)-1 \big)^2 +
-              \big(\alpha(o,s)-1 \big)^2 +
-              \big(\beta(o,s)-1 \big)^2 }. \]</span></p>
-<p>In which <span class="math inline">\(\alpha(o,s) = \frac{\sigma_s}{ \sigma_o }\)</span> is the standard deviation <span class="math inline">\(\sigma\)</span> of <span class="math inline">\(s\)</span> divided by the <span class="math inline">\(\sigma\)</span> of <span class="math inline">\(o\)</span>, <span class="math inline">\(\beta(o,s) = \mu_s / \mu_o\)</span> with<span class="math inline">\(\mu\)</span> being the arithmetic mean and <span class="math inline">\(corr(o,s)\)</span> as the Pearson’s correlation coefficient (see below). The value range and the quality is similar to the <span class="math inline">\(NSE\)</span>.</p>
-<p>The code for the <span class="math inline">\(KGE\)</span> computation is:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Kling-Gupta Efficiency</span>
+<div id="computation" class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Computation</h3>
+<p>The purpose of this function is to extract a the main of objective functions from the <code>COSERO</code> data.frame. The objective functions are extracted for each basin separately and computed for the entire length of the data, as well as for each period separately.</p>
+<p>The computational part of the function works as follows. In step (I) the non-marked periods of <code>cos_data</code> (columns of <code>viscos_options(&quot;name_COSperiod&quot;)</code> which are smaller then 0) are excluded from further calculations. The thereby obtained data.frame is named <code>evaluation_data</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ---------------------------------------------------------------------------</span>
+<span class="co">#&#39; Get basic objective function for cos_data</span>
 <span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @import hydroGOF</span>
-<span class="co">#&#39; @export</span>
-of_kge &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">as.numeric</span>( <span class="kw">KGE</span>(s,o) )
+<span class="co">#&#39; Calculate basic objective functions(NSE, KGE, percentage BIAS, Correlation)</span>
+<span class="co">#&#39; for every basin and the chosen periods.</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @param cos_data cos_data data.frame.</span>
+<span class="co">#&#39; @return list of basic objective function evaluated for the different</span>
+<span class="co">#&#39; hydrological years and over the whole timespan.</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @import pasta</span>
+<span class="co">#&#39; @import tibble</span>
+<span class="co">#&#39; @importFrom purrr map_df</span>
+<span class="co">#&#39; @importFrom dplyr select filter starts_with</span>
+<span class="co">#&#39; @importFrom magrittr set_names</span>
+judge_compute &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
+                          <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                            <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                            <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                            <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
+                       <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()) {
+  <span class="co"># pre: ====================================================================</span>
+  cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cosdata)
+  name_period &lt;-<span class="st"> </span>opts[[<span class="st">&quot;name_COSperiod&quot;</span>]]
+  name_o &lt;-<span class="st"> </span>opts[[<span class="st">&quot;name_o&quot;</span>]]
+  name_s &lt;-<span class="st"> </span>opts[[<span class="st">&quot;name_s&quot;</span>]]
+  <span class="co">#</span>
+  <span class="cf">if</span>( <span class="op">!</span>(<span class="kw">class</span>(of_metrics) <span class="op">==</span><span class="st"> &quot;list&quot;</span>) ) {
+    of_metrics &lt;-<span class="st"> </span><span class="kw">list</span>(of_metrics)
+  }
+  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_metrics))){
+    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_metrics)
+  } <span class="cf">else</span> {
+    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(of_metrics)
+  }
+  <span class="co">#</span>
+  evaluation_data &lt;-<span class="st"> </span>cos_data[cos_data[[name_period]] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, ]
+  number_judge_basins &lt;-<span class="st"> </span>evaluation_data <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">names</span>(.) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">unique</span>(.) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">grepl</span>(name_o, ., <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">sum</span>(.)
+  data_periods &lt;-<span class="st"> </span>evaluation_data <span class="op">%&gt;%</span>
+<span class="st">    </span>.[[name_period]] <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">unique</span>(.)
+  number_judge_periods &lt;-<span class="st"> </span>data_periods <span class="op">%&gt;%</span><span class="st"> </span>length
+
+  <span class="co"># compute main-of for entire data: ========================================</span>
+  d_mean &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">map_df</span>(of_metrics, <span class="cf">function</span>(judge_, x, y) <span class="kw">as.numeric</span>(<span class="kw">judge_</span>(x,y)),
+                 <span class="dt">x =</span> dplyr<span class="op">::</span><span class="kw">select</span>(evaluation_data,dplyr<span class="op">::</span><span class="kw">starts_with</span>(name_o)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unname</span>(.),
+                 <span class="dt">y =</span> dplyr<span class="op">::</span><span class="kw">select</span>(evaluation_data,dplyr<span class="op">::</span><span class="kw">starts_with</span>(name_s)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unname</span>(.) ) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">t</span>(.) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">as_tibble</span>(.) <span class="op">%&gt;%</span>
+<span class="st">    </span>magrittr<span class="op">::</span><span class="kw">set_names</span>(., <span class="st">&quot;basin&quot;</span> <span class="op">%_%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span>number_judge_basins) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">cbind.data.frame</span>(<span class="dt">of =</span> d_names,.)
+  <span class="co"># compute periodwise main-of: =============================================</span>
+  period_compute &lt;-<span class="st"> </span><span class="cf">function</span>(k) {
+    o_pick &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(evaluation_data,period <span class="op">==</span><span class="st"> </span>data_periods[k]) <span class="op">%&gt;%</span>
+<span class="st">      </span>dplyr<span class="op">::</span><span class="kw">select</span>(.,<span class="kw">starts_with</span>(name_o)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">unname</span>(.)
+    s_pick &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(evaluation_data,period <span class="op">==</span><span class="st"> </span>data_periods[k]) <span class="op">%&gt;%</span>
+<span class="st">      </span>dplyr<span class="op">::</span><span class="kw">select</span>(.,<span class="kw">starts_with</span>(name_s)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">unname</span>(.)
+    d_measures &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">map_df</span>(of_metrics, <span class="cf">function</span>(judge_,x,y) <span class="kw">as.numeric</span>(<span class="kw">judge_</span>(x,y)),
+                 <span class="dt">x =</span> o_pick,
+                 <span class="dt">y =</span> s_pick ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()
+    <span class="kw">return</span>(<span class="dt">measure =</span> d_measures)
+  }
+  d_names_periods &lt;-<span class="st"> </span>d_names <span class="op">%_%</span><span class="st"> &quot;period&quot;</span> <span class="op">%.%</span><span class="st"> </span><span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span>number_judge_periods, <span class="dt">each =</span> <span class="kw">length</span>(d_names))
+  d_periods &lt;-<span class="st"> </span><span class="kw">lapply</span>(<span class="dv">1</span><span class="op">:</span>number_judge_periods, period_compute) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">do.call</span>(rbind,.) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">as_tibble</span>(.) <span class="op">%&gt;%</span>
+<span class="st">    </span>magrittr<span class="op">::</span><span class="kw">set_names</span>(<span class="st">&quot;basin&quot;</span> <span class="op">%_%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span>number_judge_basins) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">cbind</span>(<span class="dt">of =</span> d_names_periods,.) <span class="op">%&gt;%</span>
+<span class="st">    </span>.[<span class="kw">order</span>(.<span class="op">$</span>of), ]
+  <span class="co">#</span>
+  judge_all &lt;-<span class="st"> </span><span class="kw">rbind</span>(d_mean,d_periods) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">as_tibble</span>(.)
+  judge_all<span class="op">$</span>of &lt;-<span class="st"> </span><span class="kw">as.character</span>(judge_all<span class="op">$</span>of)
+  <span class="kw">return</span>(judge_all)
 }</code></pre></div>
 </div>
-<div id="percentage-bias" class="section level3">
-<h3><span class="header-section-number">5.1.3</span> Percentage Bias</h3>
-<p>The percentage of bias <span class="math inline">\(p_{bias}\)</span> is defined as the sum of the differences between <span class="math inline">\(o\)</span> and <span class="math inline">\(s\)</span> divided by the sum of <span class="math inline">\(o\)</span>:</p>
-<p><span class="math display">\[ p_{bias} = 100*\frac{\sum_{t=1}^T [ o(t)-s(t) ] }{\sum_{t=1}^T o(t)}. \]</span></p>
-<p>The <span class="math inline">\(100*\)</span> is just a scaling factor applied to express <span class="math inline">\(p_{bias}\)</span> as a percentage.</p>
-<p>The code for the <span class="math inline">\(p_{bias}\)</span> computation is:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Percentage Bias</span>
+<div id="bar-plots" class="section level3">
+<h3><span class="header-section-number">4.1.3</span> Bar Plots</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ---------------------------------------------------------------------------</span>
+<span class="co">#&#39; Bar plot for the Main Objective Function Values</span>
 <span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @import hydroGOF</span>
+<span class="co">#&#39; @rdname judge_overview</span>
+<span class="co">#&#39;</span>
 <span class="co">#&#39; @export</span>
-of_p_bias &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">as.numeric</span>( <span class="kw">pbias</span>(s,o) )
+judge_barplot &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
+                          <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                            <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                            <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                            <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor)) {
+  <span class="co"># pre: ====================================================================</span>
+  cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cosdata)
+  <span class="cf">if</span>(<span class="op">!</span>(<span class="kw">class</span>(of_metrics) <span class="op">==</span><span class="st"> &quot;list&quot;</span>)) {
+    of_metrics &lt;-<span class="st"> </span><span class="kw">list</span>(of_metrics)
+  }
+  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_metrics))){
+    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_metrics)
+  } <span class="cf">else</span> {
+    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(of_metrics)
+  }
+  <span class="co"># functions: ==============================================================</span>
+  assign_ofgroups &lt;-<span class="st"> </span><span class="cf">function</span>(judge_melted,judge_names) {
+    judge_string &lt;-<span class="st"> </span><span class="kw">as.character</span>(judge_melted<span class="op">$</span>of)
+    judge_melted<span class="op">$</span>judge_group &lt;-<span class="st"> </span>judge_string <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">replace</span>(., <span class="kw">startsWith</span>(judge_string,judge_names[<span class="dv">1</span>]), judge_names[<span class="dv">1</span>]) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">replace</span>(., <span class="kw">startsWith</span>(judge_string,judge_names[<span class="dv">2</span>]), judge_names[<span class="dv">2</span>]) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">replace</span>(., <span class="kw">startsWith</span>(judge_string,judge_names[<span class="dv">3</span>]), judge_names[<span class="dv">3</span>]) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">replace</span>(., <span class="kw">startsWith</span>(judge_string,judge_names[<span class="dv">4</span>]), judge_names[<span class="dv">4</span>])
+    <span class="kw">return</span>(judge_melted)
+  }
+  <span class="co"># plot-list function:</span>
+  barplot_fun &lt;-<span class="st"> </span><span class="cf">function</span>(judge_name,judge_melted) {
+    judge_to_plot &lt;-<span class="st"> </span>judge_melted <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>( judge_group <span class="op">==</span><span class="st"> </span>judge_name)
+    <span class="co"># bad solution, but will be fine for now?</span>
+    <span class="cf">if</span> (judge_name <span class="op">==</span><span class="st"> &quot;pbias&quot;</span>) {
+      gglimits &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="kw">viscos_options</span>(<span class="st">&quot;of_limits&quot;</span>)[<span class="dv">2</span>]<span class="op">*</span><span class="dv">100</span>,
+                   <span class="kw">viscos_options</span>(<span class="st">&quot;of_limits&quot;</span>)[<span class="dv">2</span>]<span class="op">*</span><span class="dv">100</span>)
+    } <span class="cf">else</span> {
+      gglimits &lt;-<span class="st"> </span><span class="kw">viscos_options</span>(<span class="st">&quot;of_limits&quot;</span>)
+    }
+    plt_out &lt;-<span class="st"> </span><span class="kw">ggplot</span>(<span class="dt">data =</span> judge_to_plot) <span class="op">+</span>
+<span class="st">      </span><span class="kw">geom_bar</span>(<span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>,
+               <span class="dt">position =</span> <span class="st">&quot;identity&quot;</span>,
+               <span class="kw">aes</span>(<span class="dt">x =</span> of, <span class="dt">y =</span> value, <span class="dt">fill =</span> value)) <span class="op">+</span>
+<span class="st">      </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>variable, <span class="dt">ncol =</span> <span class="dv">1</span>) <span class="op">+</span>
+<span class="st">      </span><span class="kw">ggtitle</span>(judge_name) <span class="op">+</span>
+<span class="st">      </span><span class="kw">ylim</span>(gglimits)
+    <span class="kw">return</span>(plt_out)
+  }
+  <span class="co"># computations: ===========================================================</span>
+  judge_data &lt;-<span class="st"> </span><span class="kw">judge_compute</span>(cos_data,of_metrics)
+  num_basins &lt;-<span class="st"> </span><span class="kw">ncol</span>(judge_data) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+  judge_melted &lt;-<span class="st"> </span><span class="kw">suppressMessages</span>( reshape2<span class="op">::</span><span class="kw">melt</span>(judge_data) ) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">assign_ofgroups</span>(.,d_names)
+  <span class="co"># plotting ================================================================</span>
+  plot_list &lt;-<span class="st"> </span><span class="kw">lapply</span>(d_names, <span class="cf">function</span>(x) <span class="kw">barplot_fun</span>(x,judge_melted)) <span class="op">%&gt;%</span>
+<span class="st">    </span>magrittr<span class="op">::</span><span class="kw">set_names</span>(d_names)
+  <span class="kw">return</span>(plot_list)
 }</code></pre></div>
 </div>
-<div id="pearsons-correlation-coefficient" class="section level3">
-<h3><span class="header-section-number">5.1.4</span> Pearson’s correlation coefficient</h3>
-<p>Pearson’s correlation coefficient, <span class="math inline">\(r\)</span> or <span class="math inline">\(corr(o,s)\)</span>, is a measure of the linear relationship between <span class="math inline">\(o\)</span> and <span class="math inline">\(s\)</span>. It is defined as:</p>
-<p><span class="math display">\[ r \equiv corr(o,s) = \frac{cov(o,s)}{\sigma_s*\sigma_o}, \]</span></p>
-<p>where <span class="math inline">\(cov(...)\)</span> denotes the covariance. The correlation coefficient can take on values between -1 and 1. The former corresponds to an inverse and the latter to a direct relationship and the closer the values is to zero the weaker is the implied correlation.</p>
-<p>The code for the correlation is:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Correlation</span>
+<div id="raster-plots" class="section level3">
+<h3><span class="header-section-number">4.1.4</span> Raster Plots</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Bar plot for the Main Objective Function Values</span>
 <span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @import hydroGOF</span>
+<span class="co">#&#39; @rdname judge_overview</span>
+<span class="co">#&#39; @import pasta</span>
 <span class="co">#&#39; @export</span>
-of_cor &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">diag</span>( <span class="kw">cor</span>(o,s) )
+judge_rasterplot &lt;-<span class="st"> </span><span class="cf">function</span>(cos_data,
+                             <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                               <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                               <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                               <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor)) {
+  <span class="co"># def: ====================================================================</span>
+  <span class="kw">build_tibble</span>(cos_data)
+  <span class="cf">if</span>(<span class="op">!</span>(<span class="kw">class</span>(of_metrics) <span class="op">==</span><span class="st"> &quot;list&quot;</span>)) {
+    of_metrics &lt;-<span class="st"> </span><span class="kw">list</span>(of_metrics)
+  }
+  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_metrics))){
+    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_metrics)
+  } <span class="cf">else</span> {
+    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(of_metrics)
+  }
+  <span class="co"># computations: ===========================================================</span>
+  regex_main_of &lt;-<span class="st"> </span>d_names <span class="op">%.%</span><span class="st"> &quot;*&quot;</span>
+  judge_data &lt;-<span class="st"> </span><span class="kw">judge_compute</span>(cos_data, of_metrics)
+  <span class="co">#</span>
+  plot_list &lt;-<span class="st"> </span><span class="kw">lapply</span>(regex_main_of,<span class="cf">function</span>(x) <span class="kw">plot_fun_raster</span>(x,judge_data)) <span class="op">%&gt;%</span>
+<span class="st">    </span>magrittr<span class="op">::</span><span class="kw">set_names</span>(d_names)
+  <span class="kw">return</span>(plot_list)
+}
+
+<span class="co"># plot function -------------------------------------------------------------</span>
+plot_fun_raster &lt;-<span class="st"> </span><span class="cf">function</span>(regex_single_of,judge_data) {
+  <span class="co"># function definitions ====================================================</span>
+  extract_single_of &lt;-<span class="st"> </span><span class="cf">function</span>(judge_data){
+    idx &lt;-<span class="st"> </span><span class="kw">grep</span>(regex_single_of,judge_data<span class="op">$</span>of)
+    <span class="kw">return</span>(judge_data[idx, ])
+  }
+  add_facet_info &lt;-<span class="st"> </span><span class="cf">function</span>(judge_data) {
+    facet_column &lt;-<span class="st"> </span><span class="kw">nrow</span>(judge_data) <span class="op">%&gt;%</span>
+<span class="st">      </span>magrittr<span class="op">::</span><span class="kw">subtract</span>(<span class="dv">1</span>) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">rep</span>(<span class="st">&quot;period&quot;</span>,.) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">c</span>(<span class="st">&quot;overall&quot;</span>,.)
+    <span class="kw">return</span>( <span class="kw">cbind</span>(judge_data,<span class="dt">facets =</span> facet_column) )
+  }
+  reverse_basin_levels &lt;-<span class="st"> </span><span class="cf">function</span>(prepared_data) {
+    prepared_data<span class="op">$</span>variable &lt;-<span class="st"> </span><span class="kw">factor</span>(prepared_data<span class="op">$</span>variable,
+                                 <span class="dt">levels =</span> prepared_data<span class="op">$</span>variable <span class="op">%&gt;%</span>
+<span class="st">                                   </span><span class="kw">levels</span>() <span class="op">%&gt;%</span>
+<span class="st">                                   </span><span class="kw">rev</span>()
+                                 )
+    <span class="kw">return</span>(prepared_data)
+  }
+  reverse_facetting_levels &lt;-<span class="st"> </span><span class="cf">function</span>(prepared_data) {
+    prepared_data<span class="op">$</span>facets &lt;-<span class="st"> </span><span class="kw">factor</span>(prepared_data<span class="op">$</span>facets,
+                               <span class="dt">levels =</span> prepared_data<span class="op">$</span>facets <span class="op">%&gt;%</span>
+<span class="st">                                 </span><span class="kw">levels</span>() <span class="op">%&gt;%</span>
+<span class="st">                                 </span><span class="kw">rev</span>()
+                               )
+    <span class="kw">return</span>(prepared_data)
+  }
+  bind_and_round_value &lt;-<span class="st"> </span><span class="cf">function</span>(of,gglimits,digits) {
+    dplyr<span class="op">::</span><span class="kw">mutate</span>(of,
+                  <span class="dt">value =</span> <span class="kw">pmax</span>(value,gglimits[<span class="dv">1</span>]) <span class="op">%&gt;%</span>
+<span class="st">                    </span><span class="kw">pmin</span>(.,gglimits[<span class="dv">2</span>]) <span class="op">%&gt;%</span>
+<span class="st">                    </span><span class="kw">round</span>(.,digits)
+                  )
+  }
+  <span class="co"># computation =============================================================</span>
+  <span class="cf">if</span> (regex_single_of <span class="op">==</span><span class="st"> &quot;p_bias.*&quot;</span>) {
+    <span class="co"># pbias has different limits :(</span>
+    gglimits &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="kw">viscos_options</span>(<span class="st">&quot;of_limits&quot;</span>)[<span class="dv">2</span>]<span class="op">*</span><span class="dv">100</span>,
+                  <span class="kw">viscos_options</span>(<span class="st">&quot;of_limits&quot;</span>)[<span class="dv">2</span>]<span class="op">*</span><span class="dv">100</span>)
+  } <span class="cf">else</span> {
+    gglimits &lt;-<span class="st"> </span><span class="kw">viscos_options</span>(<span class="st">&quot;of_limits&quot;</span>)
+  }
+  <span class="co">#</span>
+  prepared_data &lt;-<span class="st"> </span>judge_data <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">extract_single_of</span>() <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">add_facet_info</span>() <span class="op">%&gt;%</span>
+<span class="st">    </span>reshape2<span class="op">::</span><span class="kw">melt</span>(., <span class="dt">id.vars =</span> <span class="kw">c</span>(<span class="st">&quot;of&quot;</span>,<span class="st">&quot;facets&quot;</span>)) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">reverse_basin_levels</span>() <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">reverse_facetting_levels</span>() <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">bind_and_round_value</span>(.,gglimits,<span class="dv">2</span>)
+  <span class="co"># ggplot ==================================================================</span>
+  plt_out &lt;-<span class="st"> </span><span class="kw">ggplot</span>(prepared_data,
+                    <span class="kw">aes</span>(of,variable, <span class="dt">fill =</span> value),
+                    <span class="dt">environmnet =</span> <span class="kw">environment</span>()) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_raster</span>(<span class="dt">position =</span> <span class="st">&quot;identity&quot;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">coord_fixed</span>(<span class="dt">ratio =</span> <span class="dv">5</span>)  <span class="op">+</span>
+<span class="st">    </span><span class="kw">facet_grid</span>(<span class="op">~</span><span class="st"> </span>facets,  <span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>, <span class="dt">space =</span> <span class="st">&quot;free&quot;</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme</span>( <span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>)  <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_tile</span>(<span class="dt">color =</span> <span class="st">&quot;white&quot;</span>, <span class="dt">size =</span> <span class="fl">0.25</span> ) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(of,variable, <span class="dt">label =</span> <span class="kw">as.character</span>(<span class="kw">sprintf</span>(<span class="st">&quot;%0.2f&quot;</span>,value,<span class="dv">2</span>))),
+              <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>)
+  <span class="kw">return</span>(plt_out)
 }</code></pre></div>
-</div>
-</div>
-<div id="ohter-objective-functions" class="section level2">
-<h2><span class="header-section-number">5.2</span> Ohter Objective Functions</h2>
-<p>Descriptions shall follow</p>
-<div id="root-mean-sqaured-error" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> Root Mean Sqaured Error</h3>
-<p><span class="math display">\[ \frac{\sum_{t=1}^T \big( o(t)-s(t) \big)^2}
-              {T} \]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Root Mean Sqaured Error</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @import hydroGOF</span>
-<span class="co">#&#39; @export</span>
-of_rmse &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">as.numeric</span>( <span class="kw">rmse</span>(s,o) )
-}</code></pre></div>
-</div>
-<div id="inverted-nash-sutcliffe-efficiency" class="section level3">
-<h3><span class="header-section-number">5.2.2</span> Inverted Nash-Sutcliffe Efficiency</h3>
-<p><span class="math display">\[ nse^{-1} = \frac{\sum_{t=1}^T \big( s(t)-o(t) \big)^2}
-              {\sum_{t=1}^T \big( s(t)-\bar{s} \big)^2} \]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Inverted Nash-Sutcliffe Efficiency</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @import hydroGOF</span>
-<span class="co">#&#39; @export</span>
-of_invert_nse &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">as.numeric</span>( <span class="kw">NSE</span>(o,s) )
-}</code></pre></div>
-</div>
-<div id="ratio-of-the-standard-deviations" class="section level3">
-<h3><span class="header-section-number">5.2.3</span> Ratio of the Standard Deviations</h3>
-<p><span class="math display">\[ rsd = \frac{\sigma_s}{ \sigma_o } \]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Ratio of Standard Deviations</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @import hydroGOF</span>
-<span class="co">#&#39; @export</span>
-of_rsd &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">as.numeric</span>( <span class="kw">rSD</span>(s,o) )
-}</code></pre></div>
-</div>
-<div id="ratio-of-the-means" class="section level3">
-<h3><span class="header-section-number">5.2.4</span> Ratio of the Means</h3>
-<p><span class="math display">\[ rmeans = \mu_s / \mu_o\]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Ratio of Means</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @export</span>
-of_rmeans &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">as.numeric</span>( <span class="kw">mean</span>(s)/<span class="kw">mean</span>(o) )
-}</code></pre></div>
-</div>
-<div id="volumetric-efficiency" class="section level3">
-<h3><span class="header-section-number">5.2.5</span> Volumetric Efficiency</h3>
-<p>The volumetric efficiency, <span class="math inline">\(VE\)</span>, uses the absolute distance between observation and simulation instead of the quadratic and is bound between 0 to 1.</p>
-<p><span class="math display">\[ VE = 1- \frac{\sum_{t=1}^T abs\big( s(t)-o(t) \big)}
-                {\sum_{t=1}^T o(t) } \]</span></p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Volumetric Efficiency</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @rdname of_overview</span>
-<span class="co">#&#39; @import hydroGOF</span>
-<span class="co">#&#39; @export</span>
-of_ve &lt;-<span class="st"> </span>function(o,s) {
-  <span class="kw">as.numeric</span>( <span class="kw">VE</span>(s,o) )
-}</code></pre></div>
+
 </div>
 </div>
 </div>
@@ -367,9 +521,10 @@ of_ve &lt;-<span class="st"> </span>function(o,s) {
           </div>
         </div>
       </div>
-<a href="ojective-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="runoff-peaks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exploring-objective-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -378,9 +533,10 @@ of_ve &lt;-<span class="st"> </span>function(o,s) {
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
+"github": false,
 "facebook": true,
 "twitter": true,
 "google": false,
@@ -398,7 +554,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["visCOS.pdf"],
 "toc": {
 "collapse": "subsection"
 }
@@ -411,7 +567,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);
