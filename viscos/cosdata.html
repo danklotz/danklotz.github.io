@@ -32,7 +32,11 @@
   
   
 <link rel="prev" href="index.html">
+<<<<<<< HEAD
 <link rel="next" href="runoff-peaks.html">
+=======
+<link rel="next" href="aggregate-according-to-time.html">
+>>>>>>> origin/master
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -109,6 +113,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>2</b> cosdata</a><ul>
 <li class="chapter" data-level="2.1" data-path="cosdata.html"><a href="cosdata.html#examples-plots-from-cosdata"><i class="fa fa-check"></i><b>2.1</b> Examples plots from cosdata</a></li>
 </ul></li>
+<<<<<<< HEAD
 <li class="chapter" data-level="3" data-path="runoff-peaks.html"><a href="runoff-peaks.html"><i class="fa fa-check"></i><b>3</b> Runoff Peaks</a><ul>
 <li class="chapter" data-level="3.1" data-path="runoff-peaks.html"><a href="runoff-peaks.html#examples"><i class="fa fa-check"></i><b>3.1</b> Examples:</a></li>
 <li class="chapter" data-level="3.2" data-path="runoff-peaks.html"><a href="runoff-peaks.html#code"><i class="fa fa-check"></i><b>3.2</b> Code</a><ul>
@@ -132,6 +137,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="6" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html"><i class="fa fa-check"></i><b>6</b> Comparisons: Exploring Objective Functions II</a><ul>
 <li class="chapter" data-level="6.1" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html#code-3"><i class="fa fa-check"></i><b>6.1</b> Code</a></li>
+=======
+<li class="chapter" data-level="3" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html"><i class="fa fa-check"></i><b>3</b> Aggregate according to time</a><ul>
+<li class="chapter" data-level="3.1" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html#code-aggregate_time"><i class="fa fa-check"></i><b>3.1</b> Code: <code>aggregate_time</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="distance-metrics.html"><a href="distance-metrics.html"><i class="fa fa-check"></i><b>4</b> Distance Metrics</a><ul>
+<li class="chapter" data-level="4.1" data-path="distance-metrics.html"><a href="distance-metrics.html#code"><i class="fa fa-check"></i><b>4.1</b> Code</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="distance-metrics.html"><a href="distance-metrics.html#the-main-objective-functions"><i class="fa fa-check"></i><b>4.1.1</b> The “Main” Objective Functions</a></li>
+<li class="chapter" data-level="4.1.2" data-path="distance-metrics.html"><a href="distance-metrics.html#mean-squared-error"><i class="fa fa-check"></i><b>4.1.2</b> Mean Squared Error</a></li>
+<li class="chapter" data-level="4.1.3" data-path="distance-metrics.html"><a href="distance-metrics.html#distance-function-fortran-wrapper"><i class="fa fa-check"></i><b>4.1.3</b> Distance Function Fortran Wrapper</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="distance-metrics.html"><a href="distance-metrics.html#references"><i class="fa fa-check"></i><b>4.2</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html"><i class="fa fa-check"></i><b>5</b> Objective Function Summaries</a><ul>
+<li class="chapter" data-level="5.1" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#code-1"><i class="fa fa-check"></i><b>5.1</b> Code</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#wrapper"><i class="fa fa-check"></i><b>5.1.1</b> Wrapper</a></li>
+<li class="chapter" data-level="5.1.2" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#computation"><i class="fa fa-check"></i><b>5.1.2</b> Computation</a></li>
+<li class="chapter" data-level="5.1.3" data-path="objective-function-summaries.html"><a href="objective-function-summaries.html#plotting"><i class="fa fa-check"></i><b>5.1.3</b> Plotting</a></li>
+</ul></li>
+>>>>>>> origin/master
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -212,7 +236,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  raw_data_example <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">cook_cosdata</span>(.) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">head</span>(.)</code></pre></div>
+<<<<<<< HEAD
 <pre><code>## # A tibble: 6 × 11
+=======
+<pre><code>## # A tibble: 6 x 11
+>>>>>>> origin/master
 ##    yyyy    mm    dd    hh   min QOBS_0001 QSIM_0001 QOBS_0002 QSIM_0002
 ##   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
 ## 1  2007     1     1     0     0      2.98      3.48      2.56      3.11
@@ -250,7 +278,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<<<<<<< HEAD
 <a href="runoff-peaks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+=======
+<a href="aggregate-according-to-time.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+>>>>>>> origin/master
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>visCOS</title>
   <meta name="description" content="visCOS">
-  <meta name="generator" content="bookdown 0.3.18 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5.4 and GitBook 2.6.7">
 
   <meta property="og:title" content="visCOS" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="index.html">
-<link rel="next" href="read-in-data.html">
+<link rel="next" href="cosdata.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -102,17 +102,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./index.html">visCOS</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Hello Traveler</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#raw-data"><i class="fa fa-check"></i><b>1.1</b> Raw Data</a></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#cooked-data"><i class="fa fa-check"></i><b>1.2</b> Cooked Data</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> The Guide</a></li>
+<li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#viscos-and-other-r-package"><i class="fa fa-check"></i><b>2.1</b> visCOS and other R-package</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="read-in-data.html"><a href="read-in-data.html"><i class="fa fa-check"></i><b>2</b> Read in Data</a></li>
-<li class="chapter" data-level="3" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html"><i class="fa fa-check"></i><b>3</b> Aggregate according to time</a><ul>
-<li class="chapter" data-level="3.1" data-path="aggregate-according-to-time.html"><a href="aggregate-according-to-time.html#code-aggregate_time"><i class="fa fa-check"></i><b>3.1</b> Code: <code>aggregate_time</code></a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="other-helpful-functions.html"><a href="other-helpful-functions.html"><i class="fa fa-check"></i><b>4</b> Other helpful functions</a></li>
-<li class="chapter" data-level="5" data-path="proposal-for-the-libraries-function.html"><a href="proposal-for-the-libraries-function.html"><i class="fa fa-check"></i><b>5</b> Proposal for the libraries function</a></li>
+<li class="chapter" data-level="3" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>3</b> cosdata</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -134,18 +128,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="introduction" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Within <strong>visCOS</strong> “cooking data” is is used as a synonym for the process of transforming <em>raw data</em> into <em>cooked data</em>. This process and definitions are, of course, metaphors. We shall explain them in the following.</p>
-<div id="raw-data" class="section level2">
-<h2><span class="header-section-number">1.1</span> Raw Data</h2>
-<p>Raw-data is data which is not yet in the right format for its use. Raw-data takes on many forms. The ones of interest for <strong>visCOS</strong> are series of observations, <span class="math inline">\(o\)</span>, and model simulations, <span class="math inline">\(s\)</span>. in the scientific context, raw data is usually served in some simple file format, e.g. <em>.txt</em> or <em>.csv</em>. In other context more complex formats can be found, but we shall not delve into that now. <code>R</code> includes method to read simple formats, e.g. with the different <code>read.table</code> functions (simply enter <code>?read.table</code> in your <code>R</code> terminal to get an overview). However, for larger (unstructured) files we recommend the read functionality of the <code>data.table</code> package. In our tests it was fastest and most flexible choice. Lastly, we recommend <code>readr</code> package for well structured and large data that has to be read.</p>
-</div>
-<div id="cooked-data" class="section level2">
-<h2><span class="header-section-number">1.2</span> Cooked Data</h2>
-<p>Cooked data is data that is formatted in a way, that can be used be used by applications. A nice example (or dish if you want to) for cooked data is<br />
-<a href="ftp://cran.r-project.org/pub/R/web/packages/tidyr/vignettes/tidy-data.html">tidy-data</a>. Another one might be the storage of data in matrices and vectors. Within the <strong>visCOS</strong> package, cooked data, is data which is in the <em>cos_data</em> format. This format is a slightly redundant but flexible representation of hydrological time-series that is derived from the way COSERO produces outputs. All data in <em>cos_data</em> format can be used for further exploratory analysis with the package.</p>
-<p>…</p>
-<p>Currently <strong>visCOS</strong> only allows to compare between <em>numbered catchments</em>! The data <strong>must</strong> include an integer number at the end of its name, e.g. <code>QObs_001</code> and <code>QSim_001</code>).</p>
+<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
+<p>This guide defines the code for the R-package visCOS and provides instructions, examples and tips for using it.</p>
+<p>The goal of visCOS is to provide a possibility to streamline the R based visual-analysis for the hydrological model COSERO. COSERO is a HBV-like distributed rainfall-runoff model, developed at the institute for water management, hydrology and hydraulic engineering at BOKU, Vienna. The name is an abbreviation for “Conceptual Semi-Distributed Rainfall Runoff Model”.</p>
+<p>visCOS is embedded into a broader effort that aims to establish practical and easy-to-use workflows between R and COSERO. The overall concept of that project is shown in <strong>Figure xyz</strong>. The R-package <code>coscos</code> provides the backbone of the projects. It provides the basic interface between COSERO and R, generic helper functions and primitives, and defines the options for all subsequent package. Currently, visCOS is the only package that builds on it, but hopefully<br />
+soon we will have more packages, ideas and scripts that are able to use it. s</p>
+<p><strong>Figure xyz</strong></p>
+<div id="viscos-and-other-r-package" class="section level2">
+<h2><span class="header-section-number">2.1</span> visCOS and other R-package</h2>
+<p>There exist many R-packages dedicated to hydrology.</p>
+<p>Among then, several have provide help to the calibration of (conceptual) rainfall-runoff models. As their name suggests, these models relate the a rainfall input to a generated runoff for some given basins They have found a wide array of applications in hydrology. Form the analysis of catchment properties to climate impact studies, so to speak. From the point o view of the R package ecosystem there are to packages, which are of particular interest with regard to <strong>visCOS</strong>: The <a href="https://CRAN.R-project.org/package=hydroGOF"><code>hydroGOF</code></a> package and the <a href="https://CRAN.R-project.org/package=hydroTSM"><code>hydroTSM</code></a> package. The former provides the most commonly used (and discussed) objective functions. The latter, helps with the analysis, interpolation and the plotting of hydrological time series.</p>
+<p>As an R-package that aim of <strong>visCOS</strong> is to provide visual aids for the parameter estimation process of multiple (related) basins or catchments.</p>
+<p>Thus, topic wise, visCOS can be positioned somewhere in-between the two previously mentioned packages. visCOS is usable for conceptual rainfall runoff models in general, but almost all of its functionality has been derived from different applications of the COSERO model.</p>
 
 </div>
 </div>
@@ -155,7 +149,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="read-in-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cosdata.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -166,7 +160,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -200,7 +194,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

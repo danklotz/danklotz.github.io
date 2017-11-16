@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 200 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,44.3956,-9.59858)">
+        <path d="M33.935,24.15L33.935,35.538" style="fill:none;stroke:rgb(166,166,166);stroke-width:2.08px;"/>
+    </g>
+    <g transform="matrix(0.797378,0,0,0.797378,29.3119,6.8075)">
+        <circle cx="110.289" cy="26.113" r="10.928" style="fill:rgb(166,166,166);stroke:rgb(166,166,166);stroke-width:2.87px;stroke-linecap:round;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,21.0014,12.5953)">
+        <text x="142.631px" y="25.543px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:41.667px;">z</text>
+    </g>
+    <g transform="matrix(1,0,0,1,0,3)">
+        <path d="M33.935,26.15L33.935,37.538" style="fill:none;stroke:rgb(166,166,166);stroke-width:2.08px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,0,2)">
+        <path d="M34.063,32.851L88.32,32.851L94.949,27.221L108.379,27.221" style="fill:none;stroke:rgb(166,166,166);stroke-width:2.08px;stroke-linejoin:miter;"/>
+    </g>
+    <g transform="matrix(1,0,0,-1,0,53.0724)">
+        <path d="M78.361,32.851L88.32,32.851L94.949,27.221L108.379,27.221" style="fill:none;stroke:rgb(166,166,166);stroke-width:2.08px;stroke-linejoin:miter;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-30.6081,15.4276)">
+        <text x="38.471px" y="22.71px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:41.667px;">x  y</text>
+    </g>
+    <g transform="matrix(1,0,0,1,0,-3)">
+        <path d="M126.195,30.706L158.424,30.706" style="fill:none;stroke:rgb(166,166,166);stroke-width:2.29px;stroke-linejoin:miter;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-9.20229,10.035)">
+        <text x="109.898px" y="6.094px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:20.833px;">test</text>
+    </g>
+    <g transform="matrix(1,0,0,1,0,-3)">
+        <path d="M158.181,18.029L158.181,43.17" style="fill:none;stroke:rgb(166,166,166);stroke-width:2.29px;stroke-linejoin:miter;"/>
+    </g>
+</svg>
