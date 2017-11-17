@@ -22,25 +22,26 @@ An about page will also follow soon. Don't worry (yet).
 
 ---
 
-![](figures/projects_banner.jpg)
+![](figures/projects_banner.svg)
 
+[ ![](figures/allokkio.jpg) ](allokkio/)
 
-## Open Learning 2017
+A small blog where I collect notes on concepts, approximations, guessing, etc.
 
-```{marginfigure}
-Season 2 of a project, which was (and is) inspired by [Una Kravets](https://github.com/una/personal-goals). The idea is to share most 
+---
+
+[ ![](figures/open_learning.svg) ](open_learning_2017.html)
+
+Season 2 of a project that was (and is) inspired by [Una Kravets](https://github.com/una/personal-goals). The idea is to share most 
 of my learning efforts openly. For fun and glory!
-```
 
-[ ![](figures/open_learning.jpg) ](open_learning_2017.html)
+---
 
-## R and COSERO
-```{marginfigure}
+[ ![](figures/viscos.svg) ](viscos/index.html)
+
 'rrrcos' and 'viscos' are my take for providing a unified way to guide the 
-calibration of the rainfall-runoff model COSERO from 'R'  
-```
+calibration of the rainfall-runoff model COSERO from 'R' 
 
-[ ![](figures/viscos.jpg) ](viscos/index.html)
 
 
 
