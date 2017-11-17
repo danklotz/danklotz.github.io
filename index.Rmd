@@ -6,7 +6,8 @@ output:
 create_dir: true
 ---
 
-![](figures/banner.jpg)
+![](figures/banner.svg)
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -20,8 +21,6 @@ In the mean-time feel free to contact me over at
 
 An about page will also follow soon. Don't worry (yet).
 
----
-
 ![](figures/projects_banner.svg)
 
 [ ![](figures/allokkio.jpg) ](allokkio/)
@@ -33,7 +32,7 @@ A small blog where I collect notes on concepts, approximations, guessing, etc.
 [ ![](figures/open_learning.svg) ](open_learning_2017.html)
 
 Season 2 of a project that was (and is) inspired by [Una Kravets](https://github.com/una/personal-goals). The idea is to share most 
-of my learning efforts openly. For fun and glory!
+of my learning efforts openly. For fun and glory ;)
 
 ---
 
@@ -41,7 +40,4 @@ of my learning efforts openly. For fun and glory!
 
 'rrrcos' and 'viscos' are my take for providing a unified way to guide the 
 calibration of the rainfall-runoff model COSERO from 'R' 
-
-
-
 
