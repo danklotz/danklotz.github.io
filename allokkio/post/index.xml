@@ -6,8 +6,50 @@
     <description>Recent content in Posts on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Nov 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rainy Meanderings</title>
+      <link>/2017/11/17/rainy-meanderings/</link>
+      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/17/rainy-meanderings/</guid>
+      <description>&lt;p&gt;Here I will collect notes and references about the conceptualization in hydrology.&lt;/p&gt;
+&lt;p&gt;Klemes (Conceptualization and scale in hydrology, 1986; &lt;a href=&#34;https://doi.org/10.1016/0022-1694(83)90208-1&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/0022-1694(83)90208-1&lt;/a&gt;) provides the basics. The abstract reads:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is argued that the levels of scale at which a meaningful conceptualization of physical processes is possible are not arbitrary and their range is not continuous. Formulations appropriate at a given level usually are not applicable at the immediately adjoining levels. This is seen as one of the important reasons for the slow progress of hydrological science on basin scale since it is dominated by different effects than those observed at the immediately lower level of channel reaches and hillslopes which represent the focus of current hydrological research. The search for an appropriate level of conceptualization can proceed either upward or downward along the hierarchy of scales. Both possibilities are discussed and an example of the downward route is given.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div id=&#34;linear-and-non-linear-reservoirs&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Linear and Non-Linear Reservoirs&lt;/h2&gt;
+&lt;p&gt;Ostrowski provides the best derivation and description of linear and piece-wise linear reservoirs I am currently aware.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;handling-imperfection&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Handling Imperfection&lt;/h2&gt;
+&lt;p&gt;Most conceptual rainfall-runoff models are biased estimators with relatively low variance. They are innately wrong, but are able to closely shadow the real system.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Again, a paper of Klemes is a good starting point. It seems that the paper &lt;em&gt;Operational testing of hydrological simulation models&lt;/em&gt; (Klemes, 1986; &lt;a href=&#34;http://dx.doi.org/10.1080/02626668609491024&#34; class=&#34;uri&#34;&gt;http://dx.doi.org/10.1080/02626668609491024&lt;/a&gt;) introduced the calibration-validation concept to the hydrological community. Here is the abstract &lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This paper describes a hierarchical scheme for the systematic testing of hydrological simulation models, a scheme that would lend to a model a minimum level of credibility commensurate with the difficulty of the modelling task. The scheme would be easy to implement operationally and its adoption would provide a convenient common basic standard applicable to models irrespective of their structure. The concept was motivated by problems encountered in connection with assessing the feasibility of using hydrological simulation models for the simulation of streamflow under changed climatic conditions. The problems arose while the author was working under the auspices of the World Meteorological Organization on a related project for the World Climate Programme - Water (Klemes, 1985b).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The underlying idea is by no means new and original since it is just commonsense tailored to specific hydrological situations. Essentially equivalent testing schemes are used in other sciences as a matter of standard routine. An outline of this testing scheme was originally presented in Klemes (1982a). Some elements of the concept appear in Lawson &amp;amp; Schiau (1977) and examples of application of the split-sample test, which represents the basic level of the scheme, can be found in WMO (1975, 1986).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;p&gt;Cross Validation will (most likely) not work on (highly) auto-correlated error-time-series. See the paper &lt;em&gt;A note on the validity of cross-validation for evaluating autoregressive time series prediction&lt;/em&gt; (&lt;a href=&#34;https://robjhyndman.com/publications/cv-time-series/&#34;&gt;Christoph Bergmeir, Rob J Hyndman and Bonsoo Koo, 2017; to appear)&lt;/a&gt;). The abstract reads:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One of the most widely used standard procedures for model evaluation in classification and regression is &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt;-fold cross-validation (CV). However, when it comes to time series forecasting, because of the inherent serial correlation and potential non-stationarity of the data, its application is not straightforward and often omitted by practitioners in favour of an out-of-sample (OOS) evaluation. In this paper, we show that in the case of a purely autoregressive model, the use of standard &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt;-fold CV is possible as long as the models considered have uncorrelated errors. Such a setup occurs, for example, when the models nest a more appropriate model. This is very common when Machine Learning methods are used for prediction, where CV in particular is suitable to control for overfitting the data. We present theoretical insights supporting our arguments. Furthermore, we present a simulation study and a real-world example where we show empirically that &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt;-fold CV performs favourably compared to both OOS evaluation and other time-series-specific techniques such as non-dependent cross-validation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+&lt;hr /&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;I love the honesty of the abstract. It does not try to sell the thoughts as new or groundbreaking. I wonder if such a presentation is still possible today.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Visualizing Uncertainty</title>

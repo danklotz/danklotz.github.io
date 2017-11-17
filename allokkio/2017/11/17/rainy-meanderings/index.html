@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+<title>allokkio - Rainy Meanderings</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="allokkio">
+<meta name="generator" content="Hugo 0.18.1" />
+
+  
+
+
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../../../css/tuftesque.css">
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+
+<body>
+<div id="layout" class="pure-g">
+<article class="pure-u-1">
+<header class="brand">
+  <h1>
+    <a href="../../../../">
+      <span id = "blog_logo">
+        
+          <img src= "/allokkio/images/logo.jpg" alt="home" style="height: 40px; width:40px">
+           
+          
+        
+      </span>
+      
+    </a>
+  </h1>
+</header>
+
+<section>
+  <h2 class="content-title">
+  
+  <a href="../../../../2017/11/17/rainy-meanderings/">Rainy Meanderings</a>
+  
+  </h2>
+  
+  
+  
+  
+
+  
+</section>
+
+
+<section><p>Here I will collect notes and references about the conceptualization in hydrology.</p>
+<p>Klemes (Conceptualization and scale in hydrology, 1986; <a href="https://doi.org/10.1016/0022-1694(83)90208-1" class="uri">https://doi.org/10.1016/0022-1694(83)90208-1</a>) provides the basics. The abstract reads:</p>
+<blockquote>
+<p>It is argued that the levels of scale at which a meaningful conceptualization of physical processes is possible are not arbitrary and their range is not continuous. Formulations appropriate at a given level usually are not applicable at the immediately adjoining levels. This is seen as one of the important reasons for the slow progress of hydrological science on basin scale since it is dominated by different effects than those observed at the immediately lower level of channel reaches and hillslopes which represent the focus of current hydrological research. The search for an appropriate level of conceptualization can proceed either upward or downward along the hierarchy of scales. Both possibilities are discussed and an example of the downward route is given.</p>
+</blockquote>
+<div id="linear-and-non-linear-reservoirs" class="section level2">
+<h2>Linear and Non-Linear Reservoirs</h2>
+<p>Ostrowski provides the best derivation and description of linear and piece-wise linear reservoirs I am currently aware.</p>
+</div>
+<div id="handling-imperfection" class="section level2">
+<h2>Handling Imperfection</h2>
+<p>Most conceptual rainfall-runoff models are biased estimators with relatively low variance. They are innately wrong, but are able to closely shadow the real system.</p>
+<hr />
+<p>Again, a paper of Klemes is a good starting point. It seems that the paper <em>Operational testing of hydrological simulation models</em> (Klemes, 1986; <a href="http://dx.doi.org/10.1080/02626668609491024" class="uri">http://dx.doi.org/10.1080/02626668609491024</a>) introduced the calibration-validation concept to the hydrological community. Here is the abstract <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>:</p>
+<blockquote>
+<p>This paper describes a hierarchical scheme for the systematic testing of hydrological simulation models, a scheme that would lend to a model a minimum level of credibility commensurate with the difficulty of the modelling task. The scheme would be easy to implement operationally and its adoption would provide a convenient common basic standard applicable to models irrespective of their structure. The concept was motivated by problems encountered in connection with assessing the feasibility of using hydrological simulation models for the simulation of streamflow under changed climatic conditions. The problems arose while the author was working under the auspices of the World Meteorological Organization on a related project for the World Climate Programme - Water (Klemes, 1985b).</p>
+</blockquote>
+<blockquote>
+<p>The underlying idea is by no means new and original since it is just commonsense tailored to specific hydrological situations. Essentially equivalent testing schemes are used in other sciences as a matter of standard routine. An outline of this testing scheme was originally presented in Klemes (1982a). Some elements of the concept appear in Lawson &amp; Schiau (1977) and examples of application of the split-sample test, which represents the basic level of the scheme, can be found in WMO (1975, 1986).</p>
+</blockquote>
+<hr />
+<p>Cross Validation will (most likely) not work on (highly) auto-correlated error-time-series. See the paper <em>A note on the validity of cross-validation for evaluating autoregressive time series prediction</em> (<a href="https://robjhyndman.com/publications/cv-time-series/">Christoph Bergmeir, Rob J Hyndman and Bonsoo Koo, 2017; to appear)</a>). The abstract reads:</p>
+<blockquote>
+<p>One of the most widely used standard procedures for model evaluation in classification and regression is <span class="math inline">\(K\)</span>-fold cross-validation (CV). However, when it comes to time series forecasting, because of the inherent serial correlation and potential non-stationarity of the data, its application is not straightforward and often omitted by practitioners in favour of an out-of-sample (OOS) evaluation. In this paper, we show that in the case of a purely autoregressive model, the use of standard <span class="math inline">\(K\)</span>-fold CV is possible as long as the models considered have uncorrelated errors. Such a setup occurs, for example, when the models nest a more appropriate model. This is very common when Machine Learning methods are used for prediction, where CV in particular is suitable to control for overfitting the data. We present theoretical insights supporting our arguments. Furthermore, we present a simulation study and a real-world example where we show empirically that <span class="math inline">\(K\)</span>-fold CV performs favourably compared to both OOS evaluation and other time-series-specific techniques such as non-dependent cross-validation.</p>
+</blockquote>
+<hr />
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>I love the honesty of the abstract. It does not try to sell the thoughts as new or groundbreaking. I wonder if such a presentation is still possible today.<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+</section>
+<section>
+  
+
+
+  
+
+
+      
+
+  <footer class="page-footer">
+		<hr>
+		<ul class="page-footer-menu">
+		
+		</ul>
+
+  
+
+	<div class="copyright">
+	<p>
+    
+      &copy; 2017
+    .
+    All rights reserved.
+    
+  </p>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</footer>
+
+</section>
+</article>
+</div>
+</body>
+</html>
