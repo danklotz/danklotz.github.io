@@ -1,5 +1,5 @@
 ---
-title: "Open Learning 2017"
+title: "Open Learning"
 author: "Daniel Klotz"
 output:
   tufte::tufte_html: 
@@ -11,37 +11,92 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-In high school I had the epiphany that it is better to follow good teachers then good topics. Throughout my studies I tried to follow that maxim as good as possible, but forgot about it recently. This year I want to re-establish my principle once more.
+
+In high school I had the epiphany that it is better to follow good teachers then 
+good topics. Throughout my studies I tried to follow that maxim as good as 
+possible, but forgot about it until recently. Albeit my pursuits follow topics, 
+I will try to keep this in mind for this list. 
+
+Also: I prefer to share videos/audio here. 
 
 ---
 
-# Books
+# 1. Conceptual Exploration
+- [Awesome Explorables](https://github.com/sp4ke/awesome-explorables)
+- [Bret Victor: Kill Math](http://worrydream.com/KillMath/)
+- [Bret Victor: Explorable Explanations](http://worrydream.com/ExplorableExplanations/)
+- [Bret Victor: Up and Down the Ladder of Abstraction](http://worrydream.com/LadderOfAbstraction/)
+- Claus Mattheck: *Die Körpersprache der Bauteile*
+- [explorabl.es](http://explorabl.es)
+- [Grand Illusions (Youtube Channel)](https://www.youtube.com/channel/UCnmgSO_4g6QcRzy0yFeglyA)
+- [Hamish Todd: Unintuitive action at a distance in game mechanics and Explorable Explanations](https://youtu.be/duTI2m0RLcA)
+- [Ken Perlin: On the mind field of virtual and future reality](https://youtu.be/xuzrF_82z7U)
+- [Michael Nielsen: Thought as Technology](http://cognitivemedium.com/tat/)
+- [Michael Nielsen: Magic Paper](http://cognitivemedium.com/magic_paper/index.html)
+- [Negative Evidence](https://www.edge.org/response-detail/27130)
+- [Nicky Case: Explorable Explanations](https://youtu.be/Zl9m0AQInBk)
+- [Nicky Case: How to Simulate the Universe, in 134 Easy Steps](https://youtu.be/uc5rfTkLzlY)
+- [Robin Arnott: Designing a Trance  Meditation and Game Design (GDC)](https://youtu.be/zZ8BFsdbem0)
+- [Tadashi Tokieda: Toy Models](https://youtu.be/2v3ANzWkPVI)
+- [4d Toys](https://youtu.be/0t4aKJuKP0Q)
 
-1. Garrett Grolemund, Hadley Wickham: *R for Data Science*
-2. Claus Mattheck: *Die Körpersprache der Bauteile*
-3. John M. Chambers: *Extending R*
+## 1.1 Generative Stuff
+- [Grammar Variational Autoencoder](https://youtu.be/ar4Fm1V65Fw)
+- [Jessica Rosenkrantz: Generative Design](https://youtu.be/NC4Tkc6alWg)
+- [Samim A. Winiger: Genarative Design](https://youtu.be/dVm4O01Cmtw)
+- [UCSC: Generative Methods Day 2017](https://youtu.be/pcZQILKxo_M)
 
----
+## 1.2 Topological Views:
+- [Colah: Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)
+- [N.J. Wilderberger: Algebraic Topology - A beginner's course](https://www.youtube.com/playlist?list=PL41FDABC6AA085E78)
+- [Tadashi Tokieda: Topology and Geometry](https://www.youtube.com/playlist?list=PLTBqohhFNBE_09L0i-lf3fYXF5woAbrzJ)
 
-# Videos
-## 1 Computing with Data
 
-### 1.1 Hadley Wickham
-a. [PLOTCON 2016 - New open viz in R](https://youtu.be/cU0-NrUxRw4)
-b. [Data Science with R](https://youtu.be/K-ss_ag2k9E)
-c. [Managing many models with R](https://youtu.be/rz3_FDVt9eg)
-d. [Data Science in the Tidyverse](https://www.rstudio.com/resources/videos/data-science-in-the-tidyverse/)
+# 2. Data Analysis
+- [A Brief History of Data Visualization](https://youtu.be/N00g9Q9stBo)
+- [Brandon Rohrer: How Support Vector Machines work / How to open a black box](https://youtu.be/-Z4aojJ-pdg)
+- [Brian Caffo: Machine learning, the basics](https://youtu.be/ix6Wj5tntp8)
+- [Data Stories Podcast](http://datastori.es)
+- [Kim Rees: The Data Documentary](https://youtu.be/0VGARONcLVs)
+- [Lisa Charlotte Rost: A Data Point Walks Into a Bar](https://youtu.be/8XgF-RmNwUc)
 
-### 1.2 Bred Victor
-- To Do *TM*
+## 2.1 R Specifics
+- [Garrett Grolemund, Hadley Wickham: *R for Data Science*](http://r4ds.had.co.nz)
+- [Hadley Wickham: PLOTCON 2016 - New open viz in R](https://youtu.be/cU0-NrUxRw4)
+- [Hadley Wickham: Data Science with R](https://youtu.be/K-ss_ag2k9E)
+- [Hadley Wickham: Managing many models with R](https://youtu.be/rz3_FDVt9eg)
+- [Hadley Wickham: Data Science in the Tidyverse](https://www.rstudio.com/resources/videos/data-science-in-the-tidyverse/)
+- John M. Chambers: *Extending R* 
+- [Not So Standard Deviations](http://nssdeviations.com)
+- [Roger Peng: Analyst Mindset](https://www.youtube.com/playlist?list=PLjTlxb-wKvXPeXrKjrI3S_jH7LVdG_Peu)
 
-### 1.3 Norman J. Wildberger
-- [Algebraic Topology: A beginner's course](https://www.youtube.com/playlist?list=PL41FDABC6AA085E78)
+## 2.2 Probability 
+- [Andrew Gelman: Theoretical Statistics is the Theory of Applied Statistics: How to Think About What We Do](https://youtu.be/cuE9eHSbjNI)
+- [Taleb: Probability Moocs](https://www.youtube.com/channel/UC8uY6yLP9BS4BUc9BSc0Jww/feed)
 
-### 1.4 Bart Kosko
-a. [Negative Evidence](https://www.edge.org/response-detail/27130)
-b. Noise (2nd read)
 
-## 2 Misc
-[Listening to Music](http://oyc.yale.edu/music/musi-112)
+# 3. Computational Notebooks
+- [Bret Victor: Explorable Explanations](http://worrydream.com/ExplorableExplanations/)
+- [Distill Journal](https://distill.pub)
+- [Jupyter: Computational Narratives](https://blog.jupyter.org/project-jupyter-computational-narratives-as-the-engine-of-collaborative-data-science-2b5fb94c3c58)
+- [ouseful: Computational Essays](https://blog.ouseful.info/2017/11/15/programming-meh-lets-teach-how-to-write-computational-essays-instead/)
+- [Wolfram: What is a Computational Essay](http://blog.stephenwolfram.com/2017/11/what-is-a-computational-essay/)
+- [Idyll](https://mathisonian.github.io/idyll/a-walk-on-the-idyll-side/) ([example](http://idyll-lang.org/idyll/scroll/))
+
+## 3.1 Software and Stuff: 
+- [Tangle](http://worrydream.com/Tangle/) (old now, see [this](https://blog.ouseful.info/2017/07/13/time-to-revisit-tangle/) and [this](https://github.com/hadley/tanglekit))
+- [matbox2](https://github.com/unconed/mathbox) ([here](https://nbviewer.jupyter.org/github/znah/mathbox/blob/jupyter/examples/notebooks/mathbox.ipynb?utm_campaign=Data%2BElixir&utm_medium=email&utm_source=Data_Elixir_157) is a nice example from jupyter)
+- [jsReact](https://github.com/kcf-jackson/jsReact)
+
+# 4. Water and Landscape
+- Claus Mattheck: *Die Körpersprache der Bauteile*
+
+
+# Misc
+- [Alan Watts: On Nothingness](https://youtu.be/K-GZEB6Zrao)
+- [Listening to Music](http://oyc.yale.edu/music/musi-112)
+- [Samwise Didier Interview](https://youtu.be/iX3yQ3JBHDs)
+- [Steven Wittens: The Pixel Factory](https://youtu.be/4NkjLWAkYZ8)
+- [Two Minute Papers](https://www.youtube.com/user/keeroyz)
+
 
