@@ -133,6 +133,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html"><i class="fa fa-check"></i><b>6</b> Comparisons: Exploring Objective Functions II</a><ul>
 <li class="chapter" data-level="6.1" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html#code-3"><i class="fa fa-check"></i><b>6.1</b> Code</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="windowed-objective-function.html"><a href="windowed-objective-function.html"><i class="fa fa-check"></i><b>7</b> Windowed Objective Function</a><ul>
+<li class="chapter" data-level="7.1" data-path="windowed-objective-function.html"><a href="windowed-objective-function.html#code-4"><i class="fa fa-check"></i><b>7.1</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tips-tricks.html"><a href="tips-tricks.html"><i class="fa fa-check"></i><b>8</b> Tips &amp; Tricks</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -208,7 +212,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## 4 2007  1  1  3   0      2.51      3.48      3.48      2.57      3.11      3.11
 ## 5 2007  1  1  4   0      2.42      3.48      3.48      2.57      3.11      3.11
 ## 6 2007  1  1  5   0      2.34      3.49      3.49      2.57      3.11      3.11</code></pre>
-<p>One can see that the example data still has some columns that are not needed for further analysis, i.e. the columns <code>QOSI_0001</code> and <code>QOSI_0002</code>. Furthermore, the <code>posixdate</code> and the <code>period</code> columns are still missing in the data. Again, the <code>coscos</code> provides a streamlined function, called <code>cook_cosdata</code> to get rid of the non-needed columns, complete the date columns and add the <code>period</code> column with pre-specified settings. With the raw-data example from before, the finished cosdata would look as following:</p>
+<p>One can see that the example data still has some columns that are not needed for further analysis, i.e. the columns <code>QOSI_0001</code> and <code>QOSI_0002</code>. Furthermore, the <code>posixdate</code> and the <code>period</code> columns are still missing in the data. Again, the <code>coscos</code> provides a streamlined function, called <code>cook_cosdata</code> to get rid of the non-needed columns, complete the date columns and add the <code>period</code> column with pre-specified settings. With the raw-data example from before, the finished cosdata might then look as following:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  raw_data_example <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">cook_cosdata</span>(.) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">head</span>(.)</code></pre></div>

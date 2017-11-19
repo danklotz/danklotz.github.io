@@ -133,6 +133,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="6" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html"><i class="fa fa-check"></i><b>6</b> Comparisons: Exploring Objective Functions II</a><ul>
 <li class="chapter" data-level="6.1" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html#code-3"><i class="fa fa-check"></i><b>6.1</b> Code</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="windowed-objective-function.html"><a href="windowed-objective-function.html"><i class="fa fa-check"></i><b>7</b> Windowed Objective Function</a><ul>
+<li class="chapter" data-level="7.1" data-path="windowed-objective-function.html"><a href="windowed-objective-function.html#code-4"><i class="fa fa-check"></i><b>7.1</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tips-tricks.html"><a href="tips-tricks.html"><i class="fa fa-check"></i><b>8</b> Tips &amp; Tricks</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -248,19 +252,25 @@ judge &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
   <span class="co"># compute options: ------------------------------------------------------</span>
   <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;compute&quot;</span>) {
     <span class="kw">judge_compute</span>(cosdata, of_metrics)
+    
   } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_barplot&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;barplot&quot;</span>) {
     <span class="kw">judge_barplot</span>(cosdata, of_metrics)
+    
   } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_rasterplot&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;rasterplot&quot;</span>) {
     <span class="kw">judge_rasterplot</span>(cosdata, of_metrics)
-  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;of_explore&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;explore&quot;</span>) {
+    
+  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_explore&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;explore&quot;</span>) {
     <span class="kw">judge_explore</span>(cosdata, of_metrics)
-  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;of_compare&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;compare&quot;</span>) {
+    
+  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_explore&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;compare&quot;</span>) {
     cosdata2 &lt;-<span class="st"> </span><span class="ot">NULL</span>
-    <span class="cf">if</span> (<span class="st">&quot;cos_data2&quot;</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">names</span>(le_dots)) {
-      cos_data2 &lt;-<span class="st"> </span><span class="kw">eval</span>(le_dots<span class="op">$</span>cos_data2)
-    }
-    <span class="kw">judge_compare</span>(<span class="dt">d1 =</span> cosdata,
-               <span class="dt">d2 =</span> cosdata2)
+    <span class="cf">if</span> (<span class="st">&quot;cos_data2&quot;</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">names</span>(le_dots)) {cos_data2 &lt;-<span class="st"> </span><span class="kw">eval</span>(le_dots<span class="op">$</span>cos_data2)}
+    <span class="kw">judge_compare</span>(<span class="dt">d1 =</span> cosdata, <span class="dt">d2 =</span> cosdata2, of_metrics)
+    
+  } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_window&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;window&quot;</span>) {
+    windows &lt;-<span class="st"> </span><span class="kw">c</span>(20L,500L)
+    <span class="cf">if</span> (window_sizes <span class="op">%in%</span><span class="st"> </span><span class="kw">names</span>(le_dots)) {windows &lt;-<span class="st"> </span>window_sizes}
+    <span class="kw">judge_window</span>(cosdata, of_metrics, window_sizes)
   } <span class="cf">else</span> {
     <span class="kw">stop</span>(<span class="st">&quot;There is no option (`type`) called&quot;</span> <span class="op">%&amp;&amp;%</span><span class="st"> </span>le_type)
   }

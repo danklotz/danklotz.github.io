@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>visCOS</title>
+  <meta name="description" content="visCOS">
+  <meta name="generator" content="bookdown 0.5.10 and GitBook 2.6.7">
+
+  <meta property="og:title" content="visCOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="visCOS" />
+  
+  
+  
+
+<meta name="author" content="Daniel Klotz, Johannes Wesemann, Simon Frey, Mathew Herrnegger">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="comparisons-exploring-objective-functions-ii.html">
+<link rel="next" href="tips-tricks.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">visCOS</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> The Guide</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> Introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#viscos-and-other-r-package"><i class="fa fa-check"></i><b>1.2</b> visCOS and other R-package</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cosdata.html"><a href="cosdata.html"><i class="fa fa-check"></i><b>2</b> cosdata</a><ul>
+<li class="chapter" data-level="2.1" data-path="cosdata.html"><a href="cosdata.html#examples-plots-from-cosdata"><i class="fa fa-check"></i><b>2.1</b> Examples plots from cosdata</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="runoff-peaks.html"><a href="runoff-peaks.html"><i class="fa fa-check"></i><b>3</b> Runoff Peaks</a><ul>
+<li class="chapter" data-level="3.1" data-path="runoff-peaks.html"><a href="runoff-peaks.html#examples"><i class="fa fa-check"></i><b>3.1</b> Examples:</a></li>
+<li class="chapter" data-level="3.2" data-path="runoff-peaks.html"><a href="runoff-peaks.html#code"><i class="fa fa-check"></i><b>3.2</b> Code</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="runoff-peaks.html"><a href="runoff-peaks.html#peak-plots-for-a-signle-basin"><i class="fa fa-check"></i><b>3.2.1</b> Peak-Plots for a signle Basin</a></li>
+<li class="chapter" data-level="3.2.2" data-path="runoff-peaks.html"><a href="runoff-peaks.html#peak-finding-function"><i class="fa fa-check"></i><b>3.2.2</b> Peak Finding Function</a></li>
+<li class="chapter" data-level="3.2.3" data-path="runoff-peaks.html"><a href="runoff-peaks.html#subplot-function"><i class="fa fa-check"></i><b>3.2.3</b> Subplot Function</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="runoff-peaks.html"><a href="runoff-peaks.html#references"><i class="fa fa-check"></i><b>3.3</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="objective-functions.html"><a href="objective-functions.html"><i class="fa fa-check"></i><b>4</b> Objective Functions</a><ul>
+<li class="chapter" data-level="4.1" data-path="objective-functions.html"><a href="objective-functions.html#code-1"><i class="fa fa-check"></i><b>4.1</b> Code</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="objective-functions.html"><a href="objective-functions.html#wrapper"><i class="fa fa-check"></i><b>4.1.1</b> Wrapper</a></li>
+<li class="chapter" data-level="4.1.2" data-path="objective-functions.html"><a href="objective-functions.html#computation"><i class="fa fa-check"></i><b>4.1.2</b> Computation</a></li>
+<li class="chapter" data-level="4.1.3" data-path="objective-functions.html"><a href="objective-functions.html#bar-plots"><i class="fa fa-check"></i><b>4.1.3</b> Bar Plots</a></li>
+<li class="chapter" data-level="4.1.4" data-path="objective-functions.html"><a href="objective-functions.html#raster-plots"><i class="fa fa-check"></i><b>4.1.4</b> Raster Plots</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html"><i class="fa fa-check"></i><b>5</b> Exploring Objective Functions</a><ul>
+<li class="chapter" data-level="5.1" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#example"><i class="fa fa-check"></i><b>5.1</b> Example</a></li>
+<li class="chapter" data-level="5.2" data-path="exploring-objective-functions.html"><a href="exploring-objective-functions.html#code-2"><i class="fa fa-check"></i><b>5.2</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html"><i class="fa fa-check"></i><b>6</b> Comparisons: Exploring Objective Functions II</a><ul>
+<li class="chapter" data-level="6.1" data-path="comparisons-exploring-objective-functions-ii.html"><a href="comparisons-exploring-objective-functions-ii.html#code-3"><i class="fa fa-check"></i><b>6.1</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="windowed-objective-function.html"><a href="windowed-objective-function.html"><i class="fa fa-check"></i><b>7</b> Windowed Objective Function</a><ul>
+<li class="chapter" data-level="7.1" data-path="windowed-objective-function.html"><a href="windowed-objective-function.html#code-4"><i class="fa fa-check"></i><b>7.1</b> Code</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tips-tricks.html"><a href="tips-tricks.html"><i class="fa fa-check"></i><b>8</b> Tips &amp; Tricks</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">visCOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="windowed-objective-function" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Windowed Objective Function</h1>
+<p>This chapter defines the function <code>judge_window</code>. It provides an low quality option to get a static summar of the interactive functions <code>judge_explore</code> and <code>judge_compare</code>.</p>
+<p>Here is an example of its use, together with an example plot:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  coscos<span class="op">::</span><span class="kw">libraries</span>(coscos,
+                    visCOS, 
+                    tidyverse, 
+                    ggridges)
+  <span class="co"># </span>
+  cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">viscos_example</span>( ) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>()
+  window_sizes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">168</span>,<span class="dv">250</span>,<span class="dv">500</span>,<span class="dv">1000</span>,<span class="dv">2000</span>,<span class="dv">4000</span>,<span class="dv">6000</span>,<span class="dv">8000</span>,<span class="dv">10000</span>,<span class="dv">15000</span>)
+  windows &lt;-<span class="st"> </span><span class="kw">judge_window</span>(cos_data,
+                          <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse =</span> coscos<span class="op">::</span>of_nse, 
+                                            <span class="dt">kge =</span> coscos<span class="op">::</span>of_kge), 
+                          <span class="dt">window_sizes =</span> window_sizes)</code></pre></div>
+<p>Ideas for plots:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># different line plots of the objective function</span>
+<span class="kw">subset</span>(windows<span class="op">$</span>nse<span class="op">$</span>QOBS_<span class="dv">0002</span>, le_group <span class="op">==</span><span class="st"> &quot;of_metric&quot;</span> ) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">data =</span> .) <span class="op">+</span>
+<span class="st">    </span><span class="kw">geom_line</span>( <span class="kw">aes</span>(<span class="dt">x =</span> posixdate, <span class="dt">y =</span> value) ) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">facet_wrap</span>(<span class="op">~</span>key, <span class="dt">ncol =</span> <span class="dv">3</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Objective Functions Windows for Basin 2&quot;</span>)</code></pre></div>
+<pre><code>## Warning: Removed 167 rows containing missing values (geom_path).</code></pre>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-39-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="kw">subset</span>(windows<span class="op">$</span>nse<span class="op">$</span>QOBS_<span class="dv">0002</span>, le_group <span class="op">==</span><span class="st"> &quot;of_metric&quot;</span>)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_raster</span>(<span class="kw">aes</span>(<span class="dt">x =</span> posixdate, 
+                  <span class="dt">y =</span> key, 
+                  <span class="dt">fill =</span> value)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Objective Functions Windows for Basin 2&quot;</span>)</code></pre></div>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-39-2.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># superimposed time series:</span>
+<span class="kw">ggplot</span>(windows<span class="op">$</span>kge<span class="op">$</span>QOBS_<span class="dv">0001</span>, <span class="kw">aes</span>(<span class="dt">x =</span> idx)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>le_group, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>, <span class="dt">ncol =</span> <span class="dv">1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_raster</span>(<span class="dt">data =</span> <span class="kw">subset</span>(windows<span class="op">$</span>nse<span class="op">$</span>QOBS_<span class="dv">0001</span>, 
+                            le_group <span class="op">==</span><span class="st"> &quot;of_metric&quot;</span>), 
+              <span class="kw">aes</span>(<span class="dt">x =</span> posixdate, 
+                  <span class="dt">y =</span> key, 
+                  <span class="dt">fill =</span> value)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">data =</span> <span class="kw">subset</span>(windows<span class="op">$</span>nse<span class="op">$</span>QOBS_<span class="dv">0001</span>, 
+                          le_group <span class="op">==</span><span class="st"> &quot;q&quot;</span>), 
+            <span class="kw">aes</span>(<span class="dt">x =</span> posixdate, 
+                <span class="dt">y =</span> value, 
+                <span class="dt">color =</span> key)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title =</span> <span class="st">&quot;Objective Functions Windows for Basin 1&quot;</span>)</code></pre></div>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-39-3.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># densities:</span>
+windows<span class="op">$</span>nse <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">bind_rows</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(le_group <span class="op">==</span><span class="st"> &quot;of_metric&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ggplot</span>(., <span class="kw">aes</span>(<span class="dt">x =</span> value, <span class="dt">y =</span> key, <span class="dt">fill =</span> key)) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">geom_density_ridges</span>(<span class="dt">scale =</span> <span class="dv">5</span>, 
+                        <span class="dt">size =</span> <span class="fl">0.1</span>, 
+                        <span class="dt">rel_min_height =</span> <span class="fl">0.01</span>, 
+                        <span class="dt">alpha =</span> <span class="fl">0.5</span>) <span class="op">+</span>
+<span class="st">    </span><span class="kw">theme_ridges</span>( ) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">legend.title =</span> <span class="st">&quot;time resolution&quot;</span>,
+       <span class="dt">title =</span> <span class="st">&quot;Densities Basin 1 and 2&quot;</span>)</code></pre></div>
+<pre><code>## Picking joint bandwidth of 0.027</code></pre>
+<pre><code>## Warning: Removed 93816 rows containing non-finite values (stat_density_ridges).</code></pre>
+<p><img src="visCOS_files/figure-html/unnamed-chunk-39-4.png" width="672" style="display: block; margin: auto;" /></p>
+<div id="code-4" class="section level2">
+<h2><span class="header-section-number">7.1</span> Code</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ---------------------------------------------------------------------------</span>
+<span class="co"># Code for cooking data</span>
+<span class="co"># authors: Daniel Klotz, Johannes Wesemann, Mathew Herrnegger</span>
+<span class="co"># !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># --------------------------------------------------------------------------</span>
+<span class="co">#&#39; Objectie Function Windowing </span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; Compute the objective function for a set of windows.</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @import dplyr</span>
+<span class="co">#&#39; @importFrom purrr map2</span>
+<span class="co">#&#39; @importFrom tibble as_tibble</span>
+<span class="co">#&#39; @importFrom magrittr set_names</span>
+<span class="co">#&#39; @importFrom tidyr gather </span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @export</span>
+judge_window &lt;-<span class="st"> </span><span class="cf">function</span>(cos_data,
+                         <span class="dt">of_metrics =</span> <span class="kw">list</span>(
+                           <span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                           <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                           <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                           <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
+                         <span class="dt">window_sizes =</span> <span class="kw">c</span>(20L,500L), 
+                         <span class="dt">na_filling =</span> <span class="ot">FALSE</span>,
+                         <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()) {
+  <span class="cf">if</span>(<span class="kw">missing</span>(of_metrics)) {
+    <span class="kw">stop</span>(<span class="st">&quot;The list of objective functions (&#39;of_metrics&#39;) is missing!&quot;</span>)
+  }
+  <span class="cf">if</span> (<span class="kw">class</span>(of_metrics) <span class="op">!=</span><span class="st"> &quot;list&quot;</span>) {
+    of_metrics &lt;-<span class="st"> </span><span class="kw">list</span>(of_metrics)
+  }
+    <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_metrics))){
+    <span class="kw">names</span>(of_metrics) &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;of&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_metrics), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)
+    }
+  <span class="co">#</span>
+  <span class="kw">map</span>(of_metrics, 
+      <span class="cf">function</span>(of) {
+        <span class="kw">window_fun</span>(cos_data,
+                   of,
+                   <span class="dt">window_sizes =</span> window_sizes,
+                   <span class="dt">na_filling =</span> <span class="ot">FALSE</span>,
+                   <span class="dt">opts =</span> opts) 
+      }) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">as_tibble</span>(.)
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># --------------------------------------------------------------------------</span>
+<span class="co">#&#39; Objectie Function Windowing </span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; Compute the objective function for a set of windows.</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @import dplyr</span>
+<span class="co">#&#39; @importFrom purrr map2</span>
+<span class="co">#&#39; @importFrom tibble as_tibble</span>
+<span class="co">#&#39; @importFrom magrittr set_names</span>
+<span class="co">#&#39; @importFrom tidyr gather </span>
+window_fun &lt;-<span class="st"> </span><span class="cf">function</span>(cos_data,
+                       of_metric,
+                       <span class="dt">window_sizes =</span> <span class="kw">c</span>(20L,500L), 
+                       <span class="dt">na_filling =</span> <span class="ot">FALSE</span>,
+                       <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()) {
+  cosdata &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cos_data)
+  cosdata_length &lt;-<span class="st"> </span><span class="kw">nrow</span>(cosdata)
+  lb &lt;-<span class="st"> </span>opts[[<span class="st">&quot;of_limits&quot;</span>]] <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>.[<span class="dv">1</span>]
+  o_columns &lt;-<span class="st"> </span>cosdata <span class="op">%&gt;%</span>
+<span class="st">     </span><span class="kw">select</span>( <span class="kw">starts_with</span>(opts[[<span class="st">&quot;name_o&quot;</span>]]) )
+  s_columns &lt;-<span class="st"> </span>cosdata <span class="op">%&gt;%</span>
+<span class="st">     </span><span class="kw">select</span>( <span class="kw">starts_with</span>(opts[[<span class="st">&quot;name_s&quot;</span>]]) )
+  data_numbers &lt;-<span class="st"> </span><span class="kw">names</span>(o_columns) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">gsub</span>(opts[[<span class="st">&quot;name_o&quot;</span>]], <span class="st">&quot;&quot;</span>, ., <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">D&quot;</span>, <span class="st">&quot;&quot;</span>, ., <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>)
+<span class="co"># make plotlist: =========================================================</span>
+  <span class="co">#§ care!!  we need to quarantee that step == 0 and window_size == 0 will </span>
+  <span class="co"># $  not make problems!</span>
+  <span class="cf">if</span> ( <span class="kw">min</span>(window_sizes) <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span> ) {
+    <span class="kw">stop</span>(<span class="st">&quot;minimum window size needs to be zero!&quot;</span>)
+  } <span class="cf">else</span> <span class="cf">if</span>( <span class="kw">max</span>(window_sizes) <span class="op">&gt;=</span><span class="st"> </span>cosdata_length ) {
+    <span class="kw">stop</span>(<span class="st">&quot;maximum window size needs to be smaller than nrow(cos_data)&quot;</span>)
+  } 
+  all_window_sizes &lt;-<span class="st"> </span>window_sizes <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">as.integer</span>(.)
+  <span class="cf">if</span> (<span class="kw">length</span>(all_window_sizes) <span class="op">==</span><span class="st"> </span><span class="dv">0</span>) {
+    <span class="kw">stop</span>(<span class="st">&quot;`window_size` seems to be ill-defined. Resulting lenght is 0&quot;</span>)
+  }
+  <span class="co"># define functions for the roll: </span>
+  na_filler_fun &lt;-<span class="st"> </span><span class="cf">function</span>(in_data) {
+    <span class="cf">if</span> (na_filling) {
+      fill_idx &lt;-<span class="st"> </span>in_data <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">is.na</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">not</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">which</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">        </span><span class="kw">min</span>(.)
+      in_data[<span class="dv">1</span><span class="op">:</span>fill_idx] &lt;-<span class="st"> </span>in_data[fill_idx]
+    }
+    <span class="kw">return</span>(in_data)
+  }
+  fill_NAs &lt;-<span class="st"> </span><span class="cf">function</span>(in_data) {
+    <span class="cf">if</span> (na_filling) {
+      <span class="kw">apply</span>(in_data, <span class="dv">2</span>, na_filler_fun)
+    } 
+    <span class="kw">return</span>(in_data)
+  }
+  apply_ceilings &lt;-<span class="st"> </span><span class="cf">function</span>(in_data) {
+    <span class="kw">apply</span>(in_data, <span class="dv">2</span>, <span class="cf">function</span>(x) <span class="kw">pmax</span>(x,lb)) 
+  }
+  window_names &lt;-<span class="st"> &quot;w&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">sprintf</span>(<span class="st">&quot;%.3i&quot;</span>,<span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(all_window_sizes)) <span class="op">%_%</span><span class="st"> </span>
+<span class="st">    &quot;size&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span>all_window_sizes
+  roll_of &lt;-<span class="st"> </span><span class="cf">function</span>(o_col, s_col) {
+    <span class="kw">sapply</span>(all_window_sizes, 
+           <span class="cf">function</span>(width) <span class="kw">roll_roll</span>(<span class="dt">d1 =</span> o_col,
+                                           <span class="dt">d2 =</span> s_col,
+                                           <span class="dt">fun =</span> of_metric, 
+                                           <span class="dt">width =</span> width)) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">fill_NAs</span>(.) <span class="op">%&gt;%</span>
+<span class="st">      </span><span class="kw">apply_ceilings</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">      </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">      </span>magrittr<span class="op">::</span><span class="kw">set_names</span>(.,window_names) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">      </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">idx =</span> <span class="dv">1</span><span class="op">:</span>cosdata_length,
+                    <span class="dt">posixdate =</span> cos_data[[ opts[[<span class="st">&quot;name_COSposix&quot;</span>]] ]],
+                    <span class="dt">qobs =</span> o_col, 
+                    <span class="dt">qsim =</span> s_col) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">      </span>tidyr<span class="op">::</span><span class="kw">gather</span>(., key, value, <span class="op">-</span>idx, <span class="op">-</span>posixdate) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">      </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">le_group =</span> <span class="kw">ifelse</span>((key <span class="op">==</span><span class="st"> &quot;qobs&quot;</span> <span class="op">|</span><span class="st"> </span>key <span class="op">==</span><span class="st"> &quot;qsim&quot;</span>), <span class="st">&quot;q&quot;</span>, <span class="st">&quot;of_metric&quot;</span>))
+  }
+  <span class="co"># apply roll_of </span>
+  window_list &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">map2</span>(o_columns, s_columns, roll_of)
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
+<span class="co">#&#39; Objectie Function Rolling Functionallity</span>
+<span class="co">#&#39; </span>
+<span class="co">#&#39; Roll an objective fucntion over two sets of data (d1 and d2)</span>
+<span class="co">#&#39; @import dplyr</span>
+<span class="co">#&#39; @import purrr </span>
+<span class="co">#&#39; @importFrom magrittr set_names</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @keywords internal</span>
+roll_roll &lt;-<span class="st"> </span><span class="cf">function</span>(d1, 
+                      <span class="dt">d2 =</span> <span class="ot">NULL</span>, 
+                      of_metric,
+                      width,
+                      ...) {
+  <span class="co"># functions: =============================================================</span>
+  replace_xvar_entries &lt;-<span class="st"> </span><span class="cf">function</span>(le_list, xvar) {
+    g &lt;-<span class="st"> </span>le_list[<span class="kw">names</span>(xvar)]
+    le_list[<span class="kw">names</span>(xvar)] &lt;-<span class="st"> </span>xvar
+    <span class="kw">return</span>(le_list)
+  }
+  <span class="co"># calc: ==================================================================</span>
+  n &lt;-<span class="st"> </span><span class="kw">nrow</span>(d1)
+  from &lt;-<span class="st"> </span><span class="kw">pmax</span>((<span class="dv">1</span><span class="op">:</span>n) <span class="op">-</span><span class="st"> </span>width <span class="op">+</span><span class="st"> </span><span class="dv">1</span>, <span class="dv">1</span>)
+  to &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>n
+  elements &lt;-<span class="st"> </span><span class="kw">apply</span>(<span class="kw">cbind</span>(from, to), <span class="dv">1</span>, <span class="cf">function</span>(x) <span class="kw">seq</span>(x[<span class="dv">1</span>],x[<span class="dv">2</span>])) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">set_names</span>(., <span class="kw">paste</span>(from, to, <span class="dt">sep =</span> <span class="st">&quot;:&quot;</span>) )
+  skip &lt;-<span class="st"> </span><span class="kw">sapply</span>(elements, length) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">is_less_than</span>(width)
+  Xvar &lt;-<span class="st"> </span>elements <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>.[<span class="op">!</span>skip] <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span>purrr<span class="op">::</span><span class="kw">map_dbl</span>(., <span class="cf">function</span>(which) <span class="kw">of_metric</span>(d1[which,] , d2[which, ]))
+  Xvar_final &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">new</span>(<span class="kw">class</span>(Xvar[<span class="dv">1</span>]), <span class="ot">NA</span>), <span class="kw">length</span>(from)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">replace_xvar_entries</span>(.,Xvar)
+  <span class="kw">return</span>(Xvar_final)
+}</code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="comparisons-exploring-objective-functions-ii.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tips-tricks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["visCOS.pdf"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
