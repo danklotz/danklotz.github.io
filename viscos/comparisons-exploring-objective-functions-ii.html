@@ -183,27 +183,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="co">#&#39;</span>
   <span class="co">#&#39; @export</span>
 
-judge_explore2 &lt;-<span class="st"> </span><span class="cf">function</span>(d1,
-                           <span class="dt">d2 =</span> <span class="ot">NULL</span>,
-                           <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
-                                             <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
-                                             <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
-                                             <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
-                       <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()) {
+judge_explore2 &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata1,
+                           <span class="dt">cosdata2 =</span> <span class="ot">NULL</span>,
+                           <span class="dt">.ofuns =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                         <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                         <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                         <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
+                           <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()
+                           ) {
   <span class="co"># (I) pre-sets: ============================================================</span>
   <span class="cf">if</span>(<span class="op">!</span><span class="kw">is.list</span>(of_list)) {
     of_list =<span class="st"> </span><span class="kw">list</span>(of_list)
   }
-  <span class="cf">if</span> (<span class="kw">is.null</span>(d2)) {
-    d2 &lt;-<span class="st"> </span>d1
+  <span class="cf">if</span> (<span class="kw">is.null</span>(cosdata2)) {
+    cosdata2 &lt;-<span class="st"> </span>cosdata1
   }
   <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_list))){
     <span class="kw">names</span>(of_list) &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;of&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_list), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)
   }
-  clean_data1 &lt;-<span class="st"> </span>d1 <span class="op">%&gt;%</span><span class="st"> </span>
+  clean_data1 &lt;-<span class="st"> </span>cosdata1 <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span>coscos<span class="op">::</span><span class="kw">remove_leading_zeros</span>(.) 
-  clean_data2 &lt;-<span class="st"> </span>d2 <span class="op">%&gt;%</span>
+  clean_data2 &lt;-<span class="st"> </span>cosdata2 <span class="op">%&gt;%</span>
 <span class="st">    </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span>coscos<span class="op">::</span><span class="kw">remove_leading_zeros</span>(.) 
   <span class="co"># convenience variables: ===================================================</span>

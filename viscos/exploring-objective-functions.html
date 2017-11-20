@@ -175,7 +175,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="co"># --------------------------------------------------------------------------</span>
   <span class="co">#&#39; Explore with Objective Functions</span>
   <span class="co">#&#39;</span>
-  <span class="co">#&#39; Runs a Shiny Gadget which can be used to get an overview of a cos_data time</span>
+  <span class="co">#&#39; Runs a Shiny Gadget which can be used to get an overview of a cosdata time</span>
   <span class="co">#&#39; series object.</span>
   <span class="co">#&#39;</span>
   <span class="co">#&#39; @import shiny</span>
@@ -194,13 +194,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="co">#&#39; @examples</span>
   <span class="co">#&#39; # get example data,</span>
   <span class="co">#&#39; # explore the model performance</span>
-  <span class="co">#&#39; cos_data &lt;- get_viscos_example()</span>
-  <span class="co">#&#39; judge_explore(cos_data)</span>
-judge_explore &lt;-<span class="st"> </span><span class="cf">function</span>(cos_data,
-                          <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
-                                            <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
-                                            <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
-                                            <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
+  <span class="co">#&#39; cosdata &lt;- get_viscos_example()</span>
+  <span class="co">#&#39; judge_explore(cosdata)</span>
+judge_explore &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
+                          <span class="dt">.ofuns =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                        <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                        <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                        <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
                           <span class="dt">opts =</span>coscos<span class="op">::</span><span class="kw">viscos_options</span>()
                           ) {
   <span class="co"># (I) pre-sets: ============================================================</span>
@@ -209,14 +209,14 @@ judge_explore &lt;-<span class="st"> </span><span class="cf">function</span>(cos
   name_lb &lt;-<span class="st"> </span>opts[[<span class="st">&quot;name_lb&quot;</span>]]
   name_ub &lt;-<span class="st">  </span>opts[[<span class="st">&quot;name_ub&quot;</span>]]
   <span class="co">#</span>
-  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_metrics))){
-    <span class="kw">names</span>(of_metrics) &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;of&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_metrics), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)
+  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(.ofuns))){
+    <span class="kw">names</span>(.ofuns) &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;of&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(.ofuns), <span class="dt">sep =</span> <span class="st">&quot;_&quot;</span>)
   }
-  clean_cos_data &lt;-<span class="st"> </span>cos_data <span class="op">%&gt;%</span><span class="st"> </span>
+  cos_data &lt;-<span class="st"> </span>cosdata <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span>coscos<span class="op">::</span><span class="kw">remove_leading_zeros</span>(.)
   <span class="co">#</span>
-  names_data &lt;-<span class="st"> </span><span class="kw">names</span>(clean_cos_data) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tolower</span>(.)
+  names_data &lt;-<span class="st"> </span><span class="kw">names</span>(cos_data) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">tolower</span>(.)
   number_lb &lt;-<span class="st"> </span><span class="kw">grepl</span>(name_lb,
                      names_data,
                      <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sum</span>(.)
@@ -288,7 +288,7 @@ judge_explore &lt;-<span class="st"> </span><span class="cf">function</span>(cos
     })
     selected_data &lt;-<span class="st"> </span><span class="kw">reactive</span>({
       <span class="cf">if</span> (plot_bounds) {
-        clean_cos_data <span class="op">%&gt;%</span>
+        cos_data <span class="op">%&gt;%</span>
 <span class="st">          </span><span class="kw">select</span>(<span class="kw">matches</span>( <span class="kw">selector_x</span>() ),
                  <span class="kw">matches</span>( <span class="kw">selector_y</span>() ),
                  <span class="kw">matches</span>( <span class="kw">selector_lb</span>() ),
@@ -299,7 +299,7 @@ judge_explore &lt;-<span class="st"> </span><span class="cf">function</span>(cos
                  <span class="dt">lb =</span> <span class="kw">matches</span>( <span class="kw">selector_lb</span>() ),
                  <span class="dt">ub =</span> <span class="kw">matches</span>( <span class="kw">selector_ub</span>() ))
       } <span class="cf">else</span> {
-        clean_cos_data <span class="op">%&gt;%</span>
+        cos_data <span class="op">%&gt;%</span>
 <span class="st">          </span><span class="kw">select</span>(<span class="kw">matches</span>( <span class="kw">selector_x</span>() ),
                  <span class="kw">matches</span>( <span class="kw">selector_y</span>() )
                  ) <span class="op">%&gt;%</span>
@@ -310,7 +310,7 @@ judge_explore &lt;-<span class="st"> </span><span class="cf">function</span>(cos
     <span class="co"># (c) create xts-formated table for use in dygraphs:</span>
     xts_selected_data &lt;-<span class="st"> </span><span class="kw">reactive</span> ({
       <span class="kw">xts</span>(<span class="kw">selected_data</span>(),
-          <span class="dt">order.by =</span> clean_cos_data[[ opts[[<span class="st">&quot;name_COSposix&quot;</span>]] ]])
+          <span class="dt">order.by =</span> cos_data[[ opts[[<span class="st">&quot;name_COSposix&quot;</span>]] ]])
     })
     <span class="co"># (d) create plots:</span>
     base_graph &lt;-<span class="st"> </span><span class="kw">reactive</span>({
@@ -379,7 +379,7 @@ judge_explore &lt;-<span class="st"> </span><span class="cf">function</span>(cos
     })
     out_of &lt;-<span class="st"> </span><span class="kw">reactive</span>({
       <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.null</span>(input<span class="op">$</span>hydrographs_date_window)) {
-          <span class="kw">map_df</span>(of_metrics, <span class="cf">function</span>(of_,x,y) <span class="kw">of_</span>(x,y),
+          <span class="kw">map_df</span>(.ofuns, <span class="cf">function</span>(of_,x,y) <span class="kw">of_</span>(x,y),
                  <span class="dt">x =</span> <span class="kw">sub_slctd</span>()<span class="op">$</span>x,
                  <span class="dt">y =</span> <span class="kw">sub_slctd</span>()<span class="op">$</span>y ) <span class="co">#serve_of( sub_slctd()$x,sub_slctd()$y )</span>
       }

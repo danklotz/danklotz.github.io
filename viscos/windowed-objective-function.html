@@ -166,10 +166,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
                     tidyverse, 
                     ggridges)
   <span class="co"># </span>
-  cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">viscos_example</span>( ) <span class="op">%&gt;%</span><span class="st"> </span>
+  cosdata &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">viscos_example</span>( ) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>()
   window_sizes &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">168</span>,<span class="dv">250</span>,<span class="dv">500</span>,<span class="dv">1000</span>,<span class="dv">2000</span>,<span class="dv">4000</span>,<span class="dv">6000</span>,<span class="dv">8000</span>,<span class="dv">10000</span>,<span class="dv">15000</span>)
-  windows &lt;-<span class="st"> </span><span class="kw">judge_window</span>(cos_data,
+  windows &lt;-<span class="st"> </span><span class="kw">judge_window</span>(cosdata,
                           <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse =</span> coscos<span class="op">::</span>of_nse, 
                                             <span class="dt">kge =</span> coscos<span class="op">::</span>of_kge), 
                           <span class="dt">window_sizes =</span> window_sizes)</code></pre></div>
@@ -236,7 +236,7 @@ windows<span class="op">$</span>nse <span class="op">%&gt;%</span><span class="s
 <span class="co">#&#39; @importFrom tidyr gather </span>
 <span class="co">#&#39;</span>
 <span class="co">#&#39; @export</span>
-judge_window &lt;-<span class="st"> </span><span class="cf">function</span>(cos_data,
+judge_window &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
                          <span class="dt">of_metrics =</span> <span class="kw">list</span>(
                            <span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
                            <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
@@ -257,7 +257,7 @@ judge_window &lt;-<span class="st"> </span><span class="cf">function</span>(cos_
   <span class="co">#</span>
   <span class="kw">map</span>(of_metrics, 
       <span class="cf">function</span>(of) {
-        <span class="kw">window_fun</span>(cos_data,
+        <span class="kw">window_fun</span>(cosdata,
                    of,
                    <span class="dt">window_sizes =</span> window_sizes,
                    <span class="dt">na_filling =</span> <span class="ot">FALSE</span>,
@@ -275,18 +275,18 @@ judge_window &lt;-<span class="st"> </span><span class="cf">function</span>(cos_
 <span class="co">#&#39; @importFrom tibble as_tibble</span>
 <span class="co">#&#39; @importFrom magrittr set_names</span>
 <span class="co">#&#39; @importFrom tidyr gather </span>
-window_fun &lt;-<span class="st"> </span><span class="cf">function</span>(cos_data,
+window_fun &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
                        of_metric,
                        <span class="dt">window_sizes =</span> <span class="kw">c</span>(20L,500L), 
                        <span class="dt">na_filling =</span> <span class="ot">FALSE</span>,
                        <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()) {
-  cosdata &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cos_data)
-  cosdata_length &lt;-<span class="st"> </span><span class="kw">nrow</span>(cosdata)
+  cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cosdata)
+  cosdata_length &lt;-<span class="st"> </span><span class="kw">nrow</span>(cos_data)
   lb &lt;-<span class="st"> </span>opts[[<span class="st">&quot;of_limits&quot;</span>]] <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span>.[<span class="dv">1</span>]
-  o_columns &lt;-<span class="st"> </span>cosdata <span class="op">%&gt;%</span>
+  o_columns &lt;-<span class="st"> </span>cos_data <span class="op">%&gt;%</span>
 <span class="st">     </span><span class="kw">select</span>( <span class="kw">starts_with</span>(opts[[<span class="st">&quot;name_o&quot;</span>]]) )
-  s_columns &lt;-<span class="st"> </span>cosdata <span class="op">%&gt;%</span>
+  s_columns &lt;-<span class="st"> </span>cos_data <span class="op">%&gt;%</span>
 <span class="st">     </span><span class="kw">select</span>( <span class="kw">starts_with</span>(opts[[<span class="st">&quot;name_s&quot;</span>]]) )
   data_numbers &lt;-<span class="st"> </span><span class="kw">names</span>(o_columns) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">gsub</span>(opts[[<span class="st">&quot;name_o&quot;</span>]], <span class="st">&quot;&quot;</span>, ., <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
@@ -331,9 +331,9 @@ window_fun &lt;-<span class="st"> </span><span class="cf">function</span>(cos_da
   roll_of &lt;-<span class="st"> </span><span class="cf">function</span>(o_col, s_col) {
     <span class="kw">sapply</span>(all_window_sizes, 
            <span class="cf">function</span>(width) <span class="kw">roll_roll</span>(<span class="dt">d1 =</span> o_col,
-                                           <span class="dt">d2 =</span> s_col,
-                                           <span class="dt">fun =</span> of_metric, 
-                                           <span class="dt">width =</span> width)) <span class="op">%&gt;%</span>
+                                     <span class="dt">d2 =</span> s_col,
+                                     <span class="dt">fun =</span> of_metric, 
+                                     <span class="dt">width =</span> width)) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw">fill_NAs</span>(.) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw">apply_ceilings</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">      </span>tibble<span class="op">::</span><span class="kw">as_tibble</span>(.) <span class="op">%&gt;%</span><span class="st"> </span>

@@ -229,12 +229,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="co">#&#39; @export</span>
 judge &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
                   <span class="dt">type =</span> <span class="st">&quot;compute&quot;</span>,
-                  <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
-                                    <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
-                                    <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
-                                    <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
+                  <span class="dt">.ofuns =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
                   <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>(),
-                  ...) {
+                  ...
+                  ) {
   <span class="co"># lazy evaluation: ------------------------------------------------------</span>
   le_dots &lt;-<span class="st">  </span><span class="kw">match.call</span>(<span class="dt">expand.dots =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span>
 <span class="st">    </span>.[<span class="st">&quot;...&quot;</span>] <span class="op">%&gt;%</span>
@@ -251,26 +252,26 @@ judge &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
   }
   <span class="co"># compute options: ------------------------------------------------------</span>
   <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;compute&quot;</span>) {
-    <span class="kw">judge_compute</span>(cosdata, of_metrics)
+    <span class="kw">judge_compute</span>(cosdata, .ofuns)
     
   } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_barplot&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;barplot&quot;</span>) {
-    <span class="kw">judge_barplot</span>(cosdata, of_metrics)
+    <span class="kw">judge_barplot</span>(cosdata, .ofuns)
     
   } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_rasterplot&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;rasterplot&quot;</span>) {
-    <span class="kw">judge_rasterplot</span>(cosdata, of_metrics)
+    <span class="kw">judge_rasterplot</span>(cosdata, .ofuns)
     
   } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_explore&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;explore&quot;</span>) {
-    <span class="kw">judge_explore</span>(cosdata, of_metrics)
+    <span class="kw">judge_explore</span>(cosdata, .ofuns)
     
   } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_explore&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;compare&quot;</span>) {
     cosdata2 &lt;-<span class="st"> </span><span class="ot">NULL</span>
-    <span class="cf">if</span> (<span class="st">&quot;cos_data2&quot;</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">names</span>(le_dots)) {cos_data2 &lt;-<span class="st"> </span><span class="kw">eval</span>(le_dots<span class="op">$</span>cos_data2)}
-    <span class="kw">judge_compare</span>(<span class="dt">d1 =</span> cosdata, <span class="dt">d2 =</span> cosdata2, of_metrics)
+    <span class="cf">if</span> (<span class="st">&quot;cosdata2&quot;</span> <span class="op">%in%</span><span class="st"> </span><span class="kw">names</span>(le_dots)) {<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">eval</span>(le_dots<span class="op">$</span>cosdata2)}
+    <span class="kw">judge_compare</span>(cosdata, cosdata2, .ofuns)
     
   } <span class="cf">else</span> <span class="cf">if</span> (le_type <span class="op">==</span><span class="st"> &quot;judge_window&quot;</span> <span class="op">|</span><span class="st"> </span>le_type <span class="op">==</span><span class="st"> &quot;window&quot;</span>) {
     windows &lt;-<span class="st"> </span><span class="kw">c</span>(20L,500L)
     <span class="cf">if</span> (window_sizes <span class="op">%in%</span><span class="st"> </span><span class="kw">names</span>(le_dots)) {windows &lt;-<span class="st"> </span>window_sizes}
-    <span class="kw">judge_window</span>(cosdata, of_metrics, window_sizes)
+    <span class="kw">judge_window</span>(cosdata, .ofuns, window_sizes)
   } <span class="cf">else</span> {
     <span class="kw">stop</span>(<span class="st">&quot;There is no option (`type`) called&quot;</span> <span class="op">%&amp;&amp;%</span><span class="st"> </span>le_type)
   }
@@ -278,15 +279,14 @@ judge &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
 </div>
 <div id="computation" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Computation</h3>
-<p>The purpose of this function is to extract a the main of objective functions from the <code>COSERO</code> data.frame. The objective functions are extracted for each basin separately and computed for the entire length of the data, as well as for each period separately.</p>
-<p>The computational part of the function works as follows. In step (I) the non-marked periods of <code>cos_data</code> (columns of <code>viscos_options(&quot;name_COSperiod&quot;)</code> which are smaller then 0) are excluded from further calculations. The thereby obtained data.frame is named <code>evaluation_data</code>.</p>
+<p>The purpose of this function is to compute a set of objective functions for <code>cosdata</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ---------------------------------------------------------------------------</span>
-<span class="co">#&#39; Get basic objective function for cos_data</span>
+<span class="co">#&#39; Get basic objective function for </span>
 <span class="co">#&#39;</span>
 <span class="co">#&#39; Calculate basic objective functions(NSE, KGE, percentage BIAS, Correlation)</span>
 <span class="co">#&#39; for every basin and the chosen periods.</span>
 <span class="co">#&#39;</span>
-<span class="co">#&#39; @param cos_data cos_data data.frame.</span>
+<span class="co">#&#39; @param cosdata cosdata data.frame.</span>
 <span class="co">#&#39; @return list of basic objective function evaluated for the different</span>
 <span class="co">#&#39; hydrological years and over the whole timespan.</span>
 <span class="co">#&#39;</span>
@@ -296,24 +296,25 @@ judge &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
 <span class="co">#&#39; @importFrom dplyr select filter starts_with</span>
 <span class="co">#&#39; @importFrom magrittr set_names</span>
 judge_compute &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
-                          <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
-                                            <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
-                                            <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
-                                            <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
-                       <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()) {
+                          <span class="dt">.ofuns =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                        <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                        <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                        <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor),
+                          <span class="dt">opts =</span> coscos<span class="op">::</span><span class="kw">viscos_options</span>()
+                          ) {
   <span class="co"># pre: ====================================================================</span>
   cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cosdata)
   name_period &lt;-<span class="st"> </span>opts[[<span class="st">&quot;name_COSperiod&quot;</span>]]
   name_o &lt;-<span class="st"> </span>opts[[<span class="st">&quot;name_o&quot;</span>]]
   name_s &lt;-<span class="st"> </span>opts[[<span class="st">&quot;name_s&quot;</span>]]
   <span class="co">#</span>
-  <span class="cf">if</span>( <span class="op">!</span>(<span class="kw">class</span>(of_metrics) <span class="op">==</span><span class="st"> &quot;list&quot;</span>) ) {
-    of_metrics &lt;-<span class="st"> </span><span class="kw">list</span>(of_metrics)
+  <span class="cf">if</span>( <span class="op">!</span>(<span class="kw">class</span>(.ofuns) <span class="op">==</span><span class="st"> &quot;list&quot;</span>) ) {
+    .ofuns &lt;-<span class="st"> </span><span class="kw">list</span>(.ofuns)
   }
-  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_metrics))){
-    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_metrics)
+  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(.ofuns))){
+    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(.ofuns)
   } <span class="cf">else</span> {
-    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(of_metrics)
+    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(.ofuns)
   }
   <span class="co">#</span>
   evaluation_data &lt;-<span class="st"> </span>cos_data[cos_data[[name_period]] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, ]
@@ -328,7 +329,7 @@ judge_compute &lt;-<span class="st"> </span><span class="cf">function</span>(cos
   number_judge_periods &lt;-<span class="st"> </span>data_periods <span class="op">%&gt;%</span><span class="st"> </span>length
 
   <span class="co"># compute main-of for entire data: ========================================</span>
-  d_mean &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">map_df</span>(of_metrics, <span class="cf">function</span>(judge_, x, y) <span class="kw">as.numeric</span>(<span class="kw">judge_</span>(x,y)),
+  d_mean &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">map_df</span>(.ofuns, <span class="cf">function</span>(judge_, x, y) <span class="kw">as.numeric</span>(<span class="kw">judge_</span>(x,y)),
                  <span class="dt">x =</span> dplyr<span class="op">::</span><span class="kw">select</span>(evaluation_data,dplyr<span class="op">::</span><span class="kw">starts_with</span>(name_o)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unname</span>(.),
                  <span class="dt">y =</span> dplyr<span class="op">::</span><span class="kw">select</span>(evaluation_data,dplyr<span class="op">::</span><span class="kw">starts_with</span>(name_s)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unname</span>(.) ) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">t</span>(.) <span class="op">%&gt;%</span>
@@ -343,7 +344,7 @@ judge_compute &lt;-<span class="st"> </span><span class="cf">function</span>(cos
     s_pick &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">filter</span>(evaluation_data,period <span class="op">==</span><span class="st"> </span>data_periods[k]) <span class="op">%&gt;%</span>
 <span class="st">      </span>dplyr<span class="op">::</span><span class="kw">select</span>(.,<span class="kw">starts_with</span>(name_s)) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw">unname</span>(.)
-    d_measures &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">map_df</span>(of_metrics, <span class="cf">function</span>(judge_,x,y) <span class="kw">as.numeric</span>(<span class="kw">judge_</span>(x,y)),
+    d_measures &lt;-<span class="st"> </span>purrr<span class="op">::</span><span class="kw">map_df</span>(.ofuns, <span class="cf">function</span>(judge_,x,y) <span class="kw">as.numeric</span>(<span class="kw">judge_</span>(x,y)),
                  <span class="dt">x =</span> o_pick,
                  <span class="dt">y =</span> s_pick ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">t</span>()
     <span class="kw">return</span>(<span class="dt">measure =</span> d_measures)
@@ -371,19 +372,20 @@ judge_compute &lt;-<span class="st"> </span><span class="cf">function</span>(cos
 <span class="co">#&#39;</span>
 <span class="co">#&#39; @export</span>
 judge_barplot &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
-                          <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
-                                            <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
-                                            <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
-                                            <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor)) {
+                          <span class="dt">.ofuns =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                        <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                        <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                        <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor)
+                          ) {
   <span class="co"># pre: ====================================================================</span>
   cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cosdata)
-  <span class="cf">if</span>(<span class="op">!</span>(<span class="kw">class</span>(of_metrics) <span class="op">==</span><span class="st"> &quot;list&quot;</span>)) {
-    of_metrics &lt;-<span class="st"> </span><span class="kw">list</span>(of_metrics)
+  <span class="cf">if</span>(<span class="op">!</span>(<span class="kw">class</span>(.ofuns) <span class="op">==</span><span class="st"> &quot;list&quot;</span>)) {
+    .ofuns &lt;-<span class="st"> </span><span class="kw">list</span>(.ofuns)
   }
-  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_metrics))){
-    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_metrics)
+  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(.ofuns))){
+    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(.ofuns)
   } <span class="cf">else</span> {
-    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(of_metrics)
+    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(.ofuns)
   }
   <span class="co"># functions: ==============================================================</span>
   assign_ofgroups &lt;-<span class="st"> </span><span class="cf">function</span>(judge_melted,judge_names) {
@@ -415,7 +417,7 @@ judge_barplot &lt;-<span class="st"> </span><span class="cf">function</span>(cos
     <span class="kw">return</span>(plt_out)
   }
   <span class="co"># computations: ===========================================================</span>
-  judge_data &lt;-<span class="st"> </span><span class="kw">judge_compute</span>(cos_data,of_metrics)
+  judge_data &lt;-<span class="st"> </span><span class="kw">judge_compute</span>(cos_data,.ofuns)
   num_basins &lt;-<span class="st"> </span><span class="kw">ncol</span>(judge_data) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
   judge_melted &lt;-<span class="st"> </span><span class="kw">suppressMessages</span>( reshape2<span class="op">::</span><span class="kw">melt</span>(judge_data) ) <span class="op">%&gt;%</span>
 <span class="st">    </span><span class="kw">assign_ofgroups</span>(.,d_names)
@@ -432,24 +434,25 @@ judge_barplot &lt;-<span class="st"> </span><span class="cf">function</span>(cos
 <span class="co">#&#39; @rdname judge_overview</span>
 <span class="co">#&#39; @import pasta</span>
 <span class="co">#&#39; @export</span>
-judge_rasterplot &lt;-<span class="st"> </span><span class="cf">function</span>(cos_data,
-                             <span class="dt">of_metrics =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
-                                               <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
-                                               <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
-                                               <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor)) {
+judge_rasterplot &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata,
+                             <span class="dt">.ofuns =</span> <span class="kw">list</span>(<span class="dt">nse   =</span> coscos<span class="op">::</span>of_nse,
+                                           <span class="dt">kge   =</span> coscos<span class="op">::</span>of_kge,
+                                           <span class="dt">pbias =</span> coscos<span class="op">::</span>of_pbias,
+                                           <span class="dt">corr  =</span> coscos<span class="op">::</span>of_cor)
+                             ) {
   <span class="co"># def: ====================================================================</span>
-  <span class="kw">build_tibble</span>(cos_data)
-  <span class="cf">if</span>(<span class="op">!</span>(<span class="kw">class</span>(of_metrics) <span class="op">==</span><span class="st"> &quot;list&quot;</span>)) {
-    of_metrics &lt;-<span class="st"> </span><span class="kw">list</span>(of_metrics)
+  cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cosdata)
+  <span class="cf">if</span>(<span class="op">!</span>(<span class="kw">class</span>(.ofuns) <span class="op">==</span><span class="st"> &quot;list&quot;</span>)) {
+    .ofuns &lt;-<span class="st"> </span><span class="kw">list</span>(.ofuns)
   }
-  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(of_metrics))){
-    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(of_metrics)
+  <span class="cf">if</span> (<span class="kw">is.null</span>(<span class="kw">names</span>(.ofuns))){
+    d_names &lt;-<span class="st"> &quot;d&quot;</span> <span class="op">%&amp;%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(.ofuns)
   } <span class="cf">else</span> {
-    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(of_metrics)
+    d_names &lt;-<span class="st"> </span><span class="kw">names</span>(.ofuns)
   }
   <span class="co"># computations: ===========================================================</span>
   regex_main_of &lt;-<span class="st"> </span>d_names <span class="op">%.%</span><span class="st"> &quot;*&quot;</span>
-  judge_data &lt;-<span class="st"> </span><span class="kw">judge_compute</span>(cos_data, of_metrics)
+  judge_data &lt;-<span class="st"> </span><span class="kw">judge_compute</span>(cos_data, .ofuns)
   <span class="co">#</span>
   plot_list &lt;-<span class="st"> </span><span class="kw">lapply</span>(regex_main_of,<span class="cf">function</span>(x) <span class="kw">plot_fun_raster</span>(x,judge_data)) <span class="op">%&gt;%</span>
 <span class="st">    </span>magrittr<span class="op">::</span><span class="kw">set_names</span>(d_names)

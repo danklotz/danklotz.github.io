@@ -165,9 +165,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>For the examples 10 events are extracted from a runoff example</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">library</span>(coscos)
   <span class="kw">library</span>(visCOS)
-  cos_data &lt;-<span class="st"> </span><span class="kw">viscos_example</span>()
-  peakplots &lt;-<span class="st"> </span><span class="kw">peack</span>(cos_data, <span class="dt">action =</span> <span class="st">&quot;plots&quot;</span>, <span class="dt">n_events =</span> 10L)</code></pre></div>
-<p>The <code>peakplots</code> list does now contain plots for each basin within the <code>cos_data</code> data.frame:</p>
+  cosdata &lt;-<span class="st"> </span><span class="kw">viscos_example</span>()
+  peakplots &lt;-<span class="st"> </span><span class="kw">peack</span>(cosdata, <span class="dt">action =</span> <span class="st">&quot;plots&quot;</span>, <span class="dt">n_events =</span> 10L)</code></pre></div>
+<p>The <code>peakplots</code> list does now contain plots for each basin within the <code>cosdata</code> data.frame:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">  <span class="kw">names</span>(peakplots)</code></pre></div>
 <pre><code>## [1] &quot;basin0001&quot; &quot;basin0002&quot;</code></pre>
 <p>For each basin the a set of plots (<code>overview</code>,<code>scatter</code>,<code>event_plot</code>) are saved within a list for each basin. In the following the plots for basin 1 are shown:</p>
@@ -197,7 +197,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
   <span class="co">#&#39; @import dplyr</span>
   <span class="co">#&#39; @import magrittr</span>
   <span class="co">#&#39; @importFrom tibble tibble</span>
-  peack &lt;-<span class="st"> </span><span class="cf">function</span>(cos_data, 
+  peack &lt;-<span class="st"> </span><span class="cf">function</span>(cosdata, 
                     <span class="dt">action =</span> <span class="st">&quot;compute&quot;</span>,
                     <span class="dt">n_events=</span> 10L, 
                     <span class="dt">window_size =</span> 24L, 
@@ -211,7 +211,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       action_string =<span class="st"> &quot;compute&quot;</span>
     }
     <span class="co">#</span>
-    cosdata &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cos_data)
+    cos_data &lt;-<span class="st"> </span>coscos<span class="op">::</span><span class="kw">cook_cosdata</span>(cosdata)
     n_events_int &lt;-<span class="st"> </span><span class="kw">as.integer</span>(n_events)
     window_size_int &lt;-<span class="st"> </span><span class="kw">as.integer</span>(window_size)
     <span class="cf">if</span> (<span class="kw">is.na</span>(n_events_int)  <span class="op">|</span>
@@ -226,11 +226,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">        </span><span class="op">!</span><span class="kw">is.integer</span>(window_size) ) {
       <span class="kw">stop</span>(<span class="st">&quot;window_size is ill defined&quot;</span>)
     }
-    data1 &lt;-<span class="st"> </span>cosdata <span class="op">%&gt;%</span>
+    data1 &lt;-<span class="st"> </span>cos_data <span class="op">%&gt;%</span>
 <span class="st">      </span>dplyr<span class="op">::</span><span class="kw">select</span>( <span class="kw">starts_with</span>(opts[[<span class="st">&quot;name_o&quot;</span>]]) )
-    data2 &lt;-<span class="st"> </span>cosdata <span class="op">%&gt;%</span>
+    data2 &lt;-<span class="st"> </span>cos_data <span class="op">%&gt;%</span>
 <span class="st">      </span>dplyr<span class="op">::</span><span class="kw">select</span>( <span class="kw">starts_with</span>(opts[[<span class="st">&quot;name_s&quot;</span>]]) )
-    data_posix &lt;-<span class="st"> </span>cosdata <span class="op">%&gt;%</span><span class="st"> </span>
+    data_posix &lt;-<span class="st"> </span>cos_data <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">      </span>dplyr<span class="op">::</span><span class="kw">select</span>(<span class="kw">matches</span>(opts[[<span class="st">&quot;name_COSposix&quot;</span>]]))
     data_numbers &lt;-<span class="st"> </span><span class="kw">names</span>(data1) <span class="op">%&gt;%</span>
 <span class="st">      </span><span class="kw">gsub</span>(opts[[<span class="st">&quot;name_o&quot;</span>]], <span class="st">&quot;&quot;</span>, ., <span class="dt">ignore.case =</span> <span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
