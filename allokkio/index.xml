@@ -72,82 +72,7 @@
 &lt;div id=&#34;higher-dimensions-from-3-to-1&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Higher Dimensions: From 3 to 1&lt;/h1&gt;
 &lt;p&gt;Do these findings hold true in higher dimensions? To answer that question, let us try to aggregate 3 fine-scaled reservoirs next and see what happens.&lt;/p&gt;
-&lt;p&gt;To do so we will (again) use different inputs, as shown here:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# setup for the experiment:
-
-# dimensionality of the problem:
-le_dim &amp;lt;- 3
-
-# since the dimension is higher, we take less samples per task:
-samples_per_tab &amp;lt;- 30L
-
-# generate and show inputs:
-input &amp;lt;- matrix(NA, nrow = length(idx_inputs), ncol = le_dim) %&amp;gt;%
-  tibble::as_tibble(.) %&amp;gt;%
-  magrittr::set_names(&amp;quot;in&amp;quot; %_% 1:le_dim) %&amp;gt;%
-  dplyr::mutate(in_1 = coscos::viscos_example()$QSIM_0002[idx_inputs],
-                in_2 = coscos::viscos_example()$QSIM_0001[2000 + idx_inputs],
-                in_3 = coscos::viscos_example()$QOBS_0001[1000 + idx_inputs]) %&amp;gt;%
-  dplyr::mutate(in_m = rowSums(.),
-                idx = 1:nrow(.))
-
-ggplot(input) +
-  geom_line(aes(x = idx, y = in_1), col = &amp;quot;darkblue&amp;quot;) +
-  geom_line(aes(x = idx, y = in_2), col = &amp;quot;cyan&amp;quot;) +
-  geom_line(aes(x = idx, y = in_3), col = &amp;quot;dodgerblue&amp;quot;) +
-  theme_light() +
-  xlab(&amp;quot;time&amp;quot;) + ylab(&amp;quot;Qin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# simulation
-
-# functions for simulating (again rough bcs of duplication, but hey ...):
-  add_sim_row &amp;lt;- function(tab_id, le_sample) {
-    all_tabs &amp;lt;- le_sample[ ,tab_id]
-    in_id &amp;lt;- gsub(&amp;quot;tab&amp;quot;,&amp;quot;in&amp;quot;, tab_id)
-    simulations &amp;lt;- map(all_tabs[[1]],
-                       function(le_tab, le_input) {
-                         le_model &amp;lt;- spawn_linres(le_tab)
-                         le_model(le_input)
-                       },
-                       le_input = input[[in_id]])
-  }
-  #
-  build_rowsums &amp;lt;- function(le_tab_data) {
-    map(le_tab_data, function(x) unlist(x)) %&amp;gt;%
-      purrr::reduce(., function(x,y) x + y) %&amp;gt;%
-      list()
-  }
-  generate_sims &amp;lt;- function(le_sample) {
-    for(tab_id in names(le_sample)) {
-      sim_id &amp;lt;- gsub(&amp;quot;tab&amp;quot;,&amp;quot;sim&amp;quot;, tab_id)
-      le_sample[sim_id] &amp;lt;- list(add_sim_row(tab_id, le_sample))
-    }
-    le_sample$sim_tot &amp;lt;- select(le_sample, matches(&amp;quot;sim_\\d&amp;quot;)) %&amp;gt;%
-      apply(., 1, function(x) build_rowsums(x)) %&amp;gt;%
-      purrr::flatten(.)
-    return(le_sample)
-  }
-
-# create samples:
-
-  tab3_sample &amp;lt;- modelr::seq_range(tab_bounds, n =  samples_per_tab) %&amp;gt;%
-    purrr::map(1:3, function(x, le_seq) temp = le_seq, le_seq = .) %&amp;gt;%
-    magrittr::set_names(&amp;quot;tab&amp;quot; %_% 1:3) %&amp;gt;%
-    tibble::as_tibble(.) %&amp;gt;%
-    tidyr::expand_(., dots = c(&amp;quot;tab_1&amp;quot;, &amp;quot;tab_2&amp;quot;,&amp;quot;tab_3&amp;quot;)) %&amp;gt;%
-    dplyr::mutate(.,tab_m = rowMeans(.)) %&amp;gt;%
-    generate_sims(.)
-# compute results:
-  tab3_results &amp;lt;- select(tab3_sample, starts_with(&amp;quot;tab_&amp;quot;)) %&amp;gt;%
-    dplyr::mutate(nse_m = map2_dbl(tab3_sample$sim_m,
-                                   tab3_sample$sim_tot,
-                                   function(sim,obs) NSE(sim, obs)),
-                  rel_error = map2_dbl(tab3_sample$sim_m,
-                                        tab3_sample$sim_tot,
-                                       function(sim,obs)
-                                         -sum(abs((obs - sim)/obs))),
-                  le_size = 1
-                  )&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To do so we will (again) use different inputs, as shown here: &lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;div id=&#34;glimpses-of-the-cube&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Glimpses of the Cube&lt;/h2&gt;
 &lt;p&gt;The result now has for dimensions, but We can still think of it as a cube: The different &lt;span class=&#34;math inline&#34;&gt;\(tab_i\)&lt;/span&gt; form the axis and the information of the objective function can be defined with the help of colors.&lt;/p&gt;
@@ -155,11 +80,14 @@ ggplot(input) +
 &lt;center&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; cube
 &lt;/center&gt;
-&lt;p&gt;&lt;img src = &#34;/post/on_aggregation_figures/all_cubes_nse.jpg&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;./post/on_aggregation_figures/all_cubes_nse.jpg&#34; alt=&#34;all_cubes_nse&#34; /&gt;
 &lt;center&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(e_{rel}\)&lt;/span&gt; cube
 &lt;/center&gt;
-&lt;p&gt;&lt;img src = &#34;/post/on_aggregation_figures/all_cubes_e-rel.jpg&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;./post/on_aggregation_figures/all_cubes_e-rel.jpg&#34; alt=&#34;all_cubes_erel&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;all_cubes_erel&lt;/p&gt;
+&lt;/div&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# nse Cube:
 plotly::plot_ly(tab3_results,
         x = ~tab_1,
@@ -184,14 +112,20 @@ plotly::plot_ly(tab3_results,
 &lt;p&gt;The cubes from above give an impression of the overall patter of the objective functions. Now, we will look at them in detail by inspecting different subviews of both cubes:&lt;/p&gt;
 &lt;div id=&#34;average-dices&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Average Dices&lt;/h3&gt;
-&lt;p&gt;&lt;img src = &#34;/post/on_aggregation_figures/concept_slice-average.jpg&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;./post/on_aggregation_figures/concept_slice-average.jpg&#34; alt=&#34;slice_average&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;slice_average&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;The following plots show the average view for each pixel or a given side. As depicted above one can think of it as looking from one side (marked in green) at the cube and seeing the average samples along the view-axis.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-13-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-13-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-14-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-14-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;horizontal-slices&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Horizontal Slices&lt;/h3&gt;
-&lt;p&gt;&lt;img src = &#34;/post/on_aggregation_figures/concept_slice-horizontal.jpg&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;./post/on_aggregation_figures/concept_slice-horizontal.jpg&#34; alt=&#34;horizontal_slice&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;horizontal_slice&lt;/p&gt;
+&lt;/div&gt;
 &lt;p&gt;The &lt;em&gt;horizontal slices&lt;/em&gt; view a plain of the cube by fixing the &lt;span class=&#34;math inline&#34;&gt;\(tab_{3}\)&lt;/span&gt; at one value for each slice. As shown in the figure above, we made three slices, one for low-, one for mid- and one for high-values of &lt;span class=&#34;math inline&#34;&gt;\(tab_{3}\)&lt;/span&gt;. In the following we thus have six figures in total (three for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and three for the &lt;span class=&#34;math inline&#34;&gt;\(e_{rel}\)&lt;/span&gt;).&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-15-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-15-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-16-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-16-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
@@ -223,8 +157,8 @@ plotly::plot_ly(tab3_results,
 &lt;h2&gt;Comparison&lt;/h2&gt;
 &lt;p&gt;We can compare the first exercise with the second one by comparing their densities and see that the 2 dimensional case has more extremely results, but for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; also larger deviations towards bad values. The 3 dimensional case has less perfect values, but also smaller deviations towards the worse performance&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;##             used   (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells   1184377   63.3    2164898  115.7   2164898  115.7
-## Vcells 352238163 2687.4  586907690 4477.8 440027489 3357.2&lt;/code&gt;&lt;/pre&gt;
+## Ncells   1184155   63.3    2164898  115.7   2164898  115.7
+## Vcells 352237053 2687.4  586906160 4477.8 440014772 3357.1&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;./post/on_aggregationI_files/figure-html/unnamed-chunk-19-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;summary-2&#34; class=&#34;section level2&#34;&gt;
