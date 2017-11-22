@@ -6,8 +6,265 @@
     <description>Recent content in Posts on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Nov 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>On Aggregation I</title>
+      <link>/2017/11/21/on-aggregation-i/</link>
+      <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/21/on-aggregation-i/</guid>
+      <description>&lt;div id=&#34;the-story&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Story&lt;/h1&gt;
+&lt;p&gt;Linear reservoirs form the basis building block of most conceptual rainfall-runoff models. They can be combined or extended in a non-linear fashion to account for many complex behaviors. Furthermore, on the grand scale of things they can be seen as approximations to the Saint-Venant equations and are thus even physically justified (somehow, also see: &lt;span class=&#34;citation&#34;&gt;Klemes (1982)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Szilagyi and Szilösi-Nagy (2010)&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;For now let us assume that we study a hydrological system that consists of multiple linear reservoirs. The response of each reservoir is defined by a single constant &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; and the overall runoff of the system (which is also the only part that is measurable) is given by the sum of the individual runoffs.&lt;/p&gt;
+&lt;p&gt;We try to answer the following question by use of simulation:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Is it possible to use arithmetic mean of the reservoir constants to get a lumped reservoir which represents the behavior or response of the individual (“fine scale”) reservoirs&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A Little bit of Hydrology&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In their search for effective parameters hydrologist usually revert back to the concept of hydrological response units (&lt;em&gt;HRUs&lt;/em&gt;). The idea is to search for regions which are spatially homogenous and lump them together. Afterwards the effective parameters are usually estimated by optimization.&lt;/p&gt;
+&lt;p&gt;A more modern approach, called multiscale-parameter regionalization (MPR), suggests to first estimate the parameters at the finest possible scale and aggregate the parameters themselves afterwards. To make the fine-scale estimation possible it is assumed that the model parameters can be explicitly defined by a functional relationship with landscape properties.&lt;/p&gt;
+&lt;p&gt;My PHD is devoted to these functional relationships, but in this document we shall focus on the properties of the aggregation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-setup&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Setup&lt;/h1&gt;
+&lt;p&gt;Let us start with the experimental setup by defining a functional that returns a parameterized linear reservoir as a function of &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;spawn_linres &amp;lt;- function(tab) {
+    q &amp;lt;- 0
+    linres &amp;lt;- function(qin) {
+      q_out &amp;lt;- q*exp(-1/tab) + qin*(1-exp(-1/tab))
+      q &amp;lt;&amp;lt;- q_out
+      return(q_out)
+    }
+    return(linres)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The following figure uses the functional to exemplify how different reservoirs behave with respect to different values of &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; (in relation to a unit input of 20) &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can see that &lt;strong&gt;small&lt;/strong&gt; values of &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; lead to responsive behavior with fast depletion (orange lines), while &lt;strong&gt;large&lt;/strong&gt; values of &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; lead to a dampened response with long memory (slow depletion, blue lines). Ok, now lets do the analysis.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-simple-case-from-2-to-1&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;The Simple Case: From 2 to 1&lt;/h1&gt;
+&lt;p&gt;First, let us say that we have two linear reservoirs &lt;span class=&#34;math inline&#34;&gt;\(n=2\)&lt;/span&gt; which ought to be represented by a single one. To keep things simple let us also assume that both have the same input. We can then generate a sample of different &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values and check how good the different means of the &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; represent the overall behavior of the system. We will use the venerable Nash-Sutcliffe Efficiency, short &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; (i.e. the &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt; of the runoff) as a distance measure/objective function.&lt;/p&gt;
+&lt;div id=&#34;symmetry&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Symmetry&lt;/h2&gt;
+&lt;p&gt;Let us start by plotting an exemplary hydrograph from the generated samples. The overall (i.e. &lt;em&gt;real&lt;/em&gt;) response of the system is depicted in blue, the individual fine-scale reservoirs in violet-tones and the response from the aggregated/averaged reservoir is shown in orange: &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Ok! Now we can make a plot which shows the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; values of the aggregated reservoir in dependence of the sampled “fine-scaled” &lt;span class=&#34;math inline&#34;&gt;\(tab_i\)&lt;/span&gt; values. We can see that the best (highest) &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; values are on the 1:1 line. This makes sense, because there the relation &lt;span class=&#34;math inline&#34;&gt;\(tab_1 = tab_2\)&lt;/span&gt;holds (and the inputs are the same). One can also see that the behavior is symmetric with regard to the line. This is also an effect of the equal inputs, since &lt;span class=&#34;math inline&#34;&gt;\(tab_1 + tab_2 \equiv tab_2 + tab_1\)&lt;/span&gt;. We can also observe that the aggregation works better for larger &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values. This is mainly because of the behavior of the linear reservoirs (see: first section): More dampened functions exhibit smaller errors. Thus, a better &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; value can be expected. &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The behavior and sensitivity of the results depends on the basin properties and on the chosen objective function. An example is given in the following figure, which shows that the sum of absolute relative errors (&lt;span class=&#34;math inline&#34;&gt;\(e_rel\)&lt;/span&gt;) is less forgiving than the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt;: &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-asymmetric-case&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The Asymmetric Case&lt;/h2&gt;
+&lt;p&gt;How do the result change if the input for the reservoirs is different? &lt;strong&gt;Not much!&lt;/strong&gt; The 1:1 line does not make a symmetry anymore, but higher &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values are still easier to aggregate (whatever the means). Here is an example which uses the same input as above for one of the fine scaled reservoirs, but a different input for the other one.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can note two things:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;With regard to the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt;: the &lt;span class=&#34;math inline&#34;&gt;\(tab_2\)&lt;/span&gt; values are now more insensitive, while the &lt;span class=&#34;math inline&#34;&gt;\(tab_1\)&lt;/span&gt; values still exhibit the same pattern&lt;/li&gt;
+&lt;li&gt;The sensitivity pattern of &lt;span class=&#34;math inline&#34;&gt;\(e_rel\)&lt;/span&gt; is however inverted! The aggregation is more sensitive to changes of &lt;span class=&#34;math inline&#34;&gt;\(tab_2\)&lt;/span&gt;, than to changes of &lt;span class=&#34;math inline&#34;&gt;\(tab_1\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;p&gt;In summary we can say that perfect aggregation with the arithmetic mean is possible in the trivial case, where &lt;span class=&#34;math inline&#34;&gt;\(tab_1 = tab_2\)&lt;/span&gt; (independent of the input). For all other cases the mean is an imperfect approximation. In general, the quality of the approximations is better (less sensitive) for larger &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values. The quality decline (of the approximation) is dependent on basin properties (in our case the input) and the chosen objective functions. Averaging seems to be more difficult if one is interested in relative measures.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;higher-dimensions-from-3-to-1&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Higher Dimensions: From 3 to 1&lt;/h1&gt;
+&lt;p&gt;Do these findings hold true in higher dimensions? To answer that question, let us try to aggregate 3 fine-scaled reservoirs next and see what happens.&lt;/p&gt;
+&lt;p&gt;To do so we will (again) use different inputs, as shown here:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# setup for the experiment:
+
+# dimensionality of the problem:
+le_dim &amp;lt;- 3
+
+# since the dimension is higher, we take less samples per task:
+samples_per_tab &amp;lt;- 30L
+
+# generate and show inputs:
+input &amp;lt;- matrix(NA, nrow = length(idx_inputs), ncol = le_dim) %&amp;gt;%
+  tibble::as_tibble(.) %&amp;gt;%
+  magrittr::set_names(&amp;quot;in&amp;quot; %_% 1:le_dim) %&amp;gt;%
+  dplyr::mutate(in_1 = coscos::viscos_example()$QSIM_0002[idx_inputs],
+                in_2 = coscos::viscos_example()$QSIM_0001[2000 + idx_inputs],
+                in_3 = coscos::viscos_example()$QOBS_0001[1000 + idx_inputs]) %&amp;gt;%
+  dplyr::mutate(in_m = rowSums(.),
+                idx = 1:nrow(.))
+
+ggplot(input) +
+  geom_line(aes(x = idx, y = in_1), col = &amp;quot;darkblue&amp;quot;) +
+  geom_line(aes(x = idx, y = in_2), col = &amp;quot;cyan&amp;quot;) +
+  geom_line(aes(x = idx, y = in_3), col = &amp;quot;dodgerblue&amp;quot;) +
+  theme_light() +
+  xlab(&amp;quot;time&amp;quot;) + ylab(&amp;quot;Qin&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# simulation
+
+# functions for simulating (again rough bcs of duplication, but hey ...):
+  add_sim_row &amp;lt;- function(tab_id, le_sample) {
+    all_tabs &amp;lt;- le_sample[ ,tab_id]
+    in_id &amp;lt;- gsub(&amp;quot;tab&amp;quot;,&amp;quot;in&amp;quot;, tab_id)
+    simulations &amp;lt;- map(all_tabs[[1]],
+                       function(le_tab, le_input) {
+                         le_model &amp;lt;- spawn_linres(le_tab)
+                         le_model(le_input)
+                       },
+                       le_input = input[[in_id]])
+  }
+  #
+  build_rowsums &amp;lt;- function(le_tab_data) {
+    map(le_tab_data, function(x) unlist(x)) %&amp;gt;%
+      purrr::reduce(., function(x,y) x + y) %&amp;gt;%
+      list()
+  }
+  generate_sims &amp;lt;- function(le_sample) {
+    for(tab_id in names(le_sample)) {
+      sim_id &amp;lt;- gsub(&amp;quot;tab&amp;quot;,&amp;quot;sim&amp;quot;, tab_id)
+      le_sample[sim_id] &amp;lt;- list(add_sim_row(tab_id, le_sample))
+    }
+    le_sample$sim_tot &amp;lt;- select(le_sample, matches(&amp;quot;sim_\\d&amp;quot;)) %&amp;gt;%
+      apply(., 1, function(x) build_rowsums(x)) %&amp;gt;%
+      purrr::flatten(.)
+    return(le_sample)
+  }
+
+# create samples:
+
+  tab3_sample &amp;lt;- modelr::seq_range(tab_bounds, n =  samples_per_tab) %&amp;gt;%
+    purrr::map(1:3, function(x, le_seq) temp = le_seq, le_seq = .) %&amp;gt;%
+    magrittr::set_names(&amp;quot;tab&amp;quot; %_% 1:3) %&amp;gt;%
+    tibble::as_tibble(.) %&amp;gt;%
+    tidyr::expand_(., dots = c(&amp;quot;tab_1&amp;quot;, &amp;quot;tab_2&amp;quot;,&amp;quot;tab_3&amp;quot;)) %&amp;gt;%
+    dplyr::mutate(.,tab_m = rowMeans(.)) %&amp;gt;%
+    generate_sims(.)
+# compute results:
+  tab3_results &amp;lt;- select(tab3_sample, starts_with(&amp;quot;tab_&amp;quot;)) %&amp;gt;%
+    dplyr::mutate(nse_m = map2_dbl(tab3_sample$sim_m,
+                                   tab3_sample$sim_tot,
+                                   function(sim,obs) NSE(sim, obs)),
+                  rel_error = map2_dbl(tab3_sample$sim_m,
+                                        tab3_sample$sim_tot,
+                                       function(sim,obs)
+                                         -sum(abs((obs - sim)/obs))),
+                  le_size = 1
+                  )&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;glimpses-of-the-cube&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Glimpses of the Cube&lt;/h2&gt;
+&lt;p&gt;The result now has for dimensions, but We can still think of it as a cube: The different &lt;span class=&#34;math inline&#34;&gt;\(tab_i\)&lt;/span&gt; form the axis and the information of the objective function can be defined with the help of colors.&lt;/p&gt;
+&lt;p&gt;Here are some views of the cubes for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and the &lt;span class=&#34;math inline&#34;&gt;\(e_{rel}\)&lt;/span&gt; distance measures. Some information gets lost because of the static 3d views. We therefore added the &lt;code&gt;plotly&lt;/code&gt; code to create them, in case you want to explore the pattern yourself.&lt;/p&gt;
+&lt;center&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; cube
+&lt;/center&gt;
+&lt;p&gt;&lt;img src = &#34;/post/on_aggregation_figures/all_cubes_nse.jpg&#34; /&gt;&lt;/p&gt;
+&lt;center&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(e_{rel}\)&lt;/span&gt; cube
+&lt;/center&gt;
+&lt;p&gt;&lt;img src = &#34;/post/on_aggregation_figures/all_cubes_e-rel.jpg&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# nse Cube:
+plotly::plot_ly(tab3_results,
+        x = ~tab_1,
+        y = ~tab_2,
+        z = ~tab_3,
+        color = ~nse_m,
+        size = ~le_size,
+        sizes = c(0,20),
+        colors   = c(&amp;quot;darkcyan&amp;quot;,&amp;quot;lightgreen&amp;quot;,&amp;quot;lightyellow&amp;quot;))
+# rel_error cube:
+plotly::plot_ly(tab3_results,
+        x = ~tab_1,
+        y = ~tab_2,
+        z = ~tab_3,
+        color = ~rel_error,
+        size = ~le_size,
+        sizes = c(0,20),
+        colors   = c(&amp;quot;darkcyan&amp;quot;,&amp;quot;lightgreen&amp;quot;,&amp;quot;lightyellow&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;slice-dice&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Slice &amp;amp; Dice&lt;/h2&gt;
+&lt;p&gt;The cubes from above give an impression of the overall patter of the objective functions. Now, we will look at them in detail by inspecting different subviews of both cubes:&lt;/p&gt;
+&lt;div id=&#34;average-dices&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Average Dices&lt;/h3&gt;
+&lt;p&gt;&lt;img src = &#34;/post/on_aggregation_figures/concept_slice-average.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The following plots show the average view for each pixel or a given side. As depicted above one can think of it as looking from one side (marked in green) at the cube and seeing the average samples along the view-axis.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-13-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-13-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-14-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-14-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;horizontal-slices&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Horizontal Slices&lt;/h3&gt;
+&lt;p&gt;&lt;img src = &#34;/post/on_aggregation_figures/concept_slice-horizontal.jpg&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;horizontal slices&lt;/em&gt; view a plain of the cube by fixing the &lt;span class=&#34;math inline&#34;&gt;\(tab_{3}\)&lt;/span&gt; at one value for each slice. As shown in the figure above, we made three slices, one for low-, one for mid- and one for high-values of &lt;span class=&#34;math inline&#34;&gt;\(tab_{3}\)&lt;/span&gt;. In the following we thus have six figures in total (three for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and three for the &lt;span class=&#34;math inline&#34;&gt;\(e_{rel}\)&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-15-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-15-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-16-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-16-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this section we showed the relations between the behavior of three single reservoirs and the behavior that results from aggregating their respective constants &lt;span class=&#34;math inline&#34;&gt;\(tab_i\)&lt;/span&gt;. We saw that the trivial case, i.e. the 1:1:1 line (where &lt;span class=&#34;math inline&#34;&gt;\(tab_1 = tab_2 = tab_3\)&lt;/span&gt;), results in perfect aggregation (for both, the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and the &lt;span class=&#34;math inline&#34;&gt;\(e_rel\)&lt;/span&gt;). It can also be seen that higher &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values are associated with better objective functions values (in the averaged views this can be especially well seen).&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;is-there-a-solution&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Is there a Solution?&lt;/h1&gt;
+&lt;p&gt;Lastly, let us consider the following question:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Can a single reservoirs is able to represent multiple reservoirs at all?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For this we will optimize the previously aggregated &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; value of the single reservoir for each sampled point. We will do this for the asymmetric case of two &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values and the asymmetric case of three &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values.&lt;/p&gt;
+&lt;p&gt;For each sample point we will use a simple derivative free optimization routine provided by &lt;code&gt;stats::optimize&lt;/code&gt; (it actually is a &lt;code&gt;FORTRAN&lt;/code&gt; code, which combines the golden section search and successive parabolic interpolation).&lt;/p&gt;
+&lt;div id=&#34;asymmetric-case-with-two-tab-values&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Asymmetric case with two &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values&lt;/h2&gt;
+&lt;p&gt;In the following are the results for the asymmetric case of two &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values represented by a single reservoir. Note, the asymmetry of values for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and decay away from the 1:1 line. &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-17-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;asymmetric-case-with-three-tab-values&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Asymmetric Case with three &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values&lt;/h2&gt;
+&lt;p&gt;For the 3-dimensional case we will show the results in the form of the horizontal slices (cross sections) that have been presented above. (the respective code is provided below). &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-18-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-18-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;comparison&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Comparison&lt;/h2&gt;
+&lt;p&gt;We can compare the first exercise with the second one by comparing their densities and see that the 2 dimensional case has more extremely results, but for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; also larger deviations towards bad values. The 3 dimensional case has less perfect values, but also smaller deviations towards the worse performance&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;##             used   (Mb) gc trigger   (Mb)  max used   (Mb)
+## Ncells   1184377   63.3    2164898  115.7   2164898  115.7
+## Vcells 352238163 2687.4  586907690 4477.8 440027489 3357.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-19-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this section we see the same phenomenon as obtained by aggregation. Perfect approximations can be found along the 1:1 or the 1:1:1 line. Good Approximations are associated with larger &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values. The approximation potential for small &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; is weak and strongly input dependent. Higher dimensional problems seem to have less probability to be optimizable, but also show dampened behavior if the results are not considered in a relative fashion.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;appendix-sketches-co&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Appendix: Sketches &amp;amp; Co&lt;/h1&gt;
+&lt;p&gt;A small test to see if the optimized “aggregation”-parameters are within the bounds of the fine scaled parameters. Here a sketch for 3 dimension:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;optimas_tab3_test &amp;lt;- optimas_tab3 %&amp;gt;%
+  mutate(max_tab = pmax(tab_1,tab_2,tab_3),
+         min_tab = pmin(tab_1,tab_2,tab_3),
+         le_test = ifelse((tab_nse_opt &amp;gt;= min_tab &amp;amp; tab_nse_opt &amp;lt;= max_tab),1,0))
+
+
+#
+optimas_tab3_sub &amp;lt;- filter(optimas_tab3_test, tab_3 == g[20])
+le_midpoint &amp;lt;- with(optimas_tab3_test, {mean( c(max(nse_opt),min(nse_opt)) )})
+ggplot(optimas_tab3_sub) +
+  geom_raster(aes(tab_1, tab_2, fill = le_test)) +
+  geom_abline(color = &amp;quot;black&amp;quot;) +
+  labs(title = &amp;quot;Relative Error&amp;quot;,
+       subtitle = &amp;quot;Transect for &amp;#39;low&amp;#39; tab3 Values&amp;quot;) +
+  coord_fixed( ) +
+  theme_light( )&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
+&lt;h1&gt;References&lt;/h1&gt;
+&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
+&lt;div id=&#34;ref-klemes1982&#34;&gt;
+&lt;p&gt;Klemes, Vit. 1982. “The Essence of Mathemtical Models of Reservoir Storage.” &lt;em&gt;Canadian Journal of Civil Engineering&lt;/em&gt;. doi:&lt;a href=&#34;https://doi.org/10.1139/l82-072&#34;&gt;10.1139/l82-072&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-szilagy2010&#34;&gt;
+&lt;p&gt;Szilagyi, Josef, and Andras Szilösi-Nagy. 2010. “Recursive Streamflow Forecasting: A State-Space Approach.”&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Rainy Meanderings</title>
@@ -74,7 +331,7 @@ wrote:&lt;/p&gt;
 examples and shows the inherent problems of uncertainty visualization. The
 underlying topic, i.e. Hurricane Forecasting, is also very relevant.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../post/visunc/eagereyes_hurricanes.png&#34; alt=&#34;&amp;quot;eagereye&amp;quot;&amp;quot;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../post/visunc/eagereyes_hurricanes.png&#34; alt=&#34;&amp;quot;eagereye&amp;quot;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;real-world-metaphors&#34;&gt;Real World Metaphors&lt;/h2&gt;
 
