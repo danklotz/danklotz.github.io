@@ -82,9 +82,9 @@
 </section>
 
 
-<section><div id="the-story" class="section level1">
-<h1>The Story</h1>
-<p>Linear reservoirs form the basis building block of most conceptual rainfall-runoff models. They can be combined or extended in a non-linear fashion to account for many complex behaviors. Furthermore, on the grand scale of things they can be seen as approximations to the Saint-Venant equations and are thus even physically justified (somehow, also see: <span class="citation">Klemes (1982)</span> and <span class="citation">Szilagyi and Szilösi-Nagy (2010)</span>).</p>
+<section><pre><code>## Warning: Paket &#39;tibble&#39; wurde unter R Version 3.4.1 erstellt</code></pre>
+<pre><code>## Warning: Paket &#39;dplyr&#39; wurde unter R Version 3.4.2 erstellt</code></pre>
+<p><strong>The Story</strong> Linear reservoirs form the basis building block of most conceptual rainfall-runoff models. They can be combined or extended in a non-linear fashion to account for many complex behaviors. Furthermore, on the grand scale of things they can be seen as approximations to the Saint-Venant equations and are thus even physically justified (somehow, also see: <span class="citation">Klemes (1982)</span> and <span class="citation">Szilagyi and Szilösi-Nagy (2010)</span>).</p>
 <p>For now let us assume that we study a hydrological system that consists of multiple linear reservoirs. The response of each reservoir is defined by a single constant <span class="math inline">\(tab\)</span> and the overall runoff of the system (which is also the only part that is measurable) is given by the sum of the individual runoffs.</p>
 <p>We try to answer the following question by use of simulation:</p>
 <blockquote>
@@ -94,15 +94,16 @@
 <p>In their search for effective parameters hydrologist usually revert back to the concept of hydrological response units (<em>HRUs</em>). The idea is to search for regions which are spatially homogenous and lump them together. Afterwards the effective parameters are usually estimated by optimization.</p>
 <p>A more modern approach, called multiscale-parameter regionalization (MPR), suggests to first estimate the parameters at the finest possible scale and aggregate the parameters themselves afterwards. To make the fine-scale estimation possible it is assumed that the model parameters can be explicitly defined by a functional relationship with landscape properties.</p>
 <p>My PHD is devoted to these functional relationships, but in this document we shall focus on the properties of the aggregation.</p>
-</div>
 <div id="the-setup" class="section level1">
 <h1>The Setup</h1>
 <p>Let us start with the experimental setup by defining a functional that returns a parameterized linear reservoir as a function of <span class="math inline">\(tab\)</span>.</p>
 <pre class="r"><code>spawn_linres &lt;- function(tab) {
-    q &lt;- 0
+    q0 &lt;- 0
+    s &lt;- 0
     linres &lt;- function(qin) {
-      q_out &lt;- q*exp(-1/tab) + qin*(1-exp(-1/tab))
-      q &lt;&lt;- q_out
+      qin - (tab*qin-s)*(1.-exp(-1/tab))
+      q_out &lt;- qin - (tab*qin-s)*(1.-exp(-1/tab))
+      s &lt;&lt;- s + qin -q_out
       return(q_out)
     }
     return(linres)
@@ -124,11 +125,7 @@
 <h2>The Asymmetric Case</h2>
 <p>How do the result change if the input for the reservoirs is different? <strong>Not much!</strong> The 1:1 line does not make a symmetry anymore, but higher <span class="math inline">\(tab\)</span> values are still easier to aggregate (whatever the means). Here is an example which uses the same input as above for one of the fine scaled reservoirs, but a different input for the other one.</p>
 <p><img src="../../../../post/on_aggregationI_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="../../../../post/on_aggregationI_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
-<p>We can note two things:</p>
-<ol style="list-style-type: decimal">
-<li>With regard to the <span class="math inline">\(NSE\)</span>: the <span class="math inline">\(tab_2\)</span> values are now more insensitive, while the <span class="math inline">\(tab_1\)</span> values still exhibit the same pattern</li>
-<li>The sensitivity pattern of <span class="math inline">\(e_rel\)</span> is however inverted! The aggregation is more sensitive to changes of <span class="math inline">\(tab_2\)</span>, than to changes of <span class="math inline">\(tab_1\)</span></li>
-</ol>
+<p>We can note two things. (a) With regard to the <span class="math inline">\(NSE\)</span>: the <span class="math inline">\(tab_2\)</span> values are now more insensitive, while the <span class="math inline">\(tab_1\)</span> values still exhibit the same pattern. And (b) The sensitivity pattern of <span class="math inline">\(e_rel\)</span> is however inverted! The aggregation is more sensitive to changes of <span class="math inline">\(tab_2\)</span>, than to changes of <span class="math inline">\(tab_1\)</span>.</p>
 <div id="summary" class="section level3">
 <h3>Summary</h3>
 <p>In summary we can say that perfect aggregation with the arithmetic mean is possible in the trivial case, where <span class="math inline">\(tab_1 = tab_2\)</span> (independent of the input). For all other cases the mean is an imperfect approximation. In general, the quality of the approximations is better (less sensitive) for larger <span class="math inline">\(tab\)</span> values. The quality decline (of the approximation) is dependent on basin properties (in our case the input) and the chosen objective functions. Averaging seems to be more difficult if one is interested in relative measures.</p>
@@ -224,8 +221,8 @@ plotly::plot_ly(tab3_results,
 <h2>Comparison</h2>
 <p>We can compare the first exercise with the second one by comparing their densities and see that the 2 dimensional case has more extremely results, but for the <span class="math inline">\(NSE\)</span> also larger deviations towards bad values. The 3 dimensional case has less perfect values, but also smaller deviations towards the worse performance</p>
 <pre><code>##             used   (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells   1184155   63.3    2164898  115.7   2164898  115.7
-## Vcells 352237053 2687.4  586906160 4477.8 440014772 3357.1</code></pre>
+## Ncells   1176982   62.9    2164898  115.7   2164898  115.7
+## Vcells 352219375 2687.3  555948719 4241.6 440669344 3362.1</code></pre>
 <p><img src="../../../../post/on_aggregationI_files/figure-html/unnamed-chunk-19-1.png" width="672" /><img src="../../../../post/on_aggregationI_files/figure-html/unnamed-chunk-19-2.png" width="672" /></p>
 </div>
 <div id="summary-2" class="section level2">
@@ -251,7 +248,9 @@ ggplot(optimas_tab3_sub) +
   labs(title = &quot;Relative Error&quot;,
        subtitle = &quot;Transect for &#39;low&#39; tab3 Values&quot;) +
   coord_fixed( ) +
-  theme_light( )</code></pre>
+  theme_light( ) +
+  theme(plot.background = element_rect(fill = &#39;#EEEDE4&#39;), 
+        legend.background = element_rect(fill = &#39;#EEEDE4&#39;))</code></pre>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
