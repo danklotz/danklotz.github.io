@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on allokkio</title>
+    <link>/tags/javascript/index.xml</link>
+    <description>Recent content in Javascript on allokkio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A little Animation-Test</title>
+      <link>/2017/11/28/testing-p5js/</link>
+      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/11/28/testing-p5js/</guid>
+      <description>&lt;p&gt;My first try at &lt;a href=&#34;https://p5js.org/&#34;&gt;p5js&lt;/a&gt;. A little animation that
+plots a circle, with a radius determined by Guassian noise.&lt;/p&gt;
+
+&lt;div id=&#34;sketch-holder&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// variable definitions:
+var c_size = 450
+var time = 0.0;
+var increment = 0.001;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.01;
+var n = 0
+
+// canvas setup
+function setup() {
+  background(&amp;quot;#DDDCD3&amp;quot;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+}
+
+// generation and drawing
+function draw() {
+  noStroke();
+  time += increment;
+  if (time &amp;gt;= time_to_update) {
+    n = abs(randomGaussian(1,c_size/2));
+    time_to_update += increment_to_update
+
+    rect_color = color(221,220,211,50);
+    fill(rect_color, 2);
+    rect(0, 0, c_size, c_size);
+    fill(&amp;quot;#1e90ff&amp;quot;);
+    ellipse(c_size/2, c_size/2, n, n);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var time = 0.0;
+var increment = 0.001;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.01;
+var n = 0
+
+function setup() {
+  background(&#34;#DDDCD3&#34;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+}
+
+function draw() {
+  noStroke();
+  time += increment;
+  if (time &gt;= time_to_update) {
+    n = abs(randomGaussian(1,c_size/2));
+    time_to_update += increment_to_update
+
+    rect_color = color(221,220,211,50);
+    fill(rect_color, 2);
+    rect(0, 0, c_size, c_size);
+    fill(&#34;#1e90ff&#34;);
+    ellipse(c_size/2, c_size/2, n, n);
+  }
+
+}
+&lt;/script&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
