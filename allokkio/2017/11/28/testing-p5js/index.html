@@ -79,20 +79,21 @@ plots a circle, with a radius determined by Guassian noise.</p>
 
 <pre><code class="language-js">// variable definitions:
 var c_size = 450
+var c_pad = c_size - 20
 var time = 0.0;
 var increment = 0.001;
 var time_to_update = time + 2*increment;
 var increment_to_update = 0.01;
 var n = 0
 
-// canvas setup
+// canvas setup:
 function setup() {
   background(&quot;#DDDCD3&quot;);
   var canvas = createCanvas(c_size, c_size);
   canvas.parent('sketch-holder');
 }
 
-// generation and drawing
+// generation and drawing:
 function draw() {
   noStroke();
   time += increment;
@@ -100,24 +101,21 @@ function draw() {
     n = abs(randomGaussian(1,c_pad/2));
     time_to_update += increment_to_update
 
-    rect_color = color(221,220,211,50);
-    fill(rect_color, 2);
-    rect(0, 0, c_size, c_size);
-    fill(&quot;#1e90ff&quot;);
+    fill(30, 144, 255, 10);
     ellipse(c_size/2, c_size/2, n, n);
   }
-    stroke(&quot;#ffa500&quot;)
-    strokeWeight(1)
-    fill(221,220,211,0);
-    ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-    ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-    // text
-    textSize(19);
-    noStroke( );
-    fill(&quot;#ffa500&quot;);
-    text(&quot;~68% of \n  samples&quot;, c_pad/4 + 18, c_size/2);
-    text(&quot;~95% of \n  samples&quot;, 18, c_size/2);
-}
+  stroke(&quot;#ffa500&quot;)
+  strokeWeight(1)
+  fill(221,220,211,0);
+  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+
+  // text
+  textSize(19);
+  noStroke( );
+  fill(&quot;#ffa500&quot;);
+  text(&quot;~68% of \n  samples&quot;, c_pad/4 + 18, c_size/2);
+  text(&quot;~95% of \n  samples&quot;, 18, c_size/2);
 }
 </code></pre>
 
@@ -146,23 +144,21 @@ function draw() {
     n = abs(randomGaussian(1,c_pad/2));
     time_to_update += increment_to_update
 
-    rect_color = color(221,220,211,50);
-    fill(rect_color, 2);
-    rect(0, 0, c_size, c_size);
-    fill("#1e90ff");
+    fill(30, 144, 255, 10);
     ellipse(c_size/2, c_size/2, n, n);
   }
-    stroke("#ffa500")
-    strokeWeight(1)
-    fill(221,220,211,0);
-    ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-    ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-    // text
-    textSize(19);
-    noStroke( );
-    fill("#ffa500");
-    text("~68% of \n  samples", c_pad/4 + 18, c_size/2);
-    text("~95% of \n  samples", 18, c_size/2);
+  stroke("#ffa500")
+  strokeWeight(1)
+  fill(221,220,211,0);
+  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+
+  // text
+  textSize(19);
+  noStroke( );
+  fill("#ffa500");
+  text("~68% of \n  samples", c_pad/4 + 18, c_size/2);
+  text("~95% of \n  samples", 18, c_size/2);
 }
 </script>
 </section>

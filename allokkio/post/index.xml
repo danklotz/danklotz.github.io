@@ -24,20 +24,21 @@ plots a circle, with a radius determined by Guassian noise.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// variable definitions:
 var c_size = 450
+var c_pad = c_size - 20
 var time = 0.0;
 var increment = 0.001;
 var time_to_update = time + 2*increment;
 var increment_to_update = 0.01;
 var n = 0
 
-// canvas setup
+// canvas setup:
 function setup() {
   background(&amp;quot;#DDDCD3&amp;quot;);
   var canvas = createCanvas(c_size, c_size);
   canvas.parent(&#39;sketch-holder&#39;);
 }
 
-// generation and drawing
+// generation and drawing:
 function draw() {
   noStroke();
   time += increment;
@@ -45,24 +46,21 @@ function draw() {
     n = abs(randomGaussian(1,c_pad/2));
     time_to_update += increment_to_update
 
-    rect_color = color(221,220,211,50);
-    fill(rect_color, 2);
-    rect(0, 0, c_size, c_size);
-    fill(&amp;quot;#1e90ff&amp;quot;);
+    fill(30, 144, 255, 10);
     ellipse(c_size/2, c_size/2, n, n);
   }
-    stroke(&amp;quot;#ffa500&amp;quot;)
-    strokeWeight(1)
-    fill(221,220,211,0);
-    ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-    ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-    // text
-    textSize(19);
-    noStroke( );
-    fill(&amp;quot;#ffa500&amp;quot;);
-    text(&amp;quot;~68% of \n  samples&amp;quot;, c_pad/4 + 18, c_size/2);
-    text(&amp;quot;~95% of \n  samples&amp;quot;, 18, c_size/2);
-}
+  stroke(&amp;quot;#ffa500&amp;quot;)
+  strokeWeight(1)
+  fill(221,220,211,0);
+  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+
+  // text
+  textSize(19);
+  noStroke( );
+  fill(&amp;quot;#ffa500&amp;quot;);
+  text(&amp;quot;~68% of \n  samples&amp;quot;, c_pad/4 + 18, c_size/2);
+  text(&amp;quot;~95% of \n  samples&amp;quot;, 18, c_size/2);
 }
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -91,23 +89,21 @@ function draw() {
     n = abs(randomGaussian(1,c_pad/2));
     time_to_update += increment_to_update
 
-    rect_color = color(221,220,211,50);
-    fill(rect_color, 2);
-    rect(0, 0, c_size, c_size);
-    fill(&#34;#1e90ff&#34;);
+    fill(30, 144, 255, 10);
     ellipse(c_size/2, c_size/2, n, n);
   }
-    stroke(&#34;#ffa500&#34;)
-    strokeWeight(1)
-    fill(221,220,211,0);
-    ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-    ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-    // text
-    textSize(19);
-    noStroke( );
-    fill(&#34;#ffa500&#34;);
-    text(&#34;~68% of \n  samples&#34;, c_pad/4 + 18, c_size/2);
-    text(&#34;~95% of \n  samples&#34;, 18, c_size/2);
+  stroke(&#34;#ffa500&#34;)
+  strokeWeight(1)
+  fill(221,220,211,0);
+  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+
+  // text
+  textSize(19);
+  noStroke( );
+  fill(&#34;#ffa500&#34;);
+  text(&#34;~68% of \n  samples&#34;, c_pad/4 + 18, c_size/2);
+  text(&#34;~95% of \n  samples&#34;, 18, c_size/2);
 }
 &lt;/script&gt;
 </description>
