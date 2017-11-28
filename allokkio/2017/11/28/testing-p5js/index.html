@@ -97,7 +97,7 @@ function draw() {
   noStroke();
   time += increment;
   if (time &gt;= time_to_update) {
-    n = abs(randomGaussian(1,c_size/2));
+    n = abs(randomGaussian(1,c_pad/2));
     time_to_update += increment_to_update
 
     rect_color = color(221,220,211,50);
@@ -106,6 +106,18 @@ function draw() {
     fill(&quot;#1e90ff&quot;);
     ellipse(c_size/2, c_size/2, n, n);
   }
+    stroke(&quot;#ffa500&quot;)
+    strokeWeight(1)
+    fill(221,220,211,0);
+    ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+    ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+    // text
+    textSize(19);
+    noStroke( );
+    fill(&quot;#ffa500&quot;);
+    text(&quot;~68% of \n  samples&quot;, c_pad/4 + 18, c_size/2);
+    text(&quot;~95% of \n  samples&quot;, 18, c_size/2);
+}
 }
 </code></pre>
 
@@ -114,6 +126,7 @@ function draw() {
 <script>
 // actual script ---------------------------------------------------------------
 var c_size = 450
+var c_pad = c_size - 20
 var time = 0.0;
 var increment = 0.001;
 var time_to_update = time + 2*increment;
@@ -130,7 +143,7 @@ function draw() {
   noStroke();
   time += increment;
   if (time >= time_to_update) {
-    n = abs(randomGaussian(1,c_size/2));
+    n = abs(randomGaussian(1,c_pad/2));
     time_to_update += increment_to_update
 
     rect_color = color(221,220,211,50);
@@ -139,7 +152,17 @@ function draw() {
     fill("#1e90ff");
     ellipse(c_size/2, c_size/2, n, n);
   }
-
+    stroke("#ffa500")
+    strokeWeight(1)
+    fill(221,220,211,0);
+    ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+    ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+    // text
+    textSize(19);
+    noStroke( );
+    fill("#ffa500");
+    text("~68% of \n  samples", c_pad/4 + 18, c_size/2);
+    text("~95% of \n  samples", 18, c_size/2);
 }
 </script>
 </section>
