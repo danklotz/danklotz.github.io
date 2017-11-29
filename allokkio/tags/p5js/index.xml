@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Snippets on allokkio</title>
-    <link>/categories/snippets/index.xml</link>
-    <description>Recent content in Snippets on allokkio</description>
+    <title>P5js on allokkio</title>
+    <link>/tags/p5js/index.xml</link>
+    <description>Recent content in P5js on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="/categories/snippets/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/p5js/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Gaussian Star</title>
@@ -134,106 +134,6 @@ rotate(frameCount / 50.0);
     fill(30, 144, 255, 20);
     ellipse(0, 0, n, m);
   }
-}
-&lt;/script&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A little Animation-Test</title>
-      <link>/2017/11/28/testing-p5js/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/2017/11/28/testing-p5js/</guid>
-      <description>&lt;p&gt;My first try at &lt;a href=&#34;https://p5js.org/&#34;&gt;p5js&lt;/a&gt;. A little animation that
-plots a circle, with a radius determined by Guassian noise.&lt;/p&gt;
-
-&lt;div id=&#34;sketch-holder&#34;&gt;&lt;/div&gt;
-
-&lt;p&gt;Code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// variable definitions:
-var c_size = 450
-var c_pad = c_size - 20
-var time = 0.0;
-var increment = 0.001;
-var time_to_update = time + 2*increment;
-var increment_to_update = 0.01;
-var n = 0
-
-// canvas setup:
-function setup() {
-  background(&amp;quot;#DDDCD3&amp;quot;);
-  var canvas = createCanvas(c_size, c_size);
-  canvas.parent(&#39;sketch-holder&#39;);
-}
-
-// generation and drawing:
-function draw() {
-  noStroke();
-  time += increment;
-  if (time &amp;gt;= time_to_update) {
-    n = abs(randomGaussian(1,c_pad/2));
-    time_to_update += increment_to_update
-
-    fill(30, 144, 255, 10);
-    ellipse(c_size/2, c_size/2, n, n);
-  }
-  stroke(&amp;quot;#ffa500&amp;quot;)
-  strokeWeight(1)
-  fill(221,220,211,0);
-  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-
-  // text
-  textSize(19);
-  noStroke( );
-  fill(&amp;quot;#ffa500&amp;quot;);
-  text(&amp;quot;~68% of \n  samples&amp;quot;, c_pad/4 + 18, c_size/2);
-  text(&amp;quot;~95% of \n  samples&amp;quot;, 18, c_size/2);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
-
-&lt;script&gt;
-// actual script ---------------------------------------------------------------
-var c_size = 450
-var c_pad = c_size - 20
-var time = 0.0;
-var increment = 0.001;
-var time_to_update = time + 2*increment;
-var increment_to_update = 0.01;
-var n = 0
-
-function setup() {
-  background(&#34;#DDDCD3&#34;);
-  var canvas = createCanvas(c_size, c_size);
-  canvas.parent(&#39;sketch-holder&#39;);
-}
-
-function draw() {
-  noStroke();
-  time += increment;
-  if (time &gt;= time_to_update) {
-    n = abs(randomGaussian(1,c_pad/2));
-    time_to_update += increment_to_update
-
-    fill(30, 144, 255, 10);
-    ellipse(c_size/2, c_size/2, n, n);
-  }
-  stroke(&#34;#ffa500&#34;)
-  strokeWeight(1)
-  fill(221,220,211,0);
-  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-
-  // text
-  textSize(19);
-  noStroke( );
-  fill(&#34;#ffa500&#34;);
-  text(&#34;~68% of \n  samples&#34;, c_pad/4 + 18, c_size/2);
-  text(&#34;~95% of \n  samples&#34;, 18, c_size/2);
 }
 &lt;/script&gt;
 </description>
