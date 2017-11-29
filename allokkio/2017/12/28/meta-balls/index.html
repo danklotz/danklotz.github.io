@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
 <head>
-<title>allokkio - p5js: A little Animation-Test</title>
+<title>allokkio - Meta Balls</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@
 <section>
   <h2 class="content-title">
   
-  <a href="../../../../2017/11/28/testing-p5js/">p5js: A little Animation-Test</a>
+  <a href="../../../../2017/12/28/meta-balls/">Meta Balls</a>
   
   </h2>
   
@@ -70,95 +70,142 @@
 </section>
 
 
-<section><p>My first try at <a href="https://p5js.org/">p5js</a>. A little animation that
-plots a circle, with a radius determined by Guassian noise.</p>
-
-<div id="sketch-holder"></div>
+<section><div id="sketch-holder" align ="justify"></div>
 
 <p>Code:</p>
 
-<pre><code class="language-js">// variable definitions:
-var c_size = 450
+<pre><code class="language-js">var c_size = 450
+var half_c_size = 0.5*c_size;
 var c_pad = c_size - 20
-var time = 0.0;
-var increment = 0.001;
+var time = 0.0
+var increment = 0.002;
 var time_to_update = time + 2*increment;
-var increment_to_update = 0.01;
-var n = 0
+var increment_to_update = 0.03;
 
-// canvas setup:
+var n = 0
+var m = 0
+
 function setup() {
   background(&quot;#DDDCD3&quot;);
   var canvas = createCanvas(c_size, c_size);
   canvas.parent('sketch-holder');
+
+  // info:
+  textSize(19);
+  stroke(221,220,211);
+  fill(221,220,211);
+  ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4);
+  //
+  fill(&quot;#EEEDE4&quot;);
+  text(&quot;    ~68%  \n of the radii&quot;, c_pad/2-40, c_size/2);
+  // decoration:
+  // outer circles
+    fill(221,220,211,0);
+    stroke(221,220,211);
+    strokeWeight(3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad, c_pad);
+    // outer ellipses
+    strokeWeight(1);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4);
+    ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad  , c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad  );
 }
 
-// generation and drawing:
 function draw() {
+translate(width/2, height/2);
+rotate(frameCount / 50.0);
   noStroke();
   time += increment;
   if (time &gt;= time_to_update) {
-    n = abs(randomGaussian(1,c_pad/2));
+    n = abs(randomGaussian(1,c_pad/4));
+    m = abs(randomGaussian(1,c_pad/4));
     time_to_update += increment_to_update
 
-    fill(30, 144, 255, 10);
-    ellipse(c_size/2, c_size/2, n, n);
+    fill(30, 144, 255, 20);
+    ellipse(0, 0, n, m);
   }
-  stroke(&quot;#ffa500&quot;)
-  strokeWeight(1)
-  fill(221,220,211,0);
-  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-
-  // text
-  textSize(19);
-  noStroke( );
-  fill(&quot;#ffa500&quot;);
-  text(&quot;~68% of \n  samples&quot;, c_pad/4 + 18, c_size/2);
-  text(&quot;~95% of \n  samples&quot;, 18, c_size/2);
 }
 </code></pre>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
-
 <script>
 // actual script ---------------------------------------------------------------
-var c_size = 450
-var c_pad = c_size - 20
-var time = 0.0;
-var increment = 0.001;
-var time_to_update = time + 2*increment;
-var increment_to_update = 0.01;
-var n = 0
+var canvas_size = 450
+var canvas_pad = 50
+var radius = (canvas_size-canvas_pad)/2
+var midpoint = canvas_size/2
+var ball_radius = 350
+// Blob def
+function Blob(x,y ){
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = 50
+
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 >= (radius-0.1*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
 
 function setup() {
-  background("#DDDCD3");
-  var canvas = createCanvas(c_size, c_size);
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
   canvas.parent('sketch-holder');
+  for (var i=1; i<4; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
 }
 
 function draw() {
-  noStroke();
-  time += increment;
-  if (time >= time_to_update) {
-    n = abs(randomGaussian(1,c_pad/2));
-    time_to_update += increment_to_update
+  background("#000000");
+  loadPixels();
+  for (var y=0; y<height; y++) {
+    for (var x=0; x<width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
 
-    fill(30, 144, 255, 10);
-    ellipse(c_size/2, c_size/2, n, n);
+      for (var i = 0; i<b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 >= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.1*sum, 238);
+        pixels[index+1] = min(144 + 0.1*sum, 237);
+        pixels[index+2] = min(255 + 0.1*sum, 228);
+      }
+   }
   }
-  stroke("#ffa500")
-  strokeWeight(1)
-  fill(221,220,211,0);
-  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-
-  // text
-  textSize(19);
-  noStroke( );
-  fill("#ffa500");
-  text("~68% of \n  samples", c_pad/4 + 18, c_size/2);
-  text("~95% of \n  samples", 18, c_size/2);
+  updatePixels()
+  for(var i=0; i<b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
 }
 </script>
 </section>

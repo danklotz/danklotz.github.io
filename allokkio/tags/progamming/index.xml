@@ -9,11 +9,188 @@
     <atom:link href="/tags/progamming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Gaussian Star</title>
-      <link>/2017/12/28/testing-p5js/</link>
+      <title>Sketch: Flares</title>
+      <link>/2017/12/28/sketch-flares/</link>
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/12/28/testing-p5js/</guid>
+      <guid>/2017/12/28/sketch-flares/</guid>
+      <description>&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var canvas_size = 450;
+var canvas_pad = 50;
+var radius = (canvas_size-canvas_pad)/2;
+var midpoint = canvas_size/2;
+var ball_radius = 150;
+// Blob def
+function Blob(x,y) {
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = ball_radius
+  //
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &amp;gt;= (radius-0.3*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
+
+function setup() {
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+  for (var i=1; i&amp;lt;=2; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
+}
+
+function draw() {
+  background(&amp;quot;#000000&amp;quot;);
+  for (var i = 0; i&amp;lt;b.length; i++) {
+     noiseSeed(i);
+     b[i].vel.x += 0.05*noise(1);
+     noiseSeed(i);
+     b[i].vel.y += 0.05*noise(1);
+   }
+
+  loadPixels();
+  for (var y=0; y&amp;lt;height; y++) {
+    for (var x=0; x&amp;lt;width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
+
+      for (var i = 0; i&amp;lt;b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 &amp;gt;= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.17*sum, 238);
+        pixels[index+1] = min(144 + 0.15*sum, 237);
+        pixels[index+2] = min(255 + 0.12*sum, 228);
+      }
+   }
+  }
+  updatePixels()
+  for(var i=0; i&amp;lt;b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var canvas_size = 450;
+var canvas_pad = 50;
+var radius = (canvas_size-canvas_pad)/2;
+var midpoint = canvas_size/2;
+var ball_radius = 150;
+// Blob def
+function Blob(x,y) {
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = ball_radius
+  //
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &gt;= (radius-0.3*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
+
+function setup() {
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+  for (var i=1; i&lt;=2; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
+}
+
+function draw() {
+  background(&#34;#000000&#34;);
+  for (var i = 0; i&lt;b.length; i++) {
+     noiseSeed(i);
+     b[i].vel.x += 0.05*noise(1);
+     noiseSeed(i);
+     b[i].vel.y += 0.05*noise(1);
+   }
+
+  loadPixels();
+  for (var y=0; y&lt;height; y++) {
+    for (var x=0; x&lt;width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
+
+      for (var i = 0; i&lt;b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 &gt;= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.17*sum, 238);
+        pixels[index+1] = min(144 + 0.15*sum, 237);
+        pixels[index+2] = min(255 + 0.12*sum, 228);
+      }
+   }
+  }
+  updatePixels()
+  for(var i=0; i&lt;b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
+}
+&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sketch: Gaussian Star</title>
+      <link>/2017/12/28/sketch-gaussian-star/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/28/sketch-gaussian-star/</guid>
       <description>&lt;p&gt;Another little Javascript-animation based on Gaussian ellipses.&lt;/p&gt;
 
 &lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
@@ -140,11 +317,11 @@ rotate(frameCount / 50.0);
     </item>
     
     <item>
-      <title>A little Animation-Test</title>
-      <link>/2017/11/28/testing-p5js/</link>
+      <title>Sketch: A little Animation-Test</title>
+      <link>/2017/11/28/sketch-a-little-animation-test/</link>
       <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/2017/11/28/testing-p5js/</guid>
+      <guid>/2017/11/28/sketch-a-little-animation-test/</guid>
       <description>&lt;p&gt;My first try at &lt;a href=&#34;https://p5js.org/&#34;&gt;p5js&lt;/a&gt;. A little animation that
 plots a circle, with a radius determined by Guassian noise.&lt;/p&gt;
 

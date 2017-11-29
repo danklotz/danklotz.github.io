@@ -2,12 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/2017/12/28/testing-p5js/</loc>
+    <loc>/2017/12/28/sketch-flares/</loc>
     <lastmod>2017-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/11/28/testing-p5js/</loc>
+    <loc>/2017/12/28/sketch-gaussian-star/</loc>
+    <lastmod>2017-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/11/28/sketch-a-little-animation-test/</loc>
     <lastmod>2017-11-28T00:00:00+00:00</lastmod>
   </url>
   
