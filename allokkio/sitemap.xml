@@ -12,11 +12,6 @@
   </url>
   
   <url>
-    <loc>/2017/11/28/sketch-a-little-animation-test/</loc>
-    <lastmod>2017-11-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/2017/11/28/sketch-flares/</loc>
     <lastmod>2017-11-28T00:00:00+00:00</lastmod>
   </url>
@@ -27,13 +22,13 @@
   </url>
   
   <url>
-    <loc>/2017/11/23/bang-bang-bang/</loc>
-    <lastmod>2017-11-23T00:00:00+00:00</lastmod>
+    <loc>/2017/11/26/sketch-a-little-animation-test/</loc>
+    <lastmod>2017-11-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2017/11/21/on-aggregation-i/</loc>
-    <lastmod>2017-11-21T00:00:00+00:00</lastmod>
+    <loc>/2017/11/23/bang-bang-bang/</loc>
+    <lastmod>2017-11-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -63,6 +58,12 @@
   
   <url>
     <loc>/categories/coding/</loc>
+    <lastmod>2017-12-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/creativecoding/</loc>
     <lastmod>2017-12-27T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -141,7 +142,6 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2017-11-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
