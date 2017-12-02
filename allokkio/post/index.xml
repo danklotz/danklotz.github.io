@@ -2,12 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on allokkio</title>
-    <link>/post/index.xml</link>
+    <link>/post/</link>
     <description>Recent content in Posts on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Dec 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sketch: Doodle Flower</title>
+      <link>/2017/12/28/sketch-doodle-flower/</link>
+      <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/28/sketch-doodle-flower/</guid>
+      <description>Code:
+var c_size = 450 var midpoint = 0.5*c_size; var c_pad = c_size - 20 var alpha_decay = 20 var easing = 0.03; var x = midpoint var y = midpoint var red = 30 var green = 144 var blue = 255 var update_time = 0 var update_step = 100 function setup() { background(&amp;quot;#DDDCD3&amp;quot;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); } function mousePressed() { red = 30 green = 144 blue = 255 } function draw() { if (frameCount &amp;gt; update_time) { update_time += update_step red = round( random(1,244) ) green = round( random(1,244) ) blue = round( random(1,244) ) } //square stroke(&amp;quot;#DDDCD3&amp;quot;) fill(&amp;quot;#DDDCD3&amp;quot;) rect(0,0,c_size-1,c_size-1); // outer circles fill(&amp;quot;#EEEDE4&amp;quot;); stroke(&amp;quot;#EEEDE4&amp;quot;) ellipse(0,0,c_size,c_size); ellipse(0,c_size,c_size,c_size); ellipse(c_size,0,c_size,c_size); ellipse(c_size,c_size,c_size,c_size); // line stroke(red, green, blue); line(midpoint, midpoint, x, y) // cicrles 1 fill(red, green, blue); stroke(red, green, blue); ellipse(midpoint, midpoint, c_pad/6, c_pad/6); ellipse(x, y, 25, 25); ellipse(0.</description>
+    </item>
     
     <item>
       <title>Sketch: Flares</title>
@@ -15,175 +27,8 @@
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/12/28/sketch-flares/</guid>
-      <description>&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
-
-&lt;p&gt;Code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var canvas_size = 450;
-var canvas_pad = 50;
-var radius = (canvas_size-canvas_pad)/2;
-var midpoint = canvas_size/2;
-var ball_radius = 150;
-// Blob def
-function Blob(x,y) {
-  this.pos = createVector(x,y)
-  this.vel = p5.Vector.random2D();
-  this.vel.mult(10,20)
-  this.r = ball_radius
-  //
-  this.update= function() {
-    this.pos.add(this.vel)
-
-    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &amp;gt;= (radius-0.3*ball_radius)**2
-
-    if (pos_out) {
-      this.vel.x *= -1
-      this.vel.y *= -1
-    }
-  }
-
-}
-
-// script for running metaballs
-var b=[]
-
-function setup() {
-
-  //b = new Blob(100,100)
-  var canvas = createCanvas(canvas_size, canvas_size);
-  canvas.parent(&#39;sketch-holder&#39;);
-  for (var i=1; i&amp;lt;=2; i++) {
-    b.push(new Blob(midpoint,midpoint))
-  }
-}
-
-function draw() {
-  background(&amp;quot;#000000&amp;quot;);
-  for (var i = 0; i&amp;lt;b.length; i++) {
-     noiseSeed(i);
-     b[i].vel.x += 0.05*noise(1);
-     noiseSeed(i);
-     b[i].vel.y += 0.05*noise(1);
-   }
-
-  loadPixels();
-  for (var y=0; y&amp;lt;height; y++) {
-    for (var x=0; x&amp;lt;width; x++) {
-      var index=(x+y*width)*4;
-      var sum = 0;
-
-      for (var i = 0; i&amp;lt;b.length; i++) {
-        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
-        sum += ball_radius * b[i].r/d;
-       }
-      //
-    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 &amp;gt;= (radius)**2;
-      if (pos_out) {
-        pixels[index] = 238;
-        pixels[index+1] = 237;
-        pixels[index+2] = 228;
-      } else {
-        pixels[index] = min(30 + 0.17*sum, 238);
-        pixels[index+1] = min(144 + 0.15*sum, 237);
-        pixels[index+2] = min(255 + 0.12*sum, 228);
-      }
-   }
-  }
-  updatePixels()
-  for(var i=0; i&amp;lt;b.length; i++){
-    b[i].update();
-  }
-  fill(211,220,211,0);
-  stroke(221,220,211);
-  strokeWeight(3);
-  ellipse(midpoint, midpoint, 2*radius, 2*radius);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-// actual script ---------------------------------------------------------------
-var canvas_size = 450;
-var canvas_pad = 50;
-var radius = (canvas_size-canvas_pad)/2;
-var midpoint = canvas_size/2;
-var ball_radius = 150;
-// Blob def
-function Blob(x,y) {
-  this.pos = createVector(x,y)
-  this.vel = p5.Vector.random2D();
-  this.vel.mult(10,20)
-  this.r = ball_radius
-  //
-  this.update= function() {
-    this.pos.add(this.vel)
-
-    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &gt;= (radius-0.3*ball_radius)**2
-
-    if (pos_out) {
-      this.vel.x *= -1
-      this.vel.y *= -1
-    }
-  }
-
-}
-
-// script for running metaballs
-var b=[]
-
-function setup() {
-
-  //b = new Blob(100,100)
-  var canvas = createCanvas(canvas_size, canvas_size);
-  canvas.parent(&#39;sketch-holder&#39;);
-  for (var i=1; i&lt;=2; i++) {
-    b.push(new Blob(midpoint,midpoint))
-  }
-}
-
-function draw() {
-  background(&#34;#000000&#34;);
-  for (var i = 0; i&lt;b.length; i++) {
-     noiseSeed(i);
-     b[i].vel.x += 0.05*noise(1);
-     noiseSeed(i);
-     b[i].vel.y += 0.05*noise(1);
-   }
-
-  loadPixels();
-  for (var y=0; y&lt;height; y++) {
-    for (var x=0; x&lt;width; x++) {
-      var index=(x+y*width)*4;
-      var sum = 0;
-
-      for (var i = 0; i&lt;b.length; i++) {
-        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
-        sum += ball_radius * b[i].r/d;
-       }
-      //
-    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 &gt;= (radius)**2;
-      if (pos_out) {
-        pixels[index] = 238;
-        pixels[index+1] = 237;
-        pixels[index+2] = 228;
-      } else {
-        pixels[index] = min(30 + 0.17*sum, 238);
-        pixels[index+1] = min(144 + 0.15*sum, 237);
-        pixels[index+2] = min(255 + 0.12*sum, 228);
-      }
-   }
-  }
-  updatePixels()
-  for(var i=0; i&lt;b.length; i++){
-    b[i].update();
-  }
-  fill(211,220,211,0);
-  stroke(221,220,211);
-  strokeWeight(3);
-  ellipse(midpoint, midpoint, 2*radius, 2*radius);
-}
-&lt;/script&gt;
-</description>
+      <description>Code:
+var canvas_size = 450; var canvas_pad = 50; var radius = (canvas_size-canvas_pad)/2; var midpoint = canvas_size/2; var ball_radius = 150; // Blob def function Blob(x,y) { this.pos = createVector(x,y) this.vel = p5.Vector.random2D(); this.vel.mult(10,20) this.r = ball_radius // this.update= function() { this.pos.add(this.vel) var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &amp;gt;= (radius-0.3*ball_radius)**2 if (pos_out) { this.vel.x *= -1 this.vel.y *= -1 } } } // script for running metaballs var b=[] function setup() { //b = new Blob(100,100) var canvas = createCanvas(canvas_size, canvas_size); canvas.</description>
     </item>
     
     <item>
@@ -192,129 +37,9 @@ function draw() {
       <pubDate>Thu, 28 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/12/28/sketch-gaussian-star/</guid>
-      <description>&lt;p&gt;Another little Javascript-animation based on Gaussian ellipses.&lt;/p&gt;
-
-&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
-
-&lt;p&gt;Code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var c_size = 450
-var half_c_size = 0.5*c_size;
-var c_pad = c_size - 20
-var time = 0.0
-var increment = 0.002;
-var time_to_update = time + 2*increment;
-var increment_to_update = 0.03;
-var n = 0
-var m = 0
-
-function setup() {
-  background(&amp;quot;#DDDCD3&amp;quot;);
-  var canvas = createCanvas(c_size, c_size);
-  canvas.parent(&#39;sketch-holder&#39;);
-
-  // info:
-  textSize(19);
-  stroke(221,220,211);
-  fill(221,220,211);
-  ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4);
-  //
-  fill(&amp;quot;#EEEDE4&amp;quot;);
-  text(&amp;quot;    ~68%  \n of the radii&amp;quot;, c_pad/2-40, c_size/2);
-  // decoration:
-  // outer circles
-    fill(221,220,211,0);
-    stroke(221,220,211);
-    strokeWeight(3);
-    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3);
-    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2);
-    ellipse(half_c_size, half_c_size, c_pad, c_pad);
-    // outer ellipses
-    strokeWeight(1);
-    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4);
-    ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3);
-    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3);
-    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2);
-    ellipse(half_c_size, half_c_size, c_pad  , c_pad/2);
-    ellipse(half_c_size, half_c_size, c_pad/2, c_pad  );
-}
-
-function draw() {
-translate(width/2, height/2);
-rotate(frameCount / 50.0);
-  noStroke();
-  time += increment;
-  if (time &amp;gt;= time_to_update) {
-    n = abs(randomGaussian(1,c_pad/4));
-    m = abs(randomGaussian(1,c_pad/4));
-    time_to_update += increment_to_update
-
-    fill(30, 144, 255, 20);
-    ellipse(0, 0, n, m);
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-// actual script ---------------------------------------------------------------
-var c_size = 450
-var half_c_size = 0.5*c_size;
-var c_pad = c_size - 20
-var time = 0.0
-var increment = 0.002;
-var time_to_update = time + 2*increment;
-var increment_to_update = 0.03;
-var n = 0
-var m = 0
-
-function setup() {
-  background(&#34;#DDDCD3&#34;);
-  var canvas = createCanvas(c_size, c_size);
-  canvas.parent(&#39;sketch-holder&#39;);
-
-  // info:
-  textSize(19);
-  stroke(221,220,211);
-  fill(221,220,211);
-  ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4);
-  //
-  fill(&#34;#EEEDE4&#34;);
-  text(&#34;    ~68%  \n of the radii&#34;, c_pad/2-40, c_size/2);
-  // decoration:
-  // outer circles
-    fill(221,220,211,0);
-    stroke(221,220,211);
-    strokeWeight(3);
-    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3);
-    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2);
-    ellipse(half_c_size, half_c_size, c_pad, c_pad);
-    // outer ellipses
-    strokeWeight(1);
-    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4);
-    ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3);
-    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3);
-    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2);
-    ellipse(half_c_size, half_c_size, c_pad  , c_pad/2);
-    ellipse(half_c_size, half_c_size, c_pad/2, c_pad  );
-}
-
-function draw() {
-translate(width/2, height/2);
-rotate(frameCount / 50.0);
-  noStroke();
-  time += increment;
-  if (time &gt;= time_to_update) {
-    n = abs(randomGaussian(1,c_pad/4));
-    m = abs(randomGaussian(1,c_pad/4));
-    time_to_update += increment_to_update
-
-    fill(30, 144, 255, 20);
-    ellipse(0, 0, n, m);
-  }
-}
-&lt;/script&gt;
-</description>
+      <description>Another little Javascript-animation based on Gaussian ellipses.
+ Code:
+var c_size = 450 var half_c_size = 0.5*c_size; var c_pad = c_size - 20 var time = 0.0 var increment = 0.002; var time_to_update = time + 2*increment; var increment_to_update = 0.03; var n = 0 var m = 0 function setup() { background(&amp;quot;#DDDCD3&amp;quot;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // info: textSize(19); stroke(221,220,211); fill(221,220,211); ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4); // fill(&amp;quot;#EEEDE4&amp;quot;); text(&amp;quot; ~68% \n of the radii&amp;quot;, c_pad/2-40, c_size/2); // decoration: // outer circles fill(221,220,211,0); stroke(221,220,211); strokeWeight(3); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2); ellipse(half_c_size, half_c_size, c_pad, c_pad); // outer ellipses strokeWeight(1); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4); ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2); ellipse(half_c_size, half_c_size, c_pad , c_pad/2); ellipse(half_c_size, half_c_size, c_pad/2, c_pad ); } function draw() { translate(width/2, height/2); rotate(frameCount / 50.</description>
     </item>
     
     <item>
@@ -323,98 +48,9 @@ rotate(frameCount / 50.0);
       <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/28/sketch-a-little-animation-test/</guid>
-      <description>&lt;p&gt;My first try at &lt;a href=&#34;https://p5js.org/&#34;&gt;p5js&lt;/a&gt;. A little animation that
-plots a circle, with a radius determined by Guassian noise.&lt;/p&gt;
-
-&lt;div id=&#34;sketch-holder&#34;&gt;&lt;/div&gt;
-
-&lt;p&gt;Code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// variable definitions:
-var c_size = 450
-var c_pad = c_size - 20
-var time = 0.0;
-var increment = 0.001;
-var time_to_update = time + 2*increment;
-var increment_to_update = 0.01;
-var n = 0
-
-// canvas setup:
-function setup() {
-  background(&amp;quot;#DDDCD3&amp;quot;);
-  var canvas = createCanvas(c_size, c_size);
-  canvas.parent(&#39;sketch-holder&#39;);
-}
-
-// generation and drawing:
-function draw() {
-  noStroke();
-  time += increment;
-  if (time &amp;gt;= time_to_update) {
-    n = abs(randomGaussian(1,c_pad/2));
-    time_to_update += increment_to_update
-
-    fill(30, 144, 255, 10);
-    ellipse(c_size/2, c_size/2, n, n);
-  }
-  stroke(&amp;quot;#ffa500&amp;quot;)
-  strokeWeight(1)
-  fill(221,220,211,0);
-  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-
-  // text
-  textSize(19);
-  noStroke( );
-  fill(&amp;quot;#ffa500&amp;quot;);
-  text(&amp;quot;~68% of \n  samples&amp;quot;, c_pad/4 + 18, c_size/2);
-  text(&amp;quot;~95% of \n  samples&amp;quot;, 18, c_size/2);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
-
-&lt;script&gt;
-// actual script ---------------------------------------------------------------
-var c_size = 450
-var c_pad = c_size - 20
-var time = 0.0;
-var increment = 0.001;
-var time_to_update = time + 2*increment;
-var increment_to_update = 0.01;
-var n = 0
-
-function setup() {
-  background(&#34;#DDDCD3&#34;);
-  var canvas = createCanvas(c_size, c_size);
-  canvas.parent(&#39;sketch-holder&#39;);
-}
-
-function draw() {
-  noStroke();
-  time += increment;
-  if (time &gt;= time_to_update) {
-    n = abs(randomGaussian(1,c_pad/2));
-    time_to_update += increment_to_update
-
-    fill(30, 144, 255, 10);
-    ellipse(c_size/2, c_size/2, n, n);
-  }
-  stroke(&#34;#ffa500&#34;)
-  strokeWeight(1)
-  fill(221,220,211,0);
-  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
-  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
-
-  // text
-  textSize(19);
-  noStroke( );
-  fill(&#34;#ffa500&#34;);
-  text(&#34;~68% of \n  samples&#34;, c_pad/4 + 18, c_size/2);
-  text(&#34;~95% of \n  samples&#34;, 18, c_size/2);
-}
-&lt;/script&gt;
-</description>
+      <description>My first try at p5js. A little animation that plots a circle, with a radius determined by Guassian noise.
+ Code:
+// variable definitions: var c_size = 450 var c_pad = c_size - 20 var time = 0.0; var increment = 0.001; var time_to_update = time + 2*increment; var increment_to_update = 0.01; var n = 0 // canvas setup: function setup() { background(&amp;quot;#DDDCD3&amp;quot;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); } // generation and drawing: function draw() { noStroke(); time += increment; if (time &amp;gt;= time_to_update) { n = abs(randomGaussian(1,c_pad/2)); time_to_update += increment_to_update fill(30, 144, 255, 10); ellipse(c_size/2, c_size/2, n, n); } stroke(&amp;quot;#ffa500&amp;quot;) strokeWeight(1) fill(221,220,211,0); ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2); ellipse(c_size/2, c_size/2 ,c_pad, c_pad); // text textSize(19); noStroke( ); fill(&amp;quot;#ffa500&amp;quot;); text(&amp;quot;~68% of \n samples&amp;quot;, c_pad/4 + 18, c_size/2); text(&amp;quot;~95% of \n samples&amp;quot;, 18, c_size/2); }    // actual script --------------------------------------------------------------- var c_size = 450 var c_pad = c_size - 20 var time = 0.</description>
     </item>
     
     <item>
@@ -423,115 +59,8 @@ function draw() {
       <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/23/bang-bang-bang/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;‘Multiple exclamation marks,’ he went on, shaking his head, ‘are a sure sign of a diseased mind.’ &lt;strong&gt;- Eric, Terry Pratchett&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The purpose of this post is to start a protocol my process for getting used to &lt;em&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/rlang/vignettes/tidy-evaluation.html&#34;&gt;tidy evaluation&lt;/a&gt;&lt;/em&gt;. My actual course of action was a bit more unstructured than the one presented here. But not by much I wanted to preserve at least some degree of sanity for eventual re-reads. My hope is that it will help me to evaluate my current &lt;em&gt;learning practice&lt;/em&gt; (Sorry, I did not find any better word), and maybe also help some lost souls to build up their intuition too.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Tidy evaluation&lt;/em&gt; is a form of non standard evaluation (NSE) recently put forward by the mighty &lt;a href=&#34;https://twitter.com/hadleywickham&#34;&gt;Hadley Wickham&lt;/a&gt;. NSE is a very general term that basically refers to everything which does not follow the usual R conventions of evaluation. Nowadays, R users are already&lt;br /&gt;
-familiar with NSE, through formulas and &lt;code&gt;dplyr&lt;/code&gt;. Now, tidy evaluation provides an entire toolkit to create domain-specific languages (DSL) of grammars.&lt;/p&gt;
-&lt;p&gt;When I try to get used to a concept I value &lt;em&gt;intuition&lt;/em&gt; and &lt;em&gt;conceptual understanding&lt;/em&gt; more than complete understanding and (full) knowledge. I therefore like to start by testing out some functions with some pseudo data.&lt;/p&gt;
-&lt;p&gt;In this case I started with &lt;code&gt;quo()&lt;/code&gt;, the quotation function. It captures the provided R code without evaluation (&lt;em&gt;quotes&lt;/em&gt;), captures the current environment, and bundles them into what is called a &lt;em&gt;quosure&lt;/em&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load libraries:
-library(rlang)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: Paket &amp;#39;rlang&amp;#39; wurde unter R Version 3.4.2 erstellt&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: Paket &amp;#39;dplyr&amp;#39; wurde unter R Version 3.4.2 erstellt&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-## Attache Paket: &amp;#39;dplyr&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:stats&amp;#39;:
-## 
-##     filter, lag&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:base&amp;#39;:
-## 
-##     intersect, setdiff, setequal, union&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# quote test data and test equation:
-my_data &amp;lt;- c(1,2,3,4,5)
-my_data_quosure &amp;lt;- quo(my_data)
-my_eq_quosure &amp;lt;- quo(1+2+3+4+5)
-
-print(my_data_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
-## ~my_data&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
-## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As I expected the equation is not evaluated but transformed into a quosure which &lt;em&gt;quotes&lt;/em&gt; my equation. What happened to my_data is interesting, because it is again not evaluated. I got to admit I was not thinking about that. Secondly, the print of quosure also provides us with information about the encapsulated environment of the quosure (which in both cases is the global environment).&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;rlang&lt;/code&gt; package provides the function &lt;code&gt;eval_tidy&lt;/code&gt; to evaluate quosures within their environment:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval_tidy(my_data_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 1 2 3 4 5&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval_tidy(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;How can the &lt;code&gt;eval&lt;/code&gt; function from &lt;code&gt;base R&lt;/code&gt; evaluate a quosure? By unquoting the quosure. Unquoting can be done with multiple operations. One of them is &lt;code&gt;!!&lt;/code&gt; (&lt;em&gt;read: bang-bang&lt;/em&gt;) operator (more info can be found in the well written help section of the &lt;code&gt;rlang&lt;/code&gt; package, just type &lt;code&gt;?&#39;!!&#39;&lt;/code&gt; after the package is loaded). Here are some things I tested:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# check normal eval:
-eval(1+2+3+4+5)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;quot;1+2+3+4+5&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;1+2+3+4+5&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(parse(text = &amp;quot;1+2+3+4+5&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# check eval with quosures:
-eval(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
-## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;#39;!!&amp;#39;(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;#39;!!&amp;#39;(my_eq_quosure))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# test more options to use eval on quosures:
-eval(UQE(my_eq_quosure))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(get_expr(my_eq_quosure))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;That is pretty nice. In some way one can see quosures as an alternative to character strings and expressions.&lt;/p&gt;
-&lt;p&gt;Now, the !! operator is accompanied by the !!! operator (again, check the help). The bang-bang-bang operator (yep!) embeds unquotes the argument (like !!), but also splices the argument. Now, I could look up what splicing means exactly, but instead I just fiddle around with it and give some examples. First, I want to compare the behavior with regard to the existing quosures:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;#39;!!&amp;#39;(my_data_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## my_data&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;#39;!!!&amp;#39;(my_data_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [[1]]
-## &amp;lt;quosure: global&amp;gt;
-## ~my_data&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#
-&amp;#39;!!&amp;#39;(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;#39;!!!&amp;#39;(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [[1]]
-## &amp;lt;quosure: global&amp;gt;
-## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Ah, so &lt;code&gt;!!!&lt;/code&gt; always enlists its arguments. That is good to know. Next, I wanted to get a feeling of how &lt;code&gt;eval()&lt;/code&gt; would work with the &lt;code&gt;!!!&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
-## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;#39;!!&amp;#39;(my_eq_quosure))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;#39;!!!&amp;#39;(my_eq_quosure)[[1]])&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
-## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;#39;!!&amp;#39;( &amp;#39;!!!&amp;#39;(my_eq_quosure)[[1]] ))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The &lt;code&gt;!!!&lt;/code&gt; operator becomes useful when multiple arguments are provided to a function, or when used to enquote multiple functions. Luckily, I found a nice example in the &lt;em&gt;&lt;a href=&#34;https://community.rstudio.com/t/should-tidyeval-be-abandoned/2238/37&#34;&gt;Should-tidyeval-be.abandoned section&lt;/a&gt;&lt;/em&gt; of the Rstudio community forum. I took the example and re-arranged, so that it fits the fiddling I’ve done so far. So, in the following quosures are used to create a set the functions (&lt;code&gt;min&lt;/code&gt;, &lt;code&gt;mean&lt;/code&gt; and &lt;code&gt;max&lt;/code&gt;) within a list of quosures:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary_funs &amp;lt;- c(min = quo(min(a)),
-                 mean = quo(mean(a)),
-                 max = quo(max(a))
-                 )
-class(summary_funs)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;list&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;A look at &lt;code&gt;summary_funs&lt;/code&gt; shows that it encapsulates three entries with &lt;code&gt;quosure&lt;/code&gt;. These are&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;str(summary_funs)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## List of 3
-##  $ min :&amp;lt;quosure: global&amp;gt;
-## ~min(a)
-##  $ mean:&amp;lt;quosure: global&amp;gt;
-## ~mean(a)
-##  $ max :&amp;lt;quosure: global&amp;gt;
-## ~max(a)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now, check out beautiful this works together with &lt;code&gt;dplyr&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_dataframe &amp;lt;- data.frame(a = my_data)
-my_dataframe %&amp;gt;%
-  summarize(!!!summary_funs)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##   min mean max
-## 1   1    3   5&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Ok, so far, so good. That is really all there is for my first session. Often I like to be lazy like that, to let ideas sink it. Yet, I hope to start a next session soon!!!&lt;/p&gt;
-</description>
+      <description>‘Multiple exclamation marks,’ he went on, shaking his head, ‘are a sure sign of a diseased mind.’ - Eric, Terry Pratchett
+ The purpose of this post is to start a protocol my process for getting used to tidy evaluation. My actual course of action was a bit more unstructured than the one presented here. But not by much I wanted to preserve at least some degree of sanity for eventual re-reads.</description>
     </item>
     
     <item>
@@ -540,188 +69,7 @@ my_dataframe %&amp;gt;%
       <pubDate>Tue, 21 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/21/on-aggregation-i/</guid>
-      <description>&lt;pre&gt;&lt;code&gt;## Warning: Paket &amp;#39;tibble&amp;#39; wurde unter R Version 3.4.1 erstellt&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning: Paket &amp;#39;dplyr&amp;#39; wurde unter R Version 3.4.2 erstellt&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;The Story&lt;/strong&gt; Linear reservoirs form the basis building block of most conceptual rainfall-runoff models. They can be combined or extended in a non-linear fashion to account for many complex behaviors. Furthermore, on the grand scale of things they can be seen as approximations to the Saint-Venant equations and are thus even physically justified (somehow, also see: &lt;span class=&#34;citation&#34;&gt;Klemes (1982)&lt;/span&gt; and &lt;span class=&#34;citation&#34;&gt;Szilagyi and Szilösi-Nagy (2010)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;For now let us assume that we study a hydrological system that consists of multiple linear reservoirs. The response of each reservoir is defined by a single constant &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; and the overall runoff of the system (which is also the only part that is measurable) is given by the sum of the individual runoffs.&lt;/p&gt;
-&lt;p&gt;We try to answer the following question by use of simulation:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Is it possible to use arithmetic mean of the reservoir constants to get a lumped reservoir which represents the behavior or response of the individual (“fine scale”) reservoirs&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;A Little bit of Hydrology&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;In their search for effective parameters hydrologist usually revert back to the concept of hydrological response units (&lt;em&gt;HRUs&lt;/em&gt;). The idea is to search for regions which are spatially homogenous and lump them together. Afterwards the effective parameters are usually estimated by optimization.&lt;/p&gt;
-&lt;p&gt;A more modern approach, called multiscale-parameter regionalization (MPR), suggests to first estimate the parameters at the finest possible scale and aggregate the parameters themselves afterwards. To make the fine-scale estimation possible it is assumed that the model parameters can be explicitly defined by a functional relationship with landscape properties.&lt;/p&gt;
-&lt;p&gt;My PHD is devoted to these functional relationships, but in this document we shall focus on the properties of the aggregation.&lt;/p&gt;
-&lt;div id=&#34;the-setup&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;The Setup&lt;/h1&gt;
-&lt;p&gt;Let us start with the experimental setup by defining a functional that returns a parameterized linear reservoir as a function of &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;spawn_linres &amp;lt;- function(tab) {
-    q0 &amp;lt;- 0
-    s &amp;lt;- 0
-    linres &amp;lt;- function(qin) {
-      qin - (tab*qin-s)*(1.-exp(-1/tab))
-      q_out &amp;lt;- qin - (tab*qin-s)*(1.-exp(-1/tab))
-      s &amp;lt;&amp;lt;- s + qin -q_out
-      return(q_out)
-    }
-    return(linres)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The following figure uses the functional to exemplify how different reservoirs behave with respect to different values of &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; (in relation to a unit input of 20) &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We can see that &lt;strong&gt;small&lt;/strong&gt; values of &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; lead to responsive behavior with fast depletion (orange lines), while &lt;strong&gt;large&lt;/strong&gt; values of &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; lead to a dampened response with long memory (slow depletion, blue lines). Ok, now lets do the analysis.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-simple-case-from-2-to-1&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;The Simple Case: From 2 to 1&lt;/h1&gt;
-&lt;p&gt;First, let us say that we have two linear reservoirs &lt;span class=&#34;math inline&#34;&gt;\(n=2\)&lt;/span&gt; which ought to be represented by a single one. To keep things simple let us also assume that both have the same input. We can then generate a sample of different &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values and check how good the different means of the &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; represent the overall behavior of the system. We will use the venerable Nash-Sutcliffe Efficiency, short &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; (i.e. the &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt; of the runoff) as a distance measure/objective function.&lt;/p&gt;
-&lt;div id=&#34;symmetry&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Symmetry&lt;/h2&gt;
-&lt;p&gt;Let us start by plotting an exemplary hydrograph from the generated samples. The overall (i.e. &lt;em&gt;real&lt;/em&gt;) response of the system is depicted in blue, the individual fine-scale reservoirs in violet-tones and the response from the aggregated/averaged reservoir is shown in orange: &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Ok! Now we can make a plot which shows the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; values of the aggregated reservoir in dependence of the sampled “fine-scaled” &lt;span class=&#34;math inline&#34;&gt;\(tab_i\)&lt;/span&gt; values. We can see that the best (highest) &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; values are on the 1:1 line. This makes sense, because there the relation &lt;span class=&#34;math inline&#34;&gt;\(tab_1 = tab_2\)&lt;/span&gt;holds (and the inputs are the same). One can also see that the behavior is symmetric with regard to the line. This is also an effect of the equal inputs, since &lt;span class=&#34;math inline&#34;&gt;\(tab_1 + tab_2 \equiv tab_2 + tab_1\)&lt;/span&gt;. We can also observe that the aggregation works better for larger &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values. This is mainly because of the behavior of the linear reservoirs (see: first section): More dampened functions exhibit smaller errors. Thus, a better &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; value can be expected. &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;The behavior and sensitivity of the results depends on the basin properties and on the chosen objective function. An example is given in the following figure, which shows that the sum of absolute relative errors (&lt;span class=&#34;math inline&#34;&gt;\(e_rel\)&lt;/span&gt;) is less forgiving than the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt;: &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;the-asymmetric-case&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;The Asymmetric Case&lt;/h2&gt;
-&lt;p&gt;How do the result change if the input for the reservoirs is different? &lt;strong&gt;Not much!&lt;/strong&gt; The 1:1 line does not make a symmetry anymore, but higher &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values are still easier to aggregate (whatever the means). Here is an example which uses the same input as above for one of the fine scaled reservoirs, but a different input for the other one.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We can note two things. (a) With regard to the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt;: the &lt;span class=&#34;math inline&#34;&gt;\(tab_2\)&lt;/span&gt; values are now more insensitive, while the &lt;span class=&#34;math inline&#34;&gt;\(tab_1\)&lt;/span&gt; values still exhibit the same pattern. And (b) The sensitivity pattern of &lt;span class=&#34;math inline&#34;&gt;\(e_rel\)&lt;/span&gt; is however inverted! The aggregation is more sensitive to changes of &lt;span class=&#34;math inline&#34;&gt;\(tab_2\)&lt;/span&gt;, than to changes of &lt;span class=&#34;math inline&#34;&gt;\(tab_1\)&lt;/span&gt;.&lt;/p&gt;
-&lt;div id=&#34;summary&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Summary&lt;/h3&gt;
-&lt;p&gt;In summary we can say that perfect aggregation with the arithmetic mean is possible in the trivial case, where &lt;span class=&#34;math inline&#34;&gt;\(tab_1 = tab_2\)&lt;/span&gt; (independent of the input). For all other cases the mean is an imperfect approximation. In general, the quality of the approximations is better (less sensitive) for larger &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values. The quality decline (of the approximation) is dependent on basin properties (in our case the input) and the chosen objective functions. Averaging seems to be more difficult if one is interested in relative measures.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;higher-dimensions-from-3-to-1&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Higher Dimensions: From 3 to 1&lt;/h1&gt;
-&lt;p&gt;Do these findings hold true in higher dimensions? To answer that question, let us try to aggregate 3 fine-scaled reservoirs next and see what happens.&lt;/p&gt;
-&lt;p&gt;To do so we will (again) use different inputs, as shown here: &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;div id=&#34;glimpses-of-the-cube&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Glimpses of the Cube&lt;/h2&gt;
-&lt;p&gt;The result now has for dimensions, but We can still think of it as a cube: The different &lt;span class=&#34;math inline&#34;&gt;\(tab_i\)&lt;/span&gt; form the axis and the information of the objective function can be defined with the help of colors.&lt;/p&gt;
-&lt;p&gt;Here are some views of the cubes for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and the &lt;span class=&#34;math inline&#34;&gt;\(e_{rel}\)&lt;/span&gt; distance measures. Some information gets lost because of the static 3d views. We therefore added the &lt;code&gt;plotly&lt;/code&gt; code to create them, in case you want to explore the pattern yourself.&lt;/p&gt;
-&lt;center&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; cube
-&lt;/center&gt;
-&lt;img src=&#34;../post/on_aggregation_figures/all_cubes_nse.jpg&#34; alt=&#34;all_cubes_nse&#34; /&gt;
-&lt;center&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(e_{rel}\)&lt;/span&gt; cube
-&lt;/center&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;../post/on_aggregation_figures/all_cubes_e-rel.jpg&#34; alt=&#34;all_cubes_erel&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;all_cubes_erel&lt;/p&gt;
-&lt;/div&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# nse Cube:
-plotly::plot_ly(tab3_results,
-        x = ~tab_1,
-        y = ~tab_2,
-        z = ~tab_3,
-        color = ~nse_m,
-        size = ~le_size,
-        sizes = c(0,20),
-        colors   = c(&amp;quot;darkcyan&amp;quot;,&amp;quot;lightgreen&amp;quot;,&amp;quot;lightyellow&amp;quot;))
-# rel_error cube:
-plotly::plot_ly(tab3_results,
-        x = ~tab_1,
-        y = ~tab_2,
-        z = ~tab_3,
-        color = ~rel_error,
-        size = ~le_size,
-        sizes = c(0,20),
-        colors   = c(&amp;quot;darkcyan&amp;quot;,&amp;quot;lightgreen&amp;quot;,&amp;quot;lightyellow&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;slice-dice&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Slice &amp;amp; Dice&lt;/h2&gt;
-&lt;p&gt;The cubes from above give an impression of the overall patter of the objective functions. Now, we will look at them in detail by inspecting different subviews of both cubes:&lt;/p&gt;
-&lt;div id=&#34;average-dices&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Average Dices&lt;/h3&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;../post/on_aggregation_figures/concept_slice-average.jpg&#34; alt=&#34;slice_average&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;slice_average&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;The following plots show the average view for each pixel or a given side. As depicted above one can think of it as looking from one side (marked in green) at the cube and seeing the average samples along the view-axis.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-13-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-13-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-14-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-14-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;horizontal-slices&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Horizontal Slices&lt;/h3&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;../post/on_aggregation_figures/concept_slice-horizontal.jpg&#34; alt=&#34;horizontal_slice&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;horizontal_slice&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;The &lt;em&gt;horizontal slices&lt;/em&gt; view a plain of the cube by fixing the &lt;span class=&#34;math inline&#34;&gt;\(tab_{3}\)&lt;/span&gt; at one value for each slice. As shown in the figure above, we made three slices, one for low-, one for mid- and one for high-values of &lt;span class=&#34;math inline&#34;&gt;\(tab_{3}\)&lt;/span&gt;. In the following we thus have six figures in total (three for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and three for the &lt;span class=&#34;math inline&#34;&gt;\(e_{rel}\)&lt;/span&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-15-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-15-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-16-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-16-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;summary-1&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Summary&lt;/h2&gt;
-&lt;p&gt;In this section we showed the relations between the behavior of three single reservoirs and the behavior that results from aggregating their respective constants &lt;span class=&#34;math inline&#34;&gt;\(tab_i\)&lt;/span&gt;. We saw that the trivial case, i.e. the 1:1:1 line (where &lt;span class=&#34;math inline&#34;&gt;\(tab_1 = tab_2 = tab_3\)&lt;/span&gt;), results in perfect aggregation (for both, the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and the &lt;span class=&#34;math inline&#34;&gt;\(e_rel\)&lt;/span&gt;). It can also be seen that higher &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values are associated with better objective functions values (in the averaged views this can be especially well seen).&lt;/p&gt;
-&lt;hr /&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;is-there-a-solution&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Is there a Solution?&lt;/h1&gt;
-&lt;p&gt;Lastly, let us consider the following question:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Can a single reservoirs is able to represent multiple reservoirs at all?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;For this we will optimize the previously aggregated &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; value of the single reservoir for each sampled point. We will do this for the asymmetric case of two &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values and the asymmetric case of three &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values.&lt;/p&gt;
-&lt;p&gt;For each sample point we will use a simple derivative free optimization routine provided by &lt;code&gt;stats::optimize&lt;/code&gt; (it actually is a &lt;code&gt;FORTRAN&lt;/code&gt; code, which combines the golden section search and successive parabolic interpolation).&lt;/p&gt;
-&lt;div id=&#34;asymmetric-case-with-two-tab-values&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Asymmetric case with two &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values&lt;/h2&gt;
-&lt;p&gt;In the following are the results for the asymmetric case of two &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values represented by a single reservoir. Note, the asymmetry of values for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; and decay away from the 1:1 line. &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-17-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;asymmetric-case-with-three-tab-values&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Asymmetric Case with three &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values&lt;/h2&gt;
-&lt;p&gt;For the 3-dimensional case we will show the results in the form of the horizontal slices (cross sections) that have been presented above. (the respective code is provided below). &lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-18-2.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-18-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;comparison&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Comparison&lt;/h2&gt;
-&lt;p&gt;We can compare the first exercise with the second one by comparing their densities and see that the 2 dimensional case has more extremely results, but for the &lt;span class=&#34;math inline&#34;&gt;\(NSE\)&lt;/span&gt; also larger deviations towards bad values. The 3 dimensional case has less perfect values, but also smaller deviations towards the worse performance&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;##             used   (Mb) gc trigger   (Mb)  max used   (Mb)
-## Ncells   1176982   62.9    2164898  115.7   2164898  115.7
-## Vcells 352219375 2687.3  555948719 4241.6 440669344 3362.1&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-19-1.png&#34; width=&#34;672&#34; /&gt;&lt;img src=&#34;../post/on_aggregationI_files/figure-html/unnamed-chunk-19-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;summary-2&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Summary&lt;/h2&gt;
-&lt;p&gt;In this section we see the same phenomenon as obtained by aggregation. Perfect approximations can be found along the 1:1 or the 1:1:1 line. Good Approximations are associated with larger &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; values. The approximation potential for small &lt;span class=&#34;math inline&#34;&gt;\(tab\)&lt;/span&gt; is weak and strongly input dependent. Higher dimensional problems seem to have less probability to be optimizable, but also show dampened behavior if the results are not considered in a relative fashion.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;appendix-sketches-co&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Appendix: Sketches &amp;amp; Co&lt;/h1&gt;
-&lt;p&gt;A small test to see if the optimized “aggregation”-parameters are within the bounds of the fine scaled parameters. Here a sketch for 3 dimension:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;optimas_tab3_test &amp;lt;- optimas_tab3 %&amp;gt;%
-  mutate(max_tab = pmax(tab_1,tab_2,tab_3),
-         min_tab = pmin(tab_1,tab_2,tab_3),
-         le_test = ifelse((tab_nse_opt &amp;gt;= min_tab &amp;amp; tab_nse_opt &amp;lt;= max_tab),1,0))
-
-
-#
-optimas_tab3_sub &amp;lt;- filter(optimas_tab3_test, tab_3 == g[20])
-le_midpoint &amp;lt;- with(optimas_tab3_test, {mean( c(max(nse_opt),min(nse_opt)) )})
-ggplot(optimas_tab3_sub) +
-  geom_raster(aes(tab_1, tab_2, fill = le_test)) +
-  geom_abline(color = &amp;quot;black&amp;quot;) +
-  labs(title = &amp;quot;Relative Error&amp;quot;,
-       subtitle = &amp;quot;Transect for &amp;#39;low&amp;#39; tab3 Values&amp;quot;) +
-  coord_fixed( ) +
-  theme_light( ) +
-  theme(plot.background = element_rect(fill = &amp;#39;#EEEDE4&amp;#39;), 
-        legend.background = element_rect(fill = &amp;#39;#EEEDE4&amp;#39;))&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;references&#34; class=&#34;section level1 unnumbered&#34;&gt;
-&lt;h1&gt;References&lt;/h1&gt;
-&lt;div id=&#34;refs&#34; class=&#34;references&#34;&gt;
-&lt;div id=&#34;ref-klemes1982&#34;&gt;
-&lt;p&gt;Klemes, Vit. 1982. “The Essence of Mathemtical Models of Reservoir Storage.” &lt;em&gt;Canadian Journal of Civil Engineering&lt;/em&gt;. doi:&lt;a href=&#34;https://doi.org/10.1139/l82-072&#34;&gt;10.1139/l82-072&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;ref-szilagy2010&#34;&gt;
-&lt;p&gt;Szilagyi, Josef, and Andras Szilösi-Nagy. 2010. “Recursive Streamflow Forecasting: A State-Space Approach.”&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</description>
+      <description>## Warning: Paket &amp;#39;tibble&amp;#39; wurde unter R Version 3.4.1 erstellt ## Warning: Paket &amp;#39;dplyr&amp;#39; wurde unter R Version 3.4.2 erstellt The Story Linear reservoirs form the basis building block of most conceptual rainfall-runoff models. They can be combined or extended in a non-linear fashion to account for many complex behaviors. Furthermore, on the grand scale of things they can be seen as approximations to the Saint-Venant equations and are thus even physically justified (somehow, also see: Klemes (1982) and Szilagyi and Szilösi-Nagy (2010)).</description>
     </item>
     
     <item>
@@ -730,40 +78,9 @@ ggplot(optimas_tab3_sub) +
       <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/17/rainy-meanderings/</guid>
-      <description>&lt;p&gt;Here I will collect notes and references about the conceptualization in hydrology.&lt;/p&gt;
-&lt;p&gt;Klemes (Conceptualization and scale in hydrology, 1986; &lt;a href=&#34;https://doi.org/10.1016/0022-1694(83)90208-1&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1016/0022-1694(83)90208-1&lt;/a&gt;) provides the basics. The abstract reads:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;It is argued that the levels of scale at which a meaningful conceptualization of physical processes is possible are not arbitrary and their range is not continuous. Formulations appropriate at a given level usually are not applicable at the immediately adjoining levels. This is seen as one of the important reasons for the slow progress of hydrological science on basin scale since it is dominated by different effects than those observed at the immediately lower level of channel reaches and hillslopes which represent the focus of current hydrological research. The search for an appropriate level of conceptualization can proceed either upward or downward along the hierarchy of scales. Both possibilities are discussed and an example of the downward route is given.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div id=&#34;linear-and-non-linear-reservoirs&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Linear and Non-Linear Reservoirs&lt;/h2&gt;
-&lt;p&gt;Ostrowski provides the best derivation and description of linear and piece-wise linear reservoirs I am currently aware.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;handling-imperfection&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Handling Imperfection&lt;/h2&gt;
-&lt;p&gt;Most conceptual rainfall-runoff models are biased estimators with relatively low variance. They are innately wrong, but are able to closely shadow the real system.&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;Again, a paper of Klemes is a good starting point. It seems that the paper &lt;em&gt;Operational testing of hydrological simulation models&lt;/em&gt; (Klemes, 1986; &lt;a href=&#34;http://dx.doi.org/10.1080/02626668609491024&#34; class=&#34;uri&#34;&gt;http://dx.doi.org/10.1080/02626668609491024&lt;/a&gt;) introduced the calibration-validation concept to the hydrological community. Here is the abstract &lt;a href=&#34;#fn1&#34; class=&#34;footnoteRef&#34; id=&#34;fnref1&#34;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;This paper describes a hierarchical scheme for the systematic testing of hydrological simulation models, a scheme that would lend to a model a minimum level of credibility commensurate with the difficulty of the modelling task. The scheme would be easy to implement operationally and its adoption would provide a convenient common basic standard applicable to models irrespective of their structure. The concept was motivated by problems encountered in connection with assessing the feasibility of using hydrological simulation models for the simulation of streamflow under changed climatic conditions. The problems arose while the author was working under the auspices of the World Meteorological Organization on a related project for the World Climate Programme - Water (Klemes, 1985b).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The underlying idea is by no means new and original since it is just commonsense tailored to specific hydrological situations. Essentially equivalent testing schemes are used in other sciences as a matter of standard routine. An outline of this testing scheme was originally presented in Klemes (1982a). Some elements of the concept appear in Lawson &amp;amp; Schiau (1977) and examples of application of the split-sample test, which represents the basic level of the scheme, can be found in WMO (1975, 1986).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;p&gt;Cross Validation will (most likely) not work on (highly) auto-correlated error-time-series. See the paper &lt;em&gt;A note on the validity of cross-validation for evaluating autoregressive time series prediction&lt;/em&gt; (&lt;a href=&#34;https://robjhyndman.com/publications/cv-time-series/&#34;&gt;Christoph Bergmeir, Rob J Hyndman and Bonsoo Koo, 2017; to appear)&lt;/a&gt;). The abstract reads:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;One of the most widely used standard procedures for model evaluation in classification and regression is &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt;-fold cross-validation (CV). However, when it comes to time series forecasting, because of the inherent serial correlation and potential non-stationarity of the data, its application is not straightforward and often omitted by practitioners in favour of an out-of-sample (OOS) evaluation. In this paper, we show that in the case of a purely autoregressive model, the use of standard &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt;-fold CV is possible as long as the models considered have uncorrelated errors. Such a setup occurs, for example, when the models nest a more appropriate model. This is very common when Machine Learning methods are used for prediction, where CV in particular is suitable to control for overfitting the data. We present theoretical insights supporting our arguments. Furthermore, we present a simulation study and a real-world example where we show empirically that &lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt;-fold CV performs favourably compared to both OOS evaluation and other time-series-specific techniques such as non-dependent cross-validation.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr /&gt;
-&lt;/div&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-&lt;hr /&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn1&#34;&gt;&lt;p&gt;I love the honesty of the abstract. It does not try to sell the thoughts as new or groundbreaking. I wonder if such a presentation is still possible today.&lt;a href=&#34;#fnref1&#34;&gt;↩&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;
-</description>
+      <description>Here I will collect notes and references about the conceptualization in hydrology.
+Klemes (Conceptualization and scale in hydrology, 1986; https://doi.org/10.1016/0022-1694(83)90208-1) provides the basics. The abstract reads:
+ It is argued that the levels of scale at which a meaningful conceptualization of physical processes is possible are not arbitrary and their range is not continuous. Formulations appropriate at a given level usually are not applicable at the immediately adjoining levels. This is seen as one of the important reasons for the slow progress of hydrological science on basin scale since it is dominated by different effects than those observed at the immediately lower level of channel reaches and hillslopes which represent the focus of current hydrological research.</description>
     </item>
     
     <item>
@@ -772,78 +89,9 @@ ggplot(optimas_tab3_sub) +
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/10/04/visualizing-uncertainty/</guid>
-      <description>
-
-&lt;p&gt;I am not sure where one should start with this topic. Visualizing uncertainty
-is hard. in general, it is still an unsolved problem.&lt;/p&gt;
-
-&lt;p&gt;Back in the days even the mighty
-&lt;a href=&#34;https://flowingdata.com/2013/07/10/visualizing-uncertainty-still-unsolved-problem/&#34;&gt;Nathan Yau&lt;/a&gt;
-wrote:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;I still struggle with uncertainty and visualization. I haven’t seen many worthwhile solutions other than the old standbys, boxplots and histograms, which show distributions. But how many people understand spread, skew, etc? It’s a small proportion, which poses an interesting challenge.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Perhaps a good place to start the article &lt;a href=&#34;https://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line&#34;&gt;When Lives Are on the Line&lt;/a&gt; by &lt;a href=&#34;https://eagereyes.org/&#34;&gt;Robert Kosara&lt;/a&gt;. The article provides plenty of (good)
-examples and shows the inherent problems of uncertainty visualization. The
-underlying topic, i.e. Hurricane Forecasting, is also very relevant.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../post/visunc/eagereyes_hurricanes.png&#34; alt=&#34;&amp;quot;eagereye&amp;quot;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;real-world-metaphors&#34;&gt;Real World Metaphors&lt;/h2&gt;
-
-&lt;p&gt;This approach tries to visualize uncertainty by using visceral representation
-that are familiar to viewers. Example are brushstrokes (e.g. the thicker the
-more uncertain), hand-drawn style (e.g. the more sketchy the more uncertain) or
-watercolors (e.g. the more transparent the more uncertain). The used techniques
-might be summarized or at least strongly overlap with the domain of
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Non-photorealistic_rendering&#34;&gt;non-photorealistic rendering&lt;/a&gt;, which is&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&amp;hellip; an area of computer graphics that focuses on enabling a wide variety of expressive styles for digital art. In contrast to traditional computer graphics, which has focused on photorealism, NPR is inspired by artistic styles such as painting, drawing, technical illustration, and animated cartoons. NPR has appeared in movies and video games in the form of &amp;ldquo;toon shading&amp;rdquo;, as well as in scientific visualization, architectural illustration and experimental animation. An example of a modern use of this method is that of cel-shaded animation.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;../post/visunc/handy_overview.png&#34; alt=&#34;semiotic_logo.png&#34; /&gt;
-&lt;strong&gt;HANDY&lt;/strong&gt;. In &lt;a href=&#34;http://openaccess.city.ac.uk/1274/&#34;&gt;2012 Wood et al.&lt;/a&gt;
-presented a framework for sketchy information visualization. The framework is
-called &lt;a href=&#34;https://www.gicentre.net/handy/&#34;&gt;handy&lt;/a&gt; and is a &lt;a href=&#34;https://processing.org/&#34;&gt;processing library&lt;/a&gt;. Here is an excerpt from abstract:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;We present and evaluate a framework for constructing sketchy style information visualizations that mimic data graphics drawn by hand. We provide an alternative renderer for the Processing graphics environment that redefines core drawing primitives including line, polygon and ellipse rendering. These primitives allow higher-level graphical features such as bar charts, line charts, treemaps and node-link diagrams to be drawn in a sketchy style with a specified degree of sketchiness. &amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;There also exists a great
-&lt;a href=&#34;https://www.gicentre.net/handy/gallery/imp9lpl2bebs2rlb6i2yqdo9mcfmrd&#34;&gt;gallery&lt;/a&gt;,
-which exhibits many examples and a very thoughtful
-&lt;a href=&#34;https://www.gicentre.net/blog/?offset=1499881637476&#34;&gt;blogpost&lt;/a&gt;
-about the potential and use of sketchiness for visualizing uncertainty in
-general.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;../post/visunc/semiotic_logo.png&#34; alt=&#34;semiotic_logo.png&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;SEMIOTIC.&lt;/strong&gt; &lt;a href=&#34;http://elijahmeeks.com/&#34;&gt;Elijah Meeks&lt;/a&gt; is very smart-
-He created &lt;a href=&#34;https://emeeks.github.io/semiotic/#/&#34;&gt;Semiotic&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Semiotic is (yet another) data visualization framework. It is based on
-&lt;a href=&#34;https://reactjs.org/&#34;&gt;react&lt;/a&gt;. The motivation behind it is to provide a fast
-way to create plots, without putting to much time into a specific chart.&lt;/p&gt;
-
-&lt;p&gt;It can visualize uncertainty by &amp;lsquo;sketchy&amp;rsquo; rendering.  Elijah wrote a very nice &lt;a href=&#34;https://medium.com/@Elijah_Meeks/sketchy-data-visualization-in-semiotic-5811a52f59bc&#34;&gt;article&lt;/a&gt; which lays out his ideas.&lt;/p&gt;
-
-&lt;h2 id=&#34;spaghetti&#34;&gt;Spaghetti&lt;/h2&gt;
-
-&lt;p&gt;The idea here is to basically show a whole set of different scenarios
-congruently.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;USING MOVEMENT&lt;/strong&gt;. Instead of showing the whole ensembles at the same time one can
-reveal a &amp;ldquo;scenario&amp;rdquo; at a time. Of course this approach does not work on print.
-Here are some recent examples:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theguardian.com/cities/ng-interactive/2017/nov/03/three-degree-world-cities-drowned-global-warming&#34;&gt;Global Warming&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>I am not sure where one should start with this topic. Visualizing uncertainty is hard. in general, it is still an unsolved problem.
+Back in the days even the mighty Nathan Yau wrote:
+ I still struggle with uncertainty and visualization. I haven’t seen many worthwhile solutions other than the old standbys, boxplots and histograms, which show distributions. But how many people understand spread, skew, etc? It’s a small proportion, which poses an interesting challenge.</description>
     </item>
     
     <item>
@@ -852,31 +100,8 @@ Here are some recent examples:&lt;/p&gt;
       <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/04/10/intro/</guid>
-      <description>
-
-&lt;p&gt;Currently everything is very scrappy here and it will probably remain so for
-quite some time.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I will try to put some pretty random notes on random things on here.&lt;/li&gt;
-&lt;li&gt;The idea is that each &amp;ldquo;blogpost&amp;rdquo; will be expanded over time and is thus not
-finished. I may provide some kind of update news as the project goes along; that
-will however depend on how everything plays out.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&#34;some-definitions-and-concepts&#34;&gt;Some Definitions and Concepts&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://en.wiktionary.org/wiki/scrap&#34;&gt;scrap (/skɹæp/)&lt;/a&gt;&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;A (small) piece; a fragment; a detached, incomplete portion.&lt;/li&gt;
-&lt;li&gt;Discarded objects (especially metal) that may be dismantled to recover their constituent materials, junk.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;uovo all&amp;rsquo;occhio di bue:&lt;/strong&gt; Fried egg&lt;/p&gt;
-</description>
+      <description>Currently everything is very scrappy here and it will probably remain so for quite some time.
+ I will try to put some pretty random notes on random things on here. The idea is that each &amp;ldquo;blogpost&amp;rdquo; will be expanded over time and is thus not finished. I may provide some kind of update news as the project goes along; that will however depend on how everything plays out.  Some Definitions and Concepts scrap (/skɹæp/):</description>
     </item>
     
   </channel>
