@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+<title>allokkio - Sketch: Flares</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="allokkio">
+<meta name="generator" content="Hugo 0.20.2" />
+
+  
+
+
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+<link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="../../../../css/tuftesque.css">
+
+</head>
+
+<body>
+<div id="layout" class="pure-g">
+<article class="pure-u-1">
+<header class="brand">
+  <h1>
+    <a href="../../../../">
+      <span id = "blog_logo">
+        
+          <img src= "/allokkio/images/logo.jpg" alt="home" style="height: 40px; width:40px">
+           
+          
+        
+      </span>
+      
+    </a>
+  </h1>
+</header>
+
+<section>
+  <h2 class="content-title">
+  
+  <a href="../../../../2017/11/28/sketch-flares/">Sketch: Flares</a>
+  
+  </h2>
+  
+  
+  
+  
+
+  
+</section>
+
+
+<section><div id="sketch-holder" align ="justify"></div>
+
+<p>Code:</p>
+
+<pre><code class="language-js">var canvas_size = 450;
+var canvas_pad = 50;
+var radius = (canvas_size-canvas_pad)/2;
+var midpoint = canvas_size/2;
+var ball_radius = 150;
+// Blob def
+function Blob(x,y) {
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = ball_radius
+  //
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &gt;= (radius-0.3*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
+
+function setup() {
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
+  canvas.parent('sketch-holder');
+  for (var i=1; i&lt;=2; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
+}
+
+function draw() {
+  background(&quot;#000000&quot;);
+  for (var i = 0; i&lt;b.length; i++) {
+     noiseSeed(i);
+     b[i].vel.x += 0.05*noise(1);
+     noiseSeed(i);
+     b[i].vel.y += 0.05*noise(1);
+   }
+
+  loadPixels();
+  for (var y=0; y&lt;height; y++) {
+    for (var x=0; x&lt;width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
+
+      for (var i = 0; i&lt;b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 &gt;= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.17*sum, 238);
+        pixels[index+1] = min(144 + 0.15*sum, 237);
+        pixels[index+2] = min(255 + 0.12*sum, 228);
+      }
+   }
+  }
+  updatePixels()
+  for(var i=0; i&lt;b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
+}
+</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+var canvas_size = 450;
+var canvas_pad = 50;
+var radius = (canvas_size-canvas_pad)/2;
+var midpoint = canvas_size/2;
+var ball_radius = 150;
+// Blob def
+function Blob(x,y) {
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = ball_radius
+  //
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 >= (radius-0.3*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
+
+function setup() {
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
+  canvas.parent('sketch-holder');
+  for (var i=1; i<=2; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
+}
+
+function draw() {
+  background("#000000");
+  for (var i = 0; i<b.length; i++) {
+     noiseSeed(i);
+     b[i].vel.x += 0.05*noise(1);
+     noiseSeed(i);
+     b[i].vel.y += 0.05*noise(1);
+   }
+
+  loadPixels();
+  for (var y=0; y<height; y++) {
+    for (var x=0; x<width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
+
+      for (var i = 0; i<b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 >= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.17*sum, 238);
+        pixels[index+1] = min(144 + 0.15*sum, 237);
+        pixels[index+2] = min(255 + 0.12*sum, 228);
+      }
+   }
+  }
+  updatePixels()
+  for(var i=0; i<b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
+}
+</script>
+</section>
+<section>
+  
+
+  
+
+
+
+  
+
+
+      
+
+  <footer class="page-footer">
+		<hr>
+		<ul class="page-footer-menu">
+		
+		</ul>
+
+  
+
+	<div class="copyright">
+	<p>
+    
+      &copy; 2017
+    .
+    All rights reserved.
+    
+  </p>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</footer>
+
+</section>
+</article>
+</div>
+</body>
+</html>
