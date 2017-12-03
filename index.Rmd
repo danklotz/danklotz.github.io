@@ -25,8 +25,15 @@ An about page will also follow soon. Don't worry (yet).
 
 ## [ allokkio ](allokkio/)
 
-**Thinking by Tinkering.** A small short-lived blog where I collect short-notes, 
+**Thinking by Tinkering.** A caotic blog where I collect short-notes, 
 sketches and ideas. 
+
+--- 
+
+## [Epper Eppes](eppereppes/index.html) 
+
+**Still a fledgling**. A (more ordered) complement to the thinking by tinkering 
+of my blog. 
 
 ---
 
@@ -42,8 +49,4 @@ The idea is to share most of my learning efforts openly. For fun and glory ;)
 of `rrrCOS` are my take for providing a unified way to guide the 
 calibration of the rainfall-runoff model COSERO from 'R' 
 
----
 
-## Epper Eppes 
-
-TO COME$^{TM}$
