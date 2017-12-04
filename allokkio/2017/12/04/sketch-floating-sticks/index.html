@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+<title>allokkio - Sketch: Floating Sticks</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="allokkio">
+<meta name="generator" content="Hugo 0.18.1" />
+
+  
+
+
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+<link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link rel="stylesheet" href="../../../../css/tuftesque.css">
+
+</head>
+
+<body>
+<div id="layout" class="pure-g">
+<article class="pure-u-1">
+<header class="brand">
+  <h1>
+    <a href="../../../../">
+      <span id = "blog_logo">
+        
+          <img src= "/allokkio/images/logo.jpg" alt="home" style="height: 40px; width:40px">
+           
+          
+        
+      </span>
+      
+    </a>
+  </h1>
+</header>
+
+<section>
+  <h2 class="content-title">
+  
+  <a href="../../../../2017/12/04/sketch-floating-sticks/">Sketch: Floating Sticks</a>
+  
+  </h2>
+  
+  
+  
+  
+
+  
+</section>
+
+
+<section><p>adapted from <a href="https://www.openprocessing.org/sketch/421269">here</a></p>
+
+<div id="sketch-holder" align ="justify"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+var gl;
+var gl2;
+var tStep = 0.3;
+var all_time = 0.0
+var c_size = 450;
+var midpoint = c_size/2
+var first_click = false
+
+function setup() {
+  background(51,6,28);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent('sketch-holder');
+
+  // Line
+  /*gl = new GrowingSticks(false);
+  gl.addPoint(10,0.5*height,true,20);
+  for(var x=20; x<width-20; x+=10){
+    gl.addPoint(x,0.5*height+random(-2,2),false,5);
+  }
+  gl.addPoint(width-10,0.5*height,true,20);*/
+
+  // Circle
+  le_sticks = new GrowingSticks(true);
+  for(var a=0; a<TAU; a+=TAU/100){
+    let r = 50;
+    le_sticks.addPoint(midpoint+0.9*r*cos(a+1.5*PI), midpoint+0.9*r*sin(a+1.5*PI), 5);
+  }
+}
+
+function draw() {
+  background(51,6,28,45);
+  if (first_click) {
+    var mouse_within_center = (mouseX-midpoint)**2 + (mouseY-midpoint)**2 <= 50**2;
+    if( (mouseIsPressed) && (mouse_within_center) ){
+      le_sticks.insertPoint(false,50,50,Math.floor(random(le_sticks.points.length-2)));
+    }
+    le_sticks.update(tStep);
+    le_sticks.display();
+  }
+
+  // reference circle
+  fill(30,144,255)
+  noStroke()
+  ellipse(midpoint,midpoint,100,100)
+  fill("#EEEDE4")
+  textSize(18)
+  text("  click \n   me", midpoint-27, midpoint-5)
+  noFill()
+  stroke(30,144,255);
+  strokeWeight(3)
+  rect(1, 1, c_size-3,c_size-3);
+}
+
+function mouseClicked() {
+  first_click = true
+}
+
+var Point = function(x, y) {
+  this.pos = createVector(x,y);
+  this.vel = createVector(0,0);
+  this.acc = createVector(0,0);
+  this.force = createVector(0,0);
+  this.m = 50;
+  this.fixed = false;
+  this.drag = 0.985;
+  this.collisionDist = 30; // This affects a lot how smooth the result will be: 5=detailed, 20=smooth
+}
+
+Point.prototype = {
+  resetForces: function(){
+    this.force.mult(0);
+  },
+  addForce: function(f){
+    this.force.add(f);
+  },
+  updatePos: function(dt){
+    if(!this.fixed){
+      this.acc = this.force.div(this.m);
+      this.vel.add(p5.Vector.mult(this.acc,dt));
+      this.pos.add(p5.Vector.mult(this.vel,dt));
+      this.vel.mult(this.drag);
+    }
+  },
+  fix: function(){
+    this.fixed = true;
+  },
+  // Not efficient, should only check n neighbour points
+  checkCollisions(i, points){
+    for(var p=0; p<points.length; p++){
+      if(i != p){
+        let rel = p5.Vector.sub(this.pos,points[p].pos);
+        let d = rel.mag();
+        if(d < this.collisionDist){
+          this.force.add(rel.mult(1/(d+0.001)));
+        }
+      }
+    }
+  }
+}
+
+var Spring = function(pointA, pointB, l, k = 0.9){
+  this.pointA = pointA;
+  this.pointB = pointB;
+  this.restLen = l;
+  this.k = k;
+}
+Spring.prototype = {
+  applyForces: function(){
+    let vecAB = p5.Vector.sub(this.pointB.pos, this.pointA.pos);
+    let forceMag = this.k*(this.restLen-vecAB.mag());
+    let forceAB = vecAB.setMag(forceMag);
+    let forceBA = p5.Vector.mult(forceAB,-1);
+    this.pointA.addForce(forceBA);
+    this.pointB.addForce(forceAB);
+  }
+}
+
+// Growing line by insertion of points
+
+var GrowingSticks = function(closed=false){
+  this.springs = [];
+  this.points = [];
+  this.closed = closed;
+}
+
+GrowingSticks.prototype = {
+  addPoint: function(x, y, fixed=false, len){
+    this.points.push(new Point(x, y, fixed));
+    if(this.points.length > 1){
+      if(this.closed){
+        this.springs.pop();
+      }
+      this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len));
+      if(this.closed){
+        this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len));
+      }
+    }
+  },
+  insertPoint: function(fixed=false, len0, len1, firstIndex){
+    if(this.points.length > 1){
+      let midPos = p5.Vector.add(this.points[firstIndex].pos,this.points[firstIndex+1].pos).mult(0.5);
+      this.points.splice(firstIndex+1,0,new Point(midPos.x, midPos.y, fixed));
+      this.springs.splice(firstIndex, 1, new Spring(this.points[firstIndex],this.points[firstIndex+1],len0));
+      this.springs.splice(firstIndex+1, 0, new Spring(this.points[firstIndex+1],this.points[firstIndex+2],len1));
+    }
+  },
+  update: function(dt){
+    var self = this;
+    for(var s=0; s<this.springs.length; s++){
+      this.springs[s].applyForces();
+    }
+    for(var p=0; p<this.points.length; p++){
+      // k-d tree ?
+      /*if(p<50){
+        this.points[p].checkCollisions(p,this.points.filter(function(){
+          return ((p < 50) && (p >= 0)) || ((p > self.points.length-50) && (p < self.points.length));
+        }));
+      } else if(p>this.points.length-50){
+        this.points[p].checkCollisions(p,this.points.filter(function(){
+          return ((p < 50) && (p >= 0)) || ((p > self.points.length-50) && (p < self.points.length));
+        }));
+      } else {
+        this.points[p].checkCollisions(p,this.points.slice(p-50,p+50));
+      }*/
+      this.points[p].checkCollisions(p,this.points); // Slow
+      this.points[p].updatePos(dt);
+      this.points[p].resetForces();
+    }
+  },
+  display: function(displayPoints = false){
+    stroke(30,144,255);
+    fill(30,144,255,255);
+    all_time += 0.02*tStep
+    strokeWeight(0.001 + noise(all_time)*7);
+    //strokeWeight(5);
+    for(var p=1; p<this.points.length-1; p++){
+      line(this.points[p-1].pos.x,
+           this.points[p+1].pos.y,
+           this.points[p+1].pos.x,
+           this.points[p-1].pos.y);
+      if(displayPoints){
+        ellipse(this.points[p-1].pos.x, this.points[p+1].pos.y,10,10);
+        ellipse(this.points[p-1].pos.x, this.points[p+1].pos.y,10,10);
+        ellipse(this.points[p+1].pos.x, this.points[p-1].pos.y,10,10);
+        ellipse(this.points[p+1].pos.x, this.points[p-1].pos.y,10,10);
+      }
+    }
+    if(this.closed) {
+      line(this.points[0].pos.x, this.points[0].pos.y, this.points[this.points.length-1].pos.x, this.points[this.points.length-1].pos.y);
+    }
+  }
+}
+</script>
+</section>
+<section>
+  
+
+  
+
+
+
+  
+
+
+      
+
+  <footer class="page-footer">
+		<hr>
+		<ul class="page-footer-menu">
+		
+		</ul>
+
+  
+
+	<div class="copyright">
+	<p>
+    
+      &copy; 2017
+    .
+    All rights reserved.
+    
+  </p>
+</div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</footer>
+
+</section>
+</article>
+</div>
+</body>
+</html>
