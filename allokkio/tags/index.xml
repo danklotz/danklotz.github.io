@@ -6,15 +6,24 @@
     <description>Recent content in Tags on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Nov 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Dec 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Creativecoding</title>
+      <link>/tags/creativecoding/</link>
+      <pubDate>Sat, 09 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/creativecoding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data Science</title>
       <link>/tags/data-science/</link>
-      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-science/</guid>
       <description></description>
@@ -23,7 +32,7 @@
     <item>
       <title>Javascript</title>
       <link>/tags/javascript/</link>
-      <pubDate>Wed, 27 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/javascript/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>Js</title>
       <link>/tags/js/</link>
-      <pubDate>Wed, 27 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/js/</guid>
       <description></description>
@@ -41,7 +50,7 @@
     <item>
       <title>P5js</title>
       <link>/tags/p5js/</link>
-      <pubDate>Wed, 27 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/p5js/</guid>
       <description></description>
@@ -50,7 +59,7 @@
     <item>
       <title>Progamming</title>
       <link>/tags/progamming/</link>
-      <pubDate>Wed, 27 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/progamming/</guid>
       <description></description>
@@ -59,7 +68,7 @@
     <item>
       <title>Programming</title>
       <link>/tags/programming/</link>
-      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/programming/</guid>
       <description></description>
@@ -68,16 +77,25 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Rlang</title>
+      <link>/tags/rlang/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rlang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Scripting</title>
       <link>/tags/scripting/</link>
-      <pubDate>Wed, 27 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/scripting/</guid>
       <description></description>
@@ -86,7 +104,7 @@
     <item>
       <title>Tidy Evaluation</title>
       <link>/tags/tidy-evaluation/</link>
-      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/tidy-evaluation/</guid>
       <description></description>
@@ -95,7 +113,7 @@
     <item>
       <title>Tidyverse</title>
       <link>/tags/tidyverse/</link>
-      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/tidyverse/</guid>
       <description></description>

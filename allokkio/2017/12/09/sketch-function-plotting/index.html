@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
 <head>
-<title>allokkio - Tidyverse</title>
+<title>allokkio - Sketch: Function Plotting</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,17 +33,16 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<link rel="stylesheet" href="../../css/tuftesque.css">
+<link rel="stylesheet" href="../../../../css/tuftesque.css">
 
 </head>
-
 
 <body>
 <div id="layout" class="pure-g">
 <article class="pure-u-1">
 <header class="brand">
   <h1>
-    <a href="../../">
+    <a href="../../../../">
       <span id = "blog_logo">
         
           <img src= "/allokkio/images/logo.jpg" alt="home" style="height: 40px; width:40px">
@@ -56,55 +55,120 @@
   </h1>
 </header>
 
-  <section>
+<section>
   <h2 class="content-title">
   
-  <a href="../../tags/tidyverse/"> Tidyverse </a>
+  <a href="../../../../2017/12/09/sketch-function-plotting/">Sketch: Function Plotting</a>
   
   </h2>
   
-</section>
-  <section class="list-page">
   
-    <details open>
-      <summary class="year">2017 (2)</summary>
+  
+  
+
+  
+</section>
+
+
+<section><div id="sketch-holder" align ="justify"></div>
+
+<script src="../../../../p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var midpoint = 0.5*c_size;
+var resolution = 10;
+var x1 = 0;
+var y1 = 0;
+var grid_div = 15;
+
+
+
+function setup() {
+  background("#DDDCD3");
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent('sketch-holder');
+  noLoop();
+  strokeWeight(1);
+  stroke(50,50,50,150);
+  line(midpoint,0,midpoint,c_size)
+  line(0,midpoint,c_size,midpoint)
+  //
+  stroke(50,50,50,23);
+  for (var i=0; i<=c_size/grid_div; i++) {
+    line(i*grid_div, 0, i*grid_div, c_size);
+    line( 0, i*grid_div, c_size, i*grid_div);
+  }
+}
+
+
+function draw() {
+  f1()
+  f2()
+  f_fuse()
+  // boarder
+  stroke(100,100,100);
+  strokeWeight(1);
+  line(0, 0, 0, c_size);
+  line(0, 0, c_size, 0);
+  line(c_size-1, 0, c_size-1, c_size-1);
+  line(0, c_size-1, c_size-1, c_size-1);
+}
+
+function f1() {
+  stroke(100,100,100);
+  strokeWeight(2);
+  noFill();
+  beginShape();
+    for (var i=0; i<=c_size; i++) {
+      x1 = c_size - i;
+      y1 = midpoint - 0.02*(i-midpoint)**2 + 150;
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+function f2() {
+  stroke(100,100,100);
+  strokeWeight(2);
+  noFill();
+  beginShape();
+    for (var i=0; i<=c_size; i++) {
+      x1 = c_size - i;
+      y1 = midpoint + 0.5*(i-midpoint);
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+function f_fuse() {
+  stroke(30,144,255,120);
+  strokeWeight(5);
+  noFill();
+  beginShape();
+    for (var i=0; i<=c_size; i++) {
+      x1 = c_size - i;
+      y1 = max(midpoint + 0.5*(i-midpoint),midpoint - 0.02*(i-midpoint)**2 + 150);
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+</script>
+</section>
+<section>
+  
+
+  
+
+
+
+  
+
+
       
-        <ul>
-          <li>
-            <details open>
-              <summary>December (1)</summary>
-                
-                  <ul>
-                    <li>
-                      <span class="list-date">Dec 3 &middot;</span>
-                      <a href="../../2017/12/03/bang-bang-bang/">More tidy evaluation</a>
-                    </li>
-                  </ul>
-                
-            </details>
-          </li>
-        </ul>
-      
-        <ul>
-          <li>
-            <details open>
-              <summary>November (1)</summary>
-                
-                  <ul>
-                    <li>
-                      <span class="list-date">Nov 23 &middot;</span>
-                      <a href="../../2017/11/23/bang-bang-bang/">First Steps with Tydy Evaluation</a>
-                    </li>
-                  </ul>
-                
-            </details>
-          </li>
-        </ul>
-      
-    </details>
-    
-  </section>
-<footer class="page-footer">
+
+  <footer class="page-footer">
 		<hr>
 		<ul class="page-footer-menu">
 		
@@ -133,6 +197,7 @@
     </script>
 </footer>
 
+</section>
 </article>
 </div>
 </body>

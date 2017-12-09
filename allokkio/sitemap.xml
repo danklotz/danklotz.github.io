@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2017/12/09/sketch-function-plotting/</loc>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/12/04/sketch-floating-sticks/</loc>
     <lastmod>2017-12-04T00:00:00+00:00</lastmod>
   </url>
@@ -74,7 +79,7 @@
   
   <url>
     <loc>/tags/creativecoding/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -86,25 +91,25 @@
   
   <url>
     <loc>/tags/javascript/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/js/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/p5js/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -140,13 +145,13 @@
   
   <url>
     <loc>/tags/scripting/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/sketch/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -158,6 +163,7 @@
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -181,7 +187,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-12-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
