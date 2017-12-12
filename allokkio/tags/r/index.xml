@@ -2,14 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on allokkio</title>
-    <link>/tags/r/</link>
+    <link>/tags/r/index.xml</link>
     <description>Recent content in R on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>More tidy evaluation</title>
@@ -17,8 +14,149 @@
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/12/03/bang-bang-bang/</guid>
-      <description>The first post is more explaatory and can be found here. This one is more a note-taking effort and hence much more be spartan. The main goal is to go through some of the functionality of the rlang package.
-Basics rlang has multiple constructor-functions that can be used instead of the base Rcombine operator c(). These are: lgl(...), int(...), dbl(...), cpl(...), chr(..., .encoding = NULL), bytes(...) and ll(...). The idea here is that this way the code is more explicit than using c() (The resulting data can be inferred from the functions).</description>
+      <description>&lt;p&gt;The first &lt;em&gt;post&lt;/em&gt; is more explaatory and can be found &lt;a href=&#34;https://danklotz.github.io/allokkio/2017/11/23/bang-bang-bang/&#34;&gt;here&lt;/a&gt;. This one is more a note-taking effort and hence much more be spartan. The main goal is to go through some of the functionality of the &lt;code&gt;rlang&lt;/code&gt; package.&lt;/p&gt;
+&lt;div id=&#34;basics&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Basics&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;rlang&lt;/code&gt; has multiple constructor-functions that can be used instead of the base Rcombine operator &lt;code&gt;c()&lt;/code&gt;. These are: &lt;code&gt;lgl(...)&lt;/code&gt;, &lt;code&gt;int(...)&lt;/code&gt;, &lt;code&gt;dbl(...)&lt;/code&gt;, &lt;code&gt;cpl(...)&lt;/code&gt;, &lt;code&gt;chr(..., .encoding = NULL)&lt;/code&gt;, &lt;code&gt;bytes(...)&lt;/code&gt; and &lt;code&gt;ll(...)&lt;/code&gt;. The idea here is that this way the code is more explicit than using &lt;code&gt;c()&lt;/code&gt; (The resulting data can be inferred from the functions). Most of these funcitons are IMO self-explanatory. The ones that were not for me, are the &lt;code&gt;cpl(...)&lt;/code&gt; function which defines a &lt;em&gt;“complex”&lt;/em&gt; and the &lt;code&gt;ll(...)&lt;/code&gt; function, which defines a &lt;em&gt;“list”&lt;/em&gt;, e.g.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;#39;A logical vector:&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;A logical vector:&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;lgl(1,2,3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] TRUE TRUE TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;#39;A complex vector:&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;A complex vector:&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cpl(1,2,3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1+0i 2+0i 3+0i&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;#39;A list:&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;A list:&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ll(1,2,3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 2
+## 
+## [[3]]
+## [1] 3&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;rlang&lt;/code&gt; comes with a full fledged error handling scheme. The functions &lt;code&gt;abort()&lt;/code&gt;, &lt;code&gt;warn()&lt;/code&gt; and &lt;code&gt;inform&lt;/code&gt; &lt;em&gt;“replace”&lt;/em&gt; the base functions &lt;code&gt;base::stop()&lt;/code&gt;, &lt;code&gt;base::warning()&lt;/code&gt; and &lt;code&gt;base::message()&lt;/code&gt;. The &lt;code&gt;rlang&lt;/code&gt; functions can be more easily adapted to different types.&lt;/p&gt;
+&lt;p&gt;The function &lt;code&gt;as_function()&lt;/code&gt; converts an object to a function (It fetches the function by name if the input is a string, while quosures are transformed into functions). Here is the example from the documentation:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;#39;example from the rlang documentation:&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;example from the rlang documentation:&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;f &amp;lt;- as_function(~ . + 1)
+f(10)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 11&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# does not worK:
+#  ff &amp;lt;- as_function(&amp;quot;~ . + 1&amp;quot;)
+
+print(&amp;#39;fetch function with the name f:&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;fetch function with the name f:&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ff &amp;lt;- as_function(&amp;quot;f&amp;quot;)
+ff(10)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 11&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;#39;construct closue:&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;construct closue:&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;as_closure(~ . + 1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## function (..., .x = ..1, .y = ..2, . = ..1) 
+## . + 1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;rlang&lt;/code&gt; has an operator, i.e. &lt;code&gt;%@%&lt;/code&gt;, to get the infix attributes of a variable. The &lt;code&gt;%@%&lt;/code&gt; operator is a wras around the &lt;code&gt;attr(x,name)&lt;/code&gt;. So it works in the same way. Currently &lt;code&gt;%@%&lt;/code&gt; does not accept quosures, but could still become handy. Here is an example:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# the function:
+print(`%@%`)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## function (x, name) 
+## {
+##     attr(x, name, exact = TRUE)
+## }
+## &amp;lt;environment: namespace:rlang&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# the documentation example:
+factor(1:3)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 3
+## Levels: 1 2 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;factor(1:3) %@% &amp;quot;levels&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;1&amp;quot; &amp;quot;2&amp;quot; &amp;quot;3&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# equivalent: attr(factor(1:3),&amp;quot;levels&amp;quot;) 
+mtcars %@% &amp;quot;class&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;data.frame&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The functions &lt;code&gt;sym(x)&lt;/code&gt; and &lt;code&gt;syms(x)&lt;/code&gt; can be used to create symbols out of strings or lists of strings, e.g.:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;quot;create symbol from string&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;create symbol from string&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- 3
+&amp;quot;x&amp;quot; %&amp;gt;% sym() %&amp;gt;% eval_tidy() &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#
+print(&amp;quot;create list of symbols from string&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;create list of symbols from string&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x &amp;lt;- list(a = 1, b = 2, c = 3)
+&amp;quot;x&amp;quot; %&amp;gt;% sym() %&amp;gt;% eval_tidy() &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## $a
+## [1] 1
+## 
+## $b
+## [1] 2
+## 
+## $c
+## [1] 3&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;an-example-for-a-promise.&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;An Example for a promise.&lt;/h1&gt;
+&lt;p&gt;This example is taken from &lt;a href=&#34;http://dplyr.tidyverse.org/articles/programming.html#programming-recipes&#34;&gt;dplyr.tidyvesre.org&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;df &amp;lt;- tibble(
+  g1 = c(1, 1, 2, 2, 2),
+  g2 = c(1, 2, 1, 2, 1),
+  a = sample(5), 
+  b = sample(5)
+)
+
+quo(g1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
+## ~g1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#&amp;gt; &amp;lt;quosure: global&amp;gt;
+#&amp;gt; ~g1
+quo(a + b + c)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
+## ~a + b + c&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#&amp;gt; &amp;lt;quosure: global&amp;gt;
+#&amp;gt; ~a + b + c
+quo(&amp;quot;a&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: empty&amp;gt;
+## ~&amp;quot;a&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#&amp;gt; &amp;lt;quosure: empty&amp;gt;
+#&amp;gt; ~&amp;quot;a&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Does work:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_summarise &amp;lt;- function(df, group_var) {
+  df %&amp;gt;%
+    group_by(!!group_var) %&amp;gt;%
+    summarise(a = mean(a))
+}
+
+my_summarise(df, quo(g1))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 2 x 2
+##      g1        a
+##   &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1     1 2.500000
+## 2     2 3.333333&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Does not work:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_summarise &amp;lt;- function(df, group_var) {
+  group_var %&amp;lt;&amp;gt;% quo(group_var)
+  df %&amp;gt;%
+    group_by(!!group_var) %&amp;gt;%
+    summarise(a = mean(a))
+}
+
+my_summarise(df, g1)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A &lt;em&gt;promise&lt;/em&gt; works to. Within the &lt;em&gt;tidy evaluation&lt;/em&gt; framework a promise can be made with the &lt;code&gt;enquo()&lt;/code&gt; function:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_summarise &amp;lt;- function(df, group_by) {
+  group_by &amp;lt;- enquo(group_by)
+  df %&amp;gt;%
+    group_by(!!group_by) %&amp;gt;%
+    summarise(a = mean(a))
+}
+
+my_summarise(df, g1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 2 x 2
+##      g1        a
+##   &amp;lt;dbl&amp;gt;    &amp;lt;dbl&amp;gt;
+## 1     1 2.500000
+## 2     2 3.333333&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
     </item>
     
     <item>
@@ -27,8 +165,115 @@ Basics rlang has multiple constructor-functions that can be used instead of the 
       <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/23/bang-bang-bang/</guid>
-      <description>‘Multiple exclamation marks,’ he went on, shaking his head, ‘are a sure sign of a diseased mind.’ - Eric, Terry Pratchett
- The purpose of this post is to start a protocol my process for getting used to tidy evaluation. My actual course of action was a bit more unstructured than the one presented here. But not by much I wanted to preserve at least some degree of sanity for eventual re-reads.</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;‘Multiple exclamation marks,’ he went on, shaking his head, ‘are a sure sign of a diseased mind.’ &lt;strong&gt;- Eric, Terry Pratchett&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The purpose of this post is to start a protocol my process for getting used to &lt;em&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/rlang/vignettes/tidy-evaluation.html&#34;&gt;tidy evaluation&lt;/a&gt;&lt;/em&gt;. My actual course of action was a bit more unstructured than the one presented here. But not by much I wanted to preserve at least some degree of sanity for eventual re-reads. My hope is that it will help me to evaluate my current &lt;em&gt;learning practice&lt;/em&gt; (Sorry, I did not find any better word), and maybe also help some lost souls to build up their intuition too.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Tidy evaluation&lt;/em&gt; is a form of non standard evaluation (NSE) recently put forward by the mighty &lt;a href=&#34;https://twitter.com/hadleywickham&#34;&gt;Hadley Wickham&lt;/a&gt;. NSE is a very general term that basically refers to everything which does not follow the usual R conventions of evaluation. Nowadays, R users are already&lt;br /&gt;
+familiar with NSE, through formulas and &lt;code&gt;dplyr&lt;/code&gt;. Now, tidy evaluation provides an entire toolkit to create domain-specific languages (DSL) of grammars.&lt;/p&gt;
+&lt;p&gt;When I try to get used to a concept I value &lt;em&gt;intuition&lt;/em&gt; and &lt;em&gt;conceptual understanding&lt;/em&gt; more than complete understanding and (full) knowledge. I therefore like to start by testing out some functions with some pseudo data.&lt;/p&gt;
+&lt;p&gt;In this case I started with &lt;code&gt;quo()&lt;/code&gt;, the quotation function. It captures the provided R code without evaluation (&lt;em&gt;quotes&lt;/em&gt;), captures the current environment, and bundles them into what is called a &lt;em&gt;quosure&lt;/em&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# load libraries:
+library(rlang)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: Paket &amp;#39;rlang&amp;#39; wurde unter R Version 3.4.2 erstellt&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning: Paket &amp;#39;dplyr&amp;#39; wurde unter R Version 3.4.2 erstellt&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attache Paket: &amp;#39;dplyr&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:stats&amp;#39;:
+## 
+##     filter, lag&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:base&amp;#39;:
+## 
+##     intersect, setdiff, setequal, union&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# quote test data and test equation:
+my_data &amp;lt;- c(1,2,3,4,5)
+my_data_quosure &amp;lt;- quo(my_data)
+my_eq_quosure &amp;lt;- quo(1+2+3+4+5)
+
+print(my_data_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
+## ~my_data&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
+## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As I expected the equation is not evaluated but transformed into a quosure which &lt;em&gt;quotes&lt;/em&gt; my equation. What happened to my_data is interesting, because it is again not evaluated. I got to admit I was not thinking about that. Secondly, the print of quosure also provides us with information about the encapsulated environment of the quosure (which in both cases is the global environment).&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;rlang&lt;/code&gt; package provides the function &lt;code&gt;eval_tidy&lt;/code&gt; to evaluate quosures within their environment:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval_tidy(my_data_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 1 2 3 4 5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval_tidy(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;How can the &lt;code&gt;eval&lt;/code&gt; function from &lt;code&gt;base R&lt;/code&gt; evaluate a quosure? By unquoting the quosure. Unquoting can be done with multiple operations. One of them is &lt;code&gt;!!&lt;/code&gt; (&lt;em&gt;read: bang-bang&lt;/em&gt;) operator (more info can be found in the well written help section of the &lt;code&gt;rlang&lt;/code&gt; package, just type &lt;code&gt;?&#39;!!&#39;&lt;/code&gt; after the package is loaded). Here are some things I tested:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# check normal eval:
+eval(1+2+3+4+5)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;quot;1+2+3+4+5&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;1+2+3+4+5&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(parse(text = &amp;quot;1+2+3+4+5&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# check eval with quosures:
+eval(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
+## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;#39;!!&amp;#39;(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;#39;!!&amp;#39;(my_eq_quosure))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# test more options to use eval on quosures:
+eval(UQE(my_eq_quosure))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(get_expr(my_eq_quosure))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;That is pretty nice. In some way one can see quosures as an alternative to character strings and expressions.&lt;/p&gt;
+&lt;p&gt;Now, the !! operator is accompanied by the !!! operator (again, check the help). The bang-bang-bang operator (yep!) embeds unquotes the argument (like !!), but also splices the argument. Now, I could look up what splicing means exactly, but instead I just fiddle around with it and give some examples. First, I want to compare the behavior with regard to the existing quosures:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;#39;!!&amp;#39;(my_data_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## my_data&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;#39;!!!&amp;#39;(my_data_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## &amp;lt;quosure: global&amp;gt;
+## ~my_data&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#
+&amp;#39;!!&amp;#39;(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;&amp;#39;!!!&amp;#39;(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## &amp;lt;quosure: global&amp;gt;
+## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ah, so &lt;code&gt;!!!&lt;/code&gt; always enlists its arguments. That is good to know. Next, I wanted to get a feeling of how &lt;code&gt;eval()&lt;/code&gt; would work with the &lt;code&gt;!!!&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(my_eq_quosure)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
+## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;#39;!!&amp;#39;(my_eq_quosure))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;#39;!!!&amp;#39;(my_eq_quosure)[[1]])&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;lt;quosure: global&amp;gt;
+## ~1 + 2 + 3 + 4 + 5&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;eval(&amp;#39;!!&amp;#39;( &amp;#39;!!!&amp;#39;(my_eq_quosure)[[1]] ))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 15&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;!!!&lt;/code&gt; operator becomes useful when multiple arguments are provided to a function, or when used to enquote multiple functions. Luckily, I found a nice example in the &lt;em&gt;&lt;a href=&#34;https://community.rstudio.com/t/should-tidyeval-be-abandoned/2238/37&#34;&gt;Should-tidyeval-be.abandoned section&lt;/a&gt;&lt;/em&gt; of the Rstudio community forum. I took the example and re-arranged, so that it fits the fiddling I’ve done so far. So, in the following quosures are used to create a set the functions (&lt;code&gt;min&lt;/code&gt;, &lt;code&gt;mean&lt;/code&gt; and &lt;code&gt;max&lt;/code&gt;) within a list of quosures:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary_funs &amp;lt;- c(min = quo(min(a)),
+                 mean = quo(mean(a)),
+                 max = quo(max(a))
+                 )
+class(summary_funs)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;list&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A look at &lt;code&gt;summary_funs&lt;/code&gt; shows that it encapsulates three entries with &lt;code&gt;quosure&lt;/code&gt;. These are&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;str(summary_funs)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## List of 3
+##  $ min :&amp;lt;quosure: global&amp;gt;
+## ~min(a)
+##  $ mean:&amp;lt;quosure: global&amp;gt;
+## ~mean(a)
+##  $ max :&amp;lt;quosure: global&amp;gt;
+## ~max(a)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, check out beautiful this works together with &lt;code&gt;dplyr&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;my_dataframe &amp;lt;- data.frame(a = my_data)
+my_dataframe %&amp;gt;%
+  summarize(!!!summary_funs)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   min mean max
+## 1   1    3   5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ok, so far, so good. That is really all there is for my first session. Often I like to be lazy like that, to let ideas sink it. Yet, I hope to start a next session soon!!!&lt;/p&gt;
+</description>
     </item>
     
   </channel>

@@ -2,14 +2,161 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripting on allokkio</title>
-    <link>/tags/scripting/</link>
+    <link>/tags/scripting/index.xml</link>
     <description>Recent content in Scripting on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
     
-	<atom:link href="/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Sketch: Interactive Function Plotting</title>
+      <link>/2017/12/12/sketch-interactive-function-plotting/</link>
+      <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/12/12/sketch-interactive-function-plotting/</guid>
+      <description>&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
+
+&lt;script src=&#34;../../p5.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+let c_size = 450
+let midpoint = 0.5*c_size;
+let resolution = 10;
+let x1 = 0;
+let y1 = 0;
+let grid_div = 15;
+let k = 0.5;
+let offset_y = midpoint;
+let all_time = 0;
+let t_step = 0.005;
+
+
+function setup() {
+
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+  //noLoop();
+
+}
+
+
+function draw() {
+  // background:
+  background(&#34;#EEEDE4&#34;);
+
+
+  strokeWeight(1);
+  stroke(50,50,50,150);
+  line(midpoint,0,midpoint,c_size)
+  line(0,midpoint,c_size,midpoint)
+  //
+  stroke(50,50,50,23);
+  for (let i=0; i&lt;=c_size/grid_div; i++) {
+    line(i*grid_div, 0, i*grid_div, c_size);
+    line( 0, i*grid_div, c_size, i*grid_div);
+  }
+  // update stuff:
+  all_time += t_step
+  k = 0.03 + 0.1*noise(all_time);
+  if (mouseIsPressed) {
+    offset_y = mouseY
+  }
+
+  // functions:
+  set_fuse()
+    f_fuse(offset_y)
+  set_f1()
+      f1()
+  set_f2()
+      f2(offset_y)
+  // boarder
+  stroke(100,100,100);
+  strokeWeight(1);
+  line(0, 0, 0, c_size);
+  line(0, 0, c_size, 0);
+  line(c_size-1, 0, c_size-1, c_size-1);
+  line(0, c_size-1, c_size-1, c_size-1);
+  // description
+  textSize(20);
+  set_f1();
+  line(10, c_size - 65, 20, c_size - 65);
+  noStroke();
+  text(&#34;f2&#34;, 27, c_size - 59);
+  set_f2();
+  line(10, c_size - 40, 20, c_size - 40);
+  noStroke();
+  text(&#34;f2&#34;, 27, c_size - 34);
+  set_fuse();
+  line(10, c_size - 15, 20, c_size - 15);
+  noStroke();
+  text(&#34;f3&#34;, 27, c_size - 9);
+  //
+  text(&#34;smoothness:&#34;, c_size - 145, c_size - 9);
+  text(round(1/k), c_size - 30, c_size - 9);
+}
+
+function set_f1() {
+  strokeWeight(2);
+  fill(142,181,102);
+  stroke(142,181,102);
+}
+function set_f2() {
+  strokeWeight(2);
+  stroke(255, 141, 30);
+  fill(255, 141, 30);
+}
+function set_fuse() {
+  strokeWeight(5);
+  stroke(30,144,255);
+  fill(30,144,255,180);
+}
+
+function f1() {
+  noFill();
+  beginShape();
+    for (var i=0; i&lt;=c_size; i++) {
+      x1 = c_size - i;
+      y1 = midpoint - 0.02*(i-midpoint)**2 + 150;
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+function f2(offset) {
+  noFill();
+  beginShape();
+    for (var i=0; i&lt;=c_size; i++) {
+      x1 = c_size - i;
+      y1 = offset + 0.5*(i-midpoint);
+      curveVertex(x1,y1);
+    }
+  endShape();
+
+  set_f2();
+  noStroke()
+  ellipse(midpoint, offset, 50, 50)
+  fill(&#34;#EEEDE4&#34;)
+  textSize(18)
+  text(&#34;click&#34;, midpoint-17, offset+5)
+}
+
+function f_fuse(offset) {
+  noFill();
+  beginShape();
+    for (var i=0; i&lt;=c_size; i++) {
+      x1 = c_size - i;
+      let y1 = k*( offset + 0.5*(i-midpoint) );
+      let y2 = k*( midpoint - 0.02*(i-midpoint)**2 + 150 );
+      let le_max = max(y1, y2);
+      let le_min = min(y1, y2);
+      y3 = ( le_max + log(1.0 + exp(le_min - le_max)) )/k;
+      curveVertex(x1,y3);
+    }
+  endShape();
+}
+
+&lt;/script&gt;
+</description>
+    </item>
     
     <item>
       <title>Sketch: Function Plotting</title>
@@ -17,7 +164,92 @@
       <pubDate>Sat, 09 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/12/09/sketch-function-plotting/</guid>
-      <description>   // actual script --------------------------------------------------------------- var c_size = 450 var midpoint = 0.5*c_size; var resolution = 10; var x1 = 0; var y1 = 0; var grid_div = 15; function setup() { background(&#34;#DDDCD3&#34;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); noLoop(); strokeWeight(1); stroke(50,50,50,150); line(midpoint,0,midpoint,c_size) line(0,midpoint,c_size,midpoint) // stroke(50,50,50,23); for (var i=0; i</description>
+      <description>&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
+
+&lt;script src=&#34;../../p5.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var midpoint = 0.5*c_size;
+var resolution = 10;
+var x1 = 0;
+var y1 = 0;
+var grid_div = 15;
+
+
+
+function setup() {
+  background(&#34;#DDDCD3&#34;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+  noLoop();
+  strokeWeight(1);
+  stroke(50,50,50,150);
+  line(midpoint,0,midpoint,c_size)
+  line(0,midpoint,c_size,midpoint)
+  //
+  stroke(50,50,50,23);
+  for (var i=0; i&lt;=c_size/grid_div; i++) {
+    line(i*grid_div, 0, i*grid_div, c_size);
+    line( 0, i*grid_div, c_size, i*grid_div);
+  }
+}
+
+
+function draw() {
+  f1()
+  f2()
+  f_fuse()
+  // boarder
+  stroke(100,100,100);
+  strokeWeight(1);
+  line(0, 0, 0, c_size);
+  line(0, 0, c_size, 0);
+  line(c_size-1, 0, c_size-1, c_size-1);
+  line(0, c_size-1, c_size-1, c_size-1);
+}
+
+function f1() {
+  stroke(100,100,100);
+  strokeWeight(2);
+  noFill();
+  beginShape();
+    for (var i=0; i&lt;=c_size; i++) {
+      x1 = c_size - i;
+      y1 = midpoint - 0.02*(i-midpoint)**2 + 150;
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+function f2() {
+  stroke(100,100,100);
+  strokeWeight(2);
+  noFill();
+  beginShape();
+    for (var i=0; i&lt;=c_size; i++) {
+      x1 = c_size - i;
+      y1 = midpoint + 0.5*(i-midpoint);
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+function f_fuse() {
+  stroke(30,144,255,120);
+  strokeWeight(5);
+  noFill();
+  beginShape();
+    for (var i=0; i&lt;=c_size; i++) {
+      x1 = c_size - i;
+      y1 = max(midpoint + 0.5*(i-midpoint),midpoint - 0.02*(i-midpoint)**2 + 150);
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+&lt;/script&gt;
+</description>
     </item>
     
     <item>
@@ -26,8 +258,207 @@
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/12/04/sketch-floating-sticks/</guid>
-      <description>adapted from here
-   // actual script --------------------------------------------------------------- var gl; var gl2; var tStep = 0.3; var all_time = 0.0 var c_size = 450; var midpoint = c_size/2 var first_click = false function setup() { background(51,6,28); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // Line /*gl = new GrowingSticks(false); gl.addPoint(10,0.5*height,true,20); for(var x=20; x1){ if(this.closed){ this.springs.pop(); } this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len)); if(this.closed){ this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len)); } } }, insertPoint: function(fixed=false, len0, len1, firstIndex){ if(this.</description>
+      <description>&lt;p&gt;adapted from &lt;a href=&#34;https://www.openprocessing.org/sketch/421269&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
+
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var gl;
+var gl2;
+var tStep = 0.3;
+var all_time = 0.0
+var c_size = 450;
+var midpoint = c_size/2
+var first_click = false
+
+function setup() {
+  background(51,6,28);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+
+  // Line
+  /*gl = new GrowingSticks(false);
+  gl.addPoint(10,0.5*height,true,20);
+  for(var x=20; x&lt;width-20; x+=10){
+    gl.addPoint(x,0.5*height+random(-2,2),false,5);
+  }
+  gl.addPoint(width-10,0.5*height,true,20);*/
+
+  // Circle
+  le_sticks = new GrowingSticks(true);
+  for(var a=0; a&lt;TAU; a+=TAU/100){
+    let r = 50;
+    le_sticks.addPoint(midpoint+0.9*r*cos(a+1.5*PI), midpoint+0.9*r*sin(a+1.5*PI), 5);
+  }
+}
+
+function draw() {
+  background(51,6,28,45);
+  if (first_click) {
+    var mouse_within_center = (mouseX-midpoint)**2 + (mouseY-midpoint)**2 &lt;= 50**2;
+    if( (mouseIsPressed) &amp;&amp; (mouse_within_center) ){
+      le_sticks.insertPoint(false,50,50,Math.floor(random(le_sticks.points.length-2)));
+    }
+    le_sticks.update(tStep);
+    le_sticks.display();
+  }
+
+  // reference circle
+  fill(30,144,255)
+  noStroke()
+  ellipse(midpoint,midpoint,100,100)
+  fill(&#34;#EEEDE4&#34;)
+  textSize(18)
+  text(&#34;  click \n   me&#34;, midpoint-27, midpoint-5)
+  noFill()
+  stroke(30,144,255);
+  strokeWeight(3)
+  rect(1, 1, c_size-3,c_size-3);
+}
+
+function mouseClicked() {
+  first_click = true
+}
+
+var Point = function(x, y) {
+  this.pos = createVector(x,y);
+  this.vel = createVector(0,0);
+  this.acc = createVector(0,0);
+  this.force = createVector(0,0);
+  this.m = 50;
+  this.fixed = false;
+  this.drag = 0.985;
+  this.collisionDist = 30; // This affects a lot how smooth the result will be: 5=detailed, 20=smooth
+}
+
+Point.prototype = {
+  resetForces: function(){
+    this.force.mult(0);
+  },
+  addForce: function(f){
+    this.force.add(f);
+  },
+  updatePos: function(dt){
+    if(!this.fixed){
+      this.acc = this.force.div(this.m);
+      this.vel.add(p5.Vector.mult(this.acc,dt));
+      this.pos.add(p5.Vector.mult(this.vel,dt));
+      this.vel.mult(this.drag);
+    }
+  },
+  fix: function(){
+    this.fixed = true;
+  },
+  // Not efficient, should only check n neighbour points
+  checkCollisions(i, points){
+    for(var p=0; p&lt;points.length; p++){
+      if(i != p){
+        let rel = p5.Vector.sub(this.pos,points[p].pos);
+        let d = rel.mag();
+        if(d &lt; this.collisionDist){
+          this.force.add(rel.mult(1/(d+0.001)));
+        }
+      }
+    }
+  }
+}
+
+var Spring = function(pointA, pointB, l, k = 0.9){
+  this.pointA = pointA;
+  this.pointB = pointB;
+  this.restLen = l;
+  this.k = k;
+}
+Spring.prototype = {
+  applyForces: function(){
+    let vecAB = p5.Vector.sub(this.pointB.pos, this.pointA.pos);
+    let forceMag = this.k*(this.restLen-vecAB.mag());
+    let forceAB = vecAB.setMag(forceMag);
+    let forceBA = p5.Vector.mult(forceAB,-1);
+    this.pointA.addForce(forceBA);
+    this.pointB.addForce(forceAB);
+  }
+}
+
+// Growing line by insertion of points
+
+var GrowingSticks = function(closed=false){
+  this.springs = [];
+  this.points = [];
+  this.closed = closed;
+}
+
+GrowingSticks.prototype = {
+  addPoint: function(x, y, fixed=false, len){
+    this.points.push(new Point(x, y, fixed));
+    if(this.points.length &gt; 1){
+      if(this.closed){
+        this.springs.pop();
+      }
+      this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len));
+      if(this.closed){
+        this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len));
+      }
+    }
+  },
+  insertPoint: function(fixed=false, len0, len1, firstIndex){
+    if(this.points.length &gt; 1){
+      let midPos = p5.Vector.add(this.points[firstIndex].pos,this.points[firstIndex+1].pos).mult(0.5);
+      this.points.splice(firstIndex+1,0,new Point(midPos.x, midPos.y, fixed));
+      this.springs.splice(firstIndex, 1, new Spring(this.points[firstIndex],this.points[firstIndex+1],len0));
+      this.springs.splice(firstIndex+1, 0, new Spring(this.points[firstIndex+1],this.points[firstIndex+2],len1));
+    }
+  },
+  update: function(dt){
+    var self = this;
+    for(var s=0; s&lt;this.springs.length; s++){
+      this.springs[s].applyForces();
+    }
+    for(var p=0; p&lt;this.points.length; p++){
+      // k-d tree ?
+      /*if(p&lt;50){
+        this.points[p].checkCollisions(p,this.points.filter(function(){
+          return ((p &lt; 50) &amp;&amp; (p &gt;= 0)) || ((p &gt; self.points.length-50) &amp;&amp; (p &lt; self.points.length));
+        }));
+      } else if(p&gt;this.points.length-50){
+        this.points[p].checkCollisions(p,this.points.filter(function(){
+          return ((p &lt; 50) &amp;&amp; (p &gt;= 0)) || ((p &gt; self.points.length-50) &amp;&amp; (p &lt; self.points.length));
+        }));
+      } else {
+        this.points[p].checkCollisions(p,this.points.slice(p-50,p+50));
+      }*/
+      this.points[p].checkCollisions(p,this.points); // Slow
+      this.points[p].updatePos(dt);
+      this.points[p].resetForces();
+    }
+  },
+  display: function(displayPoints = false){
+    stroke(30,144,255);
+    fill(30,144,255,255);
+    all_time += 0.02*tStep
+    strokeWeight(0.001 + noise(all_time)*7);
+    //strokeWeight(5);
+    for(var p=1; p&lt;this.points.length-1; p++){
+      line(this.points[p-1].pos.x,
+           this.points[p+1].pos.y,
+           this.points[p+1].pos.x,
+           this.points[p-1].pos.y);
+      if(displayPoints){
+        ellipse(this.points[p-1].pos.x, this.points[p+1].pos.y,10,10);
+        ellipse(this.points[p-1].pos.x, this.points[p+1].pos.y,10,10);
+        ellipse(this.points[p+1].pos.x, this.points[p-1].pos.y,10,10);
+        ellipse(this.points[p+1].pos.x, this.points[p-1].pos.y,10,10);
+      }
+    }
+    if(this.closed) {
+      line(this.points[0].pos.x, this.points[0].pos.y, this.points[this.points.length-1].pos.x, this.points[this.points.length-1].pos.y);
+    }
+  }
+}
+&lt;/script&gt;
+</description>
     </item>
     
     <item>
@@ -36,8 +467,185 @@
       <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/12/02/sketch-growing-line/</guid>
-      <description>adapted from here
-   // actual script --------------------------------------------------------------- var gl; var tStep = 0.3; var c_size = 450 var midpoint = c_size/2 function setup() { var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // Line /*gl = new GrowingLine(false); gl.addPoint(10,0.5*height,true,20); for(var x=20; x1){ if(this.closed){ this.springs.pop(); } this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len)); if(this.closed){ this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len)); } } }, insertPoint: function(fixed=false, len0, len1, firstIndex){ if(this.points.length  1){ let midPos = p5.Vector.add(this.points[firstIndex].pos,this.points[firstIndex+1].pos).mult(0.5); this.points.splice(firstIndex+1,0,new Point(midPos.x, midPos.y, fixed)); this.</description>
+      <description>&lt;p&gt;adapted from &lt;a href=&#34;https://www.openprocessing.org/sketch/421269&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
+
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var gl;
+var tStep = 0.3;
+var c_size = 450
+var midpoint = c_size/2
+
+function setup() {
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+
+  // Line
+  /*gl = new GrowingLine(false);
+  gl.addPoint(10,0.5*height,true,20);
+  for(var x=20; x&lt;width-20; x+=10){
+    gl.addPoint(x,0.5*height+random(-2,2),false,5);
+  }
+  gl.addPoint(width-10,0.5*height,true,20);*/
+
+  // Circle
+  gl = new GrowingLine(true);
+  for(var a=0; a&lt;TAU; a+=TAU/100){
+    let r = 50;
+    gl.addPoint(midpoint+r*sin(a+PI), midpoint+r*cos(a+PI),false,5); //(a==0 || a==TAU)? true :
+  }
+}
+
+function draw() {
+  background(&#34;#EEEDE4&#34;);
+  var mouse_within_center = (mouseX-midpoint)**2 + (mouseY-midpoint)**2 &lt;= 50**2;
+  if( (mouseIsPressed) &amp;&amp; (mouse_within_center) ){
+    gl.insertPoint(false,5,5,Math.floor(random(gl.points.length-2)));
+  }
+  gl.update(tStep);
+  gl.display();
+
+  // reference circle
+  fill(30,144,255)
+  ellipse(midpoint,midpoint,100,100)
+  fill(&#34;#EEEDE4&#34;)
+  textSize(18)
+  text(&#34;  click \n  here&#34;,midpoint-26, midpoint-5)
+}
+
+var Point = function(x, y, fixed=false){
+  this.pos = createVector(x,y);
+  this.vel = createVector(0,0);
+  this.acc = createVector(0,0);
+  this.force = createVector(0,0);
+  this.m = 1;
+  this.fixed = fixed;
+  this.drag = 0.8;
+  this.collisionDist = 25; // This affects a lot how smooth the result will be: 5=detailed, 20=smooth
+}
+
+Point.prototype = {
+  resetForces: function(){
+    this.force.mult(0);
+  },
+  addForce: function(f){
+    this.force.add(f);
+  },
+  updatePos: function(dt){
+    if(!this.fixed){
+      this.acc = this.force.div(this.m);
+      this.vel.add(p5.Vector.mult(this.acc,dt));
+      this.pos.add(p5.Vector.mult(this.vel,dt));
+      this.vel.mult(this.drag);
+    }
+  },
+  fix: function(){
+    this.fixed = true;
+  },
+  // Not efficient, should only check n neighbour points
+  checkCollisions(i, points){
+    for(var p=0; p&lt;points.length; p++){
+      if(i != p){
+        let rel = p5.Vector.sub(this.pos,points[p].pos);
+        let d = rel.mag();
+        if(d &lt; this.collisionDist){
+          this.force.add(rel.mult(1/(d+0.001)));
+        }
+      }
+    }
+  }
+}
+
+var Spring = function(pointA, pointB, l, k = 0.9){
+  this.pointA = pointA;
+  this.pointB = pointB;
+  this.restLen = l;
+  this.k = k;
+}
+Spring.prototype = {
+  applyForces: function(){
+    let vecAB = p5.Vector.sub(this.pointB.pos, this.pointA.pos);
+    let forceMag = this.k*(this.restLen-vecAB.mag());
+    let forceAB = vecAB.setMag(forceMag);
+    let forceBA = p5.Vector.mult(forceAB,-1);
+    this.pointA.addForce(forceBA);
+    this.pointB.addForce(forceAB);
+  }
+}
+
+// Growing line by insertion of points
+
+var GrowingLine = function(closed=false){
+  this.springs = [];
+  this.points = [];
+  this.closed = closed;
+}
+
+GrowingLine.prototype = {
+  addPoint: function(x, y, fixed=false, len){
+    this.points.push(new Point(x, y, fixed));
+    if(this.points.length &gt; 1){
+      if(this.closed){
+        this.springs.pop();
+      }
+      this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len));
+      if(this.closed){
+        this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len));
+      }
+    }
+  },
+  insertPoint: function(fixed=false, len0, len1, firstIndex){
+    if(this.points.length &gt; 1){
+      let midPos = p5.Vector.add(this.points[firstIndex].pos,this.points[firstIndex+1].pos).mult(0.5);
+      this.points.splice(firstIndex+1,0,new Point(midPos.x, midPos.y, fixed));
+      this.springs.splice(firstIndex, 1, new Spring(this.points[firstIndex],this.points[firstIndex+1],len0));
+      this.springs.splice(firstIndex+1, 0, new Spring(this.points[firstIndex+1],this.points[firstIndex+2],len1));
+    }
+  },
+  update: function(dt){
+    var self = this;
+    for(var s=0; s&lt;this.springs.length; s++){
+      this.springs[s].applyForces();
+    }
+    for(var p=0; p&lt;this.points.length; p++){
+      // k-d tree ?
+      /*if(p&lt;50){
+        this.points[p].checkCollisions(p,this.points.filter(function(){
+          return ((p &lt; 50) &amp;&amp; (p &gt;= 0)) || ((p &gt; self.points.length-50) &amp;&amp; (p &lt; self.points.length));
+        }));
+      } else if(p&gt;this.points.length-50){
+        this.points[p].checkCollisions(p,this.points.filter(function(){
+          return ((p &lt; 50) &amp;&amp; (p &gt;= 0)) || ((p &gt; self.points.length-50) &amp;&amp; (p &lt; self.points.length));
+        }));
+      } else {
+        this.points[p].checkCollisions(p,this.points.slice(p-50,p+50));
+      }*/
+      this.points[p].checkCollisions(p,this.points); // Slow
+      this.points[p].updatePos(dt);
+      this.points[p].resetForces();
+    }
+  },
+  display: function(displayPoints = true){
+    stroke(30,144,255);
+    fill(30,144,255,50);
+    strokeWeight(1);
+    for(var p=1; p&lt;this.points.length; p++){
+      line(this.points[p-1].pos.x, this.points[p-1].pos.y, this.points[p].pos.x, this.points[p].pos.y);
+      if(displayPoints){
+        ellipse(this.points[p-1].pos.x, this.points[p-1].pos.y,10,10);
+        ellipse(this.points[p].pos.x, this.points[p].pos.y,10,10);
+      }
+    }
+    if(this.closed) {
+      line(this.points[0].pos.x, this.points[0].pos.y, this.points[this.points.length-1].pos.x, this.points[this.points.length-1].pos.y);
+    }
+  }
+}
+&lt;/script&gt;
+</description>
     </item>
     
     <item>
@@ -46,8 +654,227 @@
       <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/12/01/sketch-doodle-flower/</guid>
-      <description>Code:
-var c_size = 450 var midpoint = 0.5*c_size; var c_pad = c_size - 20 var alpha_decay = 20 var easing = 0.03; var x = midpoint var y = midpoint var red = 30 var green = 144 var blue = 255 var update_time = 0 var update_step = 100 function setup() { background(&amp;quot;#DDDCD3&amp;quot;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); } function mousePressed() { red = 30 green = 144 blue = 255 } function draw() { if (frameCount &amp;gt; update_time) { update_time += update_step red = round( random(1,244) ) green = round( random(1,244) ) blue = round( random(1,244) ) } //square stroke(&amp;quot;#DDDCD3&amp;quot;) fill(&amp;quot;#DDDCD3&amp;quot;) rect(0,0,c_size-1,c_size-1); // outer circles fill(&amp;quot;#EEEDE4&amp;quot;); stroke(&amp;quot;#EEEDE4&amp;quot;) ellipse(0,0,c_size,c_size); ellipse(0,c_size,c_size,c_size); ellipse(c_size,0,c_size,c_size); ellipse(c_size,c_size,c_size,c_size); // line stroke(red, green, blue); line(midpoint, midpoint, x, y) // cicrles 1 fill(red, green, blue); stroke(red, green, blue); ellipse(midpoint, midpoint, c_pad/6, c_pad/6); ellipse(x, y, 25, 25); ellipse(0.</description>
+      <description>&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var c_size = 450
+var midpoint = 0.5*c_size;
+var c_pad = c_size - 20
+var alpha_decay = 20
+var easing = 0.03;
+var x = midpoint
+var y = midpoint
+
+var red = 30
+var green = 144
+var blue = 255
+
+var update_time = 0
+var update_step = 100
+
+function setup() {
+  background(&amp;quot;#DDDCD3&amp;quot;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+
+}
+
+function mousePressed() {
+  red = 30
+  green = 144
+  blue = 255
+}
+
+function draw() {
+
+  if (frameCount &amp;gt; update_time) {
+    update_time += update_step
+    red = round( random(1,244) )
+    green = round( random(1,244) )
+    blue = round( random(1,244) )
+  }
+
+  //square
+  stroke(&amp;quot;#DDDCD3&amp;quot;)
+  fill(&amp;quot;#DDDCD3&amp;quot;)
+  rect(0,0,c_size-1,c_size-1);
+  // outer circles
+  fill(&amp;quot;#EEEDE4&amp;quot;);
+  stroke(&amp;quot;#EEEDE4&amp;quot;)
+  ellipse(0,0,c_size,c_size);
+  ellipse(0,c_size,c_size,c_size);
+  ellipse(c_size,0,c_size,c_size);
+  ellipse(c_size,c_size,c_size,c_size);
+  // line
+  stroke(red, green, blue);
+  line(midpoint, midpoint, x, y)
+  // cicrles 1
+  fill(red, green, blue);
+  stroke(red, green, blue);
+    ellipse(midpoint,
+            midpoint,
+            c_pad/6,
+            c_pad/6);
+    ellipse(x, y, 25, 25);
+    ellipse(0.5*(midpoint+x),
+            0.5*(midpoint+y),
+            c_pad/8,
+            c_pad/8);
+  fill(221, 220, 211, 0);
+  strokeWeight(3);
+  stroke(red, green, blue, 255-alpha_decay);
+    ellipse(0.65*midpoint + 0.35*x,
+            0.65*midpoint + 0.35*y,
+            c_pad/4,
+            c_pad/4);
+  stroke(red, green, blue, 255 - 2*alpha_decay);
+    ellipse(0.8*midpoint + 0.2*x,
+            0.8*midpoint + 0.2*y,
+            c_pad/3,
+            c_pad/3);
+  stroke(red, green, blue, 255 - 4*alpha_decay);
+    ellipse(0.9*midpoint + 0.1*x,
+            0.9*midpoint + 0.1*y,
+            c_pad/2,
+            c_pad/2);
+  stroke(red, green, blue, 255 - 6*alpha_decay);
+    ellipse(0.95*midpoint + 0.05*x,
+            0.95*midpoint + 0.05*y,
+            c_pad,
+            c_pad);
+  // ellipses 1
+  strokeWeight(1);
+    ellipse(midpoint, midpoint, c_pad/3, c_pad/4);
+    ellipse(midpoint, midpoint, c_pad/4, c_pad/3);
+    ellipse(midpoint, midpoint, c_pad/2, c_pad/3);
+    ellipse(midpoint, midpoint, c_pad/3, c_pad/2);
+    ellipse(midpoint, midpoint, c_pad  , c_pad/2);
+    ellipse(midpoint, midpoint, c_pad/2, c_pad  );
+  // cicles 2
+  strokeWeight(2);
+  stroke(red, green, blue, 255 - 8*alpha_decay);
+    ellipse(0, midpoint, c_size, c_size);
+    ellipse(c_size, midpoint, c_size, c_size);
+    ellipse(midpoint, 0, c_size, c_size);
+    ellipse(midpoint, c_size, c_size, c_size);
+  // update position
+  x += (mouseX - x) * easing;
+  y += (mouseY - y) * easing;
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var midpoint = 0.5*c_size;
+var c_pad = c_size - 20
+var alpha_decay = 20
+var easing = 0.03;
+var x = midpoint
+var y = midpoint
+
+var red = 30
+var green = 144
+var blue = 255
+
+var update_time = 0
+var update_step = 100
+
+function setup() {
+  background(&#34;#DDDCD3&#34;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+
+}
+
+function mousePressed() {
+  red = 30
+  green = 144
+  blue = 255
+}
+
+function draw() {
+
+  if (frameCount &gt; update_time) {
+    update_time += update_step
+    red = round( random(1,244) )
+    green = round( random(1,244) )
+    blue = round( random(1,244) )
+  }
+
+  //square
+  stroke(&#34;#DDDCD3&#34;)
+  fill(&#34;#DDDCD3&#34;)
+  rect(0,0,c_size-1,c_size-1);
+  // outer circles
+  fill(&#34;#EEEDE4&#34;);
+  stroke(&#34;#EEEDE4&#34;)
+  ellipse(0,0,c_size,c_size);
+  ellipse(0,c_size,c_size,c_size);
+  ellipse(c_size,0,c_size,c_size);
+  ellipse(c_size,c_size,c_size,c_size);
+  // line
+  stroke(red, green, blue);
+  line(midpoint, midpoint, x, y)
+  // cicrles 1
+  fill(red, green, blue);
+  stroke(red, green, blue);
+    ellipse(midpoint,
+            midpoint,
+            c_pad/6,
+            c_pad/6);
+    ellipse(x, y, 25, 25);
+    ellipse(0.5*(midpoint+x),
+            0.5*(midpoint+y),
+            c_pad/8,
+            c_pad/8);
+  fill(221, 220, 211, 0);
+  strokeWeight(3);
+  stroke(red, green, blue, 255-alpha_decay);
+    ellipse(0.65*midpoint + 0.35*x,
+            0.65*midpoint + 0.35*y,
+            c_pad/4,
+            c_pad/4);
+  stroke(red, green, blue, 255 - 2*alpha_decay);
+    ellipse(0.8*midpoint + 0.2*x,
+            0.8*midpoint + 0.2*y,
+            c_pad/3,
+            c_pad/3);
+  stroke(red, green, blue, 255 - 4*alpha_decay);
+    ellipse(0.9*midpoint + 0.1*x,
+            0.9*midpoint + 0.1*y,
+            c_pad/2,
+            c_pad/2);
+  stroke(red, green, blue, 255 - 6*alpha_decay);
+    ellipse(0.95*midpoint + 0.05*x,
+            0.95*midpoint + 0.05*y,
+            c_pad,
+            c_pad);
+  // ellipses 1
+  strokeWeight(1);
+    ellipse(midpoint, midpoint, c_pad/3, c_pad/4);
+    ellipse(midpoint, midpoint, c_pad/4, c_pad/3);
+    ellipse(midpoint, midpoint, c_pad/2, c_pad/3);
+    ellipse(midpoint, midpoint, c_pad/3, c_pad/2);
+    ellipse(midpoint, midpoint, c_pad  , c_pad/2);
+    ellipse(midpoint, midpoint, c_pad/2, c_pad  );
+  // cicles 2
+  strokeWeight(2);
+  stroke(red, green, blue, 255 - 8*alpha_decay);
+    ellipse(0, midpoint, c_size, c_size);
+    ellipse(c_size, midpoint, c_size, c_size);
+    ellipse(midpoint, 0, c_size, c_size);
+    ellipse(midpoint, c_size, c_size, c_size);
+  // update position
+  x += (mouseX - x) * easing;
+  y += (mouseY - y) * easing;
+
+}
+&lt;/script&gt;
+</description>
     </item>
     
     <item>
@@ -56,8 +883,175 @@ var c_size = 450 var midpoint = 0.5*c_size; var c_pad = c_size - 20 var alpha_de
       <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/28/sketch-flares/</guid>
-      <description>Code:
-var canvas_size = 450; var canvas_pad = 50; var radius = (canvas_size-canvas_pad)/2; var midpoint = canvas_size/2; var ball_radius = 150; // Blob def function Blob(x,y) { this.pos = createVector(x,y) this.vel = p5.Vector.random2D(); this.vel.mult(10,20) this.r = ball_radius // this.update= function() { this.pos.add(this.vel) var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &amp;gt;= (radius-0.3*ball_radius)**2 if (pos_out) { this.vel.x *= -1 this.vel.y *= -1 } } } // script for running metaballs var b=[] function setup() { //b = new Blob(100,100) var canvas = createCanvas(canvas_size, canvas_size); canvas.</description>
+      <description>&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var canvas_size = 450;
+var canvas_pad = 50;
+var radius = (canvas_size-canvas_pad)/2;
+var midpoint = canvas_size/2;
+var ball_radius = 150;
+// Blob def
+function Blob(x,y) {
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = ball_radius
+  //
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &amp;gt;= (radius-0.3*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
+
+function setup() {
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+  for (var i=1; i&amp;lt;=2; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
+}
+
+function draw() {
+  background(&amp;quot;#000000&amp;quot;);
+  for (var i = 0; i&amp;lt;b.length; i++) {
+     noiseSeed(i);
+     b[i].vel.x += 0.05*noise(1);
+     noiseSeed(i);
+     b[i].vel.y += 0.05*noise(1);
+   }
+
+  loadPixels();
+  for (var y=0; y&amp;lt;height; y++) {
+    for (var x=0; x&amp;lt;width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
+
+      for (var i = 0; i&amp;lt;b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 &amp;gt;= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.17*sum, 238);
+        pixels[index+1] = min(144 + 0.15*sum, 237);
+        pixels[index+2] = min(255 + 0.12*sum, 228);
+      }
+   }
+  }
+  updatePixels()
+  for(var i=0; i&amp;lt;b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var canvas_size = 450;
+var canvas_pad = 50;
+var radius = (canvas_size-canvas_pad)/2;
+var midpoint = canvas_size/2;
+var ball_radius = 150;
+// Blob def
+function Blob(x,y) {
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = ball_radius
+  //
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &gt;= (radius-0.3*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
+
+function setup() {
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+  for (var i=1; i&lt;=2; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
+}
+
+function draw() {
+  background(&#34;#000000&#34;);
+  for (var i = 0; i&lt;b.length; i++) {
+     noiseSeed(i);
+     b[i].vel.x += 0.05*noise(1);
+     noiseSeed(i);
+     b[i].vel.y += 0.05*noise(1);
+   }
+
+  loadPixels();
+  for (var y=0; y&lt;height; y++) {
+    for (var x=0; x&lt;width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
+
+      for (var i = 0; i&lt;b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 &gt;= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.17*sum, 238);
+        pixels[index+1] = min(144 + 0.15*sum, 237);
+        pixels[index+2] = min(255 + 0.12*sum, 228);
+      }
+   }
+  }
+  updatePixels()
+  for(var i=0; i&lt;b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
+}
+&lt;/script&gt;
+</description>
     </item>
     
     <item>
@@ -66,9 +1060,129 @@ var canvas_size = 450; var canvas_pad = 50; var radius = (canvas_size-canvas_pad
       <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/28/sketch-gaussian-star/</guid>
-      <description>Another little Javascript-animation based on Gaussian ellipses.
- Code:
-var c_size = 450 var half_c_size = 0.5*c_size; var c_pad = c_size - 20 var time = 0.0 var increment = 0.002; var time_to_update = time + 2*increment; var increment_to_update = 0.03; var n = 0 var m = 0 function setup() { background(&amp;quot;#DDDCD3&amp;quot;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // info: textSize(19); stroke(221,220,211); fill(221,220,211); ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4); // fill(&amp;quot;#EEEDE4&amp;quot;); text(&amp;quot; ~68% \n of the radii&amp;quot;, c_pad/2-40, c_size/2); // decoration: // outer circles fill(221,220,211,0); stroke(221,220,211); strokeWeight(3); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2); ellipse(half_c_size, half_c_size, c_pad, c_pad); // outer ellipses strokeWeight(1); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4); ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2); ellipse(half_c_size, half_c_size, c_pad , c_pad/2); ellipse(half_c_size, half_c_size, c_pad/2, c_pad ); } function draw() { translate(width/2, height/2); rotate(frameCount / 50.</description>
+      <description>&lt;p&gt;Another little Javascript-animation based on Gaussian ellipses.&lt;/p&gt;
+
+&lt;div id=&#34;sketch-holder&#34; align =&#34;justify&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;var c_size = 450
+var half_c_size = 0.5*c_size;
+var c_pad = c_size - 20
+var time = 0.0
+var increment = 0.002;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.03;
+var n = 0
+var m = 0
+
+function setup() {
+  background(&amp;quot;#DDDCD3&amp;quot;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+
+  // info:
+  textSize(19);
+  stroke(221,220,211);
+  fill(221,220,211);
+  ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4);
+  //
+  fill(&amp;quot;#EEEDE4&amp;quot;);
+  text(&amp;quot;    ~68%  \n of the radii&amp;quot;, c_pad/2-40, c_size/2);
+  // decoration:
+  // outer circles
+    fill(221,220,211,0);
+    stroke(221,220,211);
+    strokeWeight(3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad, c_pad);
+    // outer ellipses
+    strokeWeight(1);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4);
+    ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad  , c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad  );
+}
+
+function draw() {
+translate(width/2, height/2);
+rotate(frameCount / 50.0);
+  noStroke();
+  time += increment;
+  if (time &amp;gt;= time_to_update) {
+    n = abs(randomGaussian(1,c_pad/4));
+    m = abs(randomGaussian(1,c_pad/4));
+    time_to_update += increment_to_update
+
+    fill(30, 144, 255, 20);
+    ellipse(0, 0, n, m);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var half_c_size = 0.5*c_size;
+var c_pad = c_size - 20
+var time = 0.0
+var increment = 0.002;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.03;
+var n = 0
+var m = 0
+
+function setup() {
+  background(&#34;#DDDCD3&#34;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+
+  // info:
+  textSize(19);
+  stroke(221,220,211);
+  fill(221,220,211);
+  ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4);
+  //
+  fill(&#34;#EEEDE4&#34;);
+  text(&#34;    ~68%  \n of the radii&#34;, c_pad/2-40, c_size/2);
+  // decoration:
+  // outer circles
+    fill(221,220,211,0);
+    stroke(221,220,211);
+    strokeWeight(3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad, c_pad);
+    // outer ellipses
+    strokeWeight(1);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4);
+    ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad  , c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad  );
+}
+
+function draw() {
+translate(width/2, height/2);
+rotate(frameCount / 50.0);
+  noStroke();
+  time += increment;
+  if (time &gt;= time_to_update) {
+    n = abs(randomGaussian(1,c_pad/4));
+    m = abs(randomGaussian(1,c_pad/4));
+    time_to_update += increment_to_update
+
+    fill(30, 144, 255, 20);
+    ellipse(0, 0, n, m);
+  }
+}
+&lt;/script&gt;
+</description>
     </item>
     
     <item>
@@ -77,9 +1191,98 @@ var c_size = 450 var half_c_size = 0.5*c_size; var c_pad = c_size - 20 var time 
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/11/26/sketch-a-little-animation-test/</guid>
-      <description>My first try at p5js. A little animation that plots a circle, with a radius determined by Guassian noise.
- Code:
-// variable definitions: var c_size = 450 var c_pad = c_size - 20 var time = 0.0; var increment = 0.001; var time_to_update = time + 2*increment; var increment_to_update = 0.01; var n = 0 // canvas setup: function setup() { background(&amp;quot;#DDDCD3&amp;quot;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); } // generation and drawing: function draw() { noStroke(); time += increment; if (time &amp;gt;= time_to_update) { n = abs(randomGaussian(1,c_pad/2)); time_to_update += increment_to_update fill(30, 144, 255, 10); ellipse(c_size/2, c_size/2, n, n); } stroke(&amp;quot;#ffa500&amp;quot;) strokeWeight(1) fill(221,220,211,0); ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2); ellipse(c_size/2, c_size/2 ,c_pad, c_pad); // text textSize(19); noStroke( ); fill(&amp;quot;#ffa500&amp;quot;); text(&amp;quot;~68% of \n samples&amp;quot;, c_pad/4 + 18, c_size/2); text(&amp;quot;~95% of \n samples&amp;quot;, 18, c_size/2); }    // actual script --------------------------------------------------------------- var c_size = 450 var c_pad = c_size - 20 var time = 0.</description>
+      <description>&lt;p&gt;My first try at &lt;a href=&#34;https://p5js.org/&#34;&gt;p5js&lt;/a&gt;. A little animation that
+plots a circle, with a radius determined by Guassian noise.&lt;/p&gt;
+
+&lt;div id=&#34;sketch-holder&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;// variable definitions:
+var c_size = 450
+var c_pad = c_size - 20
+var time = 0.0;
+var increment = 0.001;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.01;
+var n = 0
+
+// canvas setup:
+function setup() {
+  background(&amp;quot;#DDDCD3&amp;quot;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+}
+
+// generation and drawing:
+function draw() {
+  noStroke();
+  time += increment;
+  if (time &amp;gt;= time_to_update) {
+    n = abs(randomGaussian(1,c_pad/2));
+    time_to_update += increment_to_update
+
+    fill(30, 144, 255, 10);
+    ellipse(c_size/2, c_size/2, n, n);
+  }
+  stroke(&amp;quot;#ffa500&amp;quot;)
+  strokeWeight(1)
+  fill(221,220,211,0);
+  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+
+  // text
+  textSize(19);
+  noStroke( );
+  fill(&amp;quot;#ffa500&amp;quot;);
+  text(&amp;quot;~68% of \n  samples&amp;quot;, c_pad/4 + 18, c_size/2);
+  text(&amp;quot;~95% of \n  samples&amp;quot;, 18, c_size/2);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var c_pad = c_size - 20
+var time = 0.0;
+var increment = 0.001;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.01;
+var n = 0
+
+function setup() {
+  background(&#34;#DDDCD3&#34;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent(&#39;sketch-holder&#39;);
+}
+
+function draw() {
+  noStroke();
+  time += increment;
+  if (time &gt;= time_to_update) {
+    n = abs(randomGaussian(1,c_pad/2));
+    time_to_update += increment_to_update
+
+    fill(30, 144, 255, 10);
+    ellipse(c_size/2, c_size/2, n, n);
+  }
+  stroke(&#34;#ffa500&#34;)
+  strokeWeight(1)
+  fill(221,220,211,0);
+  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+
+  // text
+  textSize(19);
+  noStroke( );
+  fill(&#34;#ffa500&#34;);
+  text(&#34;~68% of \n  samples&#34;, c_pad/4 + 18, c_size/2);
+  text(&#34;~95% of \n  samples&#34;, 18, c_size/2);
+}
+&lt;/script&gt;
+</description>
     </item>
     
   </channel>
