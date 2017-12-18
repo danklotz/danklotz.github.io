@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
 <head>
-<title>allokkio - Tidyverse</title>
+<title>allokkio - Sketch: 3D</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,17 +33,16 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<link rel="stylesheet" href="../../css/tuftesque.css">
+<link rel="stylesheet" href="../../../../css/tuftesque.css">
 
 </head>
-
 
 <body>
 <div id="layout" class="pure-g">
 <article class="pure-u-1">
 <header class="brand">
   <h1>
-    <a href="../../">
+    <a href="../../../../">
       <span id = "blog_logo">
         
           <img src= "/allokkio/images/logo.jpg" alt="home" style="height: 40px; width:40px">
@@ -56,55 +55,84 @@
   </h1>
 </header>
 
-  <section>
+<section>
   <h2 class="content-title">
   
-  <a href="../../tags/tidyverse/"> Tidyverse </a>
+  <a href="../../../../2017/12/18/sketch-3d/">Sketch: 3D</a>
   
   </h2>
   
-</section>
-  <section class="list-page">
   
-    <details open>
-      <summary class="year">2017 (2)</summary>
+  
+  
+
+  
+</section>
+
+
+<section><div id="sketch-holder" align ="justify"></div>
+
+<script src="../../../../p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+
+let angle = 0;
+let w = 50;
+let ma;
+let maxD
+
+function setup() {
+  let canvas = createCanvas(400, 400, WEBGL);
+  canvas.parent('sketch-holder');
+  ma = atan(cos(QUARTER_PI));
+  maxD = dist(0,0, 200,200)
+}
+
+function draw() {
+  background("#EEEDE4");
+  ortho(-400, 400, -400, 400, 0, 1000);
+  rotateX(-QUARTER_PI);
+  rotateY(ma);
+
+
+  let offset = 0;
+  for (let z = 0; z < height; z += w) {
+    for( let x = 0; x < width; x += w ) {
+      push();
+      rotateZ(frameCount * 0.0001);
+      rotateX(frameCount * 0.005);
+      rotateY(frameCount * 0.01);
+      let d = dist(x, z, width/2, height /2);
+      let offset = map(d, 0, maxD, -PI , PI);
+      let a = angle + offset;
+      let h = map(sin(a), -1, 1, 100, 300);
+      let h2 = map(sin(a), -1, 1, 300, 100);
+      translate( x - width/2, 0, z - height/2);
+      normalMaterial();
+      box(w - (2-h2/5), h, w - (2-h2/5))
+
+
+      pop();
+    }
+  }
+
+  angle -= 0.13;
+}
+</script>
+</section>
+<section>
+  
+
+  
+
+
+
+  
+
+
       
-        <ul>
-          <li>
-            <details open>
-              <summary>December (1)</summary>
-                
-                  <ul>
-                    <li>
-                      <span class="list-date">Dec 3 &middot;</span>
-                      <a href="../../2017/12/03/bang-bang-bang/">More tidy evaluation</a>
-                    </li>
-                  </ul>
-                
-            </details>
-          </li>
-        </ul>
-      
-        <ul>
-          <li>
-            <details open>
-              <summary>November (1)</summary>
-                
-                  <ul>
-                    <li>
-                      <span class="list-date">Nov 23 &middot;</span>
-                      <a href="../../2017/11/23/bang-bang-bang/">First Steps with Tydy Evaluation</a>
-                    </li>
-                  </ul>
-                
-            </details>
-          </li>
-        </ul>
-      
-    </details>
-    
-  </section>
-<footer class="page-footer">
+
+  <footer class="page-footer">
 		<hr>
 		<ul class="page-footer-menu">
 		
@@ -133,6 +161,7 @@
     </script>
 </footer>
 
+</section>
 </article>
 </div>
 </body>
