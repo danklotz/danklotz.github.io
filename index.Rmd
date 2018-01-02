@@ -1,8 +1,8 @@
 ---
 output: 
-  tufte::tufte_html: 
-    tufte_variant: "default"
-    tufte_features: "fonts"
+  html_document: 
+    highlight: tango
+    theme: cosmo
 create_dir: true
 ---
 
@@ -25,21 +25,21 @@ An about page will also follow soon. Don't worry (yet).
 
 ## [ allokkio ](allokkio/)
 
-**Thinking by Tinkering.** A caotic blog where I collect short-notes, 
+**Thinking by Tinkering.** A experiment blog where I collect short-notes, 
 sketches and ideas. 
 
 --- 
 
 ## [Epper Eppes](eppereppes/index.html) 
 
-**Still a fledgling**. A (more ordered) complement to the thinking by tinkering 
-of my blog. 
+**Still a fledgling**. A (more ordered) complement to the craze of *allokkio*. 
+Here I will collect lists, microsites, zines and similar things. 
 
 ---
 
 ## [Open Learning](open_learning_2017.html)
-**Learn together.**Season 2 of a project that was (and is) inspired by [Una Kravets](https://github.com/una/personal-goals). 
-The idea is to share most of my learning efforts openly. For fun and glory ;)
+**Learn together.** *Season 2* of a project to share (some) of my learning efforts.
+By and large it is inspired by [Una Kravets](https://github.com/una/personal-goals). 
 
 ---
 
