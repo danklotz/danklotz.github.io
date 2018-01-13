@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hello Traveler on My Personal Homepage</title>
+    <link>/</link>
+    <description>Recent content in Hello Traveler on My Personal Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My Personal Homepage</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>So. This is my personal homepage. Or maybe I should say that it will be it somethimes soon.</description>
+    </item>
+    
+    <item>
+      <title>Open Learning</title>
+      <link>/open_learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/open_learning/</guid>
+      <description>Here I share sources for autonomous learning on the internet. The idea is by and large inspired by Una Kravets.
+In high school I had the epiphany that it is better to follow good teachers thengood topics. Throughout my studies I tried to follow that maxim as good as possible, but forgot about it until recently. Albeit my pursuits follow topics, I will try to keep this in mind for this list.</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/projects/</guid>
+      <description>allokkio  Thinking by Tinkering. A experiment blog where I collect short-notes, sketches and ideas.
+Epper Eppes Still a fledgling. A (more ordered) complement to the craze of allokkio. Here I will collect lists, microsites, zines and similar things.
+visCOS R. The package visCOS, the package cosCOS; and the idea of rrrCOS are my take for providing a unified way to guide the calibration of the rainfall-runoff model COSERO from &amp;lsquo;R&amp;rsquo;</description>
+    </item>
+    
+  </channel>
+</rss>
