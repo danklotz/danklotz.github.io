@@ -5,6 +5,7 @@ output:
 editor_options: 
   chunk_output_type: inline
 ---
+
 <center> 
 <h1> Epper Eppes </h1> 
 Conceptual Escapades & other Curiosities 

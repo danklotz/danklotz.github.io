@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
 <head>
-<title>allokkio - Sketch: Function Plotting</title>
+<title>allokkio - Feedback with tribbles</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@
 <section>
   <h2 class="content-title">
   
-  <a href="../../../../2017/12/09/sketch-function-plotting/">Sketch: Function Plotting</a>
+  <a href="../../../../2018/01/13/feedback-with-tribbles/">Feedback with tribbles</a>
   
   </h2>
   
@@ -70,91 +70,41 @@
 </section>
 
 
-<section><div id="sketch-holder" align ="justify"></div>
+<section><p>The ordering and display of tables in <em>Rmarkdown</em> (aka <code>data.frames</code> or <code>tibbles</code>) has become so good. I actually prefer it over using <code>print</code> right now. Especially, because I can format in in an intuitive way by using the <code>tribble()</code> function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:</p>
+<pre class="r"><code>library(tibble)
 
-<script src="../../../../p5.js"></script>
-<script>
-// actual script ---------------------------------------------------------------
-var c_size = 450
-var midpoint = 0.5*c_size;
-var resolution = 10;
-var x1 = 0;
-var y1 = 0;
-var grid_div = 15;
+number_iterations &lt;- 1000
+stoping_criterion &lt;- -1
+stepsize &lt;- 0.5
+sensitivity &lt;- 0.2</code></pre>
+<p>To give a (nicely formatted) summary in the past I would have done something like this:</p>
+<pre class="r"><code>library(pasta)
 
+print(&quot;number of iterations:&quot; %&amp;&amp;% number_iterations)</code></pre>
+<pre><code>## [1] &quot;number of iterations: 1000&quot;</code></pre>
+<pre class="r"><code>print(&quot;stoping criterion:&quot; %&amp;&amp;% stoping_criterion)</code></pre>
+<pre><code>## [1] &quot;stoping criterion: -1&quot;</code></pre>
+<pre class="r"><code>print(&quot;step size:&quot; %&amp;&amp;% stepsize)</code></pre>
+<pre><code>## [1] &quot;step size: 0.5&quot;</code></pre>
+<pre class="r"><code>print(&quot;sensitivity:&quot; %&amp;&amp;% sensitivity)</code></pre>
+<pre><code>## [1] &quot;sensitivity: 0.2&quot;</code></pre>
+<p>Now, the tribble functions allows me to order the feedback in a way that is nicely formatted in code and in display:</p>
+<pre class="r"><code>info &lt;- tribble(
+  ~criterion,             ~value,
+  &quot;number of iterations&quot;, number_iterations,
+  &quot;stoping criterion&quot;,    stoping_criterion,
+  &quot;step size&quot;,            stepsize,
+  &quot;sensitivity&quot;,          sensitivity
+)
 
-
-function setup() {
-  background("#DDDCD3");
-  var canvas = createCanvas(c_size, c_size);
-  canvas.parent('sketch-holder');
-  noLoop();
-  strokeWeight(1);
-  stroke(50,50,50,150);
-  line(midpoint,0,midpoint,c_size)
-  line(0,midpoint,c_size,midpoint)
-  //
-  stroke(50,50,50,23);
-  for (var i=0; i<=c_size/grid_div; i++) {
-    line(i*grid_div, 0, i*grid_div, c_size);
-    line( 0, i*grid_div, c_size, i*grid_div);
-  }
-}
-
-
-function draw() {
-  f1()
-  f2()
-  f_fuse()
-  // boarder
-  stroke(100,100,100);
-  strokeWeight(1);
-  line(0, 0, 0, c_size);
-  line(0, 0, c_size, 0);
-  line(c_size-1, 0, c_size-1, c_size-1);
-  line(0, c_size-1, c_size-1, c_size-1);
-}
-
-function f1() {
-  stroke(100,100,100);
-  strokeWeight(2);
-  noFill();
-  beginShape();
-    for (var i=0; i<=c_size; i++) {
-      x1 = c_size - i;
-      y1 = midpoint - 0.02*(i-midpoint)**2 + 150;
-      curveVertex(x1,y1);
-    }
-  endShape();
-}
-
-function f2() {
-  stroke(100,100,100);
-  strokeWeight(2);
-  noFill();
-  beginShape();
-    for (var i=0; i<=c_size; i++) {
-      x1 = c_size - i;
-      y1 = midpoint + 0.5*(i-midpoint);
-      curveVertex(x1,y1);
-    }
-  endShape();
-}
-
-function f_fuse() {
-  stroke(30,144,255,120);
-  strokeWeight(5);
-  noFill();
-  beginShape();
-    for (var i=0; i<=c_size; i++) {
-      x1 = c_size - i;
-      y1 = max(midpoint + 0.5*(i-midpoint),midpoint - 0.02*(i-midpoint)**2 + 150);
-      curveVertex(x1,y1);
-    }
-  endShape();
-}
-
-</script>
+info</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##              criterion  value
+##                  &lt;chr&gt;  &lt;dbl&gt;
+## 1 number of iterations 1000.0
+## 2    stoping criterion   -1.0
+## 3            step size    0.5
+## 4          sensitivity    0.2</code></pre>
 </section>
 <section>
   

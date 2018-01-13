@@ -6,10 +6,20 @@
     <description>Recent content in Posts on allokkio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Feedback with tribbles</title>
+      <link>/2018/01/13/feedback-with-tribbles/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/13/feedback-with-tribbles/</guid>
+      <description>The ordering and display of tables in Rmarkdown (aka data.frames or tibbles) has become so good. I actually prefer it over using print right now. Especially, because I can format in in an intuitive way by using the tribble() function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:
+library(tibble) number_iterations &amp;lt;- 1000 stoping_criterion &amp;lt;- -1 stepsize &amp;lt;- 0.</description>
+    </item>
     
     <item>
       <title>Sketch: 3D Test</title>
