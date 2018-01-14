@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feedback with tribbles | Daniels page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/note/">notes</a></li>
+      
+      <li><a href="/open_learning/">open learning</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Feedback with tribbles</span></h1>
+
+
+</div>
+
+<main>
+<p>The ordering and display of tables in <em>Rmarkdown</em> (aka <code>data.frames</code> or <code>tibbles</code>) has become so good. I actually prefer it over using <code>print</code> right now. Especially, because I can format in in an intuitive way by using the <code>tribble()</code> function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:</p>
+<pre class="r"><code>library(tibble)
+
+number_iterations &lt;- 1000
+stoping_criterion &lt;- -1
+stepsize &lt;- 0.5
+sensitivity &lt;- 0.2</code></pre>
+<p>To give a (nicely formatted) summary in the past I would have done something like this:</p>
+<pre class="r"><code>library(pasta)
+
+print(&quot;number of iterations:&quot; %&amp;&amp;% number_iterations)</code></pre>
+<pre><code>## [1] &quot;number of iterations: 1000&quot;</code></pre>
+<pre class="r"><code>print(&quot;stoping criterion:&quot; %&amp;&amp;% stoping_criterion)</code></pre>
+<pre><code>## [1] &quot;stoping criterion: -1&quot;</code></pre>
+<pre class="r"><code>print(&quot;step size:&quot; %&amp;&amp;% stepsize)</code></pre>
+<pre><code>## [1] &quot;step size: 0.5&quot;</code></pre>
+<pre class="r"><code>print(&quot;sensitivity:&quot; %&amp;&amp;% sensitivity)</code></pre>
+<pre><code>## [1] &quot;sensitivity: 0.2&quot;</code></pre>
+<p>Now, the tribble functions allows me to order the feedback in a way that is nicely formatted in code and in display:</p>
+<pre class="r"><code>info &lt;- tribble(
+  ~criterion,             ~value,
+  &quot;number of iterations&quot;, number_iterations,
+  &quot;stoping criterion&quot;,    stoping_criterion,
+  &quot;step size&quot;,            stepsize,
+  &quot;sensitivity&quot;,          sensitivity
+)
+
+info</code></pre>
+<pre><code>## # A tibble: 4 x 2
+##              criterion  value
+##                  &lt;chr&gt;  &lt;dbl&gt;
+## 1 number of iterations 1000.0
+## 2    stoping criterion   -1.0
+## 3            step size    0.5
+## 4          sensitivity    0.2</code></pre>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

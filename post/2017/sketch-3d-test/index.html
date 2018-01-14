@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sketch: 3D Test | My Personal Homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/post/">blog</a></li>
+      
+      <li><a href="/open_learning/">open learning</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Sketch: 3D Test</span></h1>
+<h2 class="author">Daniel Klotz</h2>
+<h2 class="date">2017/12/18</h2>
+</div>
+
+<main>
+<p>Adopted from the <a href="https://youtu.be/Gi9PuLHlzzI">coding train</a>
+(who adopted it from <a href="https://beesandbombs.tumblr.com/">bees &amp; bombs</a>).</p>
+
+<div id="sketch-holder" align ="justify"></div>
+
+<script src="/p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+
+let angle = 0;
+let w = 35;
+let ma;
+let maxD
+
+function setup() {
+  let canvas = createCanvas(400, 400, WEBGL);
+  canvas.parent('sketch-holder');
+  ma = atan(cos(QUARTER_PI));
+  maxD = dist(0,0, 200,200)
+}
+
+function draw() {
+  background("#EEEDE4");
+  ortho(-400, 400, -400, 400, 0, 1000);
+  rotateX(-QUARTER_PI);
+  rotateY(ma);
+
+
+  let offset = 0;
+  for (let z = 0; z < height; z += w) {
+    for( let x = 0; x < width; x += w ) {
+      push();
+      rotateZ(frameCount * 0.0001);
+      rotateX(frameCount * 0.005);
+      rotateY(frameCount * 0.01);
+      let d = dist(x, z, width/2, height /2);
+      let offset = map(d, 0, maxD, -PI , PI);
+      let a = angle + offset;
+      let h = map(sin(a), -1, 1, 100, 300);
+      let h2 = map(sin(a), -1, 1, 300, 100);
+      translate( x - width/2, 0, z - height/2);
+      normalMaterial();
+      box(w - (2-h2/5), h, w - (2-h2/5))
+
+
+      pop();
+    }
+  }
+
+  angle -= 0.25;
+}
+</script>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

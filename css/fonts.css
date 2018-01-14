@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
 :root {
-  --blue: #2780E3;
+  --blue: #f4845f;
   --indigo: #6610f2;
   --purple: #613d7c;
   --pink: #e83e8c;
@@ -13,7 +13,7 @@
   --white: #fff;
   --gray: #868e96;
   --gray-dark: #373a3c;
-  --primary: #2780E3;
+  --primary: #f4845f;
   --secondary: #373a3c;
   --success: #3FB618;
   --info: #9954BB;
@@ -43,14 +43,14 @@ body {
 }
 
 a {
-  color: #2780E3;
+  color: #f4845f;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #165ba8;
+  color: #f27059;
   text-decoration: underline;
 }
 

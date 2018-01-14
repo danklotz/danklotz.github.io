@@ -8,14 +8,22 @@ body {
 /* header and footer areas */
 .menu { padding: 0; }
 .menu li { display: inline-block; }
-.article-meta, .menu a {
+.menu a {
   text-decoration: none;
-  background: #eff8fa;
+  background: #ffffef;
+ /*#eff8fa;*/
   padding: 5px;
   border-radius: 5px;
 }
 .menu, .article-meta, footer { text-align: center; }
-.title { font-size: 1.1em; }
+.article-meta {
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #fff;
+  background: linear-gradient(to bottom right, #b5838d, #e5989b, #ffb4a2);
+  padding: 5px;
+  border-radius: 5px;
+}
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;

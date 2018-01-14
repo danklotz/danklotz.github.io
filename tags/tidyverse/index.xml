@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tidyverse on Daniels page</title>
+    <link>/tags/tidyverse/</link>
+    <description>Recent content in Tidyverse on Daniels page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tidyverse/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>More tidy evaluation</title>
+      <link>/note/2017/12/bang-bang-bang/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/12/bang-bang-bang/</guid>
+      <description>The first post is more explaatory and can be found here. This one is more a note-taking effort and hence much more be spartan. The main goal is to go through some of the functionality of the rlang package.
+Basics rlang has multiple constructor-functions that can be used instead of the base Rcombine operator c(). These are: lgl(...), int(...), dbl(...), cpl(...), chr(..., .encoding = NULL), bytes(...) and ll(...). The idea here is that this way the code is more explicit than using c() (The resulting data can be inferred from the functions).</description>
+    </item>
+    
+    <item>
+      <title>First Steps with Tydy Evaluation</title>
+      <link>/note/2017/11/bang-bang-bang/</link>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/11/bang-bang-bang/</guid>
+      <description>‘Multiple exclamation marks,’ he went on, shaking his head, ‘are a sure sign of a diseased mind.’ - Eric, Terry Pratchett
+ The purpose of this post is to start a protocol my process for getting used to tidy evaluation. My actual course of action was a bit more unstructured than the one presented here. But not by much I wanted to preserve at least some degree of sanity for eventual re-reads.</description>
+    </item>
+    
+  </channel>
+</rss>

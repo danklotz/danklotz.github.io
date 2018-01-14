@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First Steps with Tydy Evaluation | Daniels page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/note/">notes</a></li>
+      
+      <li><a href="/open_learning/">open learning</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">First Steps with Tydy Evaluation</span></h1>
+
+
+</div>
+
+<main>
+<blockquote>
+<p>‘Multiple exclamation marks,’ he went on, shaking his head, ‘are a sure sign of a diseased mind.’ <strong>- Eric, Terry Pratchett</strong></p>
+</blockquote>
+<p>The purpose of this post is to start a protocol my process for getting used to <em><a href="https://cran.r-project.org/web/packages/rlang/vignettes/tidy-evaluation.html">tidy evaluation</a></em>. My actual course of action was a bit more unstructured than the one presented here. But not by much I wanted to preserve at least some degree of sanity for eventual re-reads. My hope is that it will help me to evaluate my current <em>learning practice</em> (Sorry, I did not find any better word), and maybe also help some lost souls to build up their intuition too.</p>
+<p><em>Tidy evaluation</em> is a form of non standard evaluation (NSE) recently put forward by the mighty <a href="https://twitter.com/hadleywickham">Hadley Wickham</a>. NSE is a very general term that basically refers to everything which does not follow the usual R conventions of evaluation. Nowadays, R users are already<br />
+familiar with NSE, through formulas and <code>dplyr</code>. Now, tidy evaluation provides an entire toolkit to create domain-specific languages (DSL) of grammars.</p>
+<p>When I try to get used to a concept I value <em>intuition</em> and <em>conceptual understanding</em> more than complete understanding and (full) knowledge. I therefore like to start by testing out some functions with some pseudo data.</p>
+<p>In this case I started with <code>quo()</code>, the quotation function. It captures the provided R code without evaluation (<em>quotes</em>), captures the current environment, and bundles them into what is called a <em>quosure</em>.</p>
+<pre class="r"><code># load libraries:
+library(rlang)</code></pre>
+<pre><code>## Warning: Paket &#39;rlang&#39; wurde unter R Version 3.4.2 erstellt</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## Warning: Paket &#39;dplyr&#39; wurde unter R Version 3.4.2 erstellt</code></pre>
+<pre><code>## 
+## Attache Paket: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code># quote test data and test equation:
+my_data &lt;- c(1,2,3,4,5)
+my_data_quosure &lt;- quo(my_data)
+my_eq_quosure &lt;- quo(1+2+3+4+5)
+
+print(my_data_quosure)</code></pre>
+<pre><code>## &lt;quosure: global&gt;
+## ~my_data</code></pre>
+<pre class="r"><code>print(my_eq_quosure)</code></pre>
+<pre><code>## &lt;quosure: global&gt;
+## ~1 + 2 + 3 + 4 + 5</code></pre>
+<p>As I expected the equation is not evaluated but transformed into a quosure which <em>quotes</em> my equation. What happened to my_data is interesting, because it is again not evaluated. I got to admit I was not thinking about that. Secondly, the print of quosure also provides us with information about the encapsulated environment of the quosure (which in both cases is the global environment).</p>
+<p>The <code>rlang</code> package provides the function <code>eval_tidy</code> to evaluate quosures within their environment:</p>
+<pre class="r"><code>eval_tidy(my_data_quosure)</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<pre class="r"><code>eval_tidy(my_eq_quosure)</code></pre>
+<pre><code>## [1] 15</code></pre>
+<p>How can the <code>eval</code> function from <code>base R</code> evaluate a quosure? By unquoting the quosure. Unquoting can be done with multiple operations. One of them is <code>!!</code> (<em>read: bang-bang</em>) operator (more info can be found in the well written help section of the <code>rlang</code> package, just type <code>?'!!'</code> after the package is loaded). Here are some things I tested:</p>
+<pre class="r"><code># check normal eval:
+eval(1+2+3+4+5)</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code>eval(&quot;1+2+3+4+5&quot;)</code></pre>
+<pre><code>## [1] &quot;1+2+3+4+5&quot;</code></pre>
+<pre class="r"><code>eval(parse(text = &quot;1+2+3+4+5&quot;))</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code># check eval with quosures:
+eval(my_eq_quosure)</code></pre>
+<pre><code>## &lt;quosure: global&gt;
+## ~1 + 2 + 3 + 4 + 5</code></pre>
+<pre class="r"><code>&#39;!!&#39;(my_eq_quosure)</code></pre>
+<pre><code>## 1 + 2 + 3 + 4 + 5</code></pre>
+<pre class="r"><code>eval(&#39;!!&#39;(my_eq_quosure))</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code># test more options to use eval on quosures:
+eval(UQE(my_eq_quosure))</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code>eval(get_expr(my_eq_quosure))</code></pre>
+<pre><code>## [1] 15</code></pre>
+<p>That is pretty nice. In some way one can see quosures as an alternative to character strings and expressions.</p>
+<p>Now, the !! operator is accompanied by the !!! operator (again, check the help). The bang-bang-bang operator (yep!) embeds unquotes the argument (like !!), but also splices the argument. Now, I could look up what splicing means exactly, but instead I just fiddle around with it and give some examples. First, I want to compare the behavior with regard to the existing quosures:</p>
+<pre class="r"><code>&#39;!!&#39;(my_data_quosure)</code></pre>
+<pre><code>## my_data</code></pre>
+<pre class="r"><code>&#39;!!!&#39;(my_data_quosure)</code></pre>
+<pre><code>## [[1]]
+## &lt;quosure: global&gt;
+## ~my_data</code></pre>
+<pre class="r"><code>#
+&#39;!!&#39;(my_eq_quosure)</code></pre>
+<pre><code>## 1 + 2 + 3 + 4 + 5</code></pre>
+<pre class="r"><code>&#39;!!!&#39;(my_eq_quosure)</code></pre>
+<pre><code>## [[1]]
+## &lt;quosure: global&gt;
+## ~1 + 2 + 3 + 4 + 5</code></pre>
+<p>Ah, so <code>!!!</code> always enlists its arguments. That is good to know. Next, I wanted to get a feeling of how <code>eval()</code> would work with the <code>!!!</code>:</p>
+<pre class="r"><code>eval(my_eq_quosure)</code></pre>
+<pre><code>## &lt;quosure: global&gt;
+## ~1 + 2 + 3 + 4 + 5</code></pre>
+<pre class="r"><code>eval(&#39;!!&#39;(my_eq_quosure))</code></pre>
+<pre><code>## [1] 15</code></pre>
+<pre class="r"><code>eval(&#39;!!!&#39;(my_eq_quosure)[[1]])</code></pre>
+<pre><code>## &lt;quosure: global&gt;
+## ~1 + 2 + 3 + 4 + 5</code></pre>
+<pre class="r"><code>eval(&#39;!!&#39;( &#39;!!!&#39;(my_eq_quosure)[[1]] ))</code></pre>
+<pre><code>## [1] 15</code></pre>
+<p>The <code>!!!</code> operator becomes useful when multiple arguments are provided to a function, or when used to enquote multiple functions. Luckily, I found a nice example in the <em><a href="https://community.rstudio.com/t/should-tidyeval-be-abandoned/2238/37">Should-tidyeval-be.abandoned section</a></em> of the Rstudio community forum. I took the example and re-arranged, so that it fits the fiddling I’ve done so far. So, in the following quosures are used to create a set the functions (<code>min</code>, <code>mean</code> and <code>max</code>) within a list of quosures:</p>
+<pre class="r"><code>summary_funs &lt;- c(min = quo(min(a)),
+                 mean = quo(mean(a)),
+                 max = quo(max(a))
+                 )
+class(summary_funs)</code></pre>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<p>A look at <code>summary_funs</code> shows that it encapsulates three entries with <code>quosure</code>. These are</p>
+<pre class="r"><code>str(summary_funs)</code></pre>
+<pre><code>## List of 3
+##  $ min :&lt;quosure: global&gt;
+## ~min(a)
+##  $ mean:&lt;quosure: global&gt;
+## ~mean(a)
+##  $ max :&lt;quosure: global&gt;
+## ~max(a)</code></pre>
+<p>Now, check out beautiful this works together with <code>dplyr</code>:</p>
+<pre class="r"><code>my_dataframe &lt;- data.frame(a = my_data)
+my_dataframe %&gt;%
+  summarize(!!!summary_funs)</code></pre>
+<pre><code>##   min mean max
+## 1   1    3   5</code></pre>
+<p>Ok, so far, so good. That is really all there is for my first session. Often I like to be lazy like that, to let ideas sink it. Yet, I hope to start a next session soon!!!</p>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

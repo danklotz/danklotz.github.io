@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sketch: Flares | My Personal Homepage</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/post/">blog</a></li>
+      
+      <li><a href="/open_learning/">open learning</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Sketch: Flares</span></h1>
+<h2 class="author">Daniel Klotz</h2>
+<h2 class="date">2017/11/28</h2>
+</div>
+
+<main>
+<div id="sketch-holder" align ="justify"></div>
+
+<p>Code:</p>
+
+<pre><code class="language-js">var canvas_size = 450;
+var canvas_pad = 50;
+var radius = (canvas_size-canvas_pad)/2;
+var midpoint = canvas_size/2;
+var ball_radius = 150;
+// Blob def
+function Blob(x,y) {
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = ball_radius
+  //
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &gt;= (radius-0.3*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
+
+function setup() {
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
+  canvas.parent('sketch-holder');
+  for (var i=1; i&lt;=2; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
+}
+
+function draw() {
+  background(&quot;#000000&quot;);
+  for (var i = 0; i&lt;b.length; i++) {
+     noiseSeed(i);
+     b[i].vel.x += 0.05*noise(1);
+     noiseSeed(i);
+     b[i].vel.y += 0.05*noise(1);
+   }
+
+  loadPixels();
+  for (var y=0; y&lt;height; y++) {
+    for (var x=0; x&lt;width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
+
+      for (var i = 0; i&lt;b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 &gt;= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.17*sum, 238);
+        pixels[index+1] = min(144 + 0.15*sum, 237);
+        pixels[index+2] = min(255 + 0.12*sum, 228);
+      }
+   }
+  }
+  updatePixels()
+  for(var i=0; i&lt;b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
+}
+</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+var canvas_size = 450;
+var canvas_pad = 50;
+var radius = (canvas_size-canvas_pad)/2;
+var midpoint = canvas_size/2;
+var ball_radius = 150;
+// Blob def
+function Blob(x,y) {
+  this.pos = createVector(x,y)
+  this.vel = p5.Vector.random2D();
+  this.vel.mult(10,20)
+  this.r = ball_radius
+  //
+  this.update= function() {
+    this.pos.add(this.vel)
+
+    var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 >= (radius-0.3*ball_radius)**2
+
+    if (pos_out) {
+      this.vel.x *= -1
+      this.vel.y *= -1
+    }
+  }
+
+}
+
+// script for running metaballs
+var b=[]
+
+function setup() {
+
+  //b = new Blob(100,100)
+  var canvas = createCanvas(canvas_size, canvas_size);
+  canvas.parent('sketch-holder');
+  for (var i=1; i<=2; i++) {
+    b.push(new Blob(midpoint,midpoint))
+  }
+}
+
+function draw() {
+  background("#000000");
+  for (var i = 0; i<b.length; i++) {
+     noiseSeed(i);
+     b[i].vel.x += 0.05*noise(1);
+     noiseSeed(i);
+     b[i].vel.y += 0.05*noise(1);
+   }
+
+  loadPixels();
+  for (var y=0; y<height; y++) {
+    for (var x=0; x<width; x++) {
+      var index=(x+y*width)*4;
+      var sum = 0;
+
+      for (var i = 0; i<b.length; i++) {
+        var d = dist(x,y,b[i].pos.x,b[i].pos.y);
+        sum += ball_radius * b[i].r/d;
+       }
+      //
+    var pos_out = (midpoint-x)**2 + (midpoint-y)**2 >= (radius)**2;
+      if (pos_out) {
+        pixels[index] = 238;
+        pixels[index+1] = 237;
+        pixels[index+2] = 228;
+      } else {
+        pixels[index] = min(30 + 0.17*sum, 238);
+        pixels[index+1] = min(144 + 0.15*sum, 237);
+        pixels[index+2] = min(255 + 0.12*sum, 228);
+      }
+   }
+  }
+  updatePixels()
+  for(var i=0; i<b.length; i++){
+    b[i].update();
+  }
+  fill(211,220,211,0);
+  stroke(221,220,211);
+  strokeWeight(3);
+  ellipse(midpoint, midpoint, 2*radius, 2*radius);
+}
+</script>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+
