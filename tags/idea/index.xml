@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Idea on Daniels page</title>
-    <link>/tags/idea/</link>
-    <description>Recent content in Idea on Daniels page</description>
+    <title>idea on Daniels page</title>
+    <link>/tags/idea/index.xml</link>
+    <description>Recent content in idea on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jan 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/idea/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/idea/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Feedback with tribbles</title>
@@ -17,8 +14,42 @@
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/note/2018/01/feedback-with-tribbles/</guid>
-      <description>The ordering and display of tables in Rmarkdown (aka data.frames or tibbles) has become so good. I actually prefer it over using print right now. Especially, because I can format in in an intuitive way by using the tribble() function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:
-library(tibble) number_iterations &amp;lt;- 1000 stoping_criterion &amp;lt;- -1 stepsize &amp;lt;- 0.</description>
+      <description>&lt;p&gt;The ordering and display of tables in &lt;em&gt;Rmarkdown&lt;/em&gt; (aka &lt;code&gt;data.frames&lt;/code&gt; or &lt;code&gt;tibbles&lt;/code&gt;) has become so good. I actually prefer it over using &lt;code&gt;print&lt;/code&gt; right now. Especially, because I can format in in an intuitive way by using the &lt;code&gt;tribble()&lt;/code&gt; function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tibble)
+
+number_iterations &amp;lt;- 1000
+stoping_criterion &amp;lt;- -1
+stepsize &amp;lt;- 0.5
+sensitivity &amp;lt;- 0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To give a (nicely formatted) summary in the past I would have done something like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(pasta)
+
+print(&amp;quot;number of iterations:&amp;quot; %&amp;amp;&amp;amp;% number_iterations)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;number of iterations: 1000&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;quot;stoping criterion:&amp;quot; %&amp;amp;&amp;amp;% stoping_criterion)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;stoping criterion: -1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;quot;step size:&amp;quot; %&amp;amp;&amp;amp;% stepsize)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;step size: 0.5&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;quot;sensitivity:&amp;quot; %&amp;amp;&amp;amp;% sensitivity)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;sensitivity: 0.2&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, the tribble functions allows me to order the feedback in a way that is nicely formatted in code and in display:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;info &amp;lt;- tribble(
+  ~criterion,             ~value,
+  &amp;quot;number of iterations&amp;quot;, number_iterations,
+  &amp;quot;stoping criterion&amp;quot;,    stoping_criterion,
+  &amp;quot;step size&amp;quot;,            stepsize,
+  &amp;quot;sensitivity&amp;quot;,          sensitivity
+)
+
+info&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 4 x 2
+##              criterion  value
+##                  &amp;lt;chr&amp;gt;  &amp;lt;dbl&amp;gt;
+## 1 number of iterations 1000.0
+## 2    stoping criterion   -1.0
+## 3            step size    0.5
+## 4          sensitivity    0.2&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>
