@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/note/2018/01/plotly-test/</loc>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/note/2018/01/feedback-with-tribbles/</loc>
     <lastmod>2018-01-13T00:00:00+00:00</lastmod>
   </url>
@@ -77,36 +82,8 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
-  </url>
-  
-  <url>
-    <loc>/note/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/open_learning/</loc>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/coding/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -120,6 +97,11 @@
     <loc>/tags/data-science/</loc>
     <lastmod>2017-12-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -141,6 +123,20 @@
   </url>
   
   <url>
+    <loc>/about/</loc>
+  </url>
+  
+  <url>
+    <loc>/note/</loc>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/open_learning/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/p5js/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -159,14 +155,18 @@
   </url>
   
   <url>
+    <loc>/projects/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/r/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -178,7 +178,7 @@
   
   <url>
     <loc>/tags/scripting/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -190,7 +190,13 @@
   
   <url>
     <loc>/categories/snippets/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-12-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
