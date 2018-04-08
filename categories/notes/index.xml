@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Daniels page</title>
+    <link>/categories/notes/</link>
+    <description>Recent content in Notes on Daniels page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Media Diet Dump</title>
+      <link>/note/2018/04/media_diet/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/04/media_diet/</guid>
+      <description>John Le Carré - The Pigeon Tunnel. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive. Matthias Adolfosn. Playfull and witty illustration. Can’t get enough of them. Kosko - Neural Networks and Fuzzy Systems: An oldie. Intersting to get a grasp of the historical developement of artifical neural networks and fuzzy logic. Song of the Sea. &amp;lt;3 Patterson. Don’t get fooled by the trailer. The movie is very slow; almost meditative.</description>
+    </item>
+    
+  </channel>
+</rss>

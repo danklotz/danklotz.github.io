@@ -23,6 +23,17 @@ library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr
     </item>
     
     <item>
+      <title>Using if else with pipes</title>
+      <link>/note/2018/01/using-if-else-with-pipes/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/01/using-if-else-with-pipes/</guid>
+      <description>A nice way to use if else within pipes is (see here):
+library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;bar&amp;quot; Alternatively, the when function from the purrr package can be used:
+library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, . &amp;gt; 0.5 ~ &amp;quot;bar&amp;quot;)  ## [1] &amp;quot;bar&amp;quot; A nice way to use a vector of inputs is provided by the case_when function from dplyr together with mutate or transmute:</description>
+    </item>
+    
+    <item>
       <title>Feedback with tribbles</title>
       <link>/note/2018/01/feedback-with-tribbles/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>

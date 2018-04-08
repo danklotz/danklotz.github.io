@@ -6,10 +6,30 @@
     <description>Recent content in Tip on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/tip/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Media Diet Dump</title>
+      <link>/note/2018/04/media_diet/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/04/media_diet/</guid>
+      <description>John Le Carré - The Pigeon Tunnel. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive. Matthias Adolfosn. Playfull and witty illustration. Can’t get enough of them. Kosko - Neural Networks and Fuzzy Systems: An oldie. Intersting to get a grasp of the historical developement of artifical neural networks and fuzzy logic. Song of the Sea. &amp;lt;3 Patterson. Don’t get fooled by the trailer. The movie is very slow; almost meditative.</description>
+    </item>
+    
+    <item>
+      <title>Using if else with pipes</title>
+      <link>/note/2018/01/using-if-else-with-pipes/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/01/using-if-else-with-pipes/</guid>
+      <description>A nice way to use if else within pipes is (see here):
+library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;bar&amp;quot; Alternatively, the when function from the purrr package can be used:
+library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, . &amp;gt; 0.5 ~ &amp;quot;bar&amp;quot;)  ## [1] &amp;quot;bar&amp;quot; A nice way to use a vector of inputs is provided by the case_when function from dplyr together with mutate or transmute:</description>
+    </item>
     
     <item>
       <title>Using if else with pipes</title>
