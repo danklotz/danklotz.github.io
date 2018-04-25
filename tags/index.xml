@@ -32,7 +32,7 @@
     <item>
       <title>Idea</title>
       <link>/tags/idea/</link>
-      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/idea/</guid>
       <description></description>
@@ -86,9 +86,18 @@
     <item>
       <title>R</title>
       <link>/tags/r/</link>
-      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reflections</title>
+      <link>/tags/reflections/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/reflections/</guid>
       <description></description>
     </item>
     
@@ -104,7 +113,7 @@
     <item>
       <title>Scripting</title>
       <link>/tags/scripting/</link>
-      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/scripting/</guid>
       <description></description>
@@ -131,9 +140,18 @@
     <item>
       <title>Tip</title>
       <link>/tags/tip/</link>
-      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/tip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Videos</title>
+      <link>/tags/videos/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/videos/</guid>
       <description></description>
     </item>
     
@@ -143,6 +161,15 @@
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/webgl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Youtube</title>
+      <link>/tags/youtube/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/youtube/</guid>
       <description></description>
     </item>
     

@@ -97,37 +97,14 @@
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>/</loc>
     <lastmod>2018-04-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
-  </url>
-  
-  <url>
-    <loc>/note/</loc>
-    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/open_learning/</loc>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+=======
     <loc>/categories/coding/</loc>
     <lastmod>2018-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
+>>>>>>> origin/master
   </url>
   
   <url>
@@ -137,9 +114,19 @@
   </url>
   
   <url>
+<<<<<<< HEAD
+    <loc>/note/</loc>
+    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
+=======
     <loc>/tags/data-science/</loc>
     <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+>>>>>>> origin/master
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -155,9 +142,45 @@
   </url>
   
   <url>
+<<<<<<< HEAD
+    <loc>/categories/coding/</loc>
+    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+=======
     <loc>/tags/js/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+>>>>>>> origin/master
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/learning/</loc>
+    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+  </url>
+  
+  <url>
+<<<<<<< HEAD
+    <loc>/tags/idea/</loc>
+    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+=======
+    <loc>/categories/notes/</loc>
+    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
+>>>>>>> origin/master
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/note/</loc>
+    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/open_learning/</loc>
   </url>
   
   <url>
@@ -182,6 +205,10 @@
     <loc>/tags/programming/</loc>
     <lastmod>2017-12-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
   </url>
   
   <url>
@@ -223,6 +250,15 @@
   <url>
     <loc>/categories/snippets/</loc>
     <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+<<<<<<< HEAD
+=======
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+>>>>>>> origin/master
     <priority>0</priority>
   </url>
   
