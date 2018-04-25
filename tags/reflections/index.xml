@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-<<<<<<< HEAD
     <title>reflections on Daniels page</title>
     <link>/tags/reflections/index.xml</link>
     <description>Recent content in reflections on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="/tags/reflections/index.xml" rel="self" type="application/rss+xml" />
-=======
-    <title>Reflections on Daniels page</title>
-    <link>/tags/reflections/</link>
-    <description>Recent content in Reflections on Daniels page</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 08 Apr 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/reflections/index.xml" rel="self" type="application/rss+xml" />
-    
->>>>>>> origin/master
     
     <item>
       <title>Media Diet Dump</title>
@@ -26,7 +14,6 @@
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/note/2018/04/media_diet/</guid>
-<<<<<<< HEAD
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.theguardian.com/books/2016/sep/11/the-pigeon-tunnel-john-le-carre-review&#34;&gt;John Le Carré - The Pigeon Tunnel&lt;/a&gt;. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ello.co/mattiasadolfsson&#34;&gt;Matthias Adolfosn&lt;/a&gt;. Playfull and witty illustration. Can’t get enough of them.&lt;/li&gt;
@@ -41,9 +28,6 @@
 &lt;li&gt;&lt;a href=&#34;https://youtu.be/pbRJtP8_AeE&#34;&gt;Youtube: New Media Linguistics&lt;/a&gt;. Notes on language creation/invention, by David Peterson (Inventor of the Dorthraki language from GoT)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-=======
-      <description>John Le Carré - The Pigeon Tunnel. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive. Matthias Adolfosn. Playfull and witty illustration. Can’t get enough of them. Kosko - Neural Networks and Fuzzy Systems: An oldie. Intersting to get a grasp of the historical developement of artifical neural networks and fuzzy logic. Song of the Sea. &amp;lt;3 Patterson. Don’t get fooled by the trailer. The movie is very slow; almost meditative.</description>
->>>>>>> origin/master
     </item>
     
   </channel>
