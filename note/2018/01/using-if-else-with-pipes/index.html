@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Using if else with pipes | Daniels page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <div class = "headhead"></div>
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/note/">compunotes</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Using if else with pipes</span></h1>
+
+
+</div>
+
+<main>
+<p>A nice way to use if else within pipes is (see <a href="https://stackoverflow.com/questions/30604107/r-conditional-evaluation-when-using-the-pipe-operator">here</a>):</p>
+<pre class="r"><code>library(magrittr)
+runif(1) %&gt;% magrittr::is_greater_than(0.5) %&gt;% {if(.) &quot;foo&quot; else &quot;bar&quot;}</code></pre>
+<pre><code>## [1] &quot;bar&quot;</code></pre>
+<p>Alternatively, the <code>when</code> function from the <code>purrr</code> package can be used:</p>
+<pre class="r"><code>library(purrr, quietly = TRUE, warn.conflicts = FALSE)
+runif(1) %&gt;% purrr::when(. &lt;= 0.5 ~ &quot;foo&quot;, 
+                         . &gt;  0.5 ~ &quot;bar&quot;) </code></pre>
+<pre><code>## [1] &quot;bar&quot;</code></pre>
+<p>A nice way to use a vector of inputs is provided by the <code>case_when</code> function from <code>dplyr</code> together with <code>mutate</code> or <code>transmute</code>:</p>
+<pre class="r"><code>library(dplyr,  quietly = TRUE, warn.conflicts = FALSE)
+library(tibble, quietly = TRUE, warn.conflicts = FALSE)
+runif(100) %&gt;% 
+  magrittr::is_greater_than(0.5) %&gt;% 
+  tibble::tibble(a = .) %&gt;% 
+  dplyr::transmute(., foobar = case_when(a &lt;= 0.5 ~ &quot;fu&quot;, a &gt;  0.5 ~ &quot;bar&quot;))</code></pre>
+<pre><code>## # A tibble: 100 x 1
+##    foobar
+##    &lt;chr&gt; 
+##  1 fu    
+##  2 fu    
+##  3 bar   
+##  4 fu    
+##  5 fu    
+##  6 fu    
+##  7 bar   
+##  8 bar   
+##  9 fu    
+## 10 fu    
+## # ... with 90 more rows</code></pre>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+
