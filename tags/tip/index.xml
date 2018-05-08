@@ -70,45 +70,6 @@ runif(100) %&amp;gt;%
     </item>
     
     <item>
-      <title>Using if else with pipes</title>
-      <link>/note/2018/01/using-if-else-with-pipes/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2018/01/using-if-else-with-pipes/</guid>
-      <description>&lt;p&gt;A nice way to use if else within pipes is (see &lt;a href=&#34;https://stackoverflow.com/questions/30604107/r-conditional-evaluation-when-using-the-pipe-operator&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(magrittr)
-runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;}&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;bar&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Alternatively, the &lt;code&gt;when&lt;/code&gt; function from the &lt;code&gt;purrr&lt;/code&gt; package can be used:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(purrr, quietly = TRUE, warn.conflicts = FALSE)
-runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, 
-                         . &amp;gt;  0.5 ~ &amp;quot;bar&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;bar&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;A nice way to use a vector of inputs is provided by the &lt;code&gt;case_when&lt;/code&gt; function from &lt;code&gt;dplyr&lt;/code&gt; together with &lt;code&gt;mutate&lt;/code&gt; or &lt;code&gt;transmute&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr,  quietly = TRUE, warn.conflicts = FALSE)
-library(tibble, quietly = TRUE, warn.conflicts = FALSE)
-runif(100) %&amp;gt;% 
-  magrittr::is_greater_than(0.5) %&amp;gt;% 
-  tibble::tibble(a = .) %&amp;gt;% 
-  dplyr::transmute(., foobar = case_when(a &amp;lt;= 0.5 ~ &amp;quot;fu&amp;quot;, a &amp;gt;  0.5 ~ &amp;quot;bar&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 100 x 1
-##    foobar
-##    &amp;lt;chr&amp;gt; 
-##  1 fu    
-##  2 fu    
-##  3 fu    
-##  4 fu    
-##  5 fu    
-##  6 fu    
-##  7 bar   
-##  8 bar   
-##  9 bar   
-## 10 bar   
-## # ... with 90 more rows&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Feedback with tribbles</title>
       <link>/note/2018/01/feedback-with-tribbles/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
