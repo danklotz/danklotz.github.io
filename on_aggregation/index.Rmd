@@ -1,0 +1,26 @@
+---
+output: 
+  html_document:
+    theme: readable
+editor_options: 
+  chunk_output_type: inline
+---
+
+<center> 
+<h1> Epper Eppes </h1> 
+Conceptual Escapades & other Curiosities 
+</center>
+
+--- 
+
+The name *epper eppes* is a nod to my dialect and might be translated as
+*probably something*. The aim is to complement the erratic and ephemeral 
+nature of my blog ([allokkio](https://danklotz.github.io/allokkio/)) by 
+gathering more elaborate or thought-out things.
+
+---
+
+**Things to look at:** 
+
+[Case Study: Aggregating Linear Reservoirs](reservoir_aggregation.html)
+
