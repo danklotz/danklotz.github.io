@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Favourites on Daniels page</title>
+    <link>/tags/favourites/</link>
+    <description>Recent content in Favourites on Daniels page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/favourites/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Favourites: Spring 2018</title>
+      <link>/note/2018/05/favourite-things-spring-2018/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/05/favourite-things-spring-2018/</guid>
+      <description>Here are some of my favourite things from Spring 2018.
+www I build a twitter-bot with Cheap Bots, Done Quick. It tweets proverbs, heuristics, fallacies and biases in the wayne of the seminal work of Tversky and Kahneman, Gerd Gigerenzer &amp;amp; co.   
+Ralph Hammer started an amazing series of articles about learning to draw (and by implication see). Starting with an exposition about seeing vs. reading. Now, why he considers &amp;ldquo;writing software&amp;rdquo; as a low-dopamine activity is beyond me.</description>
+    </item>
+    
+  </channel>
+</rss>

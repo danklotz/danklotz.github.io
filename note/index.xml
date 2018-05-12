@@ -6,10 +6,21 @@
     <description>Recent content in Notes on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/note/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Favourites: Spring 2018</title>
+      <link>/note/2018/05/favourite-things-spring-2018/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/05/favourite-things-spring-2018/</guid>
+      <description>Here are some of my favourite things from Spring 2018.
+www I build a twitter-bot with Cheap Bots, Done Quick. It tweets proverbs, heuristics, fallacies and biases in the wayne of the seminal work of Tversky and Kahneman, Gerd Gigerenzer &amp;amp; co.   
+Ralph Hammer started an amazing series of articles about learning to draw (and by implication see). Starting with an exposition about seeing vs. reading. Now, why he considers &amp;ldquo;writing software&amp;rdquo; as a low-dopamine activity is beyond me.</description>
+    </item>
     
     <item>
       <title>Media Diet Dump</title>
@@ -18,17 +29,6 @@
       
       <guid>/note/2018/04/media_diet/</guid>
       <description>John Le Carré - The Pigeon Tunnel. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive. Matthias Adolfosn. Playfull and witty illustration. Can’t get enough of them. Kosko - Neural Networks and Fuzzy Systems: An oldie. Intersting to get a grasp of the historical developement of artifical neural networks and fuzzy logic. Song of the Sea. &amp;lt;3 Patterson. Don’t get fooled by the trailer. The movie is very slow; almost meditative.</description>
-    </item>
-    
-    <item>
-      <title>Using if else with pipes</title>
-      <link>/note/2018/01/using-if-else-with-pipes/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2018/01/using-if-else-with-pipes/</guid>
-      <description>A nice way to use if else within pipes is (see here):
-library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;bar&amp;quot; Alternatively, the when function from the purrr package can be used:
-library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, . &amp;gt; 0.5 ~ &amp;quot;bar&amp;quot;)  ## [1] &amp;quot;bar&amp;quot; A nice way to use a vector of inputs is provided by the case_when function from dplyr together with mutate or transmute:</description>
     </item>
     
     <item>
