@@ -1,0 +1,26 @@
+---
+title: Almosts
+subtitle: A vignette about things that are approximately almost-right.
+output: 
+  tufte::tufte_html: 
+    tufte_variant: "envisioned"
+editor_options: 
+  chunk_output_type: inline
+---
+
+Near-fits and good enoughs rule the world. And, that is a good thing. Beeing imprecise has many advantages. Strangely enough this is often very difficult to accept. Here is a reading-list for celebrating almosts:
+
+Intersting starting points: 
+
+- [Nautilus Magazine: **The Impossible Mathematics of the Real World**](http://nautil.us/issue/49/the-absurd/the-impossible-mathematics-of-the-real-world). A nice article about the mathematics of near-misses and almost-right answers ([related](https://isohedral.ca/a-new-near-miss/)). 
+- [Stack Exchange: **Near misses to Fermats last theorem**](https://math.stackexchange.com/questions/526330/fermats-last-theorem-near-misses). A stack-thread about near misses to solution of fermats last theorem. 
+
+The end of (precise) equations:
+
+- [**Equation-free modeling unravels the behavior of complex ecological systems**](http://www.pnas.org/content/112/13/3856.full#ref-1). A comment on [Ye et al. (2015)](http://www.pnas.org/content/112/13/E1569?ijkey=715792bf2c666346ffd3bd60dd4b6430ce17c028&keytype2=tf_ipsecsha), which puts the idea forward that traditional mathematics has not been *unreasonable effective* for ecological problems.
+- [Quanta Magazine: **Mathematicians Find Wrinkle in Famed Fluid Equations**](https://www.quantamagazine.org/mathematicians-find-wrinkle-in-famed-fluid-equations-20171221/). Article about (possible) imperfections of the [Navier-Stokes equations](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_equations).
+
+Related Thingies:
+
+- [Wiki: **Quasicrystal**](https://en.wikipedia.org/wiki/Quasicrystal). Quasicrystals are almost crystals.
+
