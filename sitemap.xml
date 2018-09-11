@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/note/2018/09/sketch-particles1/</loc>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/2018/09/favourite-things-summer-2018/</loc>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/note/2018/05/favourite-things-spring-2018/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
   </url>
@@ -104,7 +114,7 @@
   
   <url>
     <loc>/tags/creativecoding/</loc>
-    <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -116,19 +126,19 @@
   
   <url>
     <loc>/tags/favourites/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/favourites/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -157,7 +167,7 @@
   
   <url>
     <loc>/tags/links/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -167,7 +177,7 @@
   
   <url>
     <loc>/note/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -177,7 +187,7 @@
   
   <url>
     <loc>/tags/p5js/</loc>
-    <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -229,7 +239,7 @@
   
   <url>
     <loc>/categories/sketch/</loc>
-    <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -241,19 +251,19 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/taste/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/taste/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -277,7 +287,7 @@
   
   <url>
     <loc>/tags/tip/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

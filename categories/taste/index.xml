@@ -6,10 +6,20 @@
     <description>Recent content in Taste on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/taste/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Favourites: Summer 2018</title>
+      <link>/note/2018/09/favourite-things-summer-2018/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/09/favourite-things-summer-2018/</guid>
+      <description>Some of my favourites from summer 2018. There we go.
+Birds Jaume Sanchez Elias posts amazing geometric animations. Mike Cook thinks about gaming, procedural content generation and computational creativity (he also wrote a book about twitter-bots, which I have not read yet, but looks great). Krieg und Freitag is one of the funniest accounts I came across (german). Severe-weather.eu collects reports of sever-weather/natural-catastrophes around europe. Kate Compton. Gabriel Peyré provides all kind of infos and visualizations about optimal transport.</description>
+    </item>
     
     <item>
       <title>Favourites: Spring 2018</title>

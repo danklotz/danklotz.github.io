@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sketch: Particles1 | Daniels page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <div class = "headhead"></div>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/note/">notes</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    </nav>
+
+<div class="article-meta">
+
+<h1><span class="title">Sketch: Particles1</span></h1>
+
+
+</div>
+
+<main>
+<p>Playing around with the <a href="https://medium.com/processing-foundation/hello-p5-js-web-editor-b90b902b74cf">new p5.js editor</a>&hellip;
+<div id="sketch-holder" align="center"></div></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+function setup() {
+  var canvas = createCanvas(720, 450);
+  canvas.parent('sketch-holder');
+  system = new ParticleSystem(createVector(width/2, 50));
+}
+
+function draw() {
+  background(20,30,50, 150);
+  system.addParticle();
+  system.run();
+
+}
+
+// A simple Particle class
+var Particle = function(position) {
+  this.acceleration = createVector(-0.00015*(mouseX-0.5*width),-0.00012*(mouseY-0.5*height));
+  this.velocity = createVector(random(-0.5, 0.5), random(-1, 0));
+    this.old_position = position.copy();
+  this.position = position.copy();
+  this.lifespan = 255;
+};
+
+Particle.prototype.run = function() {
+  this.update();
+  this.display();
+};
+
+// Method to update position
+Particle.prototype.update = function(){
+  this.velocity.add(this.acceleration);
+    var weight = 0.5+0.5*this.lifespan/255
+    this.old_position.x = weight*this.old_position.x + (1-weight)*this.position.x;
+    this.old_position.y = weight*this.old_position.y + (1-weight)*this.position.y;
+  this.position.add(this.velocity);
+    //this.position.x = 0.995*this.position.x + 0.005*width
+    //this.position.y = 0.995*this.position.y + 0.005*height
+  this.lifespan -= 1.5;
+};
+
+// Method to display
+Particle.prototype.display = function() {
+    strokeWeight(1);
+    stroke(255-0.85*this.lifespan, 0.75*this.lifespan, 200+0.001*this.lifespan, this.lifespan);
+    line(this.old_position.x, this.old_position.y, this.position.x, this.position.y);
+  strokeWeight(2);
+  fill(255-0.85*this.lifespan, 0.75*this.lifespan, 200+0.001*this.lifespan, 0.96*this.lifespan);
+  ellipse(this.position.x, this.position.y, 15*this.lifespan/255, 15*this.lifespan/255);
+};
+
+// Is the particle still useful?
+Particle.prototype.isDead = function(){
+  return this.lifespan < 0;
+};
+
+var ParticleSystem = function(position) {
+  this.origin = position.copy();
+  this.particles = [];
+};
+
+ParticleSystem.prototype.addParticle = function() {
+  this.particles.push(new Particle(createVector(mouseX, mouseY)));
+};
+
+ParticleSystem.prototype.run = function() {
+  for (var i = this.particles.length-1; i >= 0; i--) {
+    var p = this.particles[i];
+    p.run();
+    if (p.isDead()) {
+      this.particles.splice(i, 1);
+    }
+  }
+};
+</script>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

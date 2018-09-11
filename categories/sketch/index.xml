@@ -6,10 +6,20 @@
     <description>Recent content in Sketch on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/sketch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sketch: Particles1</title>
+      <link>/note/2018/09/sketch-particles1/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/09/sketch-particles1/</guid>
+      <description>Playing around with the new p5.js editor&amp;hellip; 
+  // actual script --------------------------------------------------------------- function setup() { var canvas = createCanvas(720, 450); canvas.parent(&#39;sketch-holder&#39;); system = new ParticleSystem(createVector(width/2, 50)); } function draw() { background(20,30,50, 150); system.addParticle(); system.run(); } // A simple Particle class var Particle = function(position) { this.acceleration = createVector(-0.00015*(mouseX-0.5*width),-0.00012*(mouseY-0.5*height)); this.velocity = createVector(random(-0.5, 0.5), random(-1, 0)); this.old_position = position.copy(); this.position = position.copy(); this.lifespan = 255; }; Particle.prototype.run = function() { this.</description>
+    </item>
     
     <item>
       <title>Sketch: 3D Test</title>
