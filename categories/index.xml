@@ -20,29 +20,20 @@
     </item>
     
     <item>
-      <title>Favorites</title>
-      <link>/categories/favorites/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      <title>Coding-snippets</title>
+      <link>/categories/coding-snippets/</link>
+      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/favorites/</guid>
+      <guid>/categories/coding-snippets/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Favourites</title>
-      <link>/categories/favourites/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      <title>Phil</title>
+      <link>/categories/phil/</link>
+      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/favourites/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Learning</title>
-      <link>/categories/learning/</link>
-      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/learning/</guid>
+      <guid>/categories/phil/</guid>
       <description></description>
     </item>
     
@@ -52,6 +43,15 @@
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recommendations</title>
+      <link>/categories/recommendations/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/recommendations/</guid>
       <description></description>
     </item>
     
@@ -70,15 +70,6 @@
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/snippets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Taste</title>
-      <link>/categories/taste/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/taste/</guid>
       <description></description>
     </item>
     

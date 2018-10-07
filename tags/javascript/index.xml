@@ -64,17 +64,6 @@ var c_size = 450 var midpoint = 0.5*c_size; var c_pad = c_size - 20 var alpha_de
     </item>
     
     <item>
-      <title>Sketch: Flares</title>
-      <link>/note/2017/11/sketch-flares/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2017/11/sketch-flares/</guid>
-      <description>Dawdling flares with p5.js. 
-Code:
-var canvas_size = 450; var canvas_pad = 50; var radius = (canvas_size-canvas_pad)/2; var midpoint = canvas_size/2; var ball_radius = 150; // Blob def function Blob(x,y) { this.pos = createVector(x,y) this.vel = p5.Vector.random2D(); this.vel.mult(10,20) this.r = ball_radius // this.update= function() { this.pos.add(this.vel) var pos_out = (midpoint-this.pos.x)**2 + (midpoint-this.pos.y)**2 &amp;gt;= (radius-0.3*ball_radius)**2 if (pos_out) { this.vel.x *= -1 this.vel.y *= -1 } } } // script for running metaballs var b=[] function setup() { //b = new Blob(100,100) var canvas = createCanvas(canvas_size, canvas_size); canvas.</description>
-    </item>
-    
-    <item>
       <title>Sketch: Gaussian Star</title>
       <link>/note/2017/11/sketch-gaussian-star/</link>
       <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>

@@ -21,15 +21,5 @@
 Basics rlang has multiple constructor-functions that can be used instead of the base Rcombine operator c(). These are: lgl(...), int(...), dbl(...), cpl(...), chr(..., .encoding = NULL), bytes(...) and ll(...). The idea here is that this way the code is more explicit than using c() (The resulting data can be inferred from the functions).</description>
     </item>
     
-    <item>
-      <title>First Steps with Tydy Evaluation</title>
-      <link>/note/2017/11/bang-bang-bang/</link>
-      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2017/11/bang-bang-bang/</guid>
-      <description>‘Multiple exclamation marks,’ he went on, shaking his head, ‘are a sure sign of a diseased mind.’ - Eric, Terry Pratchett
- The purpose of this post is to start a protocol my process for getting used to tidy evaluation. My actual course of action was a bit more unstructured than the one presented here. But not by much I wanted to preserve at least some degree of sanity for eventual re-reads.</description>
-    </item>
-    
   </channel>
 </rss>
