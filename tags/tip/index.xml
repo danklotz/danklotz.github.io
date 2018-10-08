@@ -38,7 +38,7 @@ Ralph Hammer started an amazing series of articles about learning to draw (and b
       
       <guid>/note/2018/01/using-if-else-with-pipes/</guid>
       <description>A nice way to use if else within pipes is (see here):
-library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;bar&amp;quot; Alternatively, the when function from the purrr package can be used:
+library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;foo&amp;quot; Alternatively, the when function from the purrr package can be used:
 library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, . &amp;gt; 0.5 ~ &amp;quot;bar&amp;quot;)  ## [1] &amp;quot;bar&amp;quot; A nice way to use a vector of inputs is provided by the case_when function from dplyr together with mutate or transmute:</description>
     </item>
     
@@ -49,7 +49,7 @@ library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr
       
       <guid>/note/2018/01/feedback-with-tribbles/</guid>
       <description>The ordering and display of tables in Rmarkdown (aka data.frames or tibbles) has become so good. I actually prefer it over using print right now. Especially, because I can format in in an intuitive way by using the tribble() function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:
-library(tibble) number_iterations &amp;lt;- 1000 stoping_criterion &amp;lt;- -1 stepsize &amp;lt;- 0.</description>
+library(tibble) ## Warning: Paket &amp;#39;tibble&amp;#39; wurde unter R Version 3.</description>
     </item>
     
   </channel>

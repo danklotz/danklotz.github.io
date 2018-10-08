@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Memos on Daniels page</title>
+    <link>/categories/memos/</link>
+    <description>Recent content in Memos on Daniels page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/memos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rainy Meanderings</title>
+      <link>/note/2017/11/rainy-meanderings/</link>
+      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/11/rainy-meanderings/</guid>
+      <description>Here I will collect notes and references about the conceptualization in hydrology.
+Klemes (Conceptualization and scale in hydrology, 1986; https://doi.org/10.1016/0022-1694(83)90208-1) provides the basics. The abstract reads:
+ It is argued that the levels of scale at which a meaningful conceptualization of physical processes is possible are not arbitrary and their range is not continuous. Formulations appropriate at a given level usually are not applicable at the immediately adjoining levels. This is seen as one of the important reasons for the slow progress of hydrological science on basin scale since it is dominated by different effects than those observed at the immediately lower level of channel reaches and hillslopes which represent the focus of current hydrological research.</description>
+    </item>
+    
+    <item>
+      <title>Intro</title>
+      <link>/note/2017/04/intro/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/04/intro/</guid>
+      <description>Currently everything is very scrappy here and it will probably remain so for quite some time.
+ I will try to put some pretty random notes on random things on here. The idea is that each &amp;ldquo;blogpost&amp;rdquo; will be expanded over time and is thus not finished. I may provide some kind of update news as the project goes along; that will however depend on how everything plays out.  Some Definitions and Concepts scrap (/skɹæp/):</description>
+    </item>
+    
+  </channel>
+</rss>

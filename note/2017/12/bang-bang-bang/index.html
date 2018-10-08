@@ -85,6 +85,7 @@ print(`%@%`)</code></pre>
 ## {
 ##     attr(x, name, exact = TRUE)
 ## }
+## &lt;bytecode: 0x7ff7fe4c50a0&gt;
 ## &lt;environment: namespace:rlang&gt;</code></pre>
 <pre class="r"><code># the documentation example:
 factor(1:3)</code></pre>
@@ -126,18 +127,21 @@ print(&quot;create list of symbols from string&quot;)</code></pre>
 )
 
 quo(g1)</code></pre>
-<pre><code>## &lt;quosure: global&gt;
-## ~g1</code></pre>
+<pre><code>## &lt;quosure&gt;
+##   expr: ^g1
+##   env:  global</code></pre>
 <pre class="r"><code>#&gt; &lt;quosure: global&gt;
 #&gt; ~g1
 quo(a + b + c)</code></pre>
-<pre><code>## &lt;quosure: global&gt;
-## ~a + b + c</code></pre>
+<pre><code>## &lt;quosure&gt;
+##   expr: ^a + b + c
+##   env:  global</code></pre>
 <pre class="r"><code>#&gt; &lt;quosure: global&gt;
 #&gt; ~a + b + c
 quo(&quot;a&quot;)</code></pre>
-<pre><code>## &lt;quosure: empty&gt;
-## ~&quot;a&quot;</code></pre>
+<pre><code>## &lt;quosure&gt;
+##   expr: ^&quot;a&quot;
+##   env:  empty</code></pre>
 <pre class="r"><code>#&gt; &lt;quosure: empty&gt;
 #&gt; ~&quot;a&quot;</code></pre>
 <p>Does work:</p>
@@ -149,10 +153,10 @@ quo(&quot;a&quot;)</code></pre>
 
 my_summarise(df, quo(g1))</code></pre>
 <pre><code>## # A tibble: 2 x 2
-##      g1        a
-##   &lt;dbl&gt;    &lt;dbl&gt;
-## 1     1 2.500000
-## 2     2 3.333333</code></pre>
+##      g1     a
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1    1.  4.00
+## 2    2.  2.33</code></pre>
 <p>Does not work:</p>
 <pre class="r"><code>my_summarise &lt;- function(df, group_var) {
   group_var %&lt;&gt;% quo(group_var)
@@ -172,10 +176,10 @@ my_summarise(df, g1)</code></pre>
 
 my_summarise(df, g1)</code></pre>
 <pre><code>## # A tibble: 2 x 2
-##      g1        a
-##   &lt;dbl&gt;    &lt;dbl&gt;
-## 1     1 2.500000
-## 2     2 3.333333</code></pre>
+##      g1     a
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1    1.  4.00
+## 2    2.  2.33</code></pre>
 </div>
 
 </main>

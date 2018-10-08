@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Links on Daniels page</title>
+    <link>/categories/links/</link>
+    <description>Recent content in Links on Daniels page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/links/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Favorites: Summer 2018</title>
+      <link>/note/2018/09/favorite-things-summer-2018/</link>
+      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/09/favorite-things-summer-2018/</guid>
+      <description>Some of my favorites from summer 2018. There we go.
+Birds Jaume Sanchez Elias posts amazing geometric animations. Mike Cook thinks about gaming, procedural content generation and computational creativity (he also wrote a book about twitter-bots, which I have not read yet, but looks great). Krieg und Freitag is one of the funniest accounts I came across (German). Severe-weather.eu collects reports of sever-weather/natural-catastrophes around Europe. Kate Compton. Gabriel Peyré provides all kind of info and visualizations about optimal transport.</description>
+    </item>
+    
+    <item>
+      <title>Favourites: Spring 2018</title>
+      <link>/note/2018/05/favourite-things-spring-2018/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/05/favourite-things-spring-2018/</guid>
+      <description>Here are some of my favourites from Spring 2018.
+www I build a twitter-bot with Cheap Bots, Done Quick. It tweets proverbs, heuristics, fallacies and biases in the wayne of the seminal work of Tversky and Kahneman, Gerd Gigerenzer &amp;amp; co.   
+Ralph Hammer started an amazing series of articles about learning to draw (and by implication see). Starting with an exposition about seeing vs. reading. Now, why he considers &amp;ldquo;writing software&amp;rdquo; as a low-dopamine activity is beyond me.</description>
+    </item>
+    
+    <item>
+      <title>Media Diet Dump</title>
+      <link>/note/2018/04/media_diet/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/04/media_diet/</guid>
+      <description>John Le Carré - The Pigeon Tunnel. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive. Matthias Adolfosn. Playfull and witty illustration. Can’t get enough of them. Kosko - Neural Networks and Fuzzy Systems: An oldie. Intersting to get a grasp of the historical developement of artifical neural networks and fuzzy logic. Song of the Sea. &amp;lt;3 Patterson. Don’t get fooled by the trailer. The movie is very slow; almost meditative.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing Uncertainty</title>
+      <link>/note/2017/10/visualizing-uncertainty/</link>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/10/visualizing-uncertainty/</guid>
+      <description>I am not sure where one should start with this topic. Visualizing uncertainty is hard. in general, it is still an unsolved problem.
+Back in the days even the mighty Nathan Yau wrote:
+ I still struggle with uncertainty and visualization. I haven’t seen many worthwhile solutions other than the old standbys, boxplots and histograms, which show distributions. But how many people understand spread, skew, etc? It’s a small proportion, which poses an interesting challenge.</description>
+    </item>
+    
+  </channel>
+</rss>

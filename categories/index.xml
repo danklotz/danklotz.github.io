@@ -11,74 +11,38 @@
     
     
     <item>
-      <title>Coding</title>
-      <link>/categories/coding/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/coding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Coding-snippets</title>
-      <link>/categories/coding-snippets/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/coding-snippets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Phil</title>
-      <link>/categories/phil/</link>
-      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/phil/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recommendations</title>
-      <link>/categories/recommendations/</link>
+      <title>Links</title>
+      <link>/categories/links/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/recommendations/</guid>
+      <guid>/categories/links/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sketch</title>
-      <link>/categories/sketch/</link>
+      <title>Memos</title>
+      <link>/categories/memos/</link>
+      <pubDate>Fri, 17 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/memos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sketches</title>
+      <link>/categories/sketches/</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/sketch/</guid>
+      <guid>/categories/sketches/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Snippets</title>
-      <link>/categories/snippets/</link>
+      <title>Tinkering</title>
+      <link>/categories/tinkering/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/snippets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tidy Eval</title>
-      <link>/categories/tidy-eval/</link>
-      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/tidy-eval/</guid>
+      <guid>/categories/tinkering/</guid>
       <description></description>
     </item>
     

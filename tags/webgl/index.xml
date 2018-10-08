@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Sketch: 3D Test</title>
-      <link>/note/2017/12/sketch-3d-test/</link>
+      <title>p5js: 3D Test</title>
+      <link>/note/2017/12/p5js-3d-test/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/12/sketch-3d-test/</guid>
+      <guid>/note/2017/12/p5js-3d-test/</guid>
       <description>Testing the usage of webGL in p5js.
 Adopted from the coding train (who adopted it from bees &amp;amp; bombs).
    // actual script --------------------------------------------------------------- let angle = 0; let w = 35; let ma; let maxD function setup() { let canvas = createCanvas(400, 400, WEBGL); canvas.parent(&#39;sketch-holder&#39;); ma = atan(cos(QUARTER_PI)); maxD = dist(0,0, 200,200) } function draw() { background(&#34;#FFF&#34;); ortho(-400, 400, -400, 400, 0, 1000); rotateX(-QUARTER_PI); rotateY(ma); let offset = 0; for (let z = 0; z </description>

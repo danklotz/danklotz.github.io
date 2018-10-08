@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thoughts on Daniels page</title>
+    <link>/categories/thoughts/</link>
+    <description>Recent content in Thoughts on Daniels page</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/thoughts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro</title>
+      <link>/note/2017/04/intro/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/04/intro/</guid>
+      <description>Currently everything is very scrappy here and it will probably remain so for quite some time.
+ I will try to put some pretty random notes on random things on here. The idea is that each &amp;ldquo;blogpost&amp;rdquo; will be expanded over time and is thus not finished. I may provide some kind of update news as the project goes along; that will however depend on how everything plays out.  Some Definitions and Concepts scrap (/skɹæp/):</description>
+    </item>
+    
+  </channel>
+</rss>

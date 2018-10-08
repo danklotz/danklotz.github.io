@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>p5js: Function Plotting | Daniels page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <div class = "headhead"></div>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/note/">notes</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    </nav>
+
+<div class="article-meta">
+
+<h1><span class="title">p5js: Function Plotting</span></h1>
+
+
+</div>
+
+<main>
+<p>A little test for plotting functions.
+<div id="sketch-holder" align ="center"></div></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var midpoint = 0.5*c_size;
+var resolution = 10;
+var x1 = 0;
+var y1 = 0;
+var grid_div = 15;
+
+
+
+function setup() {
+  background("#fff");
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent('sketch-holder');
+  noLoop();
+  strokeWeight(1);
+  stroke(50,50,50,150);
+  line(midpoint,0,midpoint,c_size)
+  line(0,midpoint,c_size,midpoint)
+  //
+  stroke(50,50,50,23);
+  for (var i=0; i<=c_size/grid_div; i++) {
+    line(i*grid_div, 0, i*grid_div, c_size);
+    line( 0, i*grid_div, c_size, i*grid_div);
+  }
+}
+
+
+function draw() {
+  f1()
+  f2()
+  f_fuse()
+  // boarder
+  stroke(100,100,100);
+  strokeWeight(1);
+  line(0, 0, 0, c_size);
+  line(0, 0, c_size, 0);
+  line(c_size-1, 0, c_size-1, c_size-1);
+  line(0, c_size-1, c_size-1, c_size-1);
+}
+
+function f1() {
+  stroke(100,100,100);
+  strokeWeight(2);
+  noFill();
+  beginShape();
+    for (var i=0; i<=c_size; i++) {
+      x1 = c_size - i;
+      y1 = midpoint - 0.02*(i-midpoint)**2 + 150;
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+function f2() {
+  stroke(100,100,100);
+  strokeWeight(2);
+  noFill();
+  beginShape();
+    for (var i=0; i<=c_size; i++) {
+      x1 = c_size - i;
+      y1 = midpoint + 0.5*(i-midpoint);
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+function f_fuse() {
+  stroke(30,144,255,120);
+  strokeWeight(5);
+  noFill();
+  beginShape();
+    for (var i=0; i<=c_size; i++) {
+      x1 = c_size - i;
+      y1 = max(midpoint + 0.5*(i-midpoint),midpoint - 0.02*(i-midpoint)**2 + 150);
+      curveVertex(x1,y1);
+    }
+  endShape();
+}
+
+</script>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

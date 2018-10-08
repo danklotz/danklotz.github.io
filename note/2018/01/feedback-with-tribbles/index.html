@@ -36,9 +36,9 @@
 
 <main>
 <p>The ordering and display of tables in <em>Rmarkdown</em> (aka <code>data.frames</code> or <code>tibbles</code>) has become so good. I actually prefer it over using <code>print</code> right now. Especially, because I can format in in an intuitive way by using the <code>tribble()</code> function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:</p>
-<pre class="r"><code>library(tibble)
-
-number_iterations &lt;- 1000
+<pre class="r"><code>library(tibble)</code></pre>
+<pre><code>## Warning: Paket &#39;tibble&#39; wurde unter R Version 3.4.3 erstellt</code></pre>
+<pre class="r"><code>number_iterations &lt;- 1000
 stoping_criterion &lt;- -1
 stepsize &lt;- 0.5
 sensitivity &lt;- 0.2</code></pre>
@@ -64,12 +64,12 @@ print(&quot;number of iterations:&quot; %&amp;&amp;% number_iterations)</code></
 
 info</code></pre>
 <pre><code>## # A tibble: 4 x 2
-##              criterion  value
-##                  &lt;chr&gt;  &lt;dbl&gt;
-## 1 number of iterations 1000.0
-## 2    stoping criterion   -1.0
-## 3            step size    0.5
-## 4          sensitivity    0.2</code></pre>
+##   criterion                value
+##   &lt;chr&gt;                    &lt;dbl&gt;
+## 1 number of iterations  1000.   
+## 2 stoping criterion       -1.00 
+## 3 step size                0.500
+## 4 sensitivity              0.200</code></pre>
 
 </main>
 
