@@ -84,21 +84,21 @@ Adopted from the coding train (who adopted it from bees &amp;amp; bombs).
     </item>
     
     <item>
-      <title>Sketch: Growing Line</title>
-      <link>/note/2017/12/sketch-growing-line/</link>
+      <title>p5js: linegrow</title>
+      <link>/note/2017/12/p5js-linegrow/</link>
       <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/12/sketch-growing-line/</guid>
+      <guid>/note/2017/12/p5js-linegrow/</guid>
       <description>Adapted from here
    // actual script --------------------------------------------------------------- var gl; var tStep = 0.3; var c_size = 450 var midpoint = c_size/2 function setup() { var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // Line /*gl = new GrowingLine(false); gl.addPoint(10,0.5*height,true,20); for(var x=20; x1){ if(this.closed){ this.springs.pop(); } this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len)); if(this.closed){ this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len)); } } }, insertPoint: function(fixed=false, len0, len1, firstIndex){ if(this.points.length  1){ let midPos = p5.Vector.add(this.points[firstIndex].pos,this.points[firstIndex+1].pos).mult(0.5); this.points.splice(firstIndex+1,0,new Point(midPos.x, midPos.y, fixed)); this.</description>
     </item>
     
     <item>
-      <title>Sketch: Growing Line</title>
-      <link>/note/2017/12/sketch-growing-line/</link>
+      <title>p5js: linegrow</title>
+      <link>/note/2017/12/p5js-linegrow/</link>
       <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/12/sketch-growing-line/</guid>
+      <guid>/note/2017/12/p5js-linegrow/</guid>
       <description>Adapted from here
    // actual script --------------------------------------------------------------- var gl; var tStep = 0.3; var c_size = 450 var midpoint = c_size/2 function setup() { var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // Line /*gl = new GrowingLine(false); gl.addPoint(10,0.5*height,true,20); for(var x=20; x1){ if(this.closed){ this.springs.pop(); } this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len)); if(this.closed){ this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len)); } } }, insertPoint: function(fixed=false, len0, len1, firstIndex){ if(this.points.length  1){ let midPos = p5.Vector.add(this.points[firstIndex].pos,this.points[firstIndex+1].pos).mult(0.5); this.points.splice(firstIndex+1,0,new Point(midPos.x, midPos.y, fixed)); this.</description>
     </item>
@@ -126,22 +126,22 @@ var c_size = 450 var midpoint = 0.5*c_size; var c_pad = c_size - 20 var alpha_de
     </item>
     
     <item>
-      <title>p5js: Gaussian Star</title>
-      <link>/note/2017/11/p5js-gaussian-star/</link>
+      <title>p5js: star</title>
+      <link>/note/2017/11/p5js-star/</link>
       <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/11/p5js-gaussian-star/</guid>
+      <guid>/note/2017/11/p5js-star/</guid>
       <description>Another little Javascript-animation based on Gaussian ellipses.
  Code:
 var c_size = 450 var half_c_size = 0.5*c_size; var c_pad = c_size - 20 var time = 0.0 var increment = 0.002; var time_to_update = time + 2*increment; var increment_to_update = 0.03; var n = 0 var m = 0 function setup() { background(&amp;quot;#DDDCD3&amp;quot;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // info: textSize(19); stroke(221,220,211); fill(221,220,211); ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4); // fill(&amp;quot;#EEEDE4&amp;quot;); text(&amp;quot; ~68% \n of the radii&amp;quot;, c_pad/2-40, c_size/2); // decoration: // outer circles fill(221,220,211,0); stroke(221,220,211); strokeWeight(3); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2); ellipse(half_c_size, half_c_size, c_pad, c_pad); // outer ellipses strokeWeight(1); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4); ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3); ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2); ellipse(half_c_size, half_c_size, c_pad , c_pad/2); ellipse(half_c_size, half_c_size, c_pad/2, c_pad ); } function draw() { translate(width/2, height/2); rotate(frameCount / 50.</description>
     </item>
     
     <item>
-      <title>p5js: A little Animation-Test</title>
-      <link>/note/2017/11/p5js-a-little-animation-test/</link>
+      <title>p5js: anim</title>
+      <link>/note/2017/11/p5js-anim/</link>
       <pubDate>Sun, 26 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/11/p5js-a-little-animation-test/</guid>
+      <guid>/note/2017/11/p5js-anim/</guid>
       <description>My first try at p5js. A little animation that plots a circle, with a radius determined by Guassian noise.
  Code:
 // variable definitions: var c_size = 450 var c_pad = c_size - 20 var time = 0.0; var increment = 0.001; var time_to_update = time + 2*increment; var increment_to_update = 0.01; var n = 0 // canvas setup: function setup() { background(&amp;quot;#DDDCD3&amp;quot;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); } // generation and drawing: function draw() { noStroke(); time += increment; if (time &amp;gt;= time_to_update) { n = abs(randomGaussian(1,c_pad/2)); time_to_update += increment_to_update fill(30, 144, 255, 10); ellipse(c_size/2, c_size/2, n, n); } stroke(&amp;quot;#ffa500&amp;quot;) strokeWeight(1) fill(221,220,211,0); ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2); ellipse(c_size/2, c_size/2 ,c_pad, c_pad); // text textSize(19); noStroke( ); fill(&amp;quot;#ffa500&amp;quot;); text(&amp;quot;~68% of \n samples&amp;quot;, c_pad/4 + 18, c_size/2); text(&amp;quot;~95% of \n samples&amp;quot;, 18, c_size/2); }    // actual script --------------------------------------------------------------- var c_size = 450 var c_pad = c_size - 20 var time = 0.</description>

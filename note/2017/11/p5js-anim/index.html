@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>p5js: anim | Daniels page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <div class = "headhead"></div>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/note/">notes</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    </nav>
+
+<div class="article-meta">
+
+<h1><span class="title">p5js: anim</span></h1>
+
+
+</div>
+
+<main>
+<p>My first try at <a href="https://p5js.org/">p5js</a>. A little animation that
+plots a circle, with a radius determined by Guassian noise.</p>
+
+<div id="sketch-holder"></div>
+
+<p>Code:</p>
+
+<pre><code class="language-js">// variable definitions:
+var c_size = 450
+var c_pad = c_size - 20
+var time = 0.0;
+var increment = 0.001;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.01;
+var n = 0
+
+// canvas setup:
+function setup() {
+  background(&quot;#DDDCD3&quot;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent('sketch-holder');
+}
+
+// generation and drawing:
+function draw() {
+  noStroke();
+  time += increment;
+  if (time &gt;= time_to_update) {
+    n = abs(randomGaussian(1,c_pad/2));
+    time_to_update += increment_to_update
+
+    fill(30, 144, 255, 10);
+    ellipse(c_size/2, c_size/2, n, n);
+  }
+  stroke(&quot;#ffa500&quot;)
+  strokeWeight(1)
+  fill(221,220,211,0);
+  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+
+  // text
+  textSize(19);
+  noStroke( );
+  fill(&quot;#ffa500&quot;);
+  text(&quot;~68% of \n  samples&quot;, c_pad/4 + 18, c_size/2);
+  text(&quot;~95% of \n  samples&quot;, 18, c_size/2);
+}
+</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
+
+<script>
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var c_pad = c_size - 20
+var time = 0.0;
+var increment = 0.001;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.01;
+var n = 0
+
+function setup() {
+  background("#DDDCD3");
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent('sketch-holder');
+}
+
+function draw() {
+  noStroke();
+  time += increment;
+  if (time >= time_to_update) {
+    n = abs(randomGaussian(1,c_pad/2));
+    time_to_update += increment_to_update
+
+    fill(30, 144, 255, 10);
+    ellipse(c_size/2, c_size/2, n, n);
+  }
+  stroke("#ffa500")
+  strokeWeight(1)
+  fill(221,220,211,0);
+  ellipse(c_size/2, c_size/2, c_pad/2, c_pad/2);
+  ellipse(c_size/2, c_size/2 ,c_pad, c_pad);
+
+  // text
+  textSize(19);
+  noStroke( );
+  fill("#ffa500");
+  text("~68% of \n  samples", c_pad/4 + 18, c_size/2);
+  text("~95% of \n  samples", 18, c_size/2);
+}
+</script>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+

@@ -53,11 +53,11 @@ Adopted from the coding train (who adopted it from bees &amp;amp; bombs).
     </item>
     
     <item>
-      <title>Sketch: Growing Line</title>
-      <link>/note/2017/12/sketch-growing-line/</link>
+      <title>p5js: linegrow</title>
+      <link>/note/2017/12/p5js-linegrow/</link>
       <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/12/sketch-growing-line/</guid>
+      <guid>/note/2017/12/p5js-linegrow/</guid>
       <description>Adapted from here
    // actual script --------------------------------------------------------------- var gl; var tStep = 0.3; var c_size = 450 var midpoint = c_size/2 function setup() { var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // Line /*gl = new GrowingLine(false); gl.addPoint(10,0.5*height,true,20); for(var x=20; x1){ if(this.closed){ this.springs.pop(); } this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len)); if(this.closed){ this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len)); } } }, insertPoint: function(fixed=false, len0, len1, firstIndex){ if(this.points.length  1){ let midPos = p5.Vector.add(this.points[firstIndex].pos,this.points[firstIndex+1].pos).mult(0.5); this.points.splice(firstIndex+1,0,new Point(midPos.x, midPos.y, fixed)); this.</description>
     </item>

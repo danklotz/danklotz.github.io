@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>p5js: star | Daniels page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <div class = "headhead"></div>
+
+
+
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">home</a></li>
+      
+      <li><a href="/about/">about</a></li>
+      
+      <li><a href="/note/">notes</a></li>
+      
+      <li><a href="/projects/">projects</a></li>
+      
+    </ul>
+    </nav>
+
+<div class="article-meta">
+
+<h1><span class="title">p5js: star</span></h1>
+
+
+</div>
+
+<main>
+<p>Another little Javascript-animation based on Gaussian ellipses.</p>
+
+<div id="sketch-holder" align ="justify"></div>
+
+<p>Code:</p>
+
+<pre><code class="language-js">var c_size = 450
+var half_c_size = 0.5*c_size;
+var c_pad = c_size - 20
+var time = 0.0
+var increment = 0.002;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.03;
+var n = 0
+var m = 0
+
+function setup() {
+  background(&quot;#DDDCD3&quot;);
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent('sketch-holder');
+
+  // info:
+  textSize(19);
+  stroke(221,220,211);
+  fill(221,220,211);
+  ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4);
+  //
+  fill(&quot;#EEEDE4&quot;);
+  text(&quot;    ~68%  \n of the radii&quot;, c_pad/2-40, c_size/2);
+  // decoration:
+  // outer circles
+    fill(221,220,211,0);
+    stroke(221,220,211);
+    strokeWeight(3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad, c_pad);
+    // outer ellipses
+    strokeWeight(1);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4);
+    ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad  , c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad  );
+}
+
+function draw() {
+translate(width/2, height/2);
+rotate(frameCount / 50.0);
+  noStroke();
+  time += increment;
+  if (time &gt;= time_to_update) {
+    n = abs(randomGaussian(1,c_pad/4));
+    m = abs(randomGaussian(1,c_pad/4));
+    time_to_update += increment_to_update
+
+    fill(30, 144, 255, 20);
+    ellipse(0, 0, n, m);
+  }
+}
+</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js"></script>
+<script>
+// actual script ---------------------------------------------------------------
+var c_size = 450
+var half_c_size = 0.5*c_size;
+var c_pad = c_size - 20
+var time = 0.0
+var increment = 0.002;
+var time_to_update = time + 2*increment;
+var increment_to_update = 0.03;
+var n = 0
+var m = 0
+
+function setup() {
+  background("#DDDCD3");
+  var canvas = createCanvas(c_size, c_size);
+  canvas.parent('sketch-holder');
+
+  // info:
+  textSize(19);
+  stroke(221,220,211);
+  fill(221,220,211);
+  ellipse(half_c_size, half_c_size, c_pad/4, c_pad/4);
+  //
+  fill("#EEEDE4");
+  text("    ~68%  \n of the radii", c_pad/2-40, c_size/2);
+  // decoration:
+  // outer circles
+    fill(221,220,211,0);
+    stroke(221,220,211);
+    strokeWeight(3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad, c_pad);
+    // outer ellipses
+    strokeWeight(1);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/4);
+    ellipse(half_c_size, half_c_size, c_pad/4, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad/3);
+    ellipse(half_c_size, half_c_size, c_pad/3, c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad  , c_pad/2);
+    ellipse(half_c_size, half_c_size, c_pad/2, c_pad  );
+}
+
+function draw() {
+translate(width/2, height/2);
+rotate(frameCount / 50.0);
+  noStroke();
+  time += increment;
+  if (time >= time_to_update) {
+    n = abs(randomGaussian(1,c_pad/4));
+    m = abs(randomGaussian(1,c_pad/4));
+    time_to_update += increment_to_update
+
+    fill(30, 144, 255, 20);
+    ellipse(0, 0, n, m);
+  }
+}
+</script>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  &copy; <a href="https://danklotz.github.io">Daniel Klotz</a> 2018 | <a href="https://github.com/danklotz">Github</a> | <a href="https://twitter.com/ido87">Twitter</a>
+  
+  </footer>
+  </body>
+</html>
+
