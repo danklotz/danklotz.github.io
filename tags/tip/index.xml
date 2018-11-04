@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tip on Daniels page</title>
-    <link>/tags/tip/</link>
-    <description>Recent content in Tip on Daniels page</description>
+    <title>tip on Daniels page</title>
+    <link>/tags/tip/index.xml</link>
+    <description>Recent content in tip on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/tip/index.xml" rel="self" type="application/rss+xml" />
-    
+    <atom:link href="/tags/tip/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Favourites: Spring 2018</title>
@@ -17,9 +14,74 @@
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/note/2018/05/favourite-things-spring-2018/</guid>
-      <description>Here are some of my favourites from Spring 2018.
-www I build a twitter-bot with Cheap Bots, Done Quick. It tweets proverbs, heuristics, fallacies and biases in the wayne of the seminal work of Tversky and Kahneman, Gerd Gigerenzer &amp;amp; co.   
-Ralph Hammer started an amazing series of articles about learning to draw (and by implication see). Starting with an exposition about seeing vs. reading. Now, why he considers &amp;ldquo;writing software&amp;rdquo; as a low-dopamine activity is beyond me.</description>
+      <description>
+
+&lt;p&gt;Here are some of my favourites from Spring 2018.&lt;/p&gt;
+
+&lt;h2 id=&#34;www&#34;&gt;www&lt;/h2&gt;
+
+&lt;p&gt;I build a &lt;a href=&#34;https://twitter.com/botski_kaseman&#34;&gt;twitter-bot&lt;/a&gt; with &lt;a href=&#34;https://cheapbotsdonequick.com/&#34;&gt;&lt;em&gt;Cheap Bots, Done Quick&lt;/em&gt;&lt;/a&gt;. It tweets proverbs, heuristics, fallacies and biases in the wayne of the seminal work of Tversky and Kahneman, Gerd Gigerenzer &amp;amp; co.
+&lt;center&gt;
+&lt;a href=&#34;https://twitter.com/botski_kaseman&#34;&gt;&lt;img src=&#34;/note/2018-05-11-favourite-things-spring-2018_files/logo_botski.jpg&#34; alt=&#34;botksi logo&#34; align=&#34;center&#34; width=&#34;20%&#34;/&gt;&lt;/a&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/ralphammer&#34;&gt;Ralph Hammer&lt;/a&gt; started an amazing series of articles about learning to draw (and by implication see). Starting with an exposition about &lt;a href=&#34;https://medium.com/personal-growth/seeing-vs-reading-29365d4540e2&#34;&gt;seeing vs. reading&lt;/a&gt;. Now, why he considers &amp;ldquo;writing software&amp;rdquo; as a low-dopamine activity is beyond me. Be it as it may, the highlight throughout the arcitles are the witty and insightful animations, which underpin the writing. Here an example:&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;/note/2018-05-11-favourite-things-spring-2018_files/reading-vs-seeing.gif&#34; alt=&#34;animation example&#34; /&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;I rediscovered &lt;a href=&#34;https://www.instapaper.com/&#34;&gt;instapaper&lt;/a&gt; through reading &lt;a href=&#34;https://jaan.io/info-overload/&#34;&gt;this&lt;/a&gt; excellent article about life-hacks. Read a nice &lt;a href=&#34;http://www.interactiongreen.com/chapter-1-power-zero/&#34;&gt;essay about the power of less&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://countercomplex.blogspot.co.at/&#34;&gt;Countercomplex&lt;/a&gt;, aka Viznut, is blogging (again). Topics include (but are not limited to) demoscene, algorithmic arts, and  digital degrowth.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Honorable mentions&lt;/strong&gt;: &lt;a href=&#34;https://scholar.google.at/&#34;&gt;google scholar&lt;/a&gt;, &lt;a href=&#34;https://whereisscihub.now.sh/&#34;&gt;where is sci-hub now&lt;/a&gt;, &lt;a href=&#34;http://phdp.github.io/blog.html&#34;&gt;Philippe Desjardins-Proulx&lt;/a&gt;, &lt;a href=&#34;https://archive.org/details/mundussubterrane02kirc&#34;&gt;archive.org: Mundus Subterraneus&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Grammar_induction&#34;&gt;wiki: Grammar Induction&lt;/a&gt;, &lt;a href=&#34;https://magenta.tensorflow.org/music-vae&#34;&gt;musicVAE&lt;/a&gt;, &lt;a href=&#34;http://www.joelsimon.net/corals.html&#34;&gt;Evolving Alien Corals&lt;/a&gt;, &lt;a href=&#34;https://www.nationalgeographic.com/archaeology-and-history/magazine/2017/01-02/babylon-mesopotamia-ancient-city-iraq/&#34;&gt;Beautiful Babylon: Jewel of the Ancient World&lt;/a&gt;, &lt;a href=&#34;https://medium.com/@ben_fry/reconnecting-china-29c3752ab9a0&#34;&gt;Reconnecting China&lt;/a&gt;, &lt;a href=&#34;http://rocs.hu-berlin.de/explorables/&#34;&gt;Complexity Explorables&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;video&#34;&gt;Video&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/user/Nerdwriter1&#34;&gt;Nerdwriter&lt;/a&gt; single-handedly changed my opinion about youtube and teached me what a video essay is. Special recommendations: &lt;a href=&#34;https://youtu.be/9wUePyAqPuk&#34;&gt;&amp;ldquo;I Drunkenly Paid for 17 Federal Programs&amp;rdquo;&lt;/a&gt; and &lt;a href=&#34;https://youtu.be/uBUnmdd5-iA&#34;&gt;&amp;ldquo;Mr. Bean Is A Master Of Physical Comedy&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Tadashi Tokieda: &lt;a href=&#34;https://youtu.be/D15L0E1zHJ0&#34;&gt;Science from a Sheet of Paper&lt;/a&gt;. The blurb reads: &lt;em&gt;By curling, folding, crumpling, sometimes tearing paper, Tadashi Tokieda will explore a variety of unexpected phenomena - from geometry and the traditional art of origami, to magic tricks and engineering of materials.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;/note/2018-05-11-favourite-things-spring-2018_files/t2-science-from-paper.png&#34; alt=&#34;t2 - science from paper&#34; width=&#34;80%&#34;/&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://woodblock.com/&#34;&gt;David Bull&lt;/a&gt; is a Tokyo-based wooblock printer and probably one of the most wholesome person on earth. His &lt;a href=&#34;https://www.youtube.com/user/seseragistudio/videos&#34;&gt;youtube-channel&lt;/a&gt; is full of information about a subject I know almost nothing about. If nothing else, check out his &lt;a href=&#34;https://www.youtube.com/playlist?list=PLK-Wicsj5rAbhRUOqhI85FZAN7df9KlZv&#34;&gt;&lt;em&gt;&amp;ldquo;David&amp;rsquo;s Choice&amp;rdquo;&lt;/em&gt;&lt;/a&gt; series. In it he introduces &amp;ldquo;various things that he finds interesting in the world of traditional Japanese woodblock prints&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/channel/UCg3qsVzHeUt5_cPpcRtoaJQ&#34;&gt;This guy&lt;/a&gt; makes knive out of everything (e.g. &lt;a href=&#34;https://youtu.be/MeNR0guNn70&#34;&gt;noodles&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/channel/UCR0SIzN1XnqQfHMoSXGWxlQ/featured&#34;&gt;&lt;em&gt;On Doubt&lt;/em&gt;&lt;/a&gt; interviews are on point. Especially the &lt;a href=&#34;https://youtu.be/HtKmLciKO30&#34;&gt;mini-documentary about dwarf fortress&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Honorable mentions&lt;/strong&gt;: &lt;a href=&#34;https://youtu.be/XXRBLyQQ78A&#34;&gt;Only Slightly Exagerated: Travel Origon&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/HqOqNfwQygc&#34;&gt;Japanese vs. German Knives&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/pZtIDeNk2aI&#34;&gt;Worlds Smalles Sushi&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/bGR2qXTPmJc&#34;&gt;Omakase Japan&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/OCmolso_LrQ&#34;&gt;Best of the Worst: Suburban Sasquatch&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/94-k9emqRBY&#34;&gt;descriptive mechanics&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/go5Au01Jrvs&#34;&gt;Hadley Wickham: Whole Game&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/atiYXm7JZv0&#34;&gt;Machine Learning with R and Tensorflow&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;research&#34;&gt;Research&lt;/h2&gt;
+
+&lt;p&gt;Was involved in:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Karsten Schulz, Reinhard Burgholzer, Daniel Klotz, Johannes Wesemann, and Mathew Herrnegger (2018): &lt;a href=&#34;https://www.hydrol-earth-syst-sci.net/22/2607/2018/&#34;&gt;Demonstrating the unit hydrograph and flow routing processes involving active student participation – a university lecture experiment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Frederik Kratzert, Daniel Klotz, Claire Brenner, Karsten Schulz, Mathew Herrnegger (2018):&lt;a href=&#34;https://eartharxiv.org/qv5jz&#34;&gt;Rainfall-Runoff modelling using Long-Short-Term-Memory (LSTM) networks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://distill.pub/2017/aia/&#34;&gt;&lt;em&gt;Using Artiﬁcial Intelligence to Augment Human Intelligence&lt;/em&gt; (2017)&lt;/a&gt; by &lt;a href=&#34;http://shancarter.com/&#34;&gt;Shan Carter&lt;/a&gt; and &lt;a href=&#34;http://michaelnielsen.org/&#34;&gt;Michael Nielsen&lt;/a&gt; came out in Winter and I read it back then. Recently revisited it and I still love it.&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;img src=&#34;/note/2018-05-11-favourite-things-spring-2018_files/uaiah.png&#34; alt=&#34;&#34; width=&#34;90%&#34;/&gt;
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/decodyng&#34;&gt;Cody M. Wild&lt;/a&gt; wrote some of the best medium articles about &lt;a href=&#34;https://towardsdatascience.com/@cody.marie.wild&#34;&gt;machine learning&lt;/a&gt; out there (sspecially the series on autoencoders: &lt;a href=&#34;https://towardsdatascience.com/what-a-disentangled-net-we-weave-representation-learning-in-vaes-pt-1-9e5dbc205bd1&#34;&gt;pt.1&lt;/a&gt; and &lt;a href=&#34;https://towardsdatascience.com/with-great-power-comes-poor-latent-codes-representation-learning-in-vaes-pt-2-57403690e92b&#34;&gt;pt.2&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1803.10122&#34;&gt;&lt;em&gt;World Models&lt;/em&gt; (2018)&lt;/a&gt; by the adorable &lt;a href=&#34;https://twitter.com/hardmaru&#34;&gt;David Ha&lt;/a&gt; and the mighty &lt;a href=&#34;http://people.idsia.ch/~juergen/&#34;&gt;Jürgen Schmidhuber&lt;/a&gt; came out and it is great. It is not only very interesting topic-wise, but also one of the most well written papers I came across. Heck, it even has it&amp;rsquo;s &lt;a href=&#34;https://t.co/diRMWBqpys&#34;&gt;own (interactive) website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Revisited &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/0022169483902081&#34;&gt;Vít Klemeš (1983): &lt;em&gt;Conceptualization and scale in hydrology&lt;/em&gt;&lt;/a&gt;. The amount of insight/foresight of Klemeš remains awe-inspiring.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://colingray.me/wp-content/uploads/2018_Grayetal_CHI_DarkPatternsUXDesign.pdf&#34;&gt;This&lt;/a&gt; is a realy nice read about &lt;a href=&#34;https://darkpatterns.org/&#34;&gt;&lt;em&gt;dark patterns&lt;/em&gt;&lt;/a&gt; in UX design (If you don&amp;rsquo;t know what dark patterns are, there is also a nice &lt;a href=&#34;https://www.youtube.com/watch?v=kxkrdLI6e6M&#34;&gt;Nerdwriter video&lt;/a&gt; available).&lt;/p&gt;
+
+&lt;p&gt;In defense of toy models: &lt;a href=&#34;https://hips.seas.harvard.edu/blog/2014/09/02/which-research-results-will-generalize/&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;http://worrydream.com/SimulationAsAPracticalTool/&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;http://cognitivemedium.com/tat/index.html&#34;&gt;3&lt;/a&gt;, and most importantly &lt;a href=&#34;https://youtu.be/2v3ANzWkPVI&#34;&gt;4&lt;/a&gt; (last one is a video).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Honorable mentions&lt;/strong&gt;: &lt;a href=&#34;https://arxiv.org/abs/1802.08786&#34;&gt;Syntax-Directed Variational Autoencoder for Structured Data&lt;/a&gt;, &lt;a href=&#34;https://arxiv.org/abs/1506.02078&#34;&gt;Visualizing and Understanding Recurrent Networks&lt;/a&gt;, &lt;a href=&#34;https://www.hydrol-earth-syst-sci.net/21/4323/2017/&#34;&gt;Toward seamless hydrologic predictions across spatial scales&lt;/a&gt;, &lt;a href=&#34;https://www.hydrol-earth-syst-sci.net/21/3427/2017/&#34;&gt;The evolution of process-based hydrologic models: historical challenges and the collective quest for physical realism&lt;/a&gt;, &lt;a href=&#34;https://www.hydrol-earth-syst-sci.net/21/3701/2017/&#34;&gt;Scaling, similarity, and the fourth paradigm for hydrology&lt;/a&gt;.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -28,7 +90,20 @@ Ralph Hammer started an amazing series of articles about learning to draw (and b
       <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/note/2018/04/media_diet/</guid>
-      <description>John Le Carré - The Pigeon Tunnel. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive. Matthias Adolfosn. Playfull and witty illustration. Can’t get enough of them. Kosko - Neural Networks and Fuzzy Systems: An oldie. Intersting to get a grasp of the historical developement of artifical neural networks and fuzzy logic. Song of the Sea. &amp;lt;3 Patterson. Don’t get fooled by the trailer. The movie is very slow; almost meditative.</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theguardian.com/books/2016/sep/11/the-pigeon-tunnel-john-le-carre-review&#34;&gt;John Le Carré - The Pigeon Tunnel&lt;/a&gt;. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ello.co/mattiasadolfsson&#34;&gt;Matthias Adolfosn&lt;/a&gt;. Playfull and witty illustration. Can’t get enough of them.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://books.google.at/books/about/Neural_Networks_and_Fuzzy_Systems.html?id=fbJQAAAAMAAJ&amp;amp;redir_esc=y&#34;&gt;Kosko - Neural Networks and Fuzzy Systems&lt;/a&gt;: An oldie. Intersting to get a grasp of the historical developement of artifical neural networks and fuzzy logic.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/VrhoOzW8oF8&#34;&gt;Song of the Sea&lt;/a&gt;. &amp;lt;3&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/m8pGJBgiiDU&#34;&gt;Patterson&lt;/a&gt;. Don’t get fooled by the trailer. The movie is very slow; almost meditative. Watched it three times now, and i like it more with every viewing.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Bb1_zlrjo1c&#34;&gt;Youtube: Inverse Problems with TensorFlow&lt;/a&gt;. I don’t like fusion-power as a technology, but I like thinking about inverse problems. Pretty nice presentation!&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/hbzGO_Qonu0&#34;&gt;Youtube: How to keep players engaged (without being evil)&lt;/a&gt;. “&lt;em&gt;Why do some games keep us rapt and entertained until the closing credits, while others fizzle out and end up on our pile of shame? Let’s look at some key ways developers can keep players interested (without being evil about it)&lt;/em&gt;”&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLL4iOQ3Gw7L9eyCJ8EnkZgO0p1AzdrRqN&#34;&gt;Youtube: 1LIVE Chilly Gonzales - Pop Music Masterclass&lt;/a&gt;. Chilly Gonzales gives some intuitions about how pop-music works.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/owseTngZFMI&#34;&gt;Youtube: Forging a knive from alufoil&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/user/Nerdwriter1&#34;&gt;Youtube: Nerdwriter&lt;/a&gt;. The Renaissance Man of youtube.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/pbRJtP8_AeE&#34;&gt;Youtube: New Media Linguistics&lt;/a&gt;. Notes on language creation/invention, by David Peterson (Inventor of the Dorthraki language from GoT)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
     <item>
@@ -37,9 +112,37 @@ Ralph Hammer started an amazing series of articles about learning to draw (and b
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/note/2018/01/using-if-else-with-pipes/</guid>
-      <description>A nice way to use if else within pipes is (see here):
-library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;foo&amp;quot; Alternatively, the when function from the purrr package can be used:
-library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, . &amp;gt; 0.5 ~ &amp;quot;bar&amp;quot;)  ## [1] &amp;quot;bar&amp;quot; A nice way to use a vector of inputs is provided by the case_when function from dplyr together with mutate or transmute:</description>
+      <description>&lt;p&gt;A nice way to use if else within pipes is (see &lt;a href=&#34;https://stackoverflow.com/questions/30604107/r-conditional-evaluation-when-using-the-pipe-operator&#34;&gt;here&lt;/a&gt;):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(magrittr)
+runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;}&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;foo&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alternatively, the &lt;code&gt;when&lt;/code&gt; function from the &lt;code&gt;purrr&lt;/code&gt; package can be used:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(purrr, quietly = TRUE, warn.conflicts = FALSE)
+runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, 
+                         . &amp;gt;  0.5 ~ &amp;quot;bar&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;bar&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A nice way to use a vector of inputs is provided by the &lt;code&gt;case_when&lt;/code&gt; function from &lt;code&gt;dplyr&lt;/code&gt; together with &lt;code&gt;mutate&lt;/code&gt; or &lt;code&gt;transmute&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(dplyr,  quietly = TRUE, warn.conflicts = FALSE)
+library(tibble, quietly = TRUE, warn.conflicts = FALSE)
+runif(100) %&amp;gt;% 
+  magrittr::is_greater_than(0.5) %&amp;gt;% 
+  tibble::tibble(a = .) %&amp;gt;% 
+  dplyr::transmute(., foobar = case_when(a &amp;lt;= 0.5 ~ &amp;quot;fu&amp;quot;, a &amp;gt;  0.5 ~ &amp;quot;bar&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 100 x 1
+##    foobar
+##    &amp;lt;chr&amp;gt; 
+##  1 fu    
+##  2 fu    
+##  3 fu    
+##  4 fu    
+##  5 fu    
+##  6 fu    
+##  7 fu    
+##  8 bar   
+##  9 fu    
+## 10 fu    
+## # ... with 90 more rows&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
@@ -48,8 +151,42 @@ library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/note/2018/01/feedback-with-tribbles/</guid>
-      <description>The ordering and display of tables in Rmarkdown (aka data.frames or tibbles) has become so good. I actually prefer it over using print right now. Especially, because I can format in in an intuitive way by using the tribble() function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:
-library(tibble) ## Warning: Paket &amp;#39;tibble&amp;#39; wurde unter R Version 3.</description>
+      <description>&lt;p&gt;The ordering and display of tables in &lt;em&gt;Rmarkdown&lt;/em&gt; (aka &lt;code&gt;data.frames&lt;/code&gt; or &lt;code&gt;tibbles&lt;/code&gt;) has become so good. I actually prefer it over using &lt;code&gt;print&lt;/code&gt; right now. Especially, because I can format in in an intuitive way by using the &lt;code&gt;tribble()&lt;/code&gt; function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tibble)
+
+number_iterations &amp;lt;- 1000
+stoping_criterion &amp;lt;- -1
+stepsize &amp;lt;- 0.5
+sensitivity &amp;lt;- 0.2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;To give a (nicely formatted) summary in the past I would have done something like this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(pasta)
+
+print(&amp;quot;number of iterations:&amp;quot; %&amp;amp;&amp;amp;% number_iterations)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;number of iterations: 1000&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;quot;stoping criterion:&amp;quot; %&amp;amp;&amp;amp;% stoping_criterion)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;stoping criterion: -1&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;quot;step size:&amp;quot; %&amp;amp;&amp;amp;% stepsize)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;step size: 0.5&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(&amp;quot;sensitivity:&amp;quot; %&amp;amp;&amp;amp;% sensitivity)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;sensitivity: 0.2&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now, the tribble functions allows me to order the feedback in a way that is nicely formatted in code and in display:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;info &amp;lt;- tribble(
+  ~criterion,             ~value,
+  &amp;quot;number of iterations&amp;quot;, number_iterations,
+  &amp;quot;stoping criterion&amp;quot;,    stoping_criterion,
+  &amp;quot;step size&amp;quot;,            stepsize,
+  &amp;quot;sensitivity&amp;quot;,          sensitivity
+)
+
+info&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 4 x 2
+##   criterion              value
+##   &amp;lt;chr&amp;gt;                  &amp;lt;dbl&amp;gt;
+## 1 number of iterations  1000  
+## 2 stoping criterion       -1  
+## 3 step size                0.5
+## 4 sensitivity              0.2&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>
