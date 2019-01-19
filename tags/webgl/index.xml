@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>webgl on Daniels page</title>
-    <link>/tags/webgl/index.xml</link>
-    <description>Recent content in webgl on Daniels page</description>
+    <title>webGL on Daniels page</title>
+    <link>/tags/webgl/</link>
+    <description>Recent content in webGL on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="/tags/webgl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/webgl/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>p5js: 3D Test</title>
@@ -14,61 +17,9 @@
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/note/2017/12/p5js-3d-test/</guid>
-      <description>&lt;p&gt;Testing the usage of &lt;code&gt;webGL&lt;/code&gt; in &lt;code&gt;p5js&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Adopted from the &lt;a href=&#34;https://youtu.be/Gi9PuLHlzzI&#34;&gt;coding train&lt;/a&gt;
-(who adopted it from &lt;a href=&#34;https://beesandbombs.tumblr.com/&#34;&gt;bees &amp;amp; bombs&lt;/a&gt;).&lt;/p&gt;
-
-&lt;div id=&#34;sketch-holder&#34; align =&#34;center&#34;&gt;&lt;/div&gt;
-
-&lt;script src=&#34;https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.js&#34;&gt;&lt;/script&gt;
-&lt;script&gt;
-// actual script ---------------------------------------------------------------
-
-let angle = 0;
-let w = 35;
-let ma;
-let maxD
-
-function setup() {
-  let canvas = createCanvas(400, 400, WEBGL);
-  canvas.parent(&#39;sketch-holder&#39;);
-  ma = atan(cos(QUARTER_PI));
-  maxD = dist(0,0, 200,200)
-}
-
-function draw() {
-  background(&#34;#FFF&#34;);
-  ortho(-400, 400, -400, 400, 0, 1000);
-  rotateX(-QUARTER_PI);
-  rotateY(ma);
-
-
-  let offset = 0;
-  for (let z = 0; z &lt; height; z += w) {
-    for( let x = 0; x &lt; width; x += w ) {
-      push();
-      rotateZ(frameCount * 0.0001);
-      rotateX(frameCount * 0.005);
-      rotateY(frameCount * 0.01);
-      let d = dist(x, z, width/2, height /2);
-      let offset = map(d, 0, maxD, -PI , PI);
-      let a = angle + offset;
-      let h = map(sin(a), -1, 1, 100, 300);
-      let h2 = map(sin(a), -1, 1, 300, 100);
-      translate( x - width/2, 0, z - height/2);
-      normalMaterial();
-      box(w - (2-h2/5), h, w - (2-h2/5))
-
-
-      pop();
-    }
-  }
-
-  angle -= 0.25;
-}
-&lt;/script&gt;
-</description>
+      <description>Testing the usage of webGL in p5js.
+Adopted from the coding train (who adopted it from bees &amp;amp; bombs).
+   // actual script --------------------------------------------------------------- let angle = 0; let w = 35; let ma; let maxD function setup() { let canvas = createCanvas(400, 400, WEBGL); canvas.parent(&#39;sketch-holder&#39;); ma = atan(cos(QUARTER_PI)); maxD = dist(0,0, 200,200) } function draw() { background(&#34;#FFF&#34;); ortho(-400, 400, -400, 400, 0, 1000); rotateX(-QUARTER_PI); rotateY(ma); let offset = 0; for (let z = 0; z </description>
     </item>
     
   </channel>

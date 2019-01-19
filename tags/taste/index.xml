@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>taste on Daniels page</title>
-    <link>/tags/taste/index.xml</link>
+    <link>/tags/taste/</link>
     <description>Recent content in taste on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="/tags/taste/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/taste/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Favourites: Spring 2018</title>
@@ -14,74 +17,9 @@
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/note/2018/05/favourite-things-spring-2018/</guid>
-      <description>
-
-&lt;p&gt;Here are some of my favourites from Spring 2018.&lt;/p&gt;
-
-&lt;h2 id=&#34;www&#34;&gt;www&lt;/h2&gt;
-
-&lt;p&gt;I build a &lt;a href=&#34;https://twitter.com/botski_kaseman&#34;&gt;twitter-bot&lt;/a&gt; with &lt;a href=&#34;https://cheapbotsdonequick.com/&#34;&gt;&lt;em&gt;Cheap Bots, Done Quick&lt;/em&gt;&lt;/a&gt;. It tweets proverbs, heuristics, fallacies and biases in the wayne of the seminal work of Tversky and Kahneman, Gerd Gigerenzer &amp;amp; co.
-&lt;center&gt;
-&lt;a href=&#34;https://twitter.com/botski_kaseman&#34;&gt;&lt;img src=&#34;/note/2018-05-11-favourite-things-spring-2018_files/logo_botski.jpg&#34; alt=&#34;botksi logo&#34; align=&#34;center&#34; width=&#34;20%&#34;/&gt;&lt;/a&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/ralphammer&#34;&gt;Ralph Hammer&lt;/a&gt; started an amazing series of articles about learning to draw (and by implication see). Starting with an exposition about &lt;a href=&#34;https://medium.com/personal-growth/seeing-vs-reading-29365d4540e2&#34;&gt;seeing vs. reading&lt;/a&gt;. Now, why he considers &amp;ldquo;writing software&amp;rdquo; as a low-dopamine activity is beyond me. Be it as it may, the highlight throughout the arcitles are the witty and insightful animations, which underpin the writing. Here an example:&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;
-&lt;img src=&#34;/note/2018-05-11-favourite-things-spring-2018_files/reading-vs-seeing.gif&#34; alt=&#34;animation example&#34; /&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;I rediscovered &lt;a href=&#34;https://www.instapaper.com/&#34;&gt;instapaper&lt;/a&gt; through reading &lt;a href=&#34;https://jaan.io/info-overload/&#34;&gt;this&lt;/a&gt; excellent article about life-hacks. Read a nice &lt;a href=&#34;http://www.interactiongreen.com/chapter-1-power-zero/&#34;&gt;essay about the power of less&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://countercomplex.blogspot.co.at/&#34;&gt;Countercomplex&lt;/a&gt;, aka Viznut, is blogging (again). Topics include (but are not limited to) demoscene, algorithmic arts, and  digital degrowth.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Honorable mentions&lt;/strong&gt;: &lt;a href=&#34;https://scholar.google.at/&#34;&gt;google scholar&lt;/a&gt;, &lt;a href=&#34;https://whereisscihub.now.sh/&#34;&gt;where is sci-hub now&lt;/a&gt;, &lt;a href=&#34;http://phdp.github.io/blog.html&#34;&gt;Philippe Desjardins-Proulx&lt;/a&gt;, &lt;a href=&#34;https://archive.org/details/mundussubterrane02kirc&#34;&gt;archive.org: Mundus Subterraneus&lt;/a&gt;, &lt;a href=&#34;https://en.wikipedia.org/wiki/Grammar_induction&#34;&gt;wiki: Grammar Induction&lt;/a&gt;, &lt;a href=&#34;https://magenta.tensorflow.org/music-vae&#34;&gt;musicVAE&lt;/a&gt;, &lt;a href=&#34;http://www.joelsimon.net/corals.html&#34;&gt;Evolving Alien Corals&lt;/a&gt;, &lt;a href=&#34;https://www.nationalgeographic.com/archaeology-and-history/magazine/2017/01-02/babylon-mesopotamia-ancient-city-iraq/&#34;&gt;Beautiful Babylon: Jewel of the Ancient World&lt;/a&gt;, &lt;a href=&#34;https://medium.com/@ben_fry/reconnecting-china-29c3752ab9a0&#34;&gt;Reconnecting China&lt;/a&gt;, &lt;a href=&#34;http://rocs.hu-berlin.de/explorables/&#34;&gt;Complexity Explorables&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;video&#34;&gt;Video&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/user/Nerdwriter1&#34;&gt;Nerdwriter&lt;/a&gt; single-handedly changed my opinion about youtube and teached me what a video essay is. Special recommendations: &lt;a href=&#34;https://youtu.be/9wUePyAqPuk&#34;&gt;&amp;ldquo;I Drunkenly Paid for 17 Federal Programs&amp;rdquo;&lt;/a&gt; and &lt;a href=&#34;https://youtu.be/uBUnmdd5-iA&#34;&gt;&amp;ldquo;Mr. Bean Is A Master Of Physical Comedy&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Tadashi Tokieda: &lt;a href=&#34;https://youtu.be/D15L0E1zHJ0&#34;&gt;Science from a Sheet of Paper&lt;/a&gt;. The blurb reads: &lt;em&gt;By curling, folding, crumpling, sometimes tearing paper, Tadashi Tokieda will explore a variety of unexpected phenomena - from geometry and the traditional art of origami, to magic tricks and engineering of materials.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;
-&lt;img src=&#34;/note/2018-05-11-favourite-things-spring-2018_files/t2-science-from-paper.png&#34; alt=&#34;t2 - science from paper&#34; width=&#34;80%&#34;/&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://woodblock.com/&#34;&gt;David Bull&lt;/a&gt; is a Tokyo-based wooblock printer and probably one of the most wholesome person on earth. His &lt;a href=&#34;https://www.youtube.com/user/seseragistudio/videos&#34;&gt;youtube-channel&lt;/a&gt; is full of information about a subject I know almost nothing about. If nothing else, check out his &lt;a href=&#34;https://www.youtube.com/playlist?list=PLK-Wicsj5rAbhRUOqhI85FZAN7df9KlZv&#34;&gt;&lt;em&gt;&amp;ldquo;David&amp;rsquo;s Choice&amp;rdquo;&lt;/em&gt;&lt;/a&gt; series. In it he introduces &amp;ldquo;various things that he finds interesting in the world of traditional Japanese woodblock prints&amp;rdquo;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/channel/UCg3qsVzHeUt5_cPpcRtoaJQ&#34;&gt;This guy&lt;/a&gt; makes knive out of everything (e.g. &lt;a href=&#34;https://youtu.be/MeNR0guNn70&#34;&gt;noodles&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://www.youtube.com/channel/UCR0SIzN1XnqQfHMoSXGWxlQ/featured&#34;&gt;&lt;em&gt;On Doubt&lt;/em&gt;&lt;/a&gt; interviews are on point. Especially the &lt;a href=&#34;https://youtu.be/HtKmLciKO30&#34;&gt;mini-documentary about dwarf fortress&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Honorable mentions&lt;/strong&gt;: &lt;a href=&#34;https://youtu.be/XXRBLyQQ78A&#34;&gt;Only Slightly Exagerated: Travel Origon&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/HqOqNfwQygc&#34;&gt;Japanese vs. German Knives&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/pZtIDeNk2aI&#34;&gt;Worlds Smalles Sushi&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/bGR2qXTPmJc&#34;&gt;Omakase Japan&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/OCmolso_LrQ&#34;&gt;Best of the Worst: Suburban Sasquatch&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/94-k9emqRBY&#34;&gt;descriptive mechanics&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/go5Au01Jrvs&#34;&gt;Hadley Wickham: Whole Game&lt;/a&gt;, &lt;a href=&#34;https://youtu.be/atiYXm7JZv0&#34;&gt;Machine Learning with R and Tensorflow&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;research&#34;&gt;Research&lt;/h2&gt;
-
-&lt;p&gt;Was involved in:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Karsten Schulz, Reinhard Burgholzer, Daniel Klotz, Johannes Wesemann, and Mathew Herrnegger (2018): &lt;a href=&#34;https://www.hydrol-earth-syst-sci.net/22/2607/2018/&#34;&gt;Demonstrating the unit hydrograph and flow routing processes involving active student participation – a university lecture experiment&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Frederik Kratzert, Daniel Klotz, Claire Brenner, Karsten Schulz, Mathew Herrnegger (2018):&lt;a href=&#34;https://eartharxiv.org/qv5jz&#34;&gt;Rainfall-Runoff modelling using Long-Short-Term-Memory (LSTM) networks&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://distill.pub/2017/aia/&#34;&gt;&lt;em&gt;Using Artiﬁcial Intelligence to Augment Human Intelligence&lt;/em&gt; (2017)&lt;/a&gt; by &lt;a href=&#34;http://shancarter.com/&#34;&gt;Shan Carter&lt;/a&gt; and &lt;a href=&#34;http://michaelnielsen.org/&#34;&gt;Michael Nielsen&lt;/a&gt; came out in Winter and I read it back then. Recently revisited it and I still love it.&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;
-&lt;img src=&#34;/note/2018-05-11-favourite-things-spring-2018_files/uaiah.png&#34; alt=&#34;&#34; width=&#34;90%&#34;/&gt;
-&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/decodyng&#34;&gt;Cody M. Wild&lt;/a&gt; wrote some of the best medium articles about &lt;a href=&#34;https://towardsdatascience.com/@cody.marie.wild&#34;&gt;machine learning&lt;/a&gt; out there (sspecially the series on autoencoders: &lt;a href=&#34;https://towardsdatascience.com/what-a-disentangled-net-we-weave-representation-learning-in-vaes-pt-1-9e5dbc205bd1&#34;&gt;pt.1&lt;/a&gt; and &lt;a href=&#34;https://towardsdatascience.com/with-great-power-comes-poor-latent-codes-representation-learning-in-vaes-pt-2-57403690e92b&#34;&gt;pt.2&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://arxiv.org/abs/1803.10122&#34;&gt;&lt;em&gt;World Models&lt;/em&gt; (2018)&lt;/a&gt; by the adorable &lt;a href=&#34;https://twitter.com/hardmaru&#34;&gt;David Ha&lt;/a&gt; and the mighty &lt;a href=&#34;http://people.idsia.ch/~juergen/&#34;&gt;Jürgen Schmidhuber&lt;/a&gt; came out and it is great. It is not only very interesting topic-wise, but also one of the most well written papers I came across. Heck, it even has it&amp;rsquo;s &lt;a href=&#34;https://t.co/diRMWBqpys&#34;&gt;own (interactive) website&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Revisited &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/0022169483902081&#34;&gt;Vít Klemeš (1983): &lt;em&gt;Conceptualization and scale in hydrology&lt;/em&gt;&lt;/a&gt;. The amount of insight/foresight of Klemeš remains awe-inspiring.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://colingray.me/wp-content/uploads/2018_Grayetal_CHI_DarkPatternsUXDesign.pdf&#34;&gt;This&lt;/a&gt; is a realy nice read about &lt;a href=&#34;https://darkpatterns.org/&#34;&gt;&lt;em&gt;dark patterns&lt;/em&gt;&lt;/a&gt; in UX design (If you don&amp;rsquo;t know what dark patterns are, there is also a nice &lt;a href=&#34;https://www.youtube.com/watch?v=kxkrdLI6e6M&#34;&gt;Nerdwriter video&lt;/a&gt; available).&lt;/p&gt;
-
-&lt;p&gt;In defense of toy models: &lt;a href=&#34;https://hips.seas.harvard.edu/blog/2014/09/02/which-research-results-will-generalize/&#34;&gt;1&lt;/a&gt;, &lt;a href=&#34;http://worrydream.com/SimulationAsAPracticalTool/&#34;&gt;2&lt;/a&gt;, &lt;a href=&#34;http://cognitivemedium.com/tat/index.html&#34;&gt;3&lt;/a&gt;, and most importantly &lt;a href=&#34;https://youtu.be/2v3ANzWkPVI&#34;&gt;4&lt;/a&gt; (last one is a video).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Honorable mentions&lt;/strong&gt;: &lt;a href=&#34;https://arxiv.org/abs/1802.08786&#34;&gt;Syntax-Directed Variational Autoencoder for Structured Data&lt;/a&gt;, &lt;a href=&#34;https://arxiv.org/abs/1506.02078&#34;&gt;Visualizing and Understanding Recurrent Networks&lt;/a&gt;, &lt;a href=&#34;https://www.hydrol-earth-syst-sci.net/21/4323/2017/&#34;&gt;Toward seamless hydrologic predictions across spatial scales&lt;/a&gt;, &lt;a href=&#34;https://www.hydrol-earth-syst-sci.net/21/3427/2017/&#34;&gt;The evolution of process-based hydrologic models: historical challenges and the collective quest for physical realism&lt;/a&gt;, &lt;a href=&#34;https://www.hydrol-earth-syst-sci.net/21/3701/2017/&#34;&gt;Scaling, similarity, and the fourth paradigm for hydrology&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>Here are some of my favourites from Spring 2018.
+www I build a twitter-bot with Cheap Bots, Done Quick. It tweets proverbs, heuristics, fallacies and biases in the wayne of the seminal work of Tversky and Kahneman, Gerd Gigerenzer &amp;amp; co.   
+Ralph Hammer started an amazing series of articles about learning to draw (and by implication see). Starting with an exposition about seeing vs. reading. Now, why he considers &amp;ldquo;writing software&amp;rdquo; as a low-dopamine activity is beyond me.</description>
     </item>
     
   </channel>

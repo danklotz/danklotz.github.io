@@ -11,7 +11,7 @@
     
     
     <item>
-      <title>Links</title>
+      <title>links</title>
       <link>/categories/links/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -20,16 +20,16 @@
     </item>
     
     <item>
-      <title>Memos</title>
+      <title>memos</title>
       <link>/categories/memos/</link>
-      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/memos/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Sketches</title>
+      <title>sketches</title>
       <link>/categories/sketches/</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -38,7 +38,7 @@
     </item>
     
     <item>
-      <title>Tinkering</title>
+      <title>tinkering</title>
       <link>/categories/tinkering/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       

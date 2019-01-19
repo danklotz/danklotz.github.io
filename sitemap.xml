@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/note/2018/11/empiricalcausal/</loc>
+    <loc>/note/2018/11/empirical-causal/</loc>
+    <lastmod>2018-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/2018/11/empirical-causal/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -107,53 +113,17 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/</loc>
   </url>
   
   <url>
-    <loc>/note/</loc>
-    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/open_learning/</loc>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/creativecoding/</loc>
-    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/data-science/</loc>
     <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/favourites/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -166,6 +136,62 @@
   <url>
     <loc>/tags/javascript/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/note/</loc>
+    <lastmod>2018-11-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/open_learning/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/programming/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tidy-evaluation/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/tidyverse/</loc>
+    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/creativecoding/</loc>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/favourites/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -189,8 +215,13 @@
   
   <url>
     <loc>/categories/memos/</loc>
-    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+    <lastmod>2018-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-11-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -202,18 +233,6 @@
   <url>
     <loc>/tags/progamming/</loc>
     <lastmod>2017-12-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/programming/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -244,18 +263,6 @@
   <url>
     <loc>/tags/taste/</loc>
     <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tidy-evaluation/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tidyverse/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
