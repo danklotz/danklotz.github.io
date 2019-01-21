@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Quotes: Techniques</title>
+      <title>Qt: Techniques</title>
       <link>/note/2018/11/empirical-causal/</link>
       <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
       
@@ -22,7 +22,7 @@ Abstract  In the situations typically encountered in the social sciences the met
     </item>
     
     <item>
-      <title>Quotes: Empirical Fit</title>
+      <title>Qt: Empirical Fit</title>
       <link>/note/2018/11/empirical-causal/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
@@ -33,7 +33,7 @@ Abstract  In the situations typically encountered in the social sciences the met
     </item>
     
     <item>
-      <title>Quotes: Sunset Salvo</title>
+      <title>Qt: Sunset Salvo</title>
       <link>/note/2018/10/sunset-salvo/</link>
       <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
       
@@ -85,7 +85,7 @@ Ralph Hammer started an amazing series of articles about learning to draw (and b
     </item>
     
     <item>
-      <title>Using if else with pipes</title>
+      <title>if else pipes</title>
       <link>/note/2018/01/using-if-else-with-pipes/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
@@ -106,13 +106,13 @@ library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr
     </item>
     
     <item>
-      <title>Feedback with tribbles</title>
+      <title>Feedback tribbles</title>
       <link>/note/2018/01/feedback-with-tribbles/</link>
       <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/note/2018/01/feedback-with-tribbles/</guid>
       <description>The ordering and display of tables in Rmarkdown (aka data.frames or tibbles) has become so good. I actually prefer it over using print right now. Especially, because I can format in in an intuitive way by using the tribble() function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:
-library(tibble) ## Warning: Paket &amp;#39;tibble&amp;#39; wurde unter R Version 3.</description>
+library(tibble) number_iterations &amp;lt;- 1000 stoping_criterion &amp;lt;- -1 stepsize &amp;lt;- 0.</description>
     </item>
     
     <item>
@@ -147,7 +147,7 @@ Adopted from the coding train (who adopted it from bees &amp;amp; bombs).
     </item>
     
     <item>
-      <title>More tidy evaluation</title>
+      <title>tidy evaluation 2</title>
       <link>/note/2017/12/bang-bang-bang/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       

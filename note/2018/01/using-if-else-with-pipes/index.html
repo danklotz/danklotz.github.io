@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Using if else with pipes | Daniels page</title>
+    <title>if else pipes | Daniels page</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     <div class = "headhead"></div>
@@ -29,7 +29,7 @@
 
 <div class="article-meta">
 
-<h1><span class="title">Using if else with pipes</span></h1>
+<h1><span class="title">if else pipes</span></h1>
 
 
 </div>
@@ -47,7 +47,8 @@ runif(1) %&gt;% magrittr::is_greater_than(0.5) %&gt;% {if(.) &quot;foo&quot; els
 runif(1) %&gt;% purrr::when(. &lt;= 0.5 ~ &quot;foo&quot;, 
                          . &gt;  0.5 ~ &quot;bar&quot;) </code></pre>
 <pre><code>## [1] &quot;bar&quot;</code></pre>
-<p>A nice way to use a vector of inputs is provided by the <code>case_when</code> function from <code>dplyr</code> together with <code>mutate</code> or <code>transmute</code>:</p>
+<p>A nice way to use a vector of inputs is provided by the <code>case_when</code> function
+from <code>dplyr</code> together with <code>mutate</code> or <code>transmute</code>:</p>
 <pre class="r"><code>library(dplyr,  quietly = TRUE, warn.conflicts = FALSE)
 library(tibble, quietly = TRUE, warn.conflicts = FALSE)
 runif(100) %&gt;% 
@@ -57,17 +58,17 @@ runif(100) %&gt;%
 <pre><code>## # A tibble: 100 x 1
 ##    foobar
 ##    &lt;chr&gt; 
-##  1 fu    
+##  1 bar   
 ##  2 fu    
-##  3 fu    
+##  3 bar   
 ##  4 fu    
 ##  5 fu    
 ##  6 fu    
 ##  7 fu    
 ##  8 bar   
 ##  9 fu    
-## 10 fu    
-## # ... with 90 more rows</code></pre>
+## 10 bar   
+## # … with 90 more rows</code></pre>
 
 </main>
 
