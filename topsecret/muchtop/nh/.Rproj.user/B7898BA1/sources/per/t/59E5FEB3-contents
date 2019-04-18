@@ -1,0 +1,58 @@
+## Basic Configuration
+
+baseurl = "https://shenoybr.github.io/hugo-goa-demo/"
+builddrafts = false
+canonifyurls = false
+languageCode = "en-US"
+
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+
+author = "Daniel Klotz"
+title = "Neural Hydrlogy"
+
+theme = "hugo-goa"
+
+## Hugo Built-in Features
+#disqusShortname = "https-shenoybr-github-io-hugo-goa-demo" # Comment out to disable Disqus.
+googleAnalytics = "XYZ"
+enableRobotsTXT = true
+
+## Site Settings
+[params]
+author = ""
+intro = "Rainfall-Runoff Modeling with Neural Networks"
+description = "Publications, presentations, posters and ohter resources about rainfall-runoff modeling with neural networks"
+authorimage = "neural-hyd-head.png"
+dateformat = "Jan 2, 2006"
+
+## Site Meta Settings
+[params.meta]
+description = "Simple minimalist theme"
+keywords = "minimalist,blog,goa,hugo,developer"
+
+
+## Extras
+[params.extra]
+copyright = "© 2018. Daniel Klotz & Frederik Kratzert. [Some Rights Reserved](http://creativecommons.org/licenses/by/3.0/)."
+poweredby = false
+highlightjs = true
+socialmarkup = false
+
+## Main Menu
+[[menu.main]]
+    name = "our work"
+    weight = 100
+    identifier = "blog"
+    url = "/blog/"
+[[menu.main]]
+    name = "related"
+    identifier = "related"
+    weight = 200
+    url = "/related/index/"
+[[menu.main]]
+    name = "about"
+    identifier = "about"
+    weight = 300
+    url = "/about/index/"
