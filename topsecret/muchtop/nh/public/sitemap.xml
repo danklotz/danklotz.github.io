@@ -2,94 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/hugo-goa-demo/about/index/</loc>
+    <loc>/about/index/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/related/index/</loc>
+    <loc>/related/index/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/blog/first/</loc>
+    <loc>/blog/first/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/tags/#1/</loc>
-    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/hugo-goa-demo/tags/about/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/hugo-goa-demo/categories/about/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/hugo-goa-demo/about/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/hugo-goa-demo/blog/</loc>
+    <loc>/tags/#1/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/categories/</loc>
+    <loc>/tags/about/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/tags/hess/</loc>
+    <loc>/categories/about/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/tags/lstm/</loc>
+    <loc>/categories/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hess/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/hugo-goa-demo/categories/paper/</loc>
+    <loc>/tags/lstm/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/categories/related/</loc>
+    <loc>/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/related/</loc>
+    <loc>/categories/paper/</loc>
+    <lastmod>2016-10-02T15:59:13-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/related/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/hugo-goa-demo/tags/</loc>
+    <loc>/related/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
     <lastmod>2016-10-02T15:59:13-04:00</lastmod>
     <priority>0</priority>
   </url>
