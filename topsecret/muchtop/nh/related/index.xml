@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Relateds on Neural Hydrlogy</title>
-    <link>/hugo-goa-demo/related/</link>
+    <link>/topsecret/muchtop/nh/related/</link>
     <description>Recent content in Relateds on Neural Hydrlogy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="/hugo-goa-demo/related/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/topsecret/muchtop/nh/related/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Related Work</title>
-      <link>/hugo-goa-demo/related/index/</link>
+      <link>/topsecret/muchtop/nh/related/index/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       
-      <guid>/hugo-goa-demo/related/index/</guid>
+      <guid>/topsecret/muchtop/nh/related/index/</guid>
       <description> Notable work by others, e.g.:
 Machine Learning  Sepp Hochreiterm Jürgen Schmidhuber (1997): Long short-term memory. Neural Computation. 9 (8): 1735–1780. doi:10.1162/neco.1997.9.8.1735.  Maybe also with short comment from our side.   Hydrology  Chaopeng Shen (2018): A transdisciplinary review of deep learning research and its relevance for water resources scientists. Water Resources Research 54, no. 11 (2018): 8558-8593.  Maybe also with short comment from our side.   Companies  Google Allen  </description>
     </item>
