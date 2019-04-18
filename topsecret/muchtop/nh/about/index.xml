@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Neural Hydrology</title>
-    <link>/topsecret/muchtop/nh/about/</link>
+    <link>/about/</link>
     <description>Recent content in Abouts on Neural Hydrology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
     
-	<atom:link href="/topsecret/muchtop/nh/about/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/about/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>/topsecret/muchtop/nh/about/index/</link>
+      <link>/about/index/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       
-      <guid>/topsecret/muchtop/nh/about/index/</guid>
+      <guid>/about/index/</guid>
       <description>Short description for all involved people. (with links, emails and maybe even with picture?)</description>
     </item>
     

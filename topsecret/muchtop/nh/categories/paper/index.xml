@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Paper on Neural Hydrology</title>
-    <link>/topsecret/muchtop/nh/categories/paper/</link>
+    <link>/categories/paper/</link>
     <description>Recent content in Paper on Neural Hydrology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 02 Oct 2016 15:59:13 -0400</lastBuildDate>
     
-	<atom:link href="/topsecret/muchtop/nh/categories/paper/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/paper/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rainfall–runoff modelling using Long Short-Term Memory (LSTM) networks</title>
-      <link>/topsecret/muchtop/nh/blog/first/</link>
+      <link>/blog/first/</link>
       <pubDate>Sun, 02 Oct 2016 15:59:13 -0400</pubDate>
       
-      <guid>/topsecret/muchtop/nh/blog/first/</guid>
+      <guid>/blog/first/</guid>
       <description>Authors  Frederik Kratzert (kratzert@ml.jku.at) Daniel Klotz Claire Brenner Karsten Schulz Mathew Herrnegger  Abstract Rainfall–runoff modelling is one of the key challenges in the field of hydrology. Various approaches exist, ranging from physically based over conceptual to fully data-driven models. In this paper, we propose a novel data-driven approach, using the Long Short-Term Memory (LSTM) network, a special type of recurrent neural network. The advantage of the LSTM is its ability to learn long-term dependencies between the provided input and output of the network, which are essential for modelling storage effects in e.</description>
     </item>
     
