@@ -6,23 +6,15 @@
     <description>Recent content in Categories on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>links</title>
-      <link>/categories/links/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/links/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>memos</title>
       <link>/categories/memos/</link>
-      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/memos/</guid>
       <description></description>
@@ -34,15 +26,6 @@
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/sketches/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tinkering</title>
-      <link>/categories/tinkering/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/tinkering/</guid>
       <description></description>
     </item>
     

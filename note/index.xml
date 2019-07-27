@@ -6,10 +6,21 @@
     <description>Recent content in Notes on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/note/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SC: Vogel &amp; Reichenstein</title>
+      <link>/note/2019/07/sr1/</link>
+      <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2019/07/sr1/</guid>
+      <description>Short Comments on two papers:
+1. Vogel (2017): Stochastic watershed models for hydrologic risk management
+This paper provides a - perhaps too enthusiastic - overview of the potential uses of stochastic watershed models (for hydrological risk management). It goes trough some of history and explains why they are seemingly underused today. It&amp;rsquo;s a good read, despite being a bit lengthy. It seemed to be that the information could be condensed more and poured into a well rounded opinion peace.</description>
+    </item>
     
     <item>
       <title>Qt: Techniques</title>

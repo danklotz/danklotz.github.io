@@ -22,6 +22,37 @@
     </item>
     
     <item>
+      <title>if else pipes</title>
+      <link>/note/2018/01/using-if-else-with-pipes/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/01/using-if-else-with-pipes/</guid>
+      <description>A nice way to use if else within pipes is (see here):
+library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;foo&amp;quot; Alternatively, the when function from the purrr package can be used:
+library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, . &amp;gt; 0.5 ~ &amp;quot;bar&amp;quot;)  ## [1] &amp;quot;bar&amp;quot; A nice way to use a vector of inputs is provided by the case_when function from dplyr together with mutate or transmute:</description>
+    </item>
+    
+    <item>
+      <title>Plotly Test</title>
+      <link>/note/2018/01/plotly-test/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/01/plotly-test/</guid>
+      <description>A test for concatenating multiple plots in plotly (Adapted from ror2 ). It seems to have problems when zoomed in.
+## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.</description>
+    </item>
+    
+    <item>
+      <title>Feedback tribbles</title>
+      <link>/note/2018/01/feedback-with-tribbles/</link>
+      <pubDate>Sat, 13 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2018/01/feedback-with-tribbles/</guid>
+      <description>The ordering and display of tables in Rmarkdown (aka data.frames or tibbles) has become so good. I actually prefer it over using print right now. Especially, because I can format in in an intuitive way by using the tribble() function. Here is an example. Let us say I want to summarize the basic set up for an optimization. Some dummy variables might look like this:
+library(tibble) number_iterations &amp;lt;- 1000 stoping_criterion &amp;lt;- -1 stepsize &amp;lt;- 0.</description>
+    </item>
+    
+    <item>
       <title>p5js: 3D Test</title>
       <link>/note/2017/12/p5js-3d-test/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
@@ -50,6 +81,16 @@ Adopted from the coding train (who adopted it from bees &amp;amp; bombs).
       <guid>/note/2017/12/p5js-floating-sticks/</guid>
       <description>Adapted from here
    // actual script --------------------------------------------------------------- var gl; var gl2; var tStep = 0.3; var all_time = 0.0 var c_size = 450; var midpoint = c_size/2 var first_click = false function setup() { background(&#34;#FFF&#34;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // Line /*gl = new GrowingSticks(false); gl.addPoint(10,0.5*height,true,20); for(var x=20; x1){ if(this.closed){ this.springs.pop(); } this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len)); if(this.closed){ this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len)); } } }, insertPoint: function(fixed=false, len0, len1, firstIndex){ if(this.</description>
+    </item>
+    
+    <item>
+      <title>tidy evaluation 2</title>
+      <link>/note/2017/12/bang-bang-bang/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2017/12/bang-bang-bang/</guid>
+      <description>The first post is more explaatory and can be found here. This one is more a note-taking effort and hence much more be spartan. The main goal is to go through some of the functionality of the rlang package.
+Basics rlang has multiple constructor-functions that can be used instead of the base Rcombine operator c(). These are: lgl(...), int(...), dbl(...), cpl(...), chr(..., .encoding = NULL), bytes(...) and ll(...). The idea here is that this way the code is more explicit than using c() (The resulting data can be inferred from the functions).</description>
     </item>
     
     <item>
