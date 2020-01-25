@@ -6,20 +6,19 @@
     <description>Recent content in Notes on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/note/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>SC: Vogel &amp; Reichenstein</title>
-      <link>/note/2019/07/sr1/</link>
-      <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
+      <title>Reading</title>
+      <link>/note/2019/11/reading-notebook/</link>
+      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/note/2019/07/sr1/</guid>
-      <description>Short Comments on two papers:
-1. Vogel (2017): Stochastic watershed models for hydrologic risk management
-This paper provides a - perhaps too enthusiastic - overview of the potential uses of stochastic watershed models (for hydrological risk management). It goes trough some of history and explains why they are seemingly underused today. It&amp;rsquo;s a good read, despite being a bit lengthy. It seemed to be that the information could be condensed more and poured into a well rounded opinion peace.</description>
+      <guid>/note/2019/11/reading-notebook/</guid>
+      <description>Digital notebook about papers &amp;amp; books. Short notes, no blog articles, twitter-threads and the like.
+Papers  Tagasovska &amp;amp; Lopez-Paz (2019): Single-Model Uncertainties for Deep Learning. Interesting approach. Alas, the proposed aleatoric-uncertainty estimation did not work for our test-applications. The proposed epistemic-uncertainty estimation is based on a classifier ensemble. Need to test eventually. De Brouwer et al. (2019): GRU-ODE-Bayes: Continuous modeling of sporadically-observed time series. Nice idea. Not (yet) sold on both the updating and the ODE-idea for the applications I am thinking about.</description>
     </item>
     
     <item>
@@ -102,8 +101,8 @@ Ralph Hammer started an amazing series of articles about learning to draw (and b
       
       <guid>/note/2018/01/using-if-else-with-pipes/</guid>
       <description>A nice way to use if else within pipes is (see here):
-library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;foo&amp;quot; Alternatively, the when function from the purrr package can be used:
-library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, . &amp;gt; 0.5 ~ &amp;quot;bar&amp;quot;)  ## [1] &amp;quot;bar&amp;quot; A nice way to use a vector of inputs is provided by the case_when function from dplyr together with mutate or transmute:</description>
+library(magrittr) runif(1) %&amp;gt;% magrittr::is_greater_than(0.5) %&amp;gt;% {if(.) &amp;quot;foo&amp;quot; else &amp;quot;bar&amp;quot;} ## [1] &amp;quot;bar&amp;quot; Alternatively, the when function from the purrr package can be used:
+library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr::when(. &amp;lt;= 0.5 ~ &amp;quot;foo&amp;quot;, . &amp;gt; 0.5 ~ &amp;quot;bar&amp;quot;)  ## [1] &amp;quot;foo&amp;quot; A nice way to use a vector of inputs is provided by the case_when function from dplyr together with mutate or transmute:</description>
     </item>
     
     <item>
