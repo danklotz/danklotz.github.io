@@ -6,18 +6,28 @@
     <description>Recent content in hello traveler on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Reading</title>
-      <link>/note/2019/11/reading-notebook/</link>
+      <title>Media Diet: JAN</title>
+      <link>/note/2020/11/media_diet/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/11/media_diet/</guid>
+      <description>Movies  Succession S2: Quite good. Would recommend. 3&amp;frasl;5. Once Upon a Time in Hollywood: Very long movie, but never got boring. Maybe the most accessible Tarantino movie; especially if you know the background story. 5&amp;frasl;5 From up a Poppy Hill: Super sweet movie from Goro Miyazaki. I did not like his Earthsea movie, but I liked this one a lot. 4&amp;frasl;5
+  Web  Amazing Notebooks by ex-engineer José Naranja.</description>
+    </item>
+    
+    <item>
+      <title>Media Diet: NOV</title>
+      <link>/note/2019/11/reading-list/</link>
       <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/note/2019/11/reading-notebook/</guid>
-      <description>Digital notebook about papers &amp;amp; books. Short notes, no blog articles, twitter-threads and the like.
+      <guid>/note/2019/11/reading-list/</guid>
+      <description>Some notes on things I&amp;rsquo;ve been reading.
 Papers  Tagasovska &amp;amp; Lopez-Paz (2019): Single-Model Uncertainties for Deep Learning. Interesting approach. Alas, the proposed aleatoric-uncertainty estimation did not work for our test-applications. The proposed epistemic-uncertainty estimation is based on a classifier ensemble. Need to test eventually. De Brouwer et al. (2019): GRU-ODE-Bayes: Continuous modeling of sporadically-observed time series. Nice idea. Not (yet) sold on both the updating and the ODE-idea for the applications I am thinking about.</description>
     </item>
     
