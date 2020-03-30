@@ -11,12 +11,12 @@ body {
     right: 0;
     left: 0;
     top: 0;
-    height: 95px;
+    height: 148px;
   text-decoration: none;
   font-size: 1.1em;
   color: #fff;
   background: linear-gradient(to right, #b5838d, #e5989b, #ffb4a2);
-  z-index: -100;
+  z-index: -80;
 }
 
 .menu { padding: 0;}
