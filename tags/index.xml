@@ -12,146 +12,11 @@
     
     
     <item>
-      <title>creativecoding</title>
+      <title>Creativecoding</title>
       <link>/tags/creativecoding/</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/creativecoding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>p5js</title>
-      <link>/tags/p5js/</link>
-      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/p5js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>favourites</title>
-      <link>/tags/favourites/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/favourites/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>links</title>
-      <link>/tags/links/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/links/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>taste</title>
-      <link>/tags/taste/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/taste/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tip</title>
-      <link>/tags/tip/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reflections</title>
-      <link>/tags/reflections/</link>
-      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/reflections/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>videos</title>
-      <link>/tags/videos/</link>
-      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/videos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>youtube</title>
-      <link>/tags/youtube/</link>
-      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/youtube/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Idea</title>
-      <link>/tags/idea/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/idea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>scripting</title>
-      <link>/tags/scripting/</link>
-      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/scripting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>/tags/javascript/</link>
-      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>js</title>
-      <link>/tags/js/</link>
-      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>webGL</title>
-      <link>/tags/webgl/</link>
-      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/webgl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>progamming</title>
-      <link>/tags/progamming/</link>
-      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/progamming/</guid>
       <description></description>
     </item>
     
@@ -165,11 +30,119 @@
     </item>
     
     <item>
+      <title>Favourites</title>
+      <link>/tags/favourites/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/favourites/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Idea</title>
+      <link>/tags/idea/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Js</title>
+      <link>/tags/js/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>/tags/links/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/links/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>P5js</title>
+      <link>/tags/p5js/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/p5js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Progamming</title>
+      <link>/tags/progamming/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/progamming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Programming</title>
       <link>/tags/programming/</link>
       <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reflections</title>
+      <link>/tags/reflections/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/reflections/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rlang</title>
+      <link>/tags/rlang/</link>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rlang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scripting</title>
+      <link>/tags/scripting/</link>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/scripting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taste</title>
+      <link>/tags/taste/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/taste/</guid>
       <description></description>
     </item>
     
@@ -192,11 +165,38 @@
     </item>
     
     <item>
-      <title>rlang</title>
-      <link>/tags/rlang/</link>
-      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
+      <title>Tip</title>
+      <link>/tags/tip/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/rlang/</guid>
+      <guid>/tags/tip/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Videos</title>
+      <link>/tags/videos/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/videos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebGL</title>
+      <link>/tags/webgl/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/webgl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Youtube</title>
+      <link>/tags/youtube/</link>
+      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/youtube/</guid>
       <description></description>
     </item>
     

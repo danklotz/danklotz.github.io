@@ -37,9 +37,6 @@
 </div>
 
 <main>
-
-
-
 <p>A nice way to use if else within pipes is (see <a href="https://stackoverflow.com/questions/30604107/r-conditional-evaluation-when-using-the-pipe-operator">here</a>):</p>
 <pre class="r"><code>library(magrittr)
 runif(1) %&gt;% magrittr::is_greater_than(0.5) %&gt;% {if(.) &quot;foo&quot; else &quot;bar&quot;}</code></pre>

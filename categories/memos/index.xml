@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>memos on Daniels page</title>
+    <title>Memos on Daniels page</title>
     <link>/categories/memos/</link>
-    <description>Recent content in memos on Daniels page</description>
+    <description>Recent content in Memos on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/memos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Media Diet: JAN</title>
-      <link>/note/2020/11/media_diet/</link>
-      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      <title>RND Media Diet</title>
+      <link>/note/2020/05/random_diet/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/note/2020/11/media_diet/</guid>
-      <description>Movies  Succession S2: Quite good. Would recommend. 3&amp;frasl;5. Once Upon a Time in Hollywood: Very long movie, but never got boring. Maybe the most accessible Tarantino movie; especially if you know the background story. 5&amp;frasl;5 From up a Poppy Hill: Super sweet movie from Goro Miyazaki. I did not like his Earthsea movie, but I liked this one a lot. 4&amp;frasl;5
-  Web  Amazing Notebooks by ex-engineer José Naranja.</description>
+      <guid>/note/2020/05/random_diet/</guid>
+      <description>Very random today. Mostly some brain candy; some more, some less healthy.
+Dave Bull is a maker of japanes woodblock prints and intersting stories to tell. The muji fountain pen works great. I do not get how audible works. The Book Brood is a strange yet endearing youtube channel about &amp;hellip; books and family life. The [green renaissance] makes captivating videos about individuals (e.g.). Geometric cakes. Glenn Shafer knows where confidence intervals come from (see also, and note that confidence intervals are not prediciton intervals).</description>
     </item>
     
     <item>
       <title>Media Diet: JAN</title>
-      <link>/note/2020/11/media_diet/</link>
-      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      <link>/note/2020/01/media_diet/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/note/2020/11/media_diet/</guid>
-      <description>Movies  Succession S2: Quite good. Would recommend. 3&amp;frasl;5. Once Upon a Time in Hollywood: Very long movie, but never got boring. Maybe the most accessible Tarantino movie; especially if you know the background story. 5&amp;frasl;5 From up a Poppy Hill: Super sweet movie from Goro Miyazaki. I did not like his Earthsea movie, but I liked this one a lot. 4&amp;frasl;5
-  Web  Amazing Notebooks by ex-engineer José Naranja.</description>
+      <guid>/note/2020/01/media_diet/</guid>
+      <description>A short one covering mention-worth media from December 2019 to January 2020.
+Movies  Succession S2: Quite good. Would recommend. 3&amp;frasl;5. Once Upon a Time in Hollywood: Very long movie, but never got boring. Maybe the most accessible Tarantino movie; especially if you know the background story. 5&amp;frasl;5 From up a Poppy Hill: Super sweet movie from Goro Miyazaki. I did not like his Earthsea movie, but I liked this one a lot.</description>
     </item>
     
     <item>

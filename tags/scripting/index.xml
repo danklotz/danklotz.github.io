@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>scripting on Daniels page</title>
+    <title>Scripting on Daniels page</title>
     <link>/tags/scripting/</link>
-    <description>Recent content in scripting on Daniels page</description>
+    <description>Recent content in Scripting on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 24 Jan 2018 00:00:00 +0000</lastBuildDate>
@@ -18,7 +18,7 @@
       
       <guid>/note/2018/01/plotly-test/</guid>
       <description>A test for concatenating multiple plots in plotly (Adapted from ror2 ). It seems to have problems when zoomed in.
-## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.</description>
+## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.11 ## 5 2007-01-01 0 2.</description>
     </item>
     
     <item>

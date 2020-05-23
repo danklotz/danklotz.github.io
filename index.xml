@@ -6,29 +6,29 @@
     <description>Recent content in hello traveler on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Media Diet: JAN</title>
-      <link>/note/2020/11/media_diet/</link>
-      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      <title>RND Media Diet</title>
+      <link>/note/2020/05/random_diet/</link>
+      <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/note/2020/11/media_diet/</guid>
-      <description>Movies  Succession S2: Quite good. Would recommend. 3&amp;frasl;5. Once Upon a Time in Hollywood: Very long movie, but never got boring. Maybe the most accessible Tarantino movie; especially if you know the background story. 5&amp;frasl;5 From up a Poppy Hill: Super sweet movie from Goro Miyazaki. I did not like his Earthsea movie, but I liked this one a lot. 4&amp;frasl;5
-  Web  Amazing Notebooks by ex-engineer José Naranja.</description>
+      <guid>/note/2020/05/random_diet/</guid>
+      <description>Very random today. Mostly some brain candy; some more, some less healthy.
+Dave Bull is a maker of japanes woodblock prints and intersting stories to tell. The muji fountain pen works great. I do not get how audible works. The Book Brood is a strange yet endearing youtube channel about &amp;hellip; books and family life. The [green renaissance] makes captivating videos about individuals (e.g.). Geometric cakes. Glenn Shafer knows where confidence intervals come from (see also, and note that confidence intervals are not prediciton intervals).</description>
     </item>
     
     <item>
       <title>Media Diet: JAN</title>
-      <link>/note/2020/11/media_diet/</link>
-      <pubDate>Mon, 30 Nov 2020 00:00:00 +0000</pubDate>
+      <link>/note/2020/01/media_diet/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>/note/2020/11/media_diet/</guid>
-      <description>Movies  Succession S2: Quite good. Would recommend. 3&amp;frasl;5. Once Upon a Time in Hollywood: Very long movie, but never got boring. Maybe the most accessible Tarantino movie; especially if you know the background story. 5&amp;frasl;5 From up a Poppy Hill: Super sweet movie from Goro Miyazaki. I did not like his Earthsea movie, but I liked this one a lot. 4&amp;frasl;5
-  Web  Amazing Notebooks by ex-engineer José Naranja.</description>
+      <guid>/note/2020/01/media_diet/</guid>
+      <description>A short one covering mention-worth media from December 2019 to January 2020.
+Movies  Succession S2: Quite good. Would recommend. 3&amp;frasl;5. Once Upon a Time in Hollywood: Very long movie, but never got boring. Maybe the most accessible Tarantino movie; especially if you know the background story. 5&amp;frasl;5 From up a Poppy Hill: Super sweet movie from Goro Miyazaki. I did not like his Earthsea movie, but I liked this one a lot.</description>
     </item>
     
     <item>
@@ -132,7 +132,7 @@ library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr
       
       <guid>/note/2018/01/plotly-test/</guid>
       <description>A test for concatenating multiple plots in plotly (Adapted from ror2 ). It seems to have problems when zoomed in.
-## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.</description>
+## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.11 ## 5 2007-01-01 0 2.</description>
     </item>
     
     <item>

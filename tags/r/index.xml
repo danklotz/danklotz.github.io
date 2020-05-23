@@ -29,7 +29,7 @@ library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr
       
       <guid>/note/2018/01/plotly-test/</guid>
       <description>A test for concatenating multiple plots in plotly (Adapted from ror2 ). It seems to have problems when zoomed in.
-## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.</description>
+## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.11 ## 5 2007-01-01 0 2.</description>
     </item>
     
     <item>
