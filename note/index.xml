@@ -6,10 +6,19 @@
     <description>Recent content in Notes on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/note/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Metrics 1</title>
+      <link>/note/2020/06/diagnostics-1/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/06/diagnostics-1/</guid>
+      <description>We only have sub-optimal metrics for reporting and evaluating model performance in rainfall-runoff modelling. This is not a controversial opinion (see for example Schaefi and Gupta, 2007 or Gupta and Kling, 2011). Many metrics implicitly assume some form of well behaved error distribution. In this series (?) I want to explore what happens if this is not the case by using simulation (using the NSE, the KGE and Pearson Correlation).</description>
+    </item>
     
     <item>
       <title>RND Media Diet</title>
@@ -132,7 +141,7 @@ library(purrr, quietly = TRUE, warn.conflicts = FALSE) runif(1) %&amp;gt;% purrr
       
       <guid>/note/2018/01/plotly-test/</guid>
       <description>A test for concatenating multiple plots in plotly (Adapted from ror2 ). It seems to have problems when zoomed in.
-## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.11 ## 5 2007-01-01 0 2.</description>
+## date min QOBS_0001 QOSI_0001 QSIM_0001 QOBS_0002 QOSI_0002 ## 1 2007-01-01 0 2.98 3.48 3.48 2.56 3.11 ## 2 2007-01-01 0 2.89 3.48 3.48 2.56 3.11 ## 3 2007-01-01 0 2.64 3.48 3.48 2.57 3.11 ## 4 2007-01-01 0 2.51 3.48 3.48 2.57 3.</description>
     </item>
     
     <item>

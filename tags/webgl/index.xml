@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WebGL on Daniels page</title>
+    <title>webGL on Daniels page</title>
     <link>/tags/webgl/</link>
-    <description>Recent content in WebGL on Daniels page</description>
+    <description>Recent content in webGL on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Dec 2017 00:00:00 +0000</lastBuildDate>

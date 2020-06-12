@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Memos on Daniels page</title>
+    <title>memos on Daniels page</title>
     <link>/categories/memos/</link>
-    <description>Recent content in Memos on Daniels page</description>
+    <description>Recent content in memos on Daniels page</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/memos/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Metrics 1</title>
+      <link>/note/2020/06/diagnostics-1/</link>
+      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/06/diagnostics-1/</guid>
+      <description>We only have sub-optimal metrics for reporting and evaluating model performance in rainfall-runoff modelling. This is not a controversial opinion (see for example Schaefi and Gupta, 2007 or Gupta and Kling, 2011). Many metrics implicitly assume some form of well behaved error distribution. In this series (?) I want to explore what happens if this is not the case by using simulation (using the NSE, the KGE and Pearson Correlation).</description>
+    </item>
     
     <item>
       <title>RND Media Diet</title>
