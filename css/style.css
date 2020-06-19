@@ -11,13 +11,17 @@ body {
     right: 0;
     left: 0;
     top: 0;
-    height: 148px;
+    height: 160px;
   text-decoration: none;
   font-size: 1.1em;
   color: #fff;
-  background: linear-gradient(to right, #b5838d, #e5989b, #ffb4a2);
+  background: linear-gradient(to right, #555555,#111111, #000000, #111111, #555555 ); 
   z-index: -80;
 }
+/* Good Gradient alternatives:
+#b5838d, #e5989b, #ffb4a2
+#e5989b,#440022, #000000, #440022, #e5989b */
+
 
 .menu { padding: 0;}
 .menu li { display: inline-block;}
