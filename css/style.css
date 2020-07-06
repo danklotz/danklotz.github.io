@@ -7,16 +7,17 @@ body {
 
 /* header and footer areas */
 .headhead {
+  .image img{display:block};
   position: absolute;
     right: 0;
     left: 0;
     top: 0;
-    height: 160px;
+    height: 273px;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #fff;
-  background: linear-gradient(to right, #555555,#111111, #000000, #111111, #555555 ); 
-  z-index: -80;
+  background: linear-gradient(to right, #4b4653,#6d6875, #6d6875, #6d6875, #4b4653 ); 
+  z-index: -10;
 }
 /* Good Gradient alternatives:
 #b5838d, #e5989b, #ffb4a2

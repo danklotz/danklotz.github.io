@@ -3,17 +3,18 @@
 
 <html lang="en-us">
   <head>
-    
-    <center><img src="/danklotz-signature.png", style="height:70px"></center>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Metrics 1 | all okkio</title>
+    <title>metrics 1 | daniel klotz |</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
-    <div class = "headhead"></div>
+     <div class = "headhead">
+  <center><img src="/danklotz-signature.png", style="height:230px", margin=0px></center>
+</div>
 
 
 
+    <p style="margin-bottom:208px;"></p>
   </head>
 
   <body>
@@ -31,7 +32,7 @@
 
 <div class="article-meta">
 
-<h1><span class="title">Metrics 1</span></h1>
+<h1><span class="title">metrics 1</span></h1>
 
 
 </div>
@@ -57,9 +58,9 @@ where <span class="math inline">\(\mathcal{N}(\cdot)\)</span> is our Gaussian, <
 <p><img src="/note/2020-06-12-diagnostics-1_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>And, the above graphic has following standard deviations:</p>
 <ul>
-<li>Standard Deviation: Process - Laplace = 2.027</li>
-<li>Standard Deviation: Process - 50:50Mixture = 1.984</li>
-<li>Standard Deviation: Process - Gaussian = 2.003</li>
+<li>Standard Deviation: Process - Laplace = 1.966</li>
+<li>Standard Deviation: Process - 50:50Mixture = 2.015</li>
+<li>Standard Deviation: Process - Gaussian = 2.008</li>
 </ul>
 <p>This setup gives us two directions to explore. For one, we can ask (a) what happens if we leaving the standard deviation <span class="math inline">\(\sigma\)</span> constant and interpolate the weights <span class="math inline">\(w\)</span> between zero and one. And secondly, (b) fixing the weights <span class="math inline">\(w\)</span> and changing the standard deviation <span class="math inline">\(\sigma\)</span>.</p>
 <p>Before making the experiments I thought that (a) should result either in a flat line (since all metrics are based on the variance) or be worse for Laplace noise (since these things often implicitly assume normality); and I thought that (b) will show us some strange behavior for the correlation. As shown below I was right on first, but wrong on second</p>
@@ -84,7 +85,7 @@ where <span class="math inline">\(\mathcal{N}(\cdot)\)</span> is our Gaussian, <
 <p>With the following average standard deviations for each metric:</p>
 <ul>
 <li>SD(Correlation): 610^{-4}</li>
-<li>SD(NSE): 0.0013</li>
+<li>SD(NSE): 0.0014</li>
 <li>SD(KGE): 0.0022</li>
 </ul>
 </div>

@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hello traveler on all okkio</title>
+    <title>Hello on daniel klotz |</title>
     <link>/</link>
-    <description>Recent content in hello traveler on all okkio</description>
+    <description>Recent content in Hello on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Metrics 1</title>
+      <title>books</title>
+      <link>/note/2020/07/reading-list/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/07/reading-list/</guid>
+      <description>Books and notes on them.
+ Otto (2019) Wütendes Wetter. Auf der Suche nach den Schuldigen für Hitzewellen, Hochwasser und Stürme. German. Interesting popular science book about the genesis climate attribution studies. Maybe a tidbit to long for the info that is provided Le Carré (2019) Federball. &amp;lt;3 Chimero (?) The Shape of Design. meh. Singer (2020?) Shape Up: Stop Running in Circles and Ship Work that Matters. Probably good if your into this kind of thing.</description>
+    </item>
+    
+    <item>
+      <title>paper extracts</title>
+      <link>/note/2020/07/quotes/</link>
+      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/07/quotes/</guid>
+      <description>Sunset Salvo In the following are some memorable quotes from John W. Tukey&amp;rsquo;s speech sunset salvo.
+ My title is borrowed from Estil green who used it when he retired as Executive Vice-President at Bell Laboratories about two decades ago. He was an executive, so he really retired.
+ +++
+ The simplicty of wrting thesis in, and assessing the correctess of, mathematical statistics [&amp;hellip;] will aways ensure expansion of that corner.</description>
+    </item>
+    
+    <item>
+      <title>metrics 1</title>
       <link>/note/2020/06/diagnostics-1/</link>
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -21,66 +43,13 @@
     </item>
     
     <item>
-      <title>RND Media Diet</title>
-      <link>/note/2020/05/random_diet/</link>
+      <title>media diet</title>
+      <link>/note/2020/05/media/</link>
       <pubDate>Sat, 30 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/note/2020/05/random_diet/</guid>
-      <description>Very random today. Mostly some brain candy; some more, some less healthy.
-Dave Bull is a maker of japanes woodblock prints and intersting stories to tell. The muji fountain pen works great. I do not get how audible works. The Book Brood is a strange yet endearing youtube channel about &amp;hellip; books and family life. The [green renaissance] makes captivating videos about individuals (e.g.). Geometric cakes. Glenn Shafer knows where confidence intervals come from (see also, and note that confidence intervals are not prediciton intervals).</description>
-    </item>
-    
-    <item>
-      <title>Media Diet: JAN</title>
-      <link>/note/2020/01/media_diet/</link>
-      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2020/01/media_diet/</guid>
-      <description>A short one covering mention-worth media from December 2019 to January 2020.
-Movies  Succession S2: Quite good. Would recommend. 3&amp;frasl;5. Once Upon a Time in Hollywood: Very long movie, but never got boring. Maybe the most accessible Tarantino movie; especially if you know the background story. 5&amp;frasl;5 From up a Poppy Hill: Super sweet movie from Goro Miyazaki. I did not like his Earthsea movie, but I liked this one a lot.</description>
-    </item>
-    
-    <item>
-      <title>Media Diet: NOV</title>
-      <link>/note/2019/11/reading-list/</link>
-      <pubDate>Sat, 30 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2019/11/reading-list/</guid>
-      <description>Some notes on things I&amp;rsquo;ve been reading.
-Papers  Tagasovska &amp;amp; Lopez-Paz (2019): Single-Model Uncertainties for Deep Learning. Interesting approach. Alas, the proposed aleatoric-uncertainty estimation did not work for our test-applications. The proposed epistemic-uncertainty estimation is based on a classifier ensemble. Need to test eventually. De Brouwer et al. (2019): GRU-ODE-Bayes: Continuous modeling of sporadically-observed time series. Nice idea. Not (yet) sold on both the updating and the ODE-idea for the applications I am thinking about.</description>
-    </item>
-    
-    <item>
-      <title>Qt: Techniques</title>
-      <link>/note/2018/11/empirical-causal/</link>
-      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2018/11/empirical-causal/</guid>
-      <description>A selection of quotes from Models and Techniques from Jan de Leeuw
-Abstract  In the situations typically encountered in the social sciences the methodology of traditional statistics is neither a good description of data analysis practice nor a good prescription to arrive at satisfactory summaries of the data. On the other hand the traditional statistical techniques are excellent data analysis tools, and statistical models are useful devices that can be used to develop and evaluate data analysis techniques.</description>
-    </item>
-    
-    <item>
-      <title>Qt: Empirical Fit</title>
-      <link>/note/2018/11/empirical-causal/</link>
-      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2018/11/empirical-causal/</guid>
-      <description>Here are some quotes from Vit Klemes&amp;rsquo; Empirical and Causal Models in Hydrology.
- Empirical relationships are [&amp;hellip;] used as convenient summaries, or reductions, of results of complex causal chains (e.g., Darcy&amp;rsquo;s law). If such summaries were not possible, every causal model would have to be developed from the absolute &amp;ldquo;first principles&amp;rdquo; (i.e., elementary empirical facts and/or axioms) known at the time.
-  The essence of specialization is to split the (possibly) infinite causal chain into segments, each containing only a few chain links; the scope of one discipline is thus intentionally limited to seeking causal relationships among phenomena within only a relatively small range, whose lower boundary represents the discipline&amp;rsquo;s &amp;ldquo;first principles&amp;rdquo; or &amp;ldquo;scientific basis,&amp;rdquo; coinciding the discipline&amp;rsquo;s objective.</description>
-    </item>
-    
-    <item>
-      <title>Qt: Sunset Salvo</title>
-      <link>/note/2018/10/sunset-salvo/</link>
-      <pubDate>Mon, 08 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2018/10/sunset-salvo/</guid>
-      <description>In the following are some memorable quotes from John W. Tukey&amp;rsquo;s speech sunset salvo.
-Regarding the process of data analysis:
- My title is borrowed from Estil green who used it when he retired as Executive Vice-President at Bell Laboratories about two decades ago. He was an executive, so he really retired.
-The simplicty of wrting thesis in, and assessing the correctess of, mathematical statistics [&amp;hellip;] will aways ensure expansion of that corner.</description>
+      <guid>/note/2020/05/media/</guid>
+      <description>30.Mai.2020 Very random one. Mostly some brain candy; some more, some less healthy.
+ Dave Bull is a maker of japanes woodblock prints and intersting stories to tell. The muji fountain pen works great. I do not get how audible works. (comment: I do now &amp;amp; I dont like it. ) The Book Brood is a strange yet endearing youtube channel about &amp;hellip; books and family life. The [green renaissance] makes captivating videos about individuals (e.</description>
     </item>
     
     <item>
@@ -91,36 +60,6 @@ The simplicty of wrting thesis in, and assessing the correctess of, mathematical
       <guid>/note/2018/09/p5js-particles1/</guid>
       <description>Playing around with the new p5.js editor&amp;hellip; 
   // actual script --------------------------------------------------------------- function setup() { var canvas = createCanvas(720, 450); canvas.parent(&#39;sketch-holder&#39;); system = new ParticleSystem(createVector(width/2, 50)); } function draw() { background(20,30,50, 150); system.addParticle(); system.run(); } // A simple Particle class var Particle = function(position) { this.acceleration = createVector(-0.00015*(mouseX-0.5*width),-0.00012*(mouseY-0.5*height)); this.velocity = createVector(random(-0.5, 0.5), random(-1, 0)); this.old_position = position.copy(); this.position = position.copy(); this.lifespan = 255; }; Particle.prototype.run = function() { this.</description>
-    </item>
-    
-    <item>
-      <title>Favorites: Summer 2018</title>
-      <link>/note/2018/09/favorite-things-summer-2018/</link>
-      <pubDate>Sun, 09 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2018/09/favorite-things-summer-2018/</guid>
-      <description>Some of my favorites from summer 2018. There we go.
-Birds Jaume Sanchez Elias posts amazing geometric animations. Mike Cook thinks about gaming, procedural content generation and computational creativity (he also wrote a book about twitter-bots, which I have not read yet, but looks great). Krieg und Freitag is one of the funniest accounts I came across (German). Severe-weather.eu collects reports of sever-weather/natural-catastrophes around Europe. Kate Compton. Gabriel Peyré provides all kind of info and visualizations about optimal transport.</description>
-    </item>
-    
-    <item>
-      <title>Favourites: Spring 2018</title>
-      <link>/note/2018/05/favourite-things-spring-2018/</link>
-      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2018/05/favourite-things-spring-2018/</guid>
-      <description>Here are some of my favourites from Spring 2018.
-www I build a twitter-bot with Cheap Bots, Done Quick. It tweets proverbs, heuristics, fallacies and biases in the wayne of the seminal work of Tversky and Kahneman, Gerd Gigerenzer &amp;amp; co.   
-Ralph Hammer started an amazing series of articles about learning to draw (and by implication see). Starting with an exposition about seeing vs. reading. Now, why he considers &amp;ldquo;writing software&amp;rdquo; as a low-dopamine activity is beyond me.</description>
-    </item>
-    
-    <item>
-      <title>Media Diet Dump</title>
-      <link>/note/2018/04/media_diet/</link>
-      <pubDate>Sun, 08 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2018/04/media_diet/</guid>
-      <description>John Le Carré - The Pigeon Tunnel. Reading Carrè is always a pleasure. This one is suprisingly self-reflexive. Matthias Adolfosn. Playfull and witty illustration. Can’t get enough of them. Kosko - Neural Networks and Fuzzy Systems: An oldie. Intersting to get a grasp of the historical developement of artifical neural networks and fuzzy logic. Song of the Sea. &amp;lt;3 Patterson. Don’t get fooled by the trailer. The movie is very slow; almost meditative.</description>
     </item>
     
     <item>
@@ -282,7 +221,7 @@ Back in the days even the mighty Nathan Yau wrote:
     </item>
     
     <item>
-      <title></title>
+      <title>Me</title>
       <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

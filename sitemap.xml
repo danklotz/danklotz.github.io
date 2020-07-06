@@ -4,8 +4,35 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/note/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/note/2020/07/reading-list/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/memos/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/note/2020/07/quotes/</loc>
+    <lastmod>2020-07-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,50 +41,8 @@
   </url>
   
   <url>
-    <loc>/note/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/memos/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/note/2020/05/random_diet/</loc>
+    <loc>/note/2020/05/media/</loc>
     <lastmod>2020-05-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2020/01/media_diet/</loc>
-    <lastmod>2020-01-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2019/11/reading-list/</loc>
-    <lastmod>2019-11-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2018/11/empirical-causal/</loc>
-    <lastmod>2018-11-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2018/11/empirical-causal/</loc>
-    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2018/10/sunset-salvo/</loc>
-    <lastmod>2018-10-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -90,63 +75,6 @@
   </url>
   
   <url>
-    <loc>/note/2018/09/favorite-things-summer-2018/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2018/05/favourite-things-spring-2018/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/favourites/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/links/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/taste/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tip/</loc>
-    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/note/2018/04/media_diet/</loc>
-    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/reflections/</loc>
-    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/videos/</loc>
-    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/youtube/</loc>
-    <lastmod>2018-04-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/idea/</loc>
     <lastmod>2018-01-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -161,6 +89,12 @@
   <url>
     <loc>/note/2018/01/using-if-else-with-pipes/</loc>
     <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/tip/</loc>
+    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
