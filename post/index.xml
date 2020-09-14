@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Daniels page</title>
+    <title>Posts on daniel klotz |</title>
     <link>/post/</link>
-    <description>Recent content in Posts on Daniels page</description>
+    <description>Recent content in Posts on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>SC - Vogel and Reichenstein</title>
-      <link>/post/2019/sr1/</link>
-      <pubDate>Sat, 27 Jul 2019 00:00:00 +0000</pubDate>
+      <title>movies</title>
+      <link>/post/2020/movies/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/2019/sr1/</guid>
-      <description>Short comments on two papers:
-Vogel (2017): Stochastic watershed models for hydrologic risk management
-This paper provides a - perhaps too enthusiastic - overview of the potential uses of stochastic watershed models (for hydrological risk management). It goes trough some of history and explains why they are seemingly underused today. It&amp;rsquo;s a good read, despite being a bit lengthy. It seemed to be that the information could be condensed more and poured into a well rounded opinion peace.</description>
+      <guid>/post/2020/movies/</guid>
+      <description>short notes about movies:
+ Paterson. A slow burner. Did not enjoy it much in cinema, but it became one of my favorite movies after watching it multiple times. Dead Man. A good movie. Just not my pair of shoes. Bill &amp;amp; Ted Face the Music. It is what it is. And that is fine. If you like Bill &amp;amp; Ted (like me) you will like this movie, if you don&amp;rsquo;t like em or don&amp;rsquo;t know em its nothing for you.</description>
     </item>
     
   </channel>
