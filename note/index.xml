@@ -6,19 +6,30 @@
     <description>Recent content in Notes on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/note/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>movies</title>
-      <link>/note/2020/09/movies/</link>
-      <pubDate>Mon, 14 Sep 2020 00:00:00 +0000</pubDate>
+      <link>/note/2020/11/movies/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/note/2020/09/movies/</guid>
-      <description>Short notes about seen movies:
- Paterson. A slow burner. Did not enjoy it much in cinema, but it became one of my favorite movies after watching it multiple times. Dead Man. A good movie. Just not my pair of shoes. Bill &amp;amp; Ted Face the Music. It is what it is. And that is fine. If you like Bill &amp;amp; Ted (like me) you will like this movie, if you don&amp;rsquo;t like em or don&amp;rsquo;t know em its nothing for you.</description>
+      <guid>/note/2020/11/movies/</guid>
+      <description>Regisseurs I watch:
+Quentin Tarantino, Stanley Kubrick, Hayao Miyazaki, Kar-Wai Wong, Edgar Wright, Woody Allen, Wes Anderson, Jim Jarmusch, Terry Gilliam.
+Short notes about movies:
+ Paterson. A slow burner. Did not enjoy it much in cinema, but it became one of my favorite movies after watching it multiple times. Dead Man. A good movie. Just not my pair of shoes. Bill &amp;amp; Ted Face the Music. It is what it is.</description>
+    </item>
+    
+    <item>
+      <title>goblin notes</title>
+      <link>/note/2020/11/goblin-notes/</link>
+      <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/11/goblin-notes/</guid>
+      <description> Experimental hollowness: When it becomes unclear if a benchmarking study, an empirical experiment or a simulation study contributes anything other than an improvement with regard to a under-specified metric (any perhaps even introduces with regard to some other relevant metrics). Empirical death end: When a theory does not admit any (more) experiments that can lead to its refutation or advancement. See: Sabine_Hossenfelder&amp;rsquo;s Lost in Math.  </description>
     </item>
     
     <item>
@@ -27,7 +38,7 @@
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/07/reading-list/</guid>
-      <description>Short reading-notes:
+      <description>Short notes on books:
  Taleb (2007): Fooled by Randomness. A gem. Page (2018) The Model Thinker. Very enjoyable. Proctor &amp;amp; Schiebinger (ed, 2008) Proctor, R: Agnotology. More interesting than I expected, less than I hoped. Ende (1994) Zettelkasten. Großartig! White et al. (1993) Complexity and Chaos. Not sure what to think about this thing. Definitely not my pair of shoes. Childers (2013) Philosophy and Probability. Very good book. Otto (2019) Wütendes Wetter.</description>
     </item>
     
