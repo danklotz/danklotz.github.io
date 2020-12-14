@@ -6,10 +6,30 @@
     <description>Recent content in Hello on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>map &amp; territory</title>
+      <link>/note/2020/12/map-territory/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/12/map-territory/</guid>
+      <description>Liu &amp;amp; Regier (2020): Flows Succeed Where GANs Fail: Lessons from Low-Dimensional Data.
+ Abstract: Normalizing flows and generative adversarial networks (GANs) are both approaches to density estimation that use deep neural networks to transform samples from an uninformative prior distribution to an approximation of the data distribution. There is great interest in both for general-purpose statistical modeling, but the two approaches have seldom been compared to each other for modeling non-image data.</description>
+    </item>
+    
+    <item>
+      <title>multi multi</title>
+      <link>/note/2020/12/multi-multi/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/12/multi-multi/</guid>
+      <description>Google AI: Optimizing Multiple Loss Functions with Loss-Conditional Training (paper)
+ First paragraph: In many machine learning applications the performance of a model cannot be summarized by a single number, but instead relies on several qualities, some of which may even be mutually exclusive. For example, a learned image compression model should minimize the compressed image size while maximizing its quality. It is often not possible to simultaneously optimize all the values of interest, either because they are fundamentally in conflict, like the image quality and the compression ratio in the example above, or simply due to the limited model capacity.</description>
+    </item>
     
     <item>
       <title>movies</title>
@@ -29,7 +49,7 @@ Short notes about movies:
       <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/11/goblin-notes/</guid>
-      <description> Experimental hollowness: When it becomes unclear if a benchmarking study, an empirical experiment or a simulation study contributes anything other than an improvement with regard to a under-specified metric (any perhaps even introduces with regard to some other relevant metrics). Empirical death end: When a theory does not admit any (more) experiments that can lead to its refutation or advancement. See: Sabine_Hossenfelder&amp;rsquo;s Lost in Math.  </description>
+      <description>Experimental hollowness: When it becomes unclear if a benchmarking study, an empirical experiment or a simulation study contributes anything other than an improvement with regard to a under-specified metric (any perhaps even introduces with regard to some other relevant metrics). Empirical death end: When a theory does not admit any (more) experiments that can lead to its refutation or advancement. See: Sabine_Hossenfelder&amp;rsquo;s Lost in Math.  treasures and scrap found along the way:</description>
     </item>
     
     <item>
