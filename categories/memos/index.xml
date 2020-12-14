@@ -6,10 +6,21 @@
     <description>Recent content in memos on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/memos/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>calm tech</title>
+      <link>/note/2020/12/calm-technology/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/12/calm-technology/</guid>
+      <description>Permacomputing As far as I can tell so far it is mainly a nice essay that lays out a vision by the amazing viznut. Here is how it starts:
+ Over the last few hundred years of human civilization, there has been a dramatic increase in the consumption of artificially produced energy. In the overarching story, this is often equated with &amp;ldquo;progress&amp;rdquo;.
+In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;progress&amp;rdquo; facilitates ever greater densities of data storage and digital logic, thus dramatically exploding the availability of computing resources.</description>
+    </item>
     
     <item>
       <title>multi multi</title>

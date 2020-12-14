@@ -4,30 +4,35 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/note/</loc>
-    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/note/2020/12/calm-technology/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/memos/</loc>
+    <lastmod>2020-12-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/note/2020/12/map-territory/</loc>
     <lastmod>2020-12-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/memos/</loc>
-    <lastmod>2020-12-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
