@@ -6,10 +6,19 @@
     <description>Recent content in memos on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/memos/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>model checking</title>
+      <link>/note/2020/12/model-checking/</link>
+      <pubDate>Wed, 16 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/12/model-checking/</guid>
+      <description>Looking Inside The Blackbox. This is blog-post/tutorial about the usage of backprop do obtain some qualitative understanding of neural-networks. Not to brad, but I had a similar idea in the context of &amp;ldquo;data-assimilation for Deep Learning based rainfall-runoff modeling&amp;rdquo;. As in the blogpost, the idea was to backprop with regard to the inputs (instead of the parameters), but with the goal to get (a) a better forecast and (b) obtain a qualitative understand about what the networks thinks about the world.</description>
+    </item>
     
     <item>
       <title>calm tech</title>
@@ -17,9 +26,18 @@
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/12/calm-technology/</guid>
-      <description>Permacomputing As far as I can tell so far it is mainly a nice essay that lays out a vision by the amazing viznut. Here is how it starts:
+      <description>Permacomputing As far as I can tell permacomputing is so far mainly a nice essay that lays out a vision by the amazing viznut. Here is how it starts:
  Over the last few hundred years of human civilization, there has been a dramatic increase in the consumption of artificially produced energy. In the overarching story, this is often equated with &amp;ldquo;progress&amp;rdquo;.
 In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;progress&amp;rdquo; facilitates ever greater densities of data storage and digital logic, thus dramatically exploding the availability of computing resources.</description>
+    </item>
+    
+    <item>
+      <title>goblin notes</title>
+      <link>/note/2020/12/goblin-notes/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/12/goblin-notes/</guid>
+      <description>Experimental hollowness: When it becomes unclear if a benchmarking study, an empirical experiment or a simulation study contributes anything other than an improvement with regard to a under-specified metric (any perhaps even introduces with regard to some other relevant metrics). Empirical death end: When a theory does not admit any (more) experiments that can lead to its refutation or advancement. See: Sabine_Hossenfelder&amp;rsquo;s Lost in Math. Winner&amp;rsquo;s forgetfulness: Winning induces forgetfulness.</description>
     </item>
     
     <item>
@@ -42,15 +60,6 @@ In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;pro
 Quentin Tarantino, Stanley Kubrick, Hayao Miyazaki, Kar-Wai Wong, Edgar Wright, Woody Allen, Wes Anderson, Jim Jarmusch, Terry Gilliam.
 Short notes about movies:
  Paterson. A slow burner. Did not enjoy it much in cinema, but it became one of my favorite movies after watching it multiple times. Dead Man. A good movie. Just not my pair of shoes. Bill &amp;amp; Ted Face the Music. It is what it is.</description>
-    </item>
-    
-    <item>
-      <title>goblin notes</title>
-      <link>/note/2020/11/goblin-notes/</link>
-      <pubDate>Sat, 21 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2020/11/goblin-notes/</guid>
-      <description>Experimental hollowness: When it becomes unclear if a benchmarking study, an empirical experiment or a simulation study contributes anything other than an improvement with regard to a under-specified metric (any perhaps even introduces with regard to some other relevant metrics). Empirical death end: When a theory does not admit any (more) experiments that can lead to its refutation or advancement. See: Sabine_Hossenfelder&amp;rsquo;s Lost in Math.  treasures and scrap found along the way:</description>
     </item>
     
     <item>
