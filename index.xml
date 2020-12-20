@@ -41,13 +41,12 @@ In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;pro
     </item>
     
     <item>
-      <title>map &amp; territory</title>
-      <link>/note/2020/12/map-territory/</link>
+      <title>analytical modeling</title>
+      <link>/note/2020/12/analytical-modelling/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/note/2020/12/map-territory/</guid>
-      <description>Liu &amp;amp; Regier (2020): Flows Succeed Where GANs Fail: Lessons from Low-Dimensional Data.
- Abstract: Normalizing flows and generative adversarial networks (GANs) are both approaches to density estimation that use deep neural networks to transform samples from an uninformative prior distribution to an approximation of the data distribution. There is great interest in both for general-purpose statistical modeling, but the two approaches have seldom been compared to each other for modeling non-image data.</description>
+      <guid>/note/2020/12/analytical-modelling/</guid>
+      <description>Before getting lost in my notes and links I recommend starting here: First, the Kill Math article by Bret Victor sets the tone for what these notes will explore. Second, check the follow-up notes by Michael Nielsen. I do not like them that much, but is still better than anything I could ever do. Third, there is this amazing article about SimRefinery and the company behind it tried to employ simulation toys/systems as &amp;ldquo;understanding tools&amp;rdquo; the real work.</description>
     </item>
     
     <item>
@@ -56,7 +55,7 @@ In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;pro
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/12/multi-multi/</guid>
-      <description>Google AI: Optimizing Multiple Loss Functions with Loss-Conditional Training (paper)
+      <description>1) Google AI (2020): Optimizing Multiple Loss Functions with Loss-Conditional Training (paper)
  First paragraph: In many machine learning applications the performance of a model cannot be summarized by a single number, but instead relies on several qualities, some of which may even be mutually exclusive. For example, a learned image compression model should minimize the compressed image size while maximizing its quality. It is often not possible to simultaneously optimize all the values of interest, either because they are fundamentally in conflict, like the image quality and the compression ratio in the example above, or simply due to the limited model capacity.</description>
     </item>
     

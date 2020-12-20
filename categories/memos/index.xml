@@ -46,7 +46,7 @@ In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;pro
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/12/multi-multi/</guid>
-      <description>Google AI: Optimizing Multiple Loss Functions with Loss-Conditional Training (paper)
+      <description>1) Google AI (2020): Optimizing Multiple Loss Functions with Loss-Conditional Training (paper)
  First paragraph: In many machine learning applications the performance of a model cannot be summarized by a single number, but instead relies on several qualities, some of which may even be mutually exclusive. For example, a learned image compression model should minimize the compressed image size while maximizing its quality. It is often not possible to simultaneously optimize all the values of interest, either because they are fundamentally in conflict, like the image quality and the compression ratio in the example above, or simply due to the limited model capacity.</description>
     </item>
     

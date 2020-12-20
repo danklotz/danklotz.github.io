@@ -38,9 +38,21 @@
 </div>
 
 <main>
+
+
 <p><strong><a href="https://towardsdatascience.com/peering-inside-the-blackbox-how-to-trick-a-neural-network-757c90a88a73">Looking Inside The Blackbox</a>.</strong> This is blog-post/tutorial about the usage of backprop do obtain some qualitative understanding of neural-networks. Not to brad, but I <a href="https://meetingorganizer.copernicus.org/EGU2020/EGU2020-8853.html">had a similar idea</a> in the context of <em>&ldquo;data-assimilation for Deep Learning based rainfall-runoff modeling&rdquo;</em>. As in the blogpost, the idea was to backprop with regard to the inputs (instead of the parameters), but with the goal to get (a) a better forecast and (b) obtain a qualitative understand about what the networks <em>thinks</em> about the world. On that note, I still like the presentation-style, here a slide so you know what I mean:</p>
 
 <p><img src="/note/2020-12-15-model-checking_files/Screenshot from 2020-12-15 18-37-09.png" alt="" /></p>
+
+<h1 id="toy-problems-limitaiton-checking">Toy problems &amp; limitaiton checking</h1>
+
+<p><a href="https://arxiv.org/abs/2006.10175v1">Liu &amp; Regier (2020): Flows Succeed Where GANs Fail: Lessons from Low-Dimensional Data</a>.</p>
+
+<p><img src="/note/2020-12-14-map-territory_files/Screenshot from 2020-12-14 00-54-45.png" alt="" /></p>
+
+<blockquote>
+<p><em>Abstract:</em> Normalizing flows and generative adversarial networks (GANs) are both approaches to density estimation that use deep neural networks to transform samples from an uninformative prior distribution to an approximation of the data distribution. There is great interest in both for general-purpose statistical modeling, but the two approaches have seldom been compared to each other for modeling non-image data. The difficulty of computing likelihoods with GANs, which are implicit models, makes conducting such a comparison challenging. We work around this difficulty by considering several low-dimensional synthetic datasets. An extensive grid search over GAN architectures, hyperparameters, and training procedures suggests that no GAN is capable of modeling our simple low-dimensional data well, a task we view as a prerequisite for an approach to be considered suitable for general-purpose statistical modeling. Several normalizing flows, on the other hand, excelled at these tasks, even substantially outperforming WGAN in terms of Wasserstein distance&mdash;the metric that WGAN alone targets. Overall, normalizing flows appear to be more reliable tools for statistical inference than GANs.</p>
+</blockquote>
 
 </main>
 
