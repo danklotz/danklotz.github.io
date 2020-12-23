@@ -6,10 +6,22 @@
     <description>Recent content in Notes on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/note/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>reviews</title>
+      <link>/note/2020/12/rnd-reviews/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/12/rnd-reviews/</guid>
+      <description>In the following you find some pretty random reviews of some pretty random things. Enjoy.
+Moving Pictures A short list of regisseurs I watch: Quentin Tarantino, Stanley Kubrick, Hayao Miyazaki, Kar-Wai Wong, Edgar Wright, Woody Allen, Wes Anderson, Jim Jarmusch, Terry Gilliam.
+And, a long list of short movie notes/reviews:
+ 8 Mile. This is a much better movie than commonly thought. I admit that it is not great cinema.</description>
+    </item>
     
     <item>
       <title>model checking</title>
@@ -46,7 +58,7 @@ In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;pro
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/12/analytical-modelling/</guid>
-      <description>Before getting lost in my notes and links I recommend starting here: First, the Kill Math article by Bret Victor sets the tone for what these notes will explore. Second, check the follow-up notes by Michael Nielsen. I do not like them that much, but is still better than anything I could ever do. Third, there is this amazing article about SimRefinery and the company behind it tried to employ simulation toys/systems as &amp;ldquo;understanding tools&amp;rdquo; the real work.</description>
+      <description>Before getting lost in my notes and links I recommend starting here: First, read Bret Victor&amp;rsquo;s Open and Down the Ladder of Abstraction and Kill Math article. They set the tone for what these notes will explore. Second, check the follow-up notes by Michael Nielsen. I do not like them that much, but is still better than anything I could ever do. Third, there is this amazing article about SimRefinery and the company behind it tried to employ simulation toys/systems as &amp;ldquo;understanding tools&amp;rdquo; the real work.</description>
     </item>
     
     <item>
@@ -57,28 +69,6 @@ In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;pro
       <guid>/note/2020/12/multi-multi/</guid>
       <description>1) Google AI (2020): Optimizing Multiple Loss Functions with Loss-Conditional Training (paper)
  First paragraph: In many machine learning applications the performance of a model cannot be summarized by a single number, but instead relies on several qualities, some of which may even be mutually exclusive. For example, a learned image compression model should minimize the compressed image size while maximizing its quality. It is often not possible to simultaneously optimize all the values of interest, either because they are fundamentally in conflict, like the image quality and the compression ratio in the example above, or simply due to the limited model capacity.</description>
-    </item>
-    
-    <item>
-      <title>movies</title>
-      <link>/note/2020/11/movies/</link>
-      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2020/11/movies/</guid>
-      <description>Regisseurs I watch:
-Quentin Tarantino, Stanley Kubrick, Hayao Miyazaki, Kar-Wai Wong, Edgar Wright, Woody Allen, Wes Anderson, Jim Jarmusch, Terry Gilliam.
-Short notes about movies:
- Paterson. A slow burner. Did not enjoy it much in cinema, but it became one of my favorite movies after watching it multiple times. Dead Man. A good movie. Just not my pair of shoes. Bill &amp;amp; Ted Face the Music. It is what it is.</description>
-    </item>
-    
-    <item>
-      <title>books</title>
-      <link>/note/2020/07/reading-list/</link>
-      <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2020/07/reading-list/</guid>
-      <description>Short notes on books:
- Taleb (2007): Fooled by Randomness. A gem. Page (2018) The Model Thinker. Very enjoyable. Proctor &amp;amp; Schiebinger (ed, 2008) Proctor, R: Agnotology. More interesting than I expected, less than I hoped. Ende (1994) Zettelkasten. Großartig! White et al. (1993) Complexity and Chaos. Not sure what to think about this thing. Definitely not my pair of shoes. Childers (2013) Philosophy and Probability. Very good book. Otto (2019) Wütendes Wetter.</description>
     </item>
     
     <item>
