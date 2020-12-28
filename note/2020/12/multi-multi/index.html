@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>multi multi | daniel klotz |</title>
+    <title>the manig | daniel klotz |</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
      <div class = "headhead">
@@ -32,7 +32,7 @@
 
 <div class="article-meta">
 
-<h1><span class="title">multi multi</span></h1>
+<h1><span class="title">the manig</span></h1>
 
 
 </div>
@@ -40,13 +40,9 @@
 <main>
 
 
-<p>1) Google AI (2020): <a href="https://ai.googleblog.com/2020/04/optimizing-multiple-loss-functions-with.html?m=1">Optimizing Multiple Loss Functions with Loss-Conditional Training</a> (<a href="https://openreview.net/pdf?id=HyxY6JHKwr">paper</a>)</p>
+<h1 id="model-weaving">model weaving</h1>
 
-<p><img src="/note/2020-12-14-multi-multi_files/Screenshot from 2020-12-14 01-15-44.png" alt="" /></p>
-
-<blockquote>
-<p><em>First paragraph:</em> In many machine learning applications the performance of a model cannot be summarized by a single number, but instead relies on several qualities, some of which may even be mutually exclusive. For example, a learned image compression model should minimize the compressed image size while maximizing its quality. It is often not possible to simultaneously optimize all the values of interest, either because they are fundamentally in conflict, like the image quality and the compression ratio in the example above, or simply due to the limited model capacity. Hence, in practice one has to decide how to balance the values of interest.</p>
-</blockquote>
+<h2 id="many-models">many models</h2>
 
 <p>2) Cheung et al. (2019): <a href="https://arxiv.org/abs/1902.05522">Superposition of many models into one</a>. Mixing different model initialization to create a model that can adapt to different task. Below the first figure and the absract go get an idea.</p>
 
@@ -56,7 +52,17 @@
 <p><em>Abstract</em>: We present a method for storing multiple models within a single set of parameters. Models can coexist in superposition and still be retrieved individually. In experiments with neural networks, we show that a surprisingly large number of models can be effectively stored within a single parameter instance. Furthermore, each of these models can undergo thousands of training steps without significantly interfering with other models within the superposition. This approach may be viewed as the online complement of compression: rather than reducing the size of a network after training, we make use of the unrealized capacity of a network during training.</p>
 </blockquote>
 
-<h1 id="morsels">morsels</h1>
+<h2 id="many-objectives">many objectives</h2>
+
+<p>Google AI (2020): <a href="https://ai.googleblog.com/2020/04/optimizing-multiple-loss-functions-with.html?m=1">Optimizing Multiple Loss Functions with Loss-Conditional Training</a> (<a href="https://openreview.net/pdf?id=HyxY6JHKwr">paper</a>)</p>
+
+<p><img src="/note/2020-12-14-multi-multi_files/Screenshot from 2020-12-14 01-15-44.png" alt="" /></p>
+
+<blockquote>
+<p><em>First paragraph:</em> In many machine learning applications the performance of a model cannot be summarized by a single number, but instead relies on several qualities, some of which may even be mutually exclusive. For example, a learned image compression model should minimize the compressed image size while maximizing its quality. It is often not possible to simultaneously optimize all the values of interest, either because they are fundamentally in conflict, like the image quality and the compression ratio in the example above, or simply due to the limited model capacity. Hence, in practice one has to decide how to balance the values of interest.</p>
+</blockquote>
+
+<h1 id="morsels">Morsels</h1>
 
 <ul>
 <li>stackexchange: <a href="https://mathoverflow.net/questions/25983/intuitive-crutches-for-higher-dimensional-thinking">Intuitions fo rhigher dimensional thinking</a></li>

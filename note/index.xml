@@ -62,13 +62,13 @@ In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;pro
     </item>
     
     <item>
-      <title>multi multi</title>
+      <title>the manig</title>
       <link>/note/2020/12/multi-multi/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/12/multi-multi/</guid>
-      <description>1) Google AI (2020): Optimizing Multiple Loss Functions with Loss-Conditional Training (paper)
- First paragraph: In many machine learning applications the performance of a model cannot be summarized by a single number, but instead relies on several qualities, some of which may even be mutually exclusive. For example, a learned image compression model should minimize the compressed image size while maximizing its quality. It is often not possible to simultaneously optimize all the values of interest, either because they are fundamentally in conflict, like the image quality and the compression ratio in the example above, or simply due to the limited model capacity.</description>
+      <description>model weaving many models 2) Cheung et al. (2019): Superposition of many models into one. Mixing different model initialization to create a model that can adapt to different task. Below the first figure and the absract go get an idea.
+ Abstract: We present a method for storing multiple models within a single set of parameters. Models can coexist in superposition and still be retrieved individually. In experiments with neural networks, we show that a surprisingly large number of models can be effectively stored within a single parameter instance.</description>
     </item>
     
     <item>
