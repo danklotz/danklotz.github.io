@@ -12,15 +12,13 @@
     
     
     <item>
-      <title>reviews</title>
+      <title>micro reviews</title>
       <link>/note/2020/12/rnd-reviews/</link>
       <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/12/rnd-reviews/</guid>
       <description>In the following you find some pretty random reviews of some pretty random things. Enjoy.
-Moving Pictures A short list of regisseurs I watch: Quentin Tarantino, Stanley Kubrick, Hayao Miyazaki, Kar-Wai Wong, Edgar Wright, Woody Allen, Wes Anderson, Jim Jarmusch, Terry Gilliam.
-And, a long list of short movie notes/reviews:
- 8 Mile. This is a much better movie than commonly thought. I admit that it is not great cinema.</description>
+Moving Pictures  8 Mile. This is a much better movie than commonly thought. I admit that it is not great cinema. But, it is also not the junk that some pretend it is. About Schmidt. Better than I expected. Gangs of New York. I did enjoy the movie, but it did not leave a lasting impression.</description>
     </item>
     
     <item>
@@ -53,13 +51,14 @@ In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;pro
     </item>
     
     <item>
-      <title>the manig</title>
+      <title>multitudes</title>
       <link>/note/2020/12/multi-multi/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/12/multi-multi/</guid>
-      <description>model weaving many models 2) Cheung et al. (2019): Superposition of many models into one. Mixing different model initialization to create a model that can adapt to different task. Below the first figure and the absract go get an idea.
- Abstract: We present a method for storing multiple models within a single set of parameters. Models can coexist in superposition and still be retrieved individually. In experiments with neural networks, we show that a surprisingly large number of models can be effectively stored within a single parameter instance.</description>
+      <description>Intuitions for higher dimensional thinking
+model weaving many models 2) Cheung et al. (2019): Superposition of many models into one. Mixing different model initialization to create a model that can adapt to different task. Below the first figure and the absract go get an idea.
+ Abstract: We present a method for storing multiple models within a single set of parameters. Models can coexist in superposition and still be retrieved individually.</description>
     </item>
     
     <item>
