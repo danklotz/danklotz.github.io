@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>metrics 1 | daniel klotz |</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+
+     <div class = "headhead">
+  <center><img src="/danklotz-signature.png", style="height:230px", margin=0px></center>
+</div>
+
+
+
+    <p style="margin-bottom:208px;"></p>
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">hi</a></li>
+      
+      <li><a href="/note/">notes</a></li>
+      
+      <li><a href="/gfx/">gfx</a></li>
+      
+      <li><a href="/about/">me</a></li>
+      
+    </ul>
+    </nav>
+
+<div class="article-meta">
+
+<h1><span class="title">metrics 1</span></h1>
+
+
+</div>
+
+<main>
+
+
+
+<p>We only have sub-optimal metrics for reporting and evaluating model performance in rainfall-runoff modelling. This is not a controversial opinion (see for example <a href="https://doi.org/10.1002/hyp.6825">Schaefi and Gupta, 2007</a> or <a href="https://doi.org/10.1029/2011WR010962">Gupta and Kling, 2011</a>). Many metrics implicitly assume some form of well behaved error distribution. In this series (?) I want to explore what happens if this is not the case by using simulation (using the NSE, the KGE and Pearson Correlation).</p>
+<div id="part-1-laplace-contamination" class="section level1">
+<h1>Part 1: Laplace Contamination</h1>
+<p>As the first experiment let us look into what happens if our model error is not Gaussian, but Laplacian.
+There are two reasons for using Laplace noise here. Firstly, we use (asymmetric) Laplacians in our publication; and secondly, its the lower bound for heavy-tailed distributions. That means that distributions with tails above the exponential are classified as heavy-tailed. In my personal experience with hydrological models most error distributions are actually more heavy-tailed than the Laplace would suggest and you can almost always a bias if you slice the hydrographs appropriately (a lot of very small errors, and some very big ones e.g. form floods).</p>
+<p>For the demonstration our process <span class="math inline">\(f_p(t)\)</span> will be a simple time dependent function without memory:
+<span class="math display">\[f_p(t) \equiv 10*sin(t) + 5*sin(0.25*t) + 100.\]</span></p>
+<p>For what we do it does not really matter if the function is positive or complex, but this gives us a process which is nice to look at. Now, we can associate perfect model types with the process and look what happens. We use perfect here in the sense that the models only deviate from the process itself by a specific noise that generated from a mixture of additional Gauss- or Laplace-noise.
+Formally, we can say that a model <span class="math inline">\(m(t)\)</span> is defined as:</p>
+<p><span class="math display">\[m(t) \equiv f_p(t) + \epsilon_t,\]</span></p>
+<p>where <span class="math inline">\(\epsilon_t\)</span> is a noise-contamination term which we vary between Laplace and Gaussian depending on a weight <span class="math inline">\(w\)</span>:</p>
+<p><span class="math display">\[ \epsilon \sim \sigma*\left(\mathcal{N}(0,\sqrt{1-w}) + \lambda \left(0,\frac{\sqrt{w}}{\sqrt{2}} \right)\right),\]</span>
+where <span class="math inline">\(\mathcal{N}(\cdot)\)</span> is our Gaussian, <span class="math inline">\(\lambda(\cdot)\)</span> is our Laplace distribution, <span class="math inline">\(w \in [0,1]\)</span> a weighting parameters which controls the sample-contribution of each distribution and <span class="math inline">\(\sigma\)</span> overall standard deviation of the mixture. The normalization within the Laplace distribution is chosen so that no matter how we choose <span class="math inline">\(w\)</span> we will always have the same overall variance and standard deviations.</p>
+<p>A concrete example of this process can be seen in the following figure:</p>
+<p><img src="/note/2020-06-12-metrics-1_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>And, the above graphic has following standard deviations:</p>
+<ul>
+<li>Standard Deviation: Process - Laplace = 2.023</li>
+<li>Standard Deviation: Process - 50:50Mixture = 2.023</li>
+<li>Standard Deviation: Process - Gaussian = 2.028</li>
+</ul>
+<p>This setup gives us two directions to explore. For one, we can ask (a) what happens if we leaving the standard deviation <span class="math inline">\(\sigma\)</span> constant and interpolate the weights <span class="math inline">\(w\)</span> between zero and one. And secondly, (b) fixing the weights <span class="math inline">\(w\)</span> and changing the standard deviation <span class="math inline">\(\sigma\)</span>.</p>
+<p>Before making the experiments I thought that (a) should result either in a flat line (since all metrics are based on the variance) or be worse for Laplace noise (since these things often implicitly assume normality); and I thought that (b) will show us some strange behavior for the correlation. As shown below I was right on first, but wrong on second</p>
+<div id="experiments" class="section level2 tabset">
+<h2>Experiments</h2>
+<div id="a-changing-weights-constant-variance" class="section level3">
+<h3>(a) Changing weights, constant variance</h3>
+<p>The settings for the simulation below are as following. We choose 100 weights <span class="math inline">\(w\)</span> in the range <span class="math inline">\((0.0001,1)\)</span>, and sample 100 noisy time-series for each chosen weight. The time-series are created as shown above; each one has a length of 4000 steps and a variance of <span class="math inline">\(\sigma =\)</span> 3.</p>
+<p>The results are:</p>
+<p><img src="/note/2020-06-12-metrics-1_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<p>With the following average standard deviations for each metric:</p>
+<ul>
+<li>SD(Correlation): 0.0018</li>
+<li>SD(NSE): 0.0042</li>
+<li>SD(KGE): 0.0045</li>
+</ul>
+</div>
+<div id="b-increasing-variance-under-constant-weights" class="section level3">
+<h3>(b) Increasing variance under constant weights</h3>
+<p>The setup for the simulation - which results in the figure below - are: We choose 100 variances <span class="math inline">\(\sigma\)</span> in the range (<span class="math inline">\(0.001\)</span>, 3). For each chosen sigma <span class="math inline">\(\sigma_i\)</span> we repeat the simulation 100 times, with a time-series length of 4000 and a fixed weight at 0.5 (<strong>note:</strong> I tried to fiddle around with the weights, but the resulting behavior does almost not change).</p>
+<p><img src="/note/2020-06-12-metrics-1_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<p>With the following average standard deviations for each metric:</p>
+<ul>
+<li>SD(Correlation): 610^{-4}</li>
+<li>SD(NSE): 0.0014</li>
+<li>SD(KGE): 0.0022</li>
+</ul>
+</div>
+<div id="conclusion" class="section level3">
+<h3>Conclusion</h3>
+<p>Some thoughts about what we saw in these simulations:</p>
+<p>In experiment (a) we saw that the type of noise does not matter as long as it is sampled i.i.d., homoscedastic and there is no bias (a bias would influence the KGE and NSE, but not the correlation). The metrics are purely based on variance, which makes it possible to use them for comparison but also hides the kind of error structure - e.g. if we would have an almost perfect model that just makes very view but large error over the entire time-series, we would get the same metrics than an model which is constantly wrong (but not too much).</p>
+<p>In experiment (b) we saw that all metric deteriorate differently with increasing variance. The correlation was always the highest and showed the least variance. I think this shows that it converges the fasts but its actual value is not very informative. The KGE value converges slower (which is bad), but it deteriorates faster than the correlation (which is good). Lastly, the NSE converges fast and deteriorates the most. So, in our experiment the NSE is the most critical metric. In other settings this might chance. So, the most informative metric will depend on the underlying setup (data, model, errors) and is not fixed. That should at least be a motivation to always report more than a single metric. But, it might also hint to a possibility to describe additional properties to the metrics, e.g. one could make a similar analysis as the one we did here and report how error contamination of different sizes can different metrics within the given setup. I’ve never seen such an analysis attached to the reported metrics.</p>
+</div>
+</div>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  <a href="https://danklotz.github.io/"><img src="../project-fig_sw.png" alt="hello" /></a>
+  
+  </footer>
+  </body>
+</html>
+
