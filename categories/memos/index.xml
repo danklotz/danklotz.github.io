@@ -85,15 +85,6 @@ model weaving many models 2) Cheung et al. (2019): Superposition of many models 
     
     <item>
       <title>metrics 1</title>
-      <link>/note/2020/06/diagnostics-1/</link>
-      <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2020/06/diagnostics-1/</guid>
-      <description>We only have sub-optimal metrics for reporting and evaluating model performance in rainfall-runoff modelling. This is not a controversial opinion (see for example Schaefi and Gupta, 2007 or Gupta and Kling, 2011). Many metrics implicitly assume some form of well behaved error distribution. In this series (?) I want to explore what happens if this is not the case by using simulation (using the NSE, the KGE and Pearson Correlation).</description>
-    </item>
-    
-    <item>
-      <title>metrics 1</title>
       <link>/note/2020/06/metrics-1/</link>
       <pubDate>Fri, 12 Jun 2020 00:00:00 +0000</pubDate>
       
