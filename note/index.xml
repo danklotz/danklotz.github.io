@@ -18,7 +18,7 @@
       
       <guid>/note/2020/12/rnd-reviews/</guid>
       <description>In the following you find some pretty random reviews of some pretty random things. Enjoy.
-Moving Pictures  The Grand Budapest Hotel. A gem. And probably, my favorite Wes Anderson movie. The whole movie is polished to the max. The story is touching, intense and comical. The colors are great. The depiction of West Europe is perfect. I love it. Isle of Dogs. Love the movie. It seems to be made with so much love.</description>
+Moving Pictures  Fanatstic Mr. Fox. One of the best Wes Anderson Movies and in many ways the spiritual precessor of Isle of Dogs. Would recommend. The Grand Budapest Hotel. A gem. And probably, my favorite Wes Anderson movie. The whole movie is polished to the max. The story is touching, intense and comical. The colors are great.</description>
     </item>
     
     <item>
@@ -31,31 +31,31 @@ Moving Pictures  The Grand Budapest Hotel. A gem. And probably, my favorite Wes 
     </item>
     
     <item>
-      <title>calm tech</title>
-      <link>/note/2020/12/calm-technology/</link>
-      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/note/2020/12/calm-technology/</guid>
-      <description>Permacomputing As far as I can tell permacomputing is so far mainly a nice essay that lays out a vision by the amazing viznut. Here is how it starts:
- Over the last few hundred years of human civilization, there has been a dramatic increase in the consumption of artificially produced energy. In the overarching story, this is often equated with &amp;ldquo;progress&amp;rdquo;.
-In the computer world, this phenomenon gets multiplied by itself: &amp;ldquo;progress&amp;rdquo; facilitates ever greater densities of data storage and digital logic, thus dramatically exploding the availability of computing resources.</description>
-    </item>
-    
-    <item>
-      <title>goblin notes</title>
+      <title>goblin footnotes</title>
       <link>/note/2020/12/goblin-notes/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/12/goblin-notes/</guid>
-      <description>Experimental hollowness: When it becomes unclear if a benchmarking study, an empirical experiment or a simulation study contributes anything other than an improvement with regard to a under-specified metric (any perhaps even introduces with regard to some other relevant metrics). Empirical death end: When a theory does not admit any (more) experiments that can lead to its refutation or advancement. See: Sabine_Hossenfelder&amp;rsquo;s Lost in Math. Winner&amp;rsquo;s forgetfulness: Winning induces forgetfulness.</description>
+      <description>Nasty patterns I found while dabbling in the research community.
+ Experimental hollowness: When it becomes unclear if a benchmarking study, an empirical experiment or a simulation study contributes anything other than an improvement with regard to a under-specified metric (any perhaps even introduces with regard to some other relevant metrics). Empirical death end: When a theory does not admit any (more) experiments that can lead to its refutation or advancement.</description>
     </item>
     
     <item>
-      <title>analytical modeling</title>
-      <link>/note/2020/12/analytical-modelling/</link>
+      <title>regenerative tech</title>
+      <link>/note/2020/12/calm-technology/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/note/2020/12/calm-technology/</guid>
+      <description>Classics  Regenerative Design Environmental Engineering Environmental Design Ecological Engineering  Howard T. Odum  Human Ecology. Permaculture Ecosystem Services Degrowth  Digital Permacomputing As far as I can tell permacomputing is so far mainly a nice essay that lays out a vision by the amazing viznut. Here is how it starts:
+ Over the last few hundred years of human civilization, there has been a dramatic increase in the consumption of artificially produced energy.</description>
+    </item>
+    
+    <item>
+      <title>analytic modeling</title>
+      <link>/note/2020/12/analytic-modeling/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/note/2020/12/analytical-modelling/</guid>
+      <guid>/note/2020/12/analytic-modeling/</guid>
       <description>These notes are about using models to analyze things. Before getting lost in my notes and links I recommend starting here: First, read Bret Victor&amp;rsquo;s Open and Down the Ladder of Abstraction and Kill Math article. They set the tone for what these notes will explore. Second, check the follow-up notes by Michael Nielsen. I do not like them that much, but is still better than anything I could ever do.</description>
     </item>
     
@@ -77,10 +77,9 @@ model weaving many models 2) Cheung et al. (2019): Superposition of many models 
       <pubDate>Mon, 06 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>/note/2020/07/quotes/</guid>
-      <description>Sunset Salvo In the following are some memorable quotes from John W. Tukey&amp;rsquo;s speech sunset salvo.
- My title is borrowed from Estil green who used it when he retired as Executive Vice-President at Bell Laboratories about two decades ago. He was an executive, so he really retired.
- +++
- The simplicty of wrting thesis in, and assessing the correctess of, mathematical statistics [&amp;hellip;] will aways ensure expansion of that corner.</description>
+      <description>A lot of smart things have been said. In the following is a small collection of quotes from scientific papers. Hence the title. I collect more condensed thoughts from the same domain at goblin foonotes.
+Sunset Salvo Some memorable quotes from John W. Tukey&amp;rsquo;s speech sunset salvo.
+ My title is borrowed from Estil green who used it when he retired as Executive Vice-President at Bell Laboratories about two decades ago.</description>
     </item>
     
     <item>
