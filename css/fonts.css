@@ -2,27 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
 
 :root {
-  --blue: #f4845f;
-  --indigo: #6610f2;
-  --purple: #613d7c;
-  --pink: #e83e8c;
-  --red: #FF0039;
-  --orange: #f0ad4e;
-  --yellow: #FF7518;
-  --green: #3FB618;
-  --teal: #20c997;
-  --cyan: #9954BB;
-  --white: #fff;
-  --gray: #868e96;
-  --gray-dark: #373a3c;
-  --primary: #f4845f;
-  --secondary: #373a3c;
-  --success: #3FB618;
-  --info: #9954BB;
-  --warning: #FF7518;
-  --danger: #FF0039;
-  --light: #f8f9fa;
-  --dark: #373a3c;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -33,9 +12,9 @@
 }
 
 /* color options for note-categories */
-div#category a:link { color: #b5838d; }
+div#category a:link { color: #898989; }
 div#category a:visited { color: #BBBBBB; }
-div#category a:hover { color: #6d6875; }
+div#category a:hover { color: #121212; }
 div#category a:active { color: #b5838d; }
 
 body {
@@ -57,10 +36,12 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
+
 a:hover {
-  color: #e5989b;
   text-decoration: underline;
+  color: #fa1a2c;
 }
+
 
 a:not([href]):not([tabindex]) {
   color: inherit;
@@ -79,8 +60,8 @@ a:not([href]):not([tabindex]):focus {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-  font-weight: 300;
+  font-family:  'Spectral', serif;
+  font-weight: 100;
   line-height: 1.2;
   color: inherit;
 }
