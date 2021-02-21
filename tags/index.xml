@@ -2,147 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on daniel klotz |</title>
-    <link>/tags/</link>
+    <link>https://danklotz.github.io/tags/</link>
     <description>Recent content in Tags on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://danklotz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>creativecoding</title>
-      <link>/tags/creativecoding/</link>
+      <link>https://danklotz.github.io/tags/creativecoding/</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/creativecoding/</guid>
+      <guid>https://danklotz.github.io/tags/creativecoding/</guid>
       <description></description>
     </item>
     
     <item>
       <title>p5js</title>
-      <link>/tags/p5js/</link>
+      <link>https://danklotz.github.io/tags/p5js/</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/p5js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Idea</title>
-      <link>/tags/idea/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/idea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tip</title>
-      <link>/tags/tip/</link>
-      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tip/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>scripting</title>
-      <link>/tags/scripting/</link>
-      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/scripting/</guid>
+      <guid>https://danklotz.github.io/tags/p5js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>/tags/javascript/</link>
+      <link>https://danklotz.github.io/tags/javascript/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/javascript/</guid>
+      <guid>https://danklotz.github.io/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>/tags/js/</link>
+      <link>https://danklotz.github.io/tags/js/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/js/</guid>
+      <guid>https://danklotz.github.io/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scripting</title>
+      <link>https://danklotz.github.io/tags/scripting/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://danklotz.github.io/tags/scripting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>webGL</title>
-      <link>/tags/webgl/</link>
+      <link>https://danklotz.github.io/tags/webgl/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/webgl/</guid>
+      <guid>https://danklotz.github.io/tags/webgl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>progamming</title>
-      <link>/tags/progamming/</link>
+      <link>https://danklotz.github.io/tags/progamming/</link>
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/progamming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Science</title>
-      <link>/tags/data-science/</link>
-      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>/tags/programming/</link>
-      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tidy Evaluation</title>
-      <link>/tags/tidy-evaluation/</link>
-      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tidy-evaluation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tidyverse</title>
-      <link>/tags/tidyverse/</link>
-      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tidyverse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rlang</title>
-      <link>/tags/rlang/</link>
-      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/rlang/</guid>
+      <guid>https://danklotz.github.io/tags/progamming/</guid>
       <description></description>
     </item>
     

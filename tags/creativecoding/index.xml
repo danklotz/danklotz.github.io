@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>creativecoding on daniel klotz |</title>
-    <link>/tags/creativecoding/</link>
+    <link>https://danklotz.github.io/tags/creativecoding/</link>
     <description>Recent content in creativecoding on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/creativecoding/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://danklotz.github.io/tags/creativecoding/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>p5js: Particles1</title>
-      <link>/note/2018/09/p5js-particles1/</link>
+      <link>https://danklotz.github.io/note/2018/09/p5js-particles1/</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/note/2018/09/p5js-particles1/</guid>
+      <guid>https://danklotz.github.io/note/2018/09/p5js-particles1/</guid>
       <description>Playing around with the new p5.js editor&amp;hellip; 
   // actual script --------------------------------------------------------------- function setup() { var canvas = createCanvas(720, 450); canvas.parent(&#39;sketch-holder&#39;); system = new ParticleSystem(createVector(width/2, 50)); } function draw() { background(20,30,50, 150); system.addParticle(); system.run(); } // A simple Particle class var Particle = function(position) { this.acceleration = createVector(-0.00015*(mouseX-0.5*width),-0.00012*(mouseY-0.5*height)); this.velocity = createVector(random(-0.5, 0.5), random(-1, 0)); this.old_position = position.copy(); this.position = position.copy(); this.lifespan = 255; }; Particle.prototype.run = function() { this.</description>
     </item>
     
     <item>
       <title>p5js: 3D Test</title>
-      <link>/note/2017/12/p5js-3d-test/</link>
+      <link>https://danklotz.github.io/note/2017/12/p5js-3d-test/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/12/p5js-3d-test/</guid>
+      <guid>https://danklotz.github.io/note/2017/12/p5js-3d-test/</guid>
       <description>Testing the usage of webGL in p5js.
 Adopted from the coding train (who adopted it from bees &amp;amp; bombs).
    // actual script --------------------------------------------------------------- let angle = 0; let w = 35; let ma; let maxD function setup() { let canvas = createCanvas(400, 400, WEBGL); canvas.parent(&#39;sketch-holder&#39;); ma = atan(cos(QUARTER_PI)); maxD = dist(0,0, 200,200) } function draw() { background(&#34;#FFF&#34;); ortho(-400, 400, -400, 400, 0, 1000); rotateX(-QUARTER_PI); rotateY(ma); let offset = 0; for (let z = 0; z </description>
@@ -34,30 +34,30 @@ Adopted from the coding train (who adopted it from bees &amp;amp; bombs).
     
     <item>
       <title>p5js: Function Plotting</title>
-      <link>/note/2017/12/p5js-function-plotting/</link>
+      <link>https://danklotz.github.io/note/2017/12/p5js-function-plotting/</link>
       <pubDate>Sat, 09 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/12/p5js-function-plotting/</guid>
+      <guid>https://danklotz.github.io/note/2017/12/p5js-function-plotting/</guid>
       <description>A little test for plotting functions. 
   // actual script --------------------------------------------------------------- var c_size = 450 var midpoint = 0.5*c_size; var resolution = 10; var x1 = 0; var y1 = 0; var grid_div = 15; function setup() { background(&#34;#fff&#34;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); noLoop(); strokeWeight(1); stroke(50,50,50,150); line(midpoint,0,midpoint,c_size) line(0,midpoint,c_size,midpoint) // stroke(50,50,50,23); for (var i=0; i</description>
     </item>
     
     <item>
       <title>p5js: Floating Sticks</title>
-      <link>/note/2017/12/p5js-floating-sticks/</link>
+      <link>https://danklotz.github.io/note/2017/12/p5js-floating-sticks/</link>
       <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/12/p5js-floating-sticks/</guid>
+      <guid>https://danklotz.github.io/note/2017/12/p5js-floating-sticks/</guid>
       <description>Adapted from here
    // actual script --------------------------------------------------------------- var gl; var gl2; var tStep = 0.3; var all_time = 0.0 var c_size = 450; var midpoint = c_size/2 var first_click = false function setup() { background(&#34;#FFF&#34;); var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // Line /*gl = new GrowingSticks(false); gl.addPoint(10,0.5*height,true,20); for(var x=20; x1){ if(this.closed){ this.springs.pop(); } this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len)); if(this.closed){ this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len)); } } }, insertPoint: function(fixed=false, len0, len1, firstIndex){ if(this.</description>
     </item>
     
     <item>
       <title>p5js: linegrow</title>
-      <link>/note/2017/12/p5js-linegrow/</link>
+      <link>https://danklotz.github.io/note/2017/12/p5js-linegrow/</link>
       <pubDate>Sat, 02 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/note/2017/12/p5js-linegrow/</guid>
+      <guid>https://danklotz.github.io/note/2017/12/p5js-linegrow/</guid>
       <description>Adapted from here
    // actual script --------------------------------------------------------------- var gl; var tStep = 0.3; var c_size = 450 var midpoint = c_size/2 function setup() { var canvas = createCanvas(c_size, c_size); canvas.parent(&#39;sketch-holder&#39;); // Line /*gl = new GrowingLine(false); gl.addPoint(10,0.5*height,true,20); for(var x=20; x1){ if(this.closed){ this.springs.pop(); } this.springs.push(new Spring(this.points[this.points.length-2],this.points[this.points.length-1],len)); if(this.closed){ this.springs.push(new Spring(this.points[this.points.length-1],this.points[0],len)); } } }, insertPoint: function(fixed=false, len0, len1, firstIndex){ if(this.points.length  1){ let midPos = p5.Vector.add(this.points[firstIndex].pos,this.points[firstIndex+1].pos).mult(0.5); this.points.splice(firstIndex+1,0,new Point(midPos.x, midPos.y, fixed)); this.</description>
     </item>

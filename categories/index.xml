@@ -2,39 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on daniel klotz |</title>
-    <link>/categories/</link>
+    <link>https://danklotz.github.io/categories/</link>
     <description>Recent content in Categories on daniel klotz |</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Dec 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://danklotz.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>memos</title>
-      <link>/categories/memos/</link>
+      <link>https://danklotz.github.io/categories/memos/</link>
       <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>/categories/memos/</guid>
+      <guid>https://danklotz.github.io/categories/memos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sketches</title>
-      <link>/categories/sketches/</link>
+      <link>https://danklotz.github.io/categories/sketches/</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/sketches/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sketching</title>
-      <link>/categories/sketching/</link>
-      <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/sketching/</guid>
+      <guid>https://danklotz.github.io/categories/sketches/</guid>
       <description></description>
     </item>
     

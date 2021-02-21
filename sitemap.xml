@@ -3,275 +3,191 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://danklotz.github.io/categories/</loc>
     <lastmod>2020-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://danklotz.github.io/</loc>
     <lastmod>2020-12-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/</loc>
-    <lastmod>2020-12-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/memos/</loc>
+    <loc>https://danklotz.github.io/note/</loc>
     <lastmod>2020-12-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/note/2020/12/rnd-reviews/</loc>
+    <loc>https://danklotz.github.io/categories/memos/</loc>
+    <lastmod>2020-12-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://danklotz.github.io/note/2020/12/rnd-reviews/</loc>
     <lastmod>2020-12-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2020/12/model-checking/</loc>
+    <loc>https://danklotz.github.io/note/2020/12/model-checking/</loc>
     <lastmod>2020-12-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2020/12/goblin-notes/</loc>
+    <loc>https://danklotz.github.io/note/2020/12/goblin-notes/</loc>
     <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2020/12/calm-technology/</loc>
+    <loc>https://danklotz.github.io/note/2020/12/calm-technology/</loc>
     <lastmod>2020-12-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2020/12/analytic-modeling/</loc>
+    <loc>https://danklotz.github.io/note/2020/12/analytic-modeling/</loc>
     <lastmod>2020-12-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2020/12/multi-multi/</loc>
+    <loc>https://danklotz.github.io/note/2020/12/multi-multi/</loc>
     <lastmod>2020-12-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2020/07/quotes/</loc>
+    <loc>https://danklotz.github.io/note/2020/07/quotes/</loc>
     <lastmod>2020-07-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2020/06/metrics-1/</loc>
-    <lastmod>2020-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2020/05/media/</loc>
+    <loc>https://danklotz.github.io/note/2020/05/media/</loc>
     <lastmod>2020-05-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://danklotz.github.io/tags/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/creativecoding/</loc>
+    <loc>https://danklotz.github.io/tags/creativecoding/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/p5js/</loc>
+    <loc>https://danklotz.github.io/tags/p5js/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/note/2018/09/p5js-particles1/</loc>
+    <loc>https://danklotz.github.io/note/2018/09/p5js-particles1/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/sketches/</loc>
+    <loc>https://danklotz.github.io/categories/sketches/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/idea/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/note/2018/01/using-if-else-with-pipes/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/tip/</loc>
-    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/note/2018/01/plotly-test/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/scripting/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/sketching/</loc>
-    <lastmod>2018-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/note/2018/01/feedback-with-tribbles/</loc>
-    <lastmod>2018-01-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/javascript/</loc>
+    <loc>https://danklotz.github.io/tags/javascript/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/js/</loc>
+    <loc>https://danklotz.github.io/tags/js/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/note/2017/12/p5js-3d-test/</loc>
+    <loc>https://danklotz.github.io/note/2017/12/p5js-3d-test/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/webgl/</loc>
+    <loc>https://danklotz.github.io/tags/scripting/</loc>
     <lastmod>2017-12-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/note/2017/12/p5js-function-plotting/</loc>
+    <loc>https://danklotz.github.io/tags/webgl/</loc>
+    <lastmod>2017-12-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://danklotz.github.io/note/2017/12/p5js-function-plotting/</loc>
     <lastmod>2017-12-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2017/12/p5js-floating-sticks/</loc>
+    <loc>https://danklotz.github.io/note/2017/12/p5js-floating-sticks/</loc>
     <lastmod>2017-12-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/progamming/</loc>
+    <loc>https://danklotz.github.io/tags/progamming/</loc>
     <lastmod>2017-12-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/data-science/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/programming/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tidy-evaluation/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/tidyverse/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/rlang/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/note/2017/12/bang-bang-bang/</loc>
-    <lastmod>2017-12-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2017/12/p5js-linegrow/</loc>
+    <loc>https://danklotz.github.io/note/2017/12/p5js-linegrow/</loc>
     <lastmod>2017-12-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2017/12/p5js-doodle-flower/</loc>
+    <loc>https://danklotz.github.io/note/2017/12/p5js-doodle-flower/</loc>
     <lastmod>2017-12-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2017/11/p5js-flares/</loc>
+    <loc>https://danklotz.github.io/note/2017/11/p5js-flares/</loc>
     <lastmod>2017-11-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2017/11/p5js-star/</loc>
+    <loc>https://danklotz.github.io/note/2017/11/p5js-star/</loc>
     <lastmod>2017-11-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2017/11/p5js-anim/</loc>
+    <loc>https://danklotz.github.io/note/2017/11/p5js-anim/</loc>
     <lastmod>2017-11-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2017/11/rainy-meanderings/</loc>
-    <lastmod>2017-11-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/note/2017/10/visualizing-uncertainty/</loc>
+    <loc>https://danklotz.github.io/note/2017/10/visualizing-uncertainty/</loc>
     <lastmod>2017-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/note/2017/04/intro/</loc>
+    <loc>https://danklotz.github.io/note/2017/04/intro/</loc>
     <lastmod>2017-04-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/gfx/</loc>
+    <loc>https://danklotz.github.io/gfx/</loc>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://danklotz.github.io/about/</loc>
   </url>
   
   <url>
-    <loc>/open_learning/</loc>
+    <loc>https://danklotz.github.io/open_learning/</loc>
   </url>
   
   <url>
-    <loc>/projects/</loc>
+    <loc>https://danklotz.github.io/projects/</loc>
   </url>
   
 </urlset>
