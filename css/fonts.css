@@ -15,9 +15,9 @@
 
 /* color options for note-categories */
 div#category a:link { color: #111155; }
-div#category a:visited { color: #3399aa; }
-div#category a:hover { color: #00eeff; }
-div#category a:active { color: #00eeff; }
+div#category a:visited { color: #AF7387; }
+div#category a:hover { color: #835665; }
+div#category a:active { color: #835665; }
 
 body {
   font-family: 'Cormorant Garamond', serif;
@@ -32,7 +32,7 @@ body {
 }
 
 a {
-  color:#111155;
+  color:#3399aa; /*111155; */
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -40,7 +40,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: #ed6dbd;
+  color: #00eeff;
 }
 
 a:not([href]):not([tabindex]) {
