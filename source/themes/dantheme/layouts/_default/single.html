@@ -1,0 +1,16 @@
+<html lang="{{ .Site.LanguageCode }}">
+
+
+{{ partial "header.html" . }}
+
+{{ partial "opener.html" . }}
+
+<div class="article-meta">
+  {{if .Params.title_fig}} <img src={{ .Params.title_fig }}> {{ end }}
+</div>
+
+<main>
+  {{ .Content }}
+</main>
+
+{{ partial "footer.html" . }}

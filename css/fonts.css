@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:900");
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Playfair+Display:ital,wght@0,400;1,700&family=UnifrakturMaguntia&display=swap');
+
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0e3530;
+}
+
+
+a {
+  color: #de688c;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  text-decoration: underline;
+
+}
+
+a:visited {
+  color: #eca7bc;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 100;
+  line-height: 1.2;
+}
+
+h1,
+.h1 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  /*Source Sans Pro, Arial, Helvetica, sans-serif;*/
+  font-size: min(20.2vw, 15.0rem);
+  /*10.5rem;*/
+  filter: url(#distort);
+  text-align: center;
+}
+
+h2,
+.h2 {
+  font-size: 2.7rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.7rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.3rem;
+}
+
+h6,
+.h6 {
+  font-size: 1.0rem;
+}
+
+code {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 85%;
+}

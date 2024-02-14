@@ -1,0 +1,28 @@
+{{ partial "header.html" . }}
+{{ partial "opener.html" . }}
+
+{{ .Content }}
+
+{{if not .IsHome }}
+<main>
+  <div id="category" , align="center">
+    <h3>Random</h3>
+    {{range where .Data.Pages ".Params.categories" "==" "memos"}}
+    <a href="{{ .URL }}">{{ .Title }} </a> <br>
+    {{ end }}
+  </div>
+
+  <hr />
+
+  <div id="category" , align="center">
+    <h3>Code Sketches</h3>
+    {{range where .Data.Pages ".Params.categories" "==" "sketches"}}
+    <a href="{{ .URL }}">{{ .Title }} </a> <br>
+    {{ end }}
+  </div>
+  <div style="clear:left"> </div>
+
+</main>
+{{ end }}
+
+{{ partial "footer.html" . }}

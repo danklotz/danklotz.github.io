@@ -1,0 +1,35 @@
+baseurl = "https://allokkio.github.io/"
+languageCode = "en-us"
+title = "allokkio"
+theme = "dantheme"
+publishDir = "../"
+ignoreFiles = ["files$", "_cache$"]
+preserveTaxonomyNames = true
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+    post = "/post/:slug/"
+    note = "/note/:slug/"
+
+#[[menu.main]]
+#    name = "notes"
+#    url = "/note/"
+#    weight = 1
+#[[menu.main]]
+#    name = "gfx"
+#    url = "/gfx/"
+#    weight = 2
+#[[menu.main]]
+#    name = "about"
+#    url = "/about/"
+#    weight = 3
+
+
+#[[menu.main]]
+#    name = "projects"
+#    url = "/projects/"
+#    weight = 4
+
+[params]
+    description = ""
+    #sfooter = "[![hello](project-fig.png)](https://danklotz.github.io/)"

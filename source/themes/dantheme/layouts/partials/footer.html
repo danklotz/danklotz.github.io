@@ -1,0 +1,43 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <link rel="stylesheet" href='{{ "/css/style.css" | relURL }}' />
+  <link rel="stylesheet" href='{{ "/css/fonts.css" | relURL }}' />
+</head>
+
+<footer>
+  <center style="background-color: #1B4540;
+  color: #cac0bb;
+  margin-top:-0px;
+  margin-bottom:-100px;
+  top: 0;
+  position: relative;
+  left: 45%;
+  right: 55%;
+  max-width: 52.8vw;
+  width: 200vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-top: 1px;
+  padding-bottom: 10px;
+  padding-left: 25vw;
+  padding-right: 25vw;">
+
+    <br>
+    Well that's it.
+    <br><br>
+    <i>See you, Space Cowboy!</i>
+    <br>
+
+    {{ with .Site.Params.footer }}
+    {{ . | markdownify }}
+    {{ end }}
+    <!-- <a href="./">
+      <img src="/living-with-black-boxes.gif" , style="height:230px"></a> -->
+
+  </center>
+</footer>
+</body>
+
+</html>
