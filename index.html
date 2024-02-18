@@ -1,5 +1,6 @@
 <body>
   <center style="background-color: #1B4540;
+                 color: #CF716A;
                  margin-top:-22px; 
                  top: 0; 
                  max-width: 100vw;
@@ -13,9 +14,15 @@
     <br>
     <p style="margin-top:70px;"></p>
     <a href="/"><img src="/header.jpg" ;></a>
-    <p style="margin-bottom:120px;"></p>
+    <p style="margin-bottom:8px;"></p>
+    <h4>
+      ⟢ <a href="#section1">tale</a> ⟡
+      <a href="#about">about</a> ⟡
+      <a href="#projects">projects</a> ⟡
+      <a href="#socials">socials</a> ⟡
+      <a href="#pubs">publications</a> ⟣
+    </h4>
     <br>
-
   </center>
 </body>
 <body>
@@ -31,47 +38,59 @@
                  margin-left: -50vw;
                  margin-right: -50vw;
                  padding-left: 25vw; padding-right: 25vw;">
-
+    <div class="main" id="section1"></div>
     <br>
-    Welcome! My name is Daniel Klotz. I am a researcher and currently at the Department of Compound Environmental Risks
-    (UFZ, Leipzig). I earned my Phd in Hydrology and Water Resource Management at the institute for Hydaulic
-    Engineering, Hydrology and Water Management (BOKU, Vienna) and served as a
-    Postdoc at the Institute for Machine Learning (JKU, Linz).
+    <h1>The Tale</h1>
+    <br>
+    <img src="short-cv.png" alt="short cv"></img>
     <br>
     <br>
+    <br>
+    </div>
     
   </center>
 </body>
 
 
 
-<div style="background-color: #cac0bb;
-                 color: #0e3530;
-                 margin-top:-1px;
-                 top: 0;
-                 position: relative;
-                 left: 45%;
-                 right: 55%;
-                 max-width: 52.8vw;
-                 width: 200vw;
-                 margin-left: -50vw;
-                 margin-right: -50vw;
-                 padding-top: 1px;
-                 padding-bottom: 10px;
-                 padding-left: 25vw;
-                 padding-right: 25vw;">
-    <h2>Contact</h2>
+<div id="about"
+     style="background-color: #cac0bb;
+        color: #000000;
+        margin-top:-1px;
+        top: 0;
+        position: relative;
+        left: 45%;
+        right: 55%;
+        max-width: 52.8vw;
+        width: 200vw;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding-top: 1px;
+        padding-bottom: 10px;
+        padding-left: 25vw;
+        padding-right: 25vw;">
+    <center>
+        <img src="/self.png"></img>
+    </center>
+    <h2>About me</h2>
+    My name is Daniel Klotz. I am a researcher! Currently I work at the Department of Compound Environmental Risks (UFZ, Leipzig) and think about data-driven approaches for reducing enviornmental/hydrological risks. Before that, I got Phd in Hydrology and Water Resource Management at the institute for Hydaulic Engineering, Hydrology and Water Management (BOKU, Vienna) and learned a lot about Machine Learning by doing a Postdoc at the Institute for Machine Learning (JKU, Linz).
+    <h3>Contact</h3>
     <b>Email: </b> <a href = "mailto: daniel.klotz@ufz.de">daniel.klotz@ufz.de</a>
+
     <br>
     <br>
 </div>
   
 <h2 id="projects">Projects</h2>
-<h3 id="professional">Professional</h3>
+
+  
+<div class="main" id="projects"></div>
+  
+<h3 id="research">Research</h3>
 <ul>
 <li><strong><a href="https://neuralhydrology.github.io">NeuralHydrology</a>.</strong> Exloring the potential of Deep Learing for Hydrology.</li>
 </ul>
-<h3 id="private">Private</h3>
+<h3 id="fun">Fun</h3>
 <ul>
 <li><strong><a href="https://github.com/danklotz/openNotes">Open Notes</a>.</strong> Short notes and incomplete lists of random stuff.</li>
 <li><strong><a href="https://nomonkey.art">NoMonkey</a>.</strong> A small project with a good friend of mine. Don&rsquo;t expect many updates.</li>
@@ -79,21 +98,22 @@
 </ul>
 
 
-<div style="background-color: #3c332f;
-                 color: #f0eeee;
-                 margin-top:-1px;
-                 top: 0;
-                 position: relative;
-                 left: 45%;
-                 right: 55%;
-                 max-width: 52.8vw;
-                 width: 200vw;
-                 margin-left: -50vw;
-                 margin-right: -50vw;
-                 padding-top: 1px;
-                 padding-bottom: 30px;
-                 padding-left: 25vw;
-                 padding-right: 25vw;">
+<div id="socials"
+    style="background-color: #3c332f;
+        color: #f0eeee;
+        margin-top:-1px;
+        top: 0;
+        position: relative;
+        left: 45%;
+        right: 55%;
+        max-width: 52.8vw;
+        width: 200vw;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding-top: 1px;
+        padding-bottom: 30px;
+        padding-left: 25vw;
+        padding-right: 25vw;">
     <h2>Follow</h2>
     <ul>
     <li><a href="https://scholar.google.com/citations?user=J5Odv8wAAAAJ&hl=en">Google Scholar</a> For updates on scientific publications.  </li>
@@ -105,7 +125,11 @@
 </div>
   
 <h2 id="selected-publications">Selected Publications</h2>
-<p><a href="https://doi.org/10.1002/2017WR021253">Klotz, D., Herrnegger, M., &amp; Schulz, K. (2017). Symbolic regression for the estimation of transfer functions of hydrological models. Water Resources Research, 53(11), 9402-9423.</a></p>
+<p>
+  
+<div class="main" id="pubs"></div>
+  <br>
+<a href="https://doi.org/10.1002/2017WR021253">Klotz, D., Herrnegger, M., &amp; Schulz, K. (2017). Symbolic regression for the estimation of transfer functions of hydrological models. Water Resources Research, 53(11), 9402-9423.</a></p>
 <p>This paper explores a more rigorous way to bind the parameters of hydrological models to geo-physical properties than the multi-scale parameter regionalization approach had used before. It spawned its own branch of research, which I have followed with great interest since then.</p>
 <hr>
 <p><a href="https://doi.org/10.5194/hess-23-5089-2019">Kratzert, F., Klotz, D., Shalev, G., Klambauer, G., Hochreiter, S., &amp; Nearing, G. (2019). Towards learning universal, regional, and local hydrological behaviors via machine learning applied to large-sample datasets. Hydrol. Earth Syst. Sci., 2019, 23, 5089–5110.</a></p>
@@ -172,3 +196,27 @@ Klotz, D. (2022). In Defense of Metrics: Metrics Sufficiently Encode Typical Hum
 </body>
 
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    
+    $("a").on('click', function (event) {
+      
+      if (this.hash !== "") {
+        
+        event.preventDefault();
+        
+        var hash = this.hash;
+        
+        
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+          
+          window.location.hash = hash;
+        });
+      } 
+    });
+  });
+</script>

@@ -1,5 +1,6 @@
 <body>
   <center style="background-color: #1B4540;
+                 color: #CF716A;
                  margin-top:-22px; 
                  top: 0; 
                  max-width: 100vw;
@@ -13,9 +14,15 @@
     <br>
     <p style="margin-top:70px;"></p>
     <a href="/"><img src="/header.jpg" ;></a>
-    <p style="margin-bottom:120px;"></p>
+    <p style="margin-bottom:8px;"></p>
+    <h4>
+      ⟢ <a href="#section1">tale</a> ⟡
+      <a href="#about">about</a> ⟡
+      <a href="#projects">projects</a> ⟡
+      <a href="#socials">socials</a> ⟡
+      <a href="#pubs">publications</a> ⟣
+    </h4>
     <br>
-
   </center>
 </body>
 
@@ -65,3 +72,27 @@
 </body>
 
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    
+    $("a").on('click', function (event) {
+      
+      if (this.hash !== "") {
+        
+        event.preventDefault();
+        
+        var hash = this.hash;
+        
+        
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+          
+          window.location.hash = hash;
+        });
+      } 
+    });
+  });
+</script>

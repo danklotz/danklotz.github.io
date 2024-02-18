@@ -51,7 +51,7 @@ h1,
 .h1 {
   font-family: 'UnifrakturMaguntia', cursive;
   /*Source Sans Pro, Arial, Helvetica, sans-serif;*/
-  font-size: min(20.2vw, 15.0rem);
+  font-size: min(10.2vw, 5.0rem);
   /*10.5rem;*/
   filter: url(#distort);
   text-align: center;

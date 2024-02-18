@@ -3,23 +3,30 @@ author: Daniel Klotz
 title: Hello
 ---
 {{< rawhtml >}}
-<div style="background-color: #cac0bb;
-                 color: #0e3530;
-                 margin-top:-1px;
-                 top: 0;
-                 position: relative;
-                 left: 45%;
-                 right: 55%;
-                 max-width: 52.8vw;
-                 width: 200vw;
-                 margin-left: -50vw;
-                 margin-right: -50vw;
-                 padding-top: 1px;
-                 padding-bottom: 10px;
-                 padding-left: 25vw;
-                 padding-right: 25vw;">
-    <h2>Contact</h2>
+<div id="about"
+     style="background-color: #cac0bb;
+        color: #000000;
+        margin-top:-1px;
+        top: 0;
+        position: relative;
+        left: 45%;
+        right: 55%;
+        max-width: 52.8vw;
+        width: 200vw;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding-top: 1px;
+        padding-bottom: 10px;
+        padding-left: 25vw;
+        padding-right: 25vw;">
+    <center>
+        <img src="/self.png"></img>
+    </center>
+    <h2>About me</h2>
+    My name is Daniel Klotz. I am a researcher! Currently I work at the Department of Compound Environmental Risks (UFZ, Leipzig) and think about data-driven approaches for reducing enviornmental/hydrological risks. Before that, I got Phd in Hydrology and Water Resource Management at the institute for Hydaulic Engineering, Hydrology and Water Management (BOKU, Vienna) and learned a lot about Machine Learning by doing a Postdoc at the Institute for Machine Learning (JKU, Linz).
+    <h3>Contact</h3>
     <b>Email: </b> <a href = "mailto: daniel.klotz@ufz.de">daniel.klotz@ufz.de</a>
+
     <br>
     <br>
 </div>
@@ -27,32 +34,36 @@ title: Hello
 
 ## Projects
 
-### Professional
+{{< rawhtml >}}  
+<div class="main" id="projects"></div>
+{{< /rawhtml >}}  
+### Research
 
 - **[NeuralHydrology](https://neuralhydrology.github.io).** Exloring the potential of Deep Learing for Hydrology.
 
-### Private
+### Fun
 
 - **[Open Notes](https://github.com/danklotz/openNotes).** Short notes and incomplete lists of random stuff.
 - **[NoMonkey](https://nomonkey.art).** A small project with a good friend of mine. Don't expect many updates.
 - **[Allokkio](http://allokkio.net).** A private, experimental website that is not yet cryptic enough.
 
 {{< rawhtml >}}
-<div style="background-color: #3c332f;
-                 color: #f0eeee;
-                 margin-top:-1px;
-                 top: 0;
-                 position: relative;
-                 left: 45%;
-                 right: 55%;
-                 max-width: 52.8vw;
-                 width: 200vw;
-                 margin-left: -50vw;
-                 margin-right: -50vw;
-                 padding-top: 1px;
-                 padding-bottom: 30px;
-                 padding-left: 25vw;
-                 padding-right: 25vw;">
+<div id="socials"
+    style="background-color: #3c332f;
+        color: #f0eeee;
+        margin-top:-1px;
+        top: 0;
+        position: relative;
+        left: 45%;
+        right: 55%;
+        max-width: 52.8vw;
+        width: 200vw;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding-top: 1px;
+        padding-bottom: 30px;
+        padding-left: 25vw;
+        padding-right: 25vw;">
     <h2>Follow</h2>
     <ul>
     <li><a href="https://scholar.google.com/citations?user=J5Odv8wAAAAJ&hl=en">Google Scholar</a> For updates on scientific publications.  </li>
@@ -66,6 +77,9 @@ title: Hello
 
 ## Selected Publications
 
+{{< rawhtml >}}  
+<div class="main" id="pubs"></div>
+{{< /rawhtml >}}  
 [Klotz, D., Herrnegger, M., & Schulz, K. (2017). Symbolic regression for the estimation of transfer functions of hydrological models. Water Resources Research, 53(11), 9402-9423.](https://doi.org/10.1002/2017WR021253)
 
 This paper explores a more rigorous way to bind the parameters of hydrological models to geo-physical properties than the multi-scale parameter regionalization approach had used before. It spawned its own branch of research, which I have followed with great interest since then.
