@@ -9,9 +9,9 @@ title: Hello
         margin-top:-1px;
         top: 0;
         position: relative;
-        left: 45%;
-        right: 55%;
-        max-width: 52.8vw;
+        left: 50%;
+        right: 50%;
+        max-width: 50vw;
         width: 200vw;
         margin-left: -50vw;
         margin-right: -50vw;
@@ -54,9 +54,9 @@ title: Hello
         margin-top:-1px;
         top: 0;
         position: relative;
-        left: 45%;
-        right: 55%;
-        max-width: 52.8vw;
+        left: 50%;
+        right: 50%;
+        max-width: 50vw;
         width: 200vw;
         margin-left: -50vw;
         margin-right: -50vw;
