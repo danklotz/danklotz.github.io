@@ -17,8 +17,8 @@ title: Hello
         margin-right: -50vw;
         padding-top: 1px;
         padding-bottom: 10px;
-        padding-left: 25vw;
-        padding-right: 25vw;">
+        padding-left: 22vw;
+        padding-right: 28vw;">
     <center>
         <img src="/self.png"></img>
     </center>
@@ -62,8 +62,8 @@ title: Hello
         margin-right: -50vw;
         padding-top: 1px;
         padding-bottom: 30px;
-        padding-left: 25vw;
-        padding-right: 25vw;">
+        padding-left: 22vw;
+        padding-right: 28vw;">
     <h2>Follow</h2>
     <ul>
     <li><a href="https://scholar.google.com/citations?user=J5Odv8wAAAAJ&hl=en">Google Scholar</a> For updates on scientific publications.  </li>
