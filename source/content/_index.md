@@ -9,16 +9,14 @@ title: Hello
         margin-top:-1px;
         top: 0;
         position: relative;
-        left: 50%;
-        right: 50%;
-        max-width: 50vw;
-        width: 200vw;
-        margin-left: -50vw;
-        margin-right: -50vw;
+        padding: -1em;
+        max-width: 800px;
         padding-top: 1px;
         padding-bottom: 10px;
-        padding-left: 22vw;
-        padding-right: 28vw;">
+        margin-left: -25vw;
+        margin-right: -25vw;
+        padding-left: 25vw;
+        padding-right: 25vw;">
     <center>
         <img src="/self.png"></img>
     </center>
@@ -98,16 +96,14 @@ This paper summarises major parts of our research on LSTMs for rainfall-runoff m
         margin-top:-1px;
         top: 0;
         position: relative;
-        left: 50%;
-        right: 50%;
-        max-width: 50vw;
-        width: 200vw;
-        margin-left: -50vw;
-        margin-right: -50vw;
+        padding: -1em;
+        max-width: 800px;
         padding-top: 1px;
-        padding-bottom: 30px;
-        padding-left: 22vw;
-        padding-right: 28vw;">
+        padding-bottom: 10px;
+        margin-left: -25vw;
+        margin-right: -25vw;
+        padding-left: 25vw;
+        padding-right: 25vw;">
     <br>
     <h2>Follow</h2>
     <ul>
