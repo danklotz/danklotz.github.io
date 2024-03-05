@@ -2,8 +2,7 @@
 /*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Playfair+Display:ital,wght@0,400;1,700&family=UnifrakturMaguntia&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap');
 
 body {
   font-family: 'Cormorant Garamond', serif;
@@ -49,7 +48,7 @@ h6,
 
 h1,
 .h1 {
-  font-family: 'UnifrakturMaguntia', cursive;
+  font-family: 'Jacquarda Bastarda 9';
   /*Source Sans Pro, Arial, Helvetica, sans-serif;*/
   font-size: min(10.2vw, 5.0rem);
   /*10.5rem;*/
