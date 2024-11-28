@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>rr: distributional predictions | daniel klotz |</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+  </head>
+
+<body>
+<center>
+  <img src="/danklotz-signature.png", style="height:230px">
+  <p style="margin-bottom:-35px;"></p>
+  <ul class="menu", margin=0>·
+    
+    <a href="/">hi</a> ·
+    
+    <a href="/note/">notes</a> ·
+    
+    <a href="/gfx/">gfx</a> ·
+    
+    <a href="/about/">me</a> ·
+    
+  </ul>
+  <br>
+ </center>
+<p style="margin-bottom:-50px;"></p>
+</body>
+
+<div class="article-meta">
+
+<h1><span class="title">rr: distributional predictions</span></h1>
+
+
+</div>
+
+<main>
+<p>Notes on distributional predictions for rainfall-runoff (r-r) modelling.</p>
+<p>Point predictions are often of limited value. This is especially the case if only view predictions are made (maybe just one). Generally, the problem is that points equate to a prediction with very low uncertainty and/or an error that is extremely well behaved. Both are seldom the case. The solution is either (a) to make more coarse predictions &mdash; e.g. the runoff will be higher or lower than in the previous day &mdash; or (b) to make richer predictions that can better account for the uncertainty &mdash; e.g. providing bounds or even full distributions.</p>
+<p>In r-r modelling strategy (b) is often pursued by adapting point-predictions. First a (deterministic) model is used to make a point predictions; then a second approach is layered on top of it to get an uncertainty estimates. This latter scheme might be a pre-processor, an updating-scheme or a post-processor etc.</p>
+<h3 id="consideration-when-using-nns">Consideration when using NNs</h3>
+<p>Low dimensions might also be difficult: <a href="https://arxiv.org/abs/2006.10175v1">Liu &amp; Regier (2020): Flows Succeed Where GANs Fail: Lessons from Low-Dimensional Data</a>.</p>
+<p>![](/note/2020-12-14-map-territory_files/Screenshot from 2020-12-14 00-54-45.png)</p>
+
+</main>
+
+  <footer>
+  <center>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  <a href="https://danklotz.github.io/"><img src="../project-fig.png" alt="hello"></a>
+  
+  </center>
+  </footer>
+  </body>
+</html>
+

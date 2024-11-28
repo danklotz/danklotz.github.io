@@ -1,0 +1,20 @@
+---
+title: Favourite Things Spring 2018
+title_fig: "https://cdn-images-1.medium.com/max/800/1*knCfDWbzlVcc25wIajBgBQ.gif"
+author: Daniel Klotz
+date: '2018-05-06'
+draft: true
+categories:
+  - learning
+tags:
+  - tip
+  - youtube
+  - videos
+  - reflections
+---
+
+The [drawing-lessons](http://gallery.ralphammer.com/writing/) of [Ralph Hammer](https://twitter.com/ralphammer) are very nice. Everything is xplained with words and very fluid animations (like the one below). 
+
+![](https://cdn-images-1.medium.com/max/800/1*knCfDWbzlVcc25wIajBgBQ.gif)
+
+

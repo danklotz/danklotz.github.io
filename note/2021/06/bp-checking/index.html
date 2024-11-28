@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bp-exploration | daniel klotz |</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+  </head>
+
+<body>
+<center>
+  <img src="/danklotz-signature.png", style="height:230px">
+  <p style="margin-bottom:-35px;"></p>
+  <ul class="menu", margin=0>·
+    
+    <a href="/">hi</a> ·
+    
+    <a href="/note/">notes</a> ·
+    
+    <a href="/gfx/">gfx</a> ·
+    
+    <a href="/about/">me</a> ·
+    
+  </ul>
+  <br>
+ </center>
+<p style="margin-bottom:-50px;"></p>
+</body>
+
+<div class="article-meta">
+
+<h1><span class="title">bp-exploration</span></h1>
+
+
+</div>
+
+<main>
+<p>Notes on using <a href="https://en.wikipedia.org/wiki/Backpropagation">backpropagation</a> as a tool for model exploration and interpretation.</p>
+<p><strong><a href="https://distill.pub/2017/feature-visualization/">Dstill.pub: Feature-Visualization</a></strong> is an amazing article that nicele exhibits how backprop can be used to visualize features (edges, textures, patterns, objects, etc.) of specific neural network parts/layers. Mordvintsev did quite some work in this direction. All looks great.</p>
+<p><strong><a href="https://towardsdatascience.com/peering-inside-the-blackbox-how-to-trick-a-neural-network-757c90a88a73">Looking Inside The Blackbox</a>.</strong> This is blog-post/tutorial about the usage of backprop do obtain some qualitative understanding of neural-networks. Not to brad, but I <a href="https://meetingorganizer.copernicus.org/EGU2020/EGU2020-8853.html">had a similar idea</a> in the context of <em>&ldquo;data-assimilation for Deep Learning based rainfall-runoff modeling&rdquo;</em>. As in the blogpost, the idea was to backprop with regard to the inputs (instead of the parameters), but with the goal to get (a) a better forecast and (b) obtain a qualitative understand about what the networks <em>thinks</em> about the world. On that note, I still like the presentation-style, here a slide so you know what I mean:</p>
+<p>![](/note/2020-12-15-model-checking_files/Screenshot from 2020-12-15 18-37-09.png)</p>
+
+</main>
+
+  <footer>
+  <center>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  <a href="https://danklotz.github.io/"><img src="../project-fig.png" alt="hello"></a>
+  
+  </center>
+  </footer>
+  </body>
+</html>
+

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>p5js: star | daniel klotz |</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+  </head>
+
+<body>
+<center>
+  <img src="/danklotz-signature.png", style="height:230px">
+  <p style="margin-bottom:-35px;"></p>
+  <ul class="menu", margin=0>·
+    
+    <a href="/">hi</a> ·
+    
+    <a href="/note/">notes</a> ·
+    
+    <a href="/gfx/">gfx</a> ·
+    
+    <a href="/about/">me</a> ·
+    
+  </ul>
+  <br>
+ </center>
+<p style="margin-bottom:-50px;"></p>
+</body>
+
+<div class="article-meta">
+
+<h1><span class="title">p5js: star</span></h1>
+
+
+</div>
+
+<main>
+<p>Another little Javascript-animation based on Gaussian ellipses.</p>
+<!-- raw HTML omitted -->
+<p>Code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c_size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">450</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">half_c_size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.5</span><span style="color:#f92672">*</span><span style="color:#a6e22e">c_size</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c_pad</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">c_size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">increment</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.002</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">time_to_update</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">time</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">increment</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">increment_to_update</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.03</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setup</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">background</span>(<span style="color:#e6db74">&#34;#DDDCD3&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">canvas</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">createCanvas</span>(<span style="color:#a6e22e">c_size</span>, <span style="color:#a6e22e">c_size</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">canvas</span>.<span style="color:#a6e22e">parent</span>(<span style="color:#e6db74">&#39;sketch-holder&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// info:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">textSize</span>(<span style="color:#ae81ff">19</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">stroke</span>(<span style="color:#ae81ff">221</span>,<span style="color:#ae81ff">220</span>,<span style="color:#ae81ff">211</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">221</span>,<span style="color:#ae81ff">220</span>,<span style="color:#ae81ff">211</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">fill</span>(<span style="color:#e6db74">&#34;#EEEDE4&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">text</span>(<span style="color:#e6db74">&#34;    ~68%  \n of the radii&#34;</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">40</span>, <span style="color:#a6e22e">c_size</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// decoration:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// outer circles
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">221</span>,<span style="color:#ae81ff">220</span>,<span style="color:#ae81ff">211</span>,<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">stroke</span>(<span style="color:#ae81ff">221</span>,<span style="color:#ae81ff">220</span>,<span style="color:#ae81ff">211</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strokeWeight</span>(<span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span>, <span style="color:#a6e22e">c_pad</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// outer ellipses
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">strokeWeight</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span>  , <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">half_c_size</span>, <span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">c_pad</span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">draw</span>() {
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">translate</span>(<span style="color:#a6e22e">width</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">rotate</span>(<span style="color:#a6e22e">frameCount</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">50.0</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">noStroke</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">time</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">increment</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">time</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">time_to_update</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">randomGaussian</span>(<span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">randomGaussian</span>(<span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">c_pad</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">time_to_update</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">increment_to_update</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fill</span>(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">144</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">20</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">ellipse</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">n</span>, <span style="color:#a6e22e">m</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+</main>
+
+  <footer>
+  <center>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  <a href="https://danklotz.github.io/"><img src="../project-fig.png" alt="hello"></a>
+  
+  </center>
+  </footer>
+  </body>
+</html>
+

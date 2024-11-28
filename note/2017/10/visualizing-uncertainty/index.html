@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visualizing Uncertainty | daniel klotz |</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+  </head>
+
+<body>
+<center>
+  <img src="/danklotz-signature.png", style="height:230px">
+  <p style="margin-bottom:-35px;"></p>
+  <ul class="menu", margin=0>·
+    
+    <a href="/">hi</a> ·
+    
+    <a href="/note/">notes</a> ·
+    
+    <a href="/gfx/">gfx</a> ·
+    
+    <a href="/about/">me</a> ·
+    
+  </ul>
+  <br>
+ </center>
+<p style="margin-bottom:-50px;"></p>
+</body>
+
+<div class="article-meta">
+
+<h1><span class="title">Visualizing Uncertainty</span></h1>
+
+
+</div>
+
+<main>
+<p>I am not sure where one should start with this topic. Visualizing uncertainty
+is hard. in general, it is still an unsolved problem.</p>
+<p>Back in the days even the mighty
+<a href="https://flowingdata.com/2013/07/10/visualizing-uncertainty-still-unsolved-problem/">Nathan Yau</a>
+wrote:</p>
+<blockquote>
+<p>I still struggle with uncertainty and visualization. I haven’t seen many worthwhile solutions other than the old standbys, boxplots and histograms, which show distributions. But how many people understand spread, skew, etc? It’s a small proportion, which poses an interesting challenge.</p>
+</blockquote>
+<p>Perhaps a good place to start the article <a href="https://eagereyes.org/blog/2017/communicating-uncertainty-when-lives-are-on-the-line">When Lives Are on the Line</a> by <a href="https://eagereyes.org/">Robert Kosara</a>. The article provides plenty of (good)
+examples and shows the inherent problems of uncertainty visualization. The
+underlying topic, i.e. Hurricane Forecasting, is also very relevant.</p>
+<p><img src="/post/visunc/eagereyes_hurricanes.png" alt="&ldquo;eagereye&rdquo;"></p>
+<h2 id="real-world-metaphors">Real World Metaphors</h2>
+<p>This approach tries to visualize uncertainty by using visceral representation
+that are familiar to viewers. Example are brushstrokes (e.g. the thicker the
+more uncertain), hand-drawn style (e.g. the more sketchy the more uncertain) or
+watercolors (e.g. the more transparent the more uncertain). The used techniques
+might be summarized or at least strongly overlap with the domain of
+<a href="https://en.wikipedia.org/wiki/Non-photorealistic_rendering">non-photorealistic rendering</a>, which is</p>
+<blockquote>
+<p>&hellip; an area of computer graphics that focuses on enabling a wide variety of expressive styles for digital art. In contrast to traditional computer graphics, which has focused on photorealism, NPR is inspired by artistic styles such as painting, drawing, technical illustration, and animated cartoons. NPR has appeared in movies and video games in the form of &ldquo;toon shading&rdquo;, as well as in scientific visualization, architectural illustration and experimental animation. An example of a modern use of this method is that of cel-shaded animation.</p>
+</blockquote>
+<p><img src="/post/visunc/handy_overview.png" alt="semiotic_logo.png">
+<strong>HANDY</strong>. In <a href="http://openaccess.city.ac.uk/1274/">2012 Wood et al.</a>
+presented a framework for sketchy information visualization. The framework is
+called <a href="https://www.gicentre.net/handy/">handy</a> and is a <a href="https://processing.org/">processing library</a>. Here is an excerpt from abstract:</p>
+<blockquote>
+<p>We present and evaluate a framework for constructing sketchy style information visualizations that mimic data graphics drawn by hand. We provide an alternative renderer for the Processing graphics environment that redefines core drawing primitives including line, polygon and ellipse rendering. These primitives allow higher-level graphical features such as bar charts, line charts, treemaps and node-link diagrams to be drawn in a sketchy style with a specified degree of sketchiness. &hellip;</p>
+</blockquote>
+<p>There also exists a great
+<a href="https://www.gicentre.net/handy/gallery/imp9lpl2bebs2rlb6i2yqdo9mcfmrd">gallery</a>,
+which exhibits many examples and a very thoughtful
+<a href="https://www.gicentre.net/blog/?offset=1499881637476">blogpost</a>
+about the potential and use of sketchiness for visualizing uncertainty in
+general.</p>
+<p><img src="/post/visunc/semiotic_logo.png" alt="semiotic_logo.png"></p>
+<p><strong>SEMIOTIC.</strong> <a href="http://elijahmeeks.com/">Elijah Meeks</a> is very smart-
+He created <a href="https://emeeks.github.io/semiotic/#/">Semiotic</a>.</p>
+<p>Semiotic is (yet another) data visualization framework. It is based on
+<a href="https://reactjs.org/">react</a>. The motivation behind it is to provide a fast
+way to create plots, without putting to much time into a specific chart.</p>
+<p>It can visualize uncertainty by &lsquo;sketchy&rsquo; rendering.  Elijah wrote a very nice <a href="https://medium.com/@Elijah_Meeks/sketchy-data-visualization-in-semiotic-5811a52f59bc">article</a> which lays out his ideas.</p>
+<h2 id="spaghetti">Spaghetti</h2>
+<p>The idea here is to basically show a whole set of different scenarios
+congruently.</p>
+<p><strong>USING MOVEMENT</strong>. Instead of showing the whole ensembles at the same time one can
+reveal a &ldquo;scenario&rdquo; at a time. Of course this approach does not work on print.
+Here are some recent examples:</p>
+<ul>
+<li><a href="https://www.theguardian.com/cities/ng-interactive/2017/nov/03/three-degree-world-cities-drowned-global-warming">Global Warming</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  <center>
+  <script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+
+  
+  <hr/>
+  <a href="https://danklotz.github.io/"><img src="../project-fig.png" alt="hello"></a>
+  
+  </center>
+  </footer>
+  </body>
+</html>
+
